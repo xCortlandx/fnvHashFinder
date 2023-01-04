@@ -184,6 +184,7 @@ string[] ModelTypes =
             "_fb8",
             "_fb9",
             "_frontend",
+            "_fxanim",
             "_head",
             "_head1",
             "_head1_cst",
@@ -254,12 +255,14 @@ string[] ModelTypes =
             "_lowerbody_viewbody9_cst",
             "_mag_view",
             "_mag_world",
+            "_mod",
             "_projectile",
             "_projectile_dead",
             "_prop",
             "_prop_animate",
             "_right_prop",
             "_shell_view",
+            "_smod",
             "_torso",
             "_torso1",
             "_torso1_armorheavy1",
@@ -364,6 +367,7 @@ string[] ModelTypes =
             "_world_ms",
             "_world_pc",
             "_world_sy",
+            "_xmodel",
         };
 string[] AnimTypes =
 {
@@ -1655,6 +1659,186 @@ string[] MaterialTypes =
 string[] VoxTypes =
 {
             "",
+            // DRAFT - BO4 Foly Vox
+            "_back",
+            "_belt_feed",
+            "_bolt_back",
+            "_bolt_back_00",
+            "_bolt_back_01",
+            "_bolt_back_02",
+            "_bolt_back_03",
+            "_bolt_back_04",
+            "_bolt_back_05",
+            "_bolt_forward",
+            "_bolt_forward_00",
+            "_bolt_forward_01",
+            "_bolt_forward_02",
+            "_bolt_forward_03",
+            "_bolt_forward_04",
+            "_bolt_forward_05",
+            "_bolt_release",
+            "_bolt_release_00",
+            "_bolt_release_01",
+            "_bolt_release_02",
+            "_bolt_release_03",
+            "_bolt_release_04",
+            "_bolt_release_05",
+            "_button",
+            "_button_press",
+            "_button_press_00",
+            "_button_press_01",
+            "_button_press_02",
+            "_button_press_03",
+            "_button_press_04",
+            "_button_press_05",
+            "_chamber_bolt_back",
+            "_chamber_bolt_back_00",
+            "_chamber_bolt_back_01",
+            "_chamber_bolt_back_02",
+            "_chamber_bolt_back_03",
+            "_chamber_bolt_back_04",
+            "_chamber_bolt_back_05",
+            "_chamber_bolt_forward",
+            "_chamber_bolt_forward_00",
+            "_chamber_bolt_forward_01",
+            "_chamber_bolt_forward_02",
+            "_chamber_bolt_forward_03",
+            "_chamber_bolt_forward_04",
+            "_chamber_bolt_forward_05",
+            "_chamber_cyl_in",
+            "_chamber_cyl_in_00",
+            "_chamber_cyl_in_01",
+            "_chamber_cyl_in_02",
+            "_chamber_cyl_in_03",
+            "_chamber_cyl_in_04",
+            "_chamber_cyl_in_05",
+            "_chamber_cyl_out",
+            "_chamber_cyl_out_00",
+            "_chamber_cyl_out_01",
+            "_chamber_cyl_out_02",
+            "_chamber_cyl_out_03",
+            "_chamber_cyl_out_04",
+            "_chamber_cyl_out_05",
+            "_chamber_first",
+            "_chamber_first_00",
+            "_chamber_first_01",
+            "_chamber_first_02",
+            "_chamber_first_03",
+            "_chamber_first_04",
+            "_chamber_first_05",
+            "_close",
+            "_cylinder_close",
+            "_cylinder_latch",
+            "_cylinder_open",
+            "_ext_mag_in",
+            "_ext_mag_out",
+            "_first_raise",
+            "_first_raise_00",
+            "_first_raise_01",
+            "_first_raise_02",
+            "_first_raise_03",
+            "_first_raise_04",
+            "_first_raise_05",
+            "_firstraise",
+            "_firstraise_00",
+            "_firstraise_01",
+            "_firstraise_02",
+            "_firstraise_03",
+            "_firstraise_04",
+            "_firstraise_05",
+            "_forward",
+            "_hammer_back",
+            "_in",
+            "_load",
+            "_mag_in",
+            "_mag_in_00",
+            "_mag_in_01",
+            "_mag_in_02",
+            "_mag_in_03",
+            "_mag_in_04",
+            "_mag_in_05",
+            "_mag_in_raise",
+            "_mag_in_start",
+            "_mag_in_start_00",
+            "_mag_in_start_01",
+            "_mag_in_start_02",
+            "_mag_in_start_03",
+            "_mag_in_start_04",
+            "_mag_in_start_05",
+            "_mag_lock",
+            "_mag_out",
+            "_mag_out_00",
+            "_mag_out_01",
+            "_mag_out_02",
+            "_mag_out_03",
+            "_mag_out_04",
+            "_mag_out_05",
+            "_mag_release",
+            "_mag_slide",
+            "_mag_slide_out",
+            "_mag_tap",
+            "_mag_tap_00",
+            "_mag_tap_01",
+            "_mag_tap_02",
+            "_mag_tap_03",
+            "_mag_tap_04",
+            "_mag_tap_05",
+            "_mag_unlock",
+            "_open",
+            "_out",
+            "_pull_back",
+            "_push_forward",
+            "_rechamber",
+            "_rechamber_00",
+            "_rechamber_01",
+            "_rechamber_02",
+            "_rechamber_03",
+            "_rechamber_04",
+            "_rechamber_05",
+            "_rechamber_ads",
+            "_rechamber_ads_00",
+            "_rechamber_ads_01",
+            "_rechamber_ads_02",
+            "_rechamber_ads_03",
+            "_rechamber_ads_04",
+            "_rechamber_ads_05",
+            "_shells_in",
+            "_shells_out",
+            "_slide_back",
+            "_slide_back_00",
+            "_slide_back_01",
+            "_slide_back_02",
+            "_slide_back_03",
+            "_slide_back_04",
+            "_slide_back_05",
+            "_slide_forward",
+            "_slide_forward_00",
+            "_slide_forward_01",
+            "_slide_forward_02",
+            "_slide_forward_03",
+            "_slide_forward_04",
+            "_slide_forward_05",
+            "_slide_release",
+            "_slide_release_00",
+            "_slide_release_01",
+            "_slide_release_02",
+            "_slide_release_03",
+            "_slide_release_04",
+            "_slide_release_05",
+            "_spin",
+            "_switch",
+            "_tap",
+            "_tap_00",
+            "_tap_01",
+            "_tap_02",
+            "_tap_03",
+            "_tap_04",
+            "_tap_05",
+            "flap_close",
+            "flap_open",
+            "rocket_load",
+            "rocket_lock",
+            "sight_open",
             // Fireteam Announcers
             "_bb_control_start_00",
             "_bb_control_start_hardcore_00",
@@ -6110,6 +6294,7 @@ void SearchForSpecificGunOps(string specificGunOps)
         CheckModelName("wpn_t9_pistol_burst_cb_highfidelity" + specificGunOps + modelType);
         CheckModelName("wpn_t9_pistol_burst_cb_leagueplay" + specificGunOps + modelType);
         CheckModelName("wpn_t9_pistol_burst_cb_samurai" + specificGunOps + modelType);
+        CheckModelName("wpn_t9_pistol_burst_cb_secondary" + specificGunOps + modelType);
         CheckModelName("wpn_t9_pistol_burst_cb_sheriff" + specificGunOps + modelType);
         CheckModelName("wpn_t9_pistol_burst_cb_souleat" + specificGunOps + modelType);
         CheckModelName("wpn_t9_pistol_burst_cb_surge" + specificGunOps + modelType);
@@ -7297,6 +7482,71 @@ void SearchForSpecificGunOps(string specificGunOps)
             CheckSoundName("fly/weapon/reload/tr_longburst/fly_tr_longburst" + specificGunOps + voxType + languageType);
             CheckSoundName("fly/weapon/reload/tr_powerburst/fly_tr_powerburst" + specificGunOps + voxType + languageType);
             CheckSoundName("fly/weapon/reload/tr_precision/fly_tr_precision" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_accurate\\ar_accurate" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_damage\\fly_damage" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_fastfire\\ar_fastfire" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_modular\\modular" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_standard\\fly_ar_standard" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_stealth\\ar_stealth" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_stealth\\fly_stealth" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\hero\\annihilator\\annihilator" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\hero\\annihilator\\fly_anni" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\hero\\annihilator\\seraph" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\hero\\bow\\fly_bow" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\hero\\flamethrower\\flamethrower" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\lmg_spray\\spray" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\lmg_standard\\lmg_standard" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\pistol\\38\\fly_38" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\pistol_burst\\pistol_burst" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\pistol_revolver\\cylinder" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\shotgun_pump\\pump" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\shotgun_semi\\shotgun_semi" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\shoulder_launcher\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\smg_accurate\\smg_accurate" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\smg_capacity\\smg_cap" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\smg_fastfire\\smg_fast" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\smg_handling\\smg_handle" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\smg_handling\\smg_handling" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\smg_standard\\smg_standard" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\snipe_fast\\sniper_fast" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\snipe_powerbolt\\powerbolt" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\sniper_powersemi\\snipe_powersemi" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\sniper_quick\\sniper_quick" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\standard_pistol\\fly_s_pistol" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\tr_midburst\\tr_midburst" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\war_machine\\war_mach" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\zm\\pistol_drum\\pistol_drum" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_accurate\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_damage\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_fastfire\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_modular\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_standard\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\ar_stealth\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\hero\\annihilator\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\hero\\bow\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\hero\\flamethrower\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\lmg_spray\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\lmg_standard\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\pistol\\38\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\pistol_burst\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\pistol_revolver\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\shock_rifle\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\shotgun_pump\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\shotgun_semi\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\shoulder_launcher\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\smg_accurate\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\smg_capacity\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\smg_fastfire\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\smg_handling\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\smg_standard\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\snipe_fast\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\snipe_powerbolt\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\sniper_powersemi\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\sniper_quick\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\standard_pistol\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\tr_midburst\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\war_machine\\" + specificGunOps + voxType + languageType);
+            //CheckSoundName("fly\\weapon\\reload\\zm\\pistol_drum\\" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/mpl/abnd/vox_abnd" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/mpl/adgi/vox_adgi" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/mpl/ahva/vox_ahva" + specificGunOps + voxType + languageType);
@@ -7331,6 +7581,7 @@ void SearchForSpecificGunOps(string specificGunOps)
             CheckSoundName("vox/scripted/ptnv/vox_ptnv" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/rmbo/vox_rmbo" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/rvas/vox_rvas" + specificGunOps + voxType + languageType);
+            CheckSoundName("vox/scripted/rvnv/vox_rvnv" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/sala/vox_sala" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/sims/vox_sims" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/stch/vox_stch" + specificGunOps + voxType + languageType);
@@ -7368,6 +7619,7 @@ void SearchForSpecificGunOps(string specificGunOps)
             CheckSoundName("vox/scripted/operators/ptnv/vox_ptnv" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/operators/rmbo/vox_rmbo" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/operators/rvas/vox_rvas" + specificGunOps + voxType + languageType);
+            CheckSoundName("vox/scripted/operators/rvnv/vox_rvnv" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/operators/sala/vox_sala" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/operators/sims/vox_sims" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/operators/stch/vox_stch" + specificGunOps + voxType + languageType);
@@ -7405,6 +7657,7 @@ void SearchForSpecificGunOps(string specificGunOps)
             CheckSoundName("vox/scripted/ping/ptnv/vox_ptnv" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/ping/rmbo/vox_rmbo" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/ping/rvas/vox_rvas" + specificGunOps + voxType + languageType);
+            CheckSoundName("vox/scripted/ping/rvnv/vox_rvnv" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/ping/sala/vox_sala" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/ping/sims/vox_sims" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/ping/stch/vox_stch" + specificGunOps + voxType + languageType);
@@ -7442,6 +7695,7 @@ void SearchForSpecificGunOps(string specificGunOps)
             CheckSoundName("vox/scripted/zm_operators/ptnv/vox_ptnv" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/zm_operators/rmbo/vox_rmbo" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/zm_operators/rvas/vox_rvas" + specificGunOps + voxType + languageType);
+            CheckSoundName("vox/scripted/zm_operators/rvnv/vox_rvnv" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/zm_operators/sala/vox_sala" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/zm_operators/sims/vox_sims" + specificGunOps + voxType + languageType);
             CheckSoundName("vox/scripted/zm_operators/stch/vox_stch" + specificGunOps + voxType + languageType);
