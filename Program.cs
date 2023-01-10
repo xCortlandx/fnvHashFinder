@@ -174,15 +174,6 @@ string[] ModelTypes =
 			"_arms_viewbody8",
 			"_arms_viewbody9",
 			"_body",
-			"_body_01",
-			"_body_02",
-			"_body_03",
-			"_body_04",
-			"_body_05",
-			"_body_06",
-			"_body_07",
-			"_body_08",
-			"_body_09",
 			"_body1",
 			"_body1_fb",
 			"_body2",
@@ -201,7 +192,22 @@ string[] ModelTypes =
 			"_body8_fb",
 			"_body9",
 			"_body9_fb",
+			"_body_01",
+			"_body_02",
+			"_body_03",
+			"_body_04",
+			"_body_05",
+			"_body_06",
+			"_body_07",
+			"_body_08",
+			"_body_09",
 			"_body_fb",
+			"_clip_sig_01_view",
+			"_clip_sig_01_world",
+			"_clip_sig_02_view",
+			"_clip_sig_02_world",
+			"_clip_sig_03_view",
+			"_clip_sig_03_world",
 			"_fb",
 			"_fb1",
 			"_fb2",
@@ -215,15 +221,6 @@ string[] ModelTypes =
 			"_frontend",
 			"_fxanim",
 			"_head",
-			"_head_01",
-			"_head_02",
-			"_head_03",
-			"_head_04",
-			"_head_05",
-			"_head_06",
-			"_head_07",
-			"_head_08",
-			"_head_09",
 			"_head1",
 			"_head1_cst",
 			"_head2",
@@ -242,6 +239,15 @@ string[] ModelTypes =
 			"_head8_cst",
 			"_head9",
 			"_head9_cst",
+			"_head_01",
+			"_head_02",
+			"_head_03",
+			"_head_04",
+			"_head_05",
+			"_head_06",
+			"_head_07",
+			"_head_08",
+			"_head_09",
 			"_head_cst",
 			"_left_prop",
 			"_lod0",
@@ -291,6 +297,12 @@ string[] ModelTypes =
 			"_lowerbody_viewbody8_cst",
 			"_lowerbody_viewbody9",
 			"_lowerbody_viewbody9_cst",
+			"_mag_sig_01_view",
+			"_mag_sig_01_world",
+			"_mag_sig_02_view",
+			"_mag_sig_02_world",
+			"_mag_sig_03_view",
+			"_mag_sig_03_world",
 			"_mag_view",
 			"_mag_world",
 			"_mod",
@@ -299,7 +311,27 @@ string[] ModelTypes =
 			"_prop",
 			"_prop_animate",
 			"_right_prop",
+			"_scope_ads_sig_01_view",
+			"_scope_ads_sig_01_world",
+			"_scope_ads_sig_02_view",
+			"_scope_ads_sig_02_world",
+			"_scope_ads_sig_03_view",
+			"_scope_ads_sig_03_world",
+			"_scope_sig_01_view",
+			"_scope_sig_01_world",
+			"_scope_sig_02_view",
+			"_scope_sig_02_world",
+			"_scope_sig_03_view",
+			"_scope_sig_03_world",
 			"_shell_view",
+			"_sig_01_view",
+			"_sig_01_world",
+			"_sig_02_view",
+			"_sig_02_world",
+			"_sig_03_view",
+			"_sig_03_world",
+			"_sig_view",
+			"_sig_world",
 			"_smod",
 			"_torso",
 			"_torso1",
@@ -4739,6 +4771,7 @@ void SearchForSpecificGunOps(string specificGunOps)
         foreach (string animType in AnimTypes)
         {
             // BO4 & CW AI Anims
+            CheckAnimName("" + specificGunOps + animType);
             CheckAnimName("ai_t8_zm_twrs_hllpht" + specificGunOps + aiAnimType);
             CheckAnimName("ai_t8_zm_twrs_tgr" + specificGunOps + aiAnimType);
             CheckAnimName("ai_t8_zm_twrs_zg_dstyr" + specificGunOps + aiAnimType);
@@ -4756,7 +4789,18 @@ void SearchForSpecificGunOps(string specificGunOps)
             CheckAnimName("ai_t9_zm_raz" + specificGunOps + aiAnimType);
             CheckAnimName("ai_t9_zm_steiner_base_com" + specificGunOps + aiAnimType);
             // BO4 Weapon Animations
-            CheckAnimName("vm_acidgat" + specificGunOps + animType);
+            // Backhander
+            // Eye of Apophis
+            // Gift Axe
+            // Rising Tide
+            // Spknifeork
+            // Spoon
+            // Spork
+            // vm_essex_model_07
+            // vm_hellion_salvo
+            // vm_hitchcock_m9
+            // vm_midburst
+            // vm_sumarbrandr
             CheckAnimName("vm_action_figure" + specificGunOps + animType);
             CheckAnimName("vm_ar_accurate" + specificGunOps + animType);
             CheckAnimName("vm_ar_an94_t8" + specificGunOps + animType);
@@ -4771,27 +4815,18 @@ void SearchForSpecificGunOps(string specificGunOps)
             CheckAnimName("vm_argus_t8" + specificGunOps + animType);
             CheckAnimName("vm_ballistic_knife_t8" + specificGunOps + animType);
             CheckAnimName("vm_ballistic_knife_t8_dw" + specificGunOps + animType);
-            CheckAnimName("vm_blundergat" + specificGunOps + animType);
             CheckAnimName("vm_bowie_knife_t8" + specificGunOps + animType);
-            CheckAnimName("vm_cackling_kaftar" + specificGunOps + animType);
-            CheckAnimName("vm_combat_knife" + specificGunOps + animType);
+            CheckAnimName("vm_combat_knife_t8" + specificGunOps + animType);
             CheckAnimName("vm_demo_hammer" + specificGunOps + animType);
-            CheckAnimName("vm_dg1" + specificGunOps + animType);
             CheckAnimName("vm_dg2" + specificGunOps + animType);
-            CheckAnimName("vm_escargot" + specificGunOps + animType);
-            CheckAnimName("vm_essex_model_07" + specificGunOps + animType);
             CheckAnimName("vm_hades" + specificGunOps + animType);
-            CheckAnimName("vm_hellion_salvo" + specificGunOps + animType);
-            CheckAnimName("vm_hitchcock_m9" + specificGunOps + animType);
             CheckAnimName("vm_homunculus" + specificGunOps + animType);
             CheckAnimName("vm_koshka" + specificGunOps + animType);
+            CheckAnimName("vm_lmg_heavy" + specificGunOps + animType);
             CheckAnimName("vm_lmg_mk48" + specificGunOps + animType);
-            CheckAnimName("vm_m1897_trebuchet" + specificGunOps + animType);
-            CheckAnimName("vm_magmagat" + specificGunOps + animType);
-            CheckAnimName("vm_midburst" + specificGunOps + animType);
             CheckAnimName("vm_money_bag_t8" + specificGunOps + animType);
             CheckAnimName("vm_mp40" + specificGunOps + animType);
-            CheckAnimName("vm_mx9" + specificGunOps + animType);
+            CheckAnimName("vm_mp9" + specificGunOps + animType);
             CheckAnimName("vm_pistol_auto" + specificGunOps + animType);
             CheckAnimName("vm_pistol_burst" + specificGunOps + animType);
             CheckAnimName("vm_pistol_revolver" + specificGunOps + animType);
@@ -4799,14 +4834,16 @@ void SearchForSpecificGunOps(string specificGunOps)
             CheckAnimName("vm_pistol_webley" + specificGunOps + animType);
             CheckAnimName("vm_polynesian_club_t8" + specificGunOps + animType);
             CheckAnimName("vm_raygun" + specificGunOps + animType);
-			CheckAnimName("vm_reaper_lmg" + specificGunOps + animType);
-            CheckAnimName("vm_serket_s_kiss" + specificGunOps + animType);
+            CheckAnimName("vm_reaper_lmg" + specificGunOps + animType);
+            CheckAnimName("vm_scorpion" + specificGunOps + animType);
             CheckAnimName("vm_shotgun_full_auto" + specificGunOps + animType);
             CheckAnimName("vm_shotgun_pump" + specificGunOps + animType);
             CheckAnimName("vm_shotgun_semiauto" + specificGunOps + animType);
+            CheckAnimName("vm_shotgun_trench" + specificGunOps + animType);
             CheckAnimName("vm_slaybell" + specificGunOps + animType);
             CheckAnimName("vm_smg_accurate" + specificGunOps + animType);
             CheckAnimName("vm_smg_capacity" + specificGunOps + animType);
+            CheckAnimName("vm_smg_drum_pistol" + specificGunOps + animType);
             CheckAnimName("vm_smg_fastburst" + specificGunOps + animType);
             CheckAnimName("vm_smg_fastfire" + specificGunOps + animType);
             CheckAnimName("vm_smg_folding" + specificGunOps + animType);
@@ -4821,17 +4858,15 @@ void SearchForSpecificGunOps(string specificGunOps)
             CheckAnimName("vm_sniper_power_semi" + specificGunOps + animType);
             CheckAnimName("vm_sniper_vanguard" + specificGunOps + animType);
             CheckAnimName("vm_special_crossbow" + specificGunOps + animType);
-            CheckAnimName("vm_spork" + specificGunOps + animType);
             CheckAnimName("vm_stop_sign" + specificGunOps + animType);
-            CheckAnimName("vm_sumarbrandr" + specificGunOps + animType);
             CheckAnimName("vm_titan" + specificGunOps + animType);
             CheckAnimName("vm_tr_damageburst_t8" + specificGunOps + animType);
             CheckAnimName("vm_tr_flechette" + specificGunOps + animType);
             CheckAnimName("vm_tr_power_semi" + specificGunOps + animType);
             CheckAnimName("vm_tr_swordfish" + specificGunOps + animType);
             CheckAnimName("vm_ww_akud" + specificGunOps + animType);
+            CheckAnimName("vm_ww_blundergat" + specificGunOps + animType);
             // CW Weapon Animations
-            CheckAnimName("" + specificGunOps + animType);
             CheckAnimName("pt_ar_accurate_t9" + specificGunOps + animType);
             CheckAnimName("pt_ar_british_t9" + specificGunOps + animType);
             CheckAnimName("pt_ar_damage_t9" + specificGunOps + animType);
@@ -5472,7 +5507,103 @@ void SearchForSpecificGunOps(string specificGunOps)
         CheckModelName("c_t9_usa_pl_woods_swamp" + specificGunOps + modelType);
         CheckModelName("c_t9_usa_pl_woods_trucker" + specificGunOps + modelType);
         CheckModelName("c_t9_usa_pl_woods_whirlwind" + specificGunOps + modelType);
-        // CW Weapon Models & Blueprints
+        // BO4 / CW Weapon Models & Blueprints
+        // Rising Tide
+        // wpn_t8_abr_223
+        // wpn_t8_acheron_alliterator
+        // wpn_t8_d3s0l8_regulator
+        // wpn_t8_escargot
+        // wpn_t8_essex_model_07
+        // wpn_t8_hitchcock_m9
+        // wpn_t8_king_and_country
+        CheckModelName("wpn_t8_ar_accurate" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_ar_fastfire" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_ar_galil" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_ar_heavy" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_ar_k57" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_ar_stealth" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_crossbow_special" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_knife_combat" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_launcher_standard" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_lmg_plr" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_lmg_titan" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_ar_an94" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_ar_double_barrel" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_ar_peacekeeper" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_ar_standard" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_knife_ballistic" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_knife_ballistic_dw" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_knife_ballistic_karambit_dw" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_lmg_mk48" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_melee_action_figure" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_melee_amulet" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_melee_coinbag" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_melee_gift_axe" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_melee_hammer_demo" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_melee_polynesian_club" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_melee_slay_bell" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_melee_stop_sign" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_melee_zombie_arm" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_pistol_auto" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_shotgun_fullauto" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_shotgun_prec" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_smg_fastburst" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_smg_folding" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_smg_minigun" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_smg_vmp" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_sniper_locus" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_sniper_mini14" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_tac_rifle_damageburst" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_loot_tac_rifle_flechette" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_pistol_burst" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_pistol_revolver" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_pistol_standard" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_shotgun_pump" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_shotgun_semi" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_smg_accurate" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_smg_capacity" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_smg_fastfire" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_smg_handling" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_smg_mp9" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_sniper_koshka" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_sniper_power_semi" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_sniper_semiauto" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_sniper_vanguard" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_sumbarbrandr" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_tac_rifle_surgeon" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_tac_rifle_swordfish" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_akud" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_akud_scope" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_blundergat" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_blundergat_acid" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_blundergat_fire" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_crossbow_impaler" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_dg1" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_dg2" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_freeze_gun" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_hand_charon" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_hand_gaia" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_hand_hemera" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_hand_ouranos" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_homunculus" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_knife_bowie" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_knife_stake" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_mp40" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_nesting_dolls" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_raygun" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_raygun_upg" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_red_shield" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_red_spear" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_shotgun_trenchgun" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_smg_thompson" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_snowball" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_snowball_yellow" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_spknifeork" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_spoon" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_spork" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_thundergun" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_tomahawk" + specificGunOps + modelType);
+        CheckModelName("wpn_t8_zm_tundra_gun" + specificGunOps + modelType);
         CheckModelName("wpn_t9_ar_damage" + specificGunOps + modelType);
         CheckModelName("wpn_t9_ar_damage_8bit" + specificGunOps + modelType);
         CheckModelName("wpn_t9_ar_damage_achill" + specificGunOps + modelType);
@@ -7100,9 +7231,6 @@ void SearchForSpecificGunOps(string specificGunOps)
         CheckModelName("wrist_watch_t9_s6_digital_undeadic" + specificGunOps + modelType);
         CheckModelName("wrist_watch_t9_s6_digital_ww" + specificGunOps + modelType);
         CheckModelName("wrist_watch_t9_s6_digital_zm_critical_kill" + specificGunOps + modelType);
-        // BO4 Operator Models & Skins
-
-        // BO4 Weapon Models & Blueprints
     }
     foreach (string imageType in ImageTypes)
     {
