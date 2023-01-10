@@ -29,7 +29,8 @@ Create a textfile for assets to scan from and eliminate the use of folders
 These methods provided are what i did in order to find large amounts of asset names, this is a more effective way. Mostly Regex.
 
 1. Word trimming after the last underscore		_[^_]*$
-2. Removing generated junk words from old unverified hashes		^...........................
-3. Translating package names, example of Model to image or vice versa:		model:c_t9_rus_pl_stitch		image:i_c_t9_rus_pl_stitch_c
-4. Direct word attacks aka Dictionary Attack: Create a wordlist by finding all underscores and replace with \n , remove dupes
-5. Using names from previous COD Titles Asset Logs
+2. Word trimming before the last underscore		^[^_]+_
+3. Removing generated junk words from old unverified hashes		^...........................
+4. Translating package names, example of Model to image or vice versa:		model:c_t9_rus_pl_stitch		image:i_c_t9_rus_pl_stitch_c
+5. Direct word attacks aka Dictionary Attack: Create a wordlist by finding all underscores and replace with \n , remove dupes
+6. Using names from previous COD Titles Asset Logs
