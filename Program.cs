@@ -230,11 +230,19 @@ string[] AnimTypes =
 "_evil_inspect",
 "_fall",
 "_fem_prone_fire",
+"_fem_prone_first_raise",
 "_fem_prone_reload",
 "_fem_prone_reload_empty",
+"_fem_prone_reload_ext_empty",
+"_fem_prone_reload_fast_empty",
+"_fem_prone_reload_mixclip_empty",
 "_fem_stand_fire",
+"_fem_stand_first_raise",
 "_fem_stand_reload",
 "_fem_stand_reload_empty",
+"_fem_stand_reload_ext_empty",
+"_fem_stand_reload_fast_empty",
+"_fem_stand_reload_mixclip_empty",
 "_ferfluid_inspect",
 "_finger_pose_l",
 "_finger_pose_r",
@@ -344,11 +352,19 @@ string[] AnimTypes =
 "_lh",
 "_loop",
 "_male_prone_fire",
+"_male_prone_first_raise",
 "_male_prone_reload",
 "_male_prone_reload_empty",
+"_male_prone_reload_ext_empty",
+"_male_prone_reload_fast_empty",
+"_male_prone_reload_mixclip_empty",
 "_male_stand_fire",
+"_male_stand_first_raise",
 "_male_stand_reload",
 "_male_stand_reload_empty",
+"_male_stand_reload_ext_empty",
+"_male_stand_reload_fast_empty",
+"_male_stand_reload_mixclip_empty",
 "_melee",
 "_melee_01",
 "_melee_02",
@@ -4426,6 +4442,10 @@ string[] VoxTypes =
 "_zm_se_kill_mult_heal_aura_01",
 "_zm_se_kill_mult_heal_aura_02",
 "_zm_se_kill_mult_heal_aura_03",
+"_zm_se_kill_mult_lightning_links_00",
+"_zm_se_kill_mult_lightning_links_01",
+"_zm_se_kill_mult_lightning_links_02",
+"_zm_se_kill_mult_lightning_links_03",
 "_zm_se_kill_mult_melee_00",
 "_zm_se_kill_mult_melee_01",
 "_zm_se_kill_mult_melee_02",
@@ -4615,7 +4635,7 @@ while (true)
         System.Threading.Thread.Sleep(500);
         Console.WriteLine("DeltaDriver");
         System.Threading.Thread.Sleep(500);
-        Console.WriteLine("pmr360\n");
+        Console.WriteLine("pmr360");
         System.Threading.Thread.Sleep(500);
         Console.WriteLine("JohnWick [Limitless]\n");
         System.Threading.Thread.Sleep(500);
@@ -7297,8 +7317,17 @@ void SearchForSpecificAsset(string xAsset)
         CheckModelName("wpn_t9_zm_wand_frenzied_guard" + modelType);
         CheckModelName("wpn_t9_zm_wand_frost_blast" + modelType);
         CheckModelName("wpn_t9_zm_wand_healing_aura" + modelType);
+        CheckModelName("wpn_t9_zm_wand_lightning_links" + modelType);
         CheckModelName("wpn_t9_zm_wand_ring_fire" + modelType);
         CheckModelName("wpn_t9_zm_wand_toxic_growth" + modelType);
+        CheckModelName("wpn_t9_zm_wand_closed_aether_shround" + modelType);
+        CheckModelName("wpn_t9_zm_wand_closed_energy_mine" + modelType);
+        CheckModelName("wpn_t9_zm_wand_closed_frenzied_guard" + modelType);
+        CheckModelName("wpn_t9_zm_wand_closed_frost_blast" + modelType);
+        CheckModelName("wpn_t9_zm_wand_closed_healing_aura" + modelType);
+        CheckModelName("wpn_t9_zm_wand_closed_lightning_links" + modelType);
+        CheckModelName("wpn_t9_zm_wand_closed_ring_fire" + modelType);
+        CheckModelName("wpn_t9_zm_wand_closed_toxic_growth" + modelType);
         CheckModelName("wrist_watch_t9_s1_analog_aviator_02" + modelType);
         CheckModelName("wrist_watch_t9_s1_analog_aviator_x2" + modelType);
         CheckModelName("wrist_watch_t9_s1_analog_bope_01" + modelType);
