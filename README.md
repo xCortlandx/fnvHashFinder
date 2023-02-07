@@ -2,6 +2,8 @@
 
 A Multi-purpose Tool that verifies pre-defined assets
 
+NOTE: Change the Startup object to FNV1A32 or FNV1A64 depending which game you are using, a red text will show what mode it's using (MW2022 strings are 32, else is 64).
+
 ## Overview
 
 This tool was created several months ago and was the one that helped me find hundreds and thousands of hashed names. With the help of a few folks from the Hash Scene.
