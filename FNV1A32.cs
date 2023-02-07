@@ -11,7 +11,8 @@ internal class FNV1A32
         // You can add Direct names under any of the types
         string[] StringTypes =
         {
-};
+            "",
+        };
 
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("                         __,,,,_");
