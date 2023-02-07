@@ -9,30 +9,6 @@ internal class FNV1A32
         string xAsset = string.Empty;
 
         // You can add Direct names under any of the types
-        string[] ImageTypes =
-        {
-"",
-};
-        string[] ImageWpnAttachmentTypes =
-        {
-"",
-};
-        string[] ImageWpnBlueprintTypes =
-        {
-"",
-};
-        string[] MaterialTypes =
-        {
-"",
-};
-        string[] VoxTypes =
-        {
-"",
-};
-        string[] LanguageTypes =
-        {
-"",
-};
         string[] StringTypes =
         {
 };
@@ -97,27 +73,6 @@ internal class FNV1A32
 
         void SearchForSpecificAsset(string xAsset)
         {
-            foreach (string imageType in ImageTypes)
-            {
-                foreach (string imageWpnAttachmentType in ImageWpnAttachmentTypes)
-                {
-                    foreach (string imageWpnBlueprintType in ImageWpnBlueprintTypes)
-                    {
-                        CheckImageName("" + imageType);
-                    }
-                }
-            }
-            foreach (string materialType in MaterialTypes)
-            {
-                CheckMaterialName("" + materialType);
-            }
-            foreach (string voxType in VoxTypes)
-            {
-                foreach (string languageType in LanguageTypes)
-                {
-                    CheckSoundName("" + voxType + languageType);
-                }
-            }
             foreach (string stringType in StringTypes)
             {
                 CheckStringName("" + stringType);
@@ -128,44 +83,9 @@ internal class FNV1A32
 
         void SearchForSpecificName(string SpecificName)
         {
-            CheckImageName(SpecificName);
-            CheckMaterialName(SpecificName);
-            CheckSoundName(SpecificName);
             CheckStringName(SpecificName);
         }
 
-        void CheckImageName(string imageName)
-        {
-            string hashName = string.Format("{0:x}", Hash32Util.Hash32(imageName));
-            if (Directory.Exists(Path + "\\ximage_" + hashName))
-            {
-                Console.WriteLine("Found Image: {0:x}", hashName + "," + imageName);
-                File.AppendAllText(Path + "\\ImagesFound.txt", hashName + "," + imageName + Environment.NewLine);
-                Directory.Delete(Path + "\\ximage_" + hashName);
-            }
-        }
-
-        void CheckMaterialName(string materialName)
-        {
-            string hashName = string.Format("{0:x}", Hash32Util.Hash32(materialName));
-            if (Directory.Exists(Path + "\\xmaterial_" + hashName))
-            {
-                Console.WriteLine("Found Material: {0:x}", hashName + "," + materialName);
-                File.AppendAllText(Path + "\\MaterialsFound.txt", hashName + "," + materialName + Environment.NewLine);
-                Directory.Delete(Path + "\\xmaterial_" + hashName);
-            }
-        }
-
-        void CheckSoundName(string soundName)
-        {
-            string hashName = string.Format("{0:x}", Hash32Util.Hash32(soundName));
-            if (Directory.Exists(Path + "\\xsound_" + hashName))
-            {
-                Console.WriteLine("Found Sound: {0:x}", hashName + "," + soundName);
-                File.AppendAllText(Path + "\\SoundsFound.txt", hashName + "," + soundName + Environment.NewLine);
-                Directory.Delete(Path + "\\xsound_" + hashName);
-            }
-        }
         void CheckStringName(string stringName)
         {
             string hashName = string.Format("{0:x}", Hash32Util.Hash32(stringName));
