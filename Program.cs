@@ -7711,7 +7711,7 @@ void SearchForSpecificName(string SpecificName)
 void CheckAnimName(string animName)
 {
     string hashName = string.Format("{0:x}", HashUtil.Hash(animName));
-    if (Directory.Exists(Path + "\\xanim\\xanim_" + hashName))
+    if (Directory.Exists(Path + "\\xanim_" + hashName))
     {
         Console.WriteLine("Found Anim: {0:x}", hashName + "," + animName);
         File.AppendAllText(Path + "\\AnimsFound.txt", hashName + "," + animName + Environment.NewLine);
@@ -7722,7 +7722,7 @@ void CheckAnimName(string animName)
 void CheckImageName(string imageName)
 {
     string hashName = string.Format("{0:x}", HashUtil.Hash(imageName));
-    if (Directory.Exists(Path + "\\ximage\\ximage_" + hashName))
+    if (Directory.Exists(Path + "\\ximage_" + hashName))
     {
         Console.WriteLine("Found Image: {0:x}", hashName + "," + imageName);
         File.AppendAllText(Path + "\\ImagesFound.txt", hashName + "," + imageName + Environment.NewLine);
@@ -7733,7 +7733,7 @@ void CheckImageName(string imageName)
 void CheckMaterialName(string materialName)
 {
     string hashName = string.Format("{0:x}", HashUtil.Hash(materialName));
-    if (Directory.Exists(Path + "\\xmaterial\\xmaterial_" + hashName))
+    if (Directory.Exists(Path + "\\xmaterial_" + hashName))
     {
         Console.WriteLine("Found Material: {0:x}", hashName + "," + materialName);
         File.AppendAllText(Path + "\\MaterialsFound.txt", hashName + "," + materialName + Environment.NewLine);
@@ -7744,7 +7744,7 @@ void CheckMaterialName(string materialName)
 void CheckModelName(string modelName)
 {
     string hashName = string.Format("{0:x}", HashUtil.Hash(modelName));
-    if (Directory.Exists(Path + "\\xmodel\\xmodel_" + hashName))
+    if (Directory.Exists(Path + "\\xmodel_" + hashName))
     {
         Console.WriteLine("Found Model: {0:x}", hashName + "," + modelName);
         File.AppendAllText(Path + "\\ModelsFound.txt", hashName + "," + modelName + Environment.NewLine);
@@ -7755,7 +7755,7 @@ void CheckModelName(string modelName)
 void CheckSoundName(string soundName)
 {
     string hashName = string.Format("{0:x}", HashUtil.Hash(soundName));
-    if (Directory.Exists(Path + "\\xsound\\xsound_" + hashName))
+    if (Directory.Exists(Path + "\\xsound_" + hashName))
     {
         Console.WriteLine("Found Sound: {0:x}", hashName + "," + soundName);
         File.AppendAllText(Path + "\\SoundsFound.txt", hashName + "," + soundName + Environment.NewLine);
@@ -7765,7 +7765,7 @@ void CheckSoundName(string soundName)
 void CheckStringName(string stringName)
 {
     string hashName = string.Format("{0:x}", HashUtil.Hash(stringName));
-    if (Directory.Exists(Path + "\\xstring\\xstring_" + hashName))
+    if (Directory.Exists(Path + "\\xstring_" + hashName))
     {
         Console.WriteLine("Found String: {0:x}", hashName + "," + stringName);
         File.AppendAllText(Path + "\\StringsFound.txt", hashName + "," + stringName + Environment.NewLine);
