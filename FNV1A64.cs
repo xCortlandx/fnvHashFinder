@@ -4603,7 +4603,7 @@ internal class FNV1A64
         Console.WriteLine("    Hash      __/   /_..-' `  ),'  //");
         Console.WriteLine("    Finder   ((__.-'((___..-'' \\__.'");
         Console.WriteLine("\nA Multi-purpose Tool that verifies pre-defined assets\n");
-        Console.ForegroundColor = ConsoleColor.Red;
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("[FNV1A64 MODE]\n");
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Specify xAsset Directory:");
