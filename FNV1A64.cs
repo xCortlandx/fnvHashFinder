@@ -135,6 +135,7 @@ internal class FNV1A64
 "_attacking_rh_additive",
 "_cancel",
 "_cancel_additive",
+"_cancel_additive_barehands",
 "_cancel_additive_dw",
 "_cancel_additive_lh",
 "_cancel_additive_rh",
@@ -355,6 +356,14 @@ internal class FNV1A64
 "_lastshot_ads",
 "_lh",
 "_loop",
+"_loop_additive",
+"_loop_additive_barehands",
+"_loop_additive_dw",
+"_loop_additive_rh",
+"_loop_barehands",
+"_loop_rh",
+"_loop_rh_additive",
+"_loop_dw",
 "_male_prone_fire",
 "_male_prone_first_raise",
 "_male_prone_reload",
@@ -452,6 +461,7 @@ internal class FNV1A64
 "_pullout_quick_alt",
 "_pullpin",
 "_pullpin_additive",
+"_pullpin_additive_barehands",
 "_pullpin_additive_dw",
 "_pullpin_additive_lh",
 "_pullpin_additive_rh",
@@ -615,6 +625,7 @@ internal class FNV1A64
 "_throw_back",
 "_throwback",
 "_throw_back_additive",
+"_throw_back_additive_rh",
 "_throw_back_lh",
 "_throw_back_rh",
 "_throw_bare_hands",
@@ -1602,10 +1613,290 @@ internal class FNV1A64
 "_world_upgraded",
 "_xmodel",
 };
-        string[] VoxTypes =
+        string[] WeaponSoundTypes =
         {
 "",
-// DRAFT - BO4 Foly Vox
+"_back",
+"_act",
+"_act_loop_npc",
+"_act_lp_npc",
+"_active",
+"_back",
+"_belt_feed",
+"_bolt_back",
+"_bolt_back_00",
+"_bolt_back_01",
+"_bolt_back_02",
+"_bolt_back_03",
+"_bolt_back_04",
+"_bolt_back_05",
+"_bolt_forward",
+"_bolt_forward_00",
+"_bolt_forward_01",
+"_bolt_forward_02",
+"_bolt_forward_03",
+"_bolt_forward_04",
+"_bolt_forward_05",
+"_bolt_release",
+"_bolt_release_00",
+"_bolt_release_01",
+"_bolt_release_02",
+"_bolt_release_03",
+"_bolt_release_04",
+"_bolt_release_05",
+"_burst",
+"_burst_act",
+"_burst_lfe",
+"_button",
+"_button_press",
+"_button_press_00",
+"_button_press_01",
+"_button_press_02",
+"_button_press_03",
+"_button_press_04",
+"_button_press_05",
+"_chamber_bolt_back",
+"_chamber_bolt_back_00",
+"_chamber_bolt_back_01",
+"_chamber_bolt_back_02",
+"_chamber_bolt_back_03",
+"_chamber_bolt_back_04",
+"_chamber_bolt_back_05",
+"_chamber_bolt_forward",
+"_chamber_bolt_forward_00",
+"_chamber_bolt_forward_01",
+"_chamber_bolt_forward_02",
+"_chamber_bolt_forward_03",
+"_chamber_bolt_forward_04",
+"_chamber_bolt_forward_05",
+"_chamber_cyl_in",
+"_chamber_cyl_in_00",
+"_chamber_cyl_in_01",
+"_chamber_cyl_in_02",
+"_chamber_cyl_in_03",
+"_chamber_cyl_in_04",
+"_chamber_cyl_in_05",
+"_chamber_cyl_out",
+"_chamber_cyl_out_00",
+"_chamber_cyl_out_01",
+"_chamber_cyl_out_02",
+"_chamber_cyl_out_03",
+"_chamber_cyl_out_04",
+"_chamber_cyl_out_05",
+"_chamber_first",
+"_chamber_first_00",
+"_chamber_first_01",
+"_chamber_first_02",
+"_chamber_first_03",
+"_chamber_first_04",
+"_chamber_first_05",
+"_close",
+"_cyl_in",
+"_cyl_out",
+"cylinder_close",
+"cylinder_open",
+"_cylinder_close",
+"_cylinder_latch",
+"_cylinder_open",
+"_dist_loop",
+"_drum_in",
+"_drum_out",
+"_empty_mag_in",
+"_empty_mag_in_start",
+"_empty_mag_out",
+"_empty_mag_out_start",
+"_empty_mag_tap",
+"_end",
+"_ext_mag_in",
+"_ext_mag_out",
+"_ext_mag_tap",
+"_fast_bolt_release",
+"_fast_mag_in",
+"_fast_mag_out",
+"_fire",
+"_fire_act",
+"_fire_last",
+"_fire_start",
+"_fire_stop",
+"_first",
+"_first_bolt_back",
+"_first_bolt_release",
+"_first_grab_end",
+"_first_grab_start",
+"_first_quick",
+"_first_raise",
+"_first_raise_00",
+"_first_raise_01",
+"_first_raise_02",
+"_first_raise_03",
+"_first_raise_04",
+"_first_raise_05",
+"_firstraise",
+"_firstraise_00",
+"_firstraise_01",
+"_firstraise_02",
+"_firstraise_03",
+"_firstraise_04",
+"_firstraise_05",
+"_flap_close",
+"_flap_close",
+"_flap_open",
+"_flap_open",
+"_forward",
+"_grab",
+"_grab_end",
+"_grab_start",
+"_hammer_back",
+"_in",
+"_inspect",
+"_inspect_fast",
+"_inspect_fast_pt1",
+"_inspect_fast_pt2",
+"_inspect_pt1",
+"_inspect_pt2",
+"_lfe",
+"_lid_close",
+"_lid_open",
+"_load",
+"_loop",
+"_loop_act",
+"_loop_active",
+"_loop_ads",
+"_loop_lfe",
+"_loop_plr",
+"_lp",
+"_lp_act",
+"_lp_active",
+"_mag_grab",
+"_mag_in",
+"_mag_in_00",
+"_mag_in_01",
+"_mag_in_02",
+"_mag_in_03",
+"_mag_in_04",
+"_mag_in_05",
+"_mag_in_raise",
+"_mag_in_start",
+"_mag_in_start_00",
+"_mag_in_start_01",
+"_mag_in_start_02",
+"_mag_in_start_03",
+"_mag_in_start_04",
+"_mag_in_start_05",
+"_mag_lock",
+"_mag_out",
+"_mag_out_00",
+"_mag_out_01",
+"_mag_out_02",
+"_mag_out_03",
+"_mag_out_04",
+"_mag_out_05",
+"_mag_empty",
+"_mag_release",
+"_mag_slide",
+"_mag_slide_out",
+"_mag_tap",
+"_mag_tap_00",
+"_mag_tap_01",
+"_mag_tap_02",
+"_mag_tap_03",
+"_mag_tap_04",
+"_mag_tap_05",
+"_mag_unlock",
+"_open",
+"_out",
+"_pull_back",
+"_pullout",
+"_pump_back",
+"_pump_forward",
+"_push_forward",
+"_putaway",
+"_raise",
+"_rechamber",
+"_rechamber_00",
+"_rechamber_01",
+"_rechamber_02",
+"_rechamber_03",
+"_rechamber_04",
+"_rechamber_05",
+"_rechamber_ads",
+"_rechamber_ads_00",
+"_rechamber_ads_01",
+"_rechamber_ads_02",
+"_rechamber_ads_03",
+"_rechamber_ads_04",
+"_rechamber_ads_05",
+"revolver_spin",
+"revolver_shell_00",
+"revolver_shell_01",
+"revolver_shell_02",
+"revolver_shell_03",
+"revolver_shell_04",
+"revolver_shell_05",
+"_rocket_load",
+"_rocket_load",
+"_rocket_lock",
+"_rocket_lock",
+"_shell_00",
+"_shell_01",
+"_shell_02",
+"_shell_03",
+"_shell_04",
+"_shell_05",
+"_shells_in",
+"shell_in_speed_00",
+"_shells_out",
+"shells_out_00",
+"shells_out_01",
+"shells_out_02",
+"_sight_open",
+"_sight_open",
+"_slide_back",
+"_slide_back_00",
+"_slide_back_01",
+"_slide_back_02",
+"_slide_back_03",
+"_slide_back_04",
+"_slide_back_05",
+"_slide_forward",
+"_slide_forward_00",
+"_slide_forward_01",
+"_slide_forward_02",
+"_slide_forward_03",
+"_slide_forward_04",
+"_slide_forward_05",
+"_slide_release",
+"_slide_release_00",
+"_slide_release_01",
+"_slide_release_02",
+"_slide_release_03",
+"_slide_release_04",
+"_slide_release_05",
+"_spin",
+"_start",
+"_start_act",
+"_start_ads",
+"_start_fire",
+"_stop",
+"_stop_act",
+"_stop_ads",
+"_suppressed",
+"_suppressed_loop_act",
+"_suppressed_start_act",
+"_suppressed_stop_act",
+"_switch",
+"_tac_mag_in",
+"_tac_mag_out",
+"_tap",
+"_tap_00",
+"_tap_01",
+"_tap_02",
+"_tap_03",
+"_tap_04",
+"_tap_05",
+"_wheel_close",
+"_wheel",
+"_zm_pap",
 "_back",
 "_belt_feed",
 "_bolt_back",
@@ -1785,7 +2076,10 @@ internal class FNV1A64
 "rocket_load",
 "rocket_lock",
 "sight_open",
-// Fireteam Announcers
+};
+        string[] TAACOMTypes =
+        {
+// TAACOM announcers
 "_bb_control_start_00",
 "_bb_control_start_hardcore_00",
 "_bb_ctf_start_00",
@@ -2829,6 +3123,9 @@ internal class FNV1A64
 "_winning_01",
 "_winning_02",
 "_winning_03",
+};
+        string[] OpVoxTypes =
+        {
 // Operator Voicelines
 "_boost_draw_00",
 "_boost_draw_01",
@@ -4520,13 +4817,6 @@ internal class FNV1A64
         string[] LanguageTypes =
         {
 "",
-// BO4 & CW Sound Extensions
-".fl75.pc.all.snd",
-".fn75.pc.all.snd",
-".ll100.pc.snd",
-".ll75.pc.all.snd",
-".ln100.pc.snd",
-".ln75.pc.all.snd",
 ".ln75.pc.bp.snd",
 ".ln75.pc.ea.snd",
 ".ln75.pc.en.snd",
@@ -4538,11 +4828,6 @@ internal class FNV1A64
 ".ln75.pc.ko.snd",
 ".ln75.pc.po.snd",
 ".ln75.pc.ru.snd",
-".lr75.pc.all.snd",
-".pl100.pc.snd",
-".pl75.pc.all.snd",
-".pn100.pc.snd",
-".pn75.pc.all.snd",
 ".pn75.pc.bp.snd",
 ".pn75.pc.ea.snd",
 ".pn75.pc.en.snd",
@@ -4554,8 +4839,6 @@ internal class FNV1A64
 ".pn75.pc.ko.snd",
 ".pn75.pc.po.snd",
 ".pn75.pc.ru.snd",
-".rl75.pc.all.snd",
-".rn75.pc.all.snd",
 ".rn75.pc.bp.snd",
 ".rn75.pc.ea.snd",
 ".rn75.pc.en.snd",
@@ -4568,11 +4851,6 @@ internal class FNV1A64
 ".rn75.pc.ms.snd",
 ".rn75.pc.po.snd",
 ".rn75.pc.ru.snd",
-".rr75.pc.all.snd",
-".sl100.pc.snd",
-".sl75.pc.all.snd",
-".sn100.pc.snd",
-".sn75.pc.all.snd",
 ".sn75.pc.bp.snd",
 ".sn75.pc.ea.snd",
 ".sn75.pc.en.snd",
@@ -4584,11 +4862,33 @@ internal class FNV1A64
 ".sn75.pc.ko.snd",
 ".sn75.pc.po.snd",
 ".sn75.pc.ru.snd",
+};
+        string[] GenericSoundTypes =
+        {
+"",
+".fl75.pc.all.snd",
+".fn75.pc.all.snd",
+".ll100.pc.snd",
+".ll75.pc.all.snd",
+".ln100.pc.snd",
+".ln75.pc.all.snd",
+".lr75.pc.all.snd",
+".pl100.pc.snd",
+".pl75.pc.all.snd",
+".pn100.pc.snd",
+".pn75.pc.all.snd",
+".rl75.pc.all.snd",
+".rn75.pc.all.snd",
+".rr75.pc.all.snd",
+".sl100.pc.snd",
+".sl75.pc.all.snd",
+".sn100.pc.snd",
+".sn75.pc.all.snd",
 ".sr75.pc.all.snd",
 };
         string[] StringTypes =
         {
-"p8_rack_wood_hat_lod0",
+        "",
 };
 
         Console.ForegroundColor = ConsoleColor.Yellow;
@@ -7478,218 +7778,231 @@ internal class FNV1A64
                 CheckModelName("wrist_watch_t9_s6_digital_ww" + modelType);
                 CheckModelName("wrist_watch_t9_s6_digital_zm_critical_kill" + modelType);
             }
-            foreach (string voxType in VoxTypes)
+            foreach (string weaponsoundType in WeaponSoundTypes)
             {
-                foreach (string languageType in LanguageTypes)
+                foreach (string genericsoundType in GenericSoundTypes)
                 {
-                    // BO4 / CW Weapon, Operator & Announcer Sounds
-                    CheckSoundName("" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/ar_accurate/ar_accurate" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/ar_british/fly_ar_british" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/ar_damage/fly_ar_damage" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/ar_fastfire/fly_ar_fastfire" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/ar_fasthandling/fly_ar_fasthandling" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/ar_mobility/fly_ar_mobility" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/ar_season6/fly_ar_season6" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/ar_slowfire/fly_ar_slowfire" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/ar_slowhandling/fly_ar_slowhandling" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/ar_soviet/fly_ar_soviet" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/ar_standard/fly_ar_standard" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/grenade_launcher/fly_grenade_launcher" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/launcher_freefire/fly_launcher_freefire" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/launcher_standard/fly_launcher_standard" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/lmg_accurate/fly_lmg_accurate" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/lmg_fastfire/fly_lmg_fastfire" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/lmg_light/fly_lmg_light" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/lmg_slowfire/fly_lmg_slowfire" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/pistol_burst/fly_pistol_burst" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/pistol_fullauto/fly_pistol_fullauto" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/pistol_revolver/fly_pistol_revolver" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/pistol_semiauto/fly_pistol_semiauto" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/pistol_shotgun/fly_pistol_shotgun" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/shotgun_leveraction/fly_shotgun_leveraction" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/shotgun_pump/fly_shotgun_pump" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/shotgun_semi/fly_shotgun_semi" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_accurate/fly_smg_accurate" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_burst/fly_smg_burst" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_capacity/fly_smg_capacity" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_cqb/fly_smg_cqb" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_fastfire/fly_smg_fastfire" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_flechette/fly_smg_flechette" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_handling/fly_smg_handling" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_heavy/fly_smg_heavy" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_season6/fly_smg_season6" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_semiauto/fly_smg_semiauto" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_spray/fly_smg_spray" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/smg_standard/fly_smg_standard" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/sniper_accurate/fly_sniper_accurate" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/sniper_cannon/fly_sniper_cannon" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/sniper_powersemi/fly_sniper_powersemi" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/sniper_standard/sniper_standard" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/special_nailgun/fly_nailgun" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/tr_damagesemi/fly_tr_damagesemi" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/tr_fastburst/fly_tr_fastburst" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/tr_longburst/fly_tr_longburst" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/tr_powerburst/fly_tr_powerburst" + voxType + languageType);
-                    CheckSoundName("fly/weapon/reload/tr_precision/fly_tr_precision" + voxType + languageType);
-                    CheckSoundName("vox/scripted/mpl/abnd/vox_abnd" + voxType + languageType);
-                    CheckSoundName("vox/scripted/mpl/adgi/vox_adgi" + voxType + languageType);
-                    CheckSoundName("vox/scripted/mpl/ahva/vox_ahva" + voxType + languageType);
-                    CheckSoundName("vox/scripted/mpl/ami6/vox_ami6" + voxType + languageType);
-                    CheckSoundName("vox/scripted/mpl/anbo/vox_anbo" + voxType + languageType);
-                    CheckSoundName("vox/scripted/mpl/anme/vox_anme" + voxType + languageType);
-                    CheckSoundName("vox/scripted/adlr/vox_adlr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/antv/vox_antv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/bakr/vox_bakr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/bdzr/vox_bdzr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/beck/vox_beck" + voxType + languageType);
-                    CheckSoundName("vox/scripted/frs1/vox_frs1" + voxType + languageType);
-                    CheckSoundName("vox/scripted/frs2/vox_frs2" + voxType + languageType);
-                    CheckSoundName("vox/scripted/fuze/vox_fuze" + voxType + languageType);
-                    CheckSoundName("vox/scripted/grca/vox_grca" + voxType + languageType);
-                    CheckSoundName("vox/scripted/gstf/vox_gstf" + voxType + languageType);
-                    CheckSoundName("vox/scripted/hdsn/vox_hdsn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/jckl/vox_jckl" + voxType + languageType);
-                    CheckSoundName("vox/scripted/kngs/vox_kngs" + voxType + languageType);
-                    CheckSoundName("vox/scripted/kngt/vox_kngt" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ktsn/vox_ktsn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/lazr/vox_lazr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/masn/vox_masn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/maxi/vox_maxi" + voxType + languageType);
-                    CheckSoundName("vox/scripted/mcln/vox_mcln" + voxType + languageType);
-                    CheckSoundName("vox/scripted/mrs1/vox_mrs1" + voxType + languageType);
-                    CheckSoundName("vox/scripted/mrs2/vox_mrs2" + voxType + languageType);
-                    CheckSoundName("vox/scripted/mrs3/vox_mrs3" + voxType + languageType);
-                    CheckSoundName("vox/scripted/naga/vox_naga" + voxType + languageType);
-                    CheckSoundName("vox/scripted/park/vox_park" + voxType + languageType);
-                    CheckSoundName("vox/scripted/prce/vox_prce" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ptnv/vox_ptnv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/rmbo/vox_rmbo" + voxType + languageType);
-                    CheckSoundName("vox/scripted/rvas/vox_rvas" + voxType + languageType);
-                    CheckSoundName("vox/scripted/rvnv/vox_rvnv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/sala/vox_sala" + voxType + languageType);
-                    CheckSoundName("vox/scripted/sims/vox_sims" + voxType + languageType);
-                    CheckSoundName("vox/scripted/stch/vox_stch" + voxType + languageType);
-                    CheckSoundName("vox/scripted/stry/vox_stry" + voxType + languageType);
-                    CheckSoundName("vox/scripted/weav/vox_weav" + voxType + languageType);
-                    CheckSoundName("vox/scripted/wolf/vox_wolf" + voxType + languageType);
-                    CheckSoundName("vox/scripted/wood/vox_wood" + voxType + languageType);
-                    CheckSoundName("vox/scripted/wrth/vox_wrth" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zyna/vox_zyna" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/adlr/vox_adlr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/antv/vox_antv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/bakr/vox_bakr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/bdzr/vox_bdzr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/beck/vox_beck" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/frs1/vox_frs1" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/frs2/vox_frs2" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/fuze/vox_fuze" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/grca/vox_grca" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/gstf/vox_gstf" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/hdsn/vox_hdsn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/jckl/vox_jckl" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/kngs/vox_kngs" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/kngt/vox_kngt" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/ktsn/vox_ktsn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/lazr/vox_lazr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/masn/vox_masn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/maxi/vox_maxi" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/mcln/vox_mcln" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/mrs1/vox_mrs1" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/mrs2/vox_mrs2" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/mrs3/vox_mrs3" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/naga/vox_naga" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/park/vox_park" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/prce/vox_prce" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/ptnv/vox_ptnv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/rmbo/vox_rmbo" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/rvas/vox_rvas" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/rvnv/vox_rvnv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/sala/vox_sala" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/sims/vox_sims" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/stch/vox_stch" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/stry/vox_stry" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/weav/vox_weav" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/wolf/vox_wolf" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/wood/vox_wood" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/wrth/vox_wrth" + voxType + languageType);
-                    CheckSoundName("vox/scripted/operators/zyna/vox_zyna" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/adlr/vox_adlr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/antv/vox_antv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/bakr/vox_bakr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/bdzr/vox_bdzr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/beck/vox_beck" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/frs1/vox_frs1" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/frs2/vox_frs2" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/fuze/vox_fuze" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/grca/vox_grca" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/gstf/vox_gstf" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/hdsn/vox_hdsn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/jckl/vox_jckl" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/kngs/vox_kngs" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/kngt/vox_kngt" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/ktsn/vox_ktsn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/lazr/vox_lazr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/masn/vox_masn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/maxi/vox_maxi" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/mcln/vox_mcln" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/mrs1/vox_mrs1" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/mrs2/vox_mrs2" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/mrs3/vox_mrs3" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/naga/vox_naga" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/park/vox_park" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/prce/vox_prce" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/ptnv/vox_ptnv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/rmbo/vox_rmbo" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/rvas/vox_rvas" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/rvnv/vox_rvnv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/sala/vox_sala" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/sims/vox_sims" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/stch/vox_stch" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/stry/vox_stry" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/weav/vox_weav" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/wolf/vox_wolf" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/wood/vox_wood" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/wrth/vox_wrth" + voxType + languageType);
-                    CheckSoundName("vox/scripted/ping/zyna/vox_zyna" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/adlr/vox_adlr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/antv/vox_antv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/bakr/vox_bakr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/bdzr/vox_bdzr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/beck/vox_beck" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/frs1/vox_frs1" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/frs2/vox_frs2" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/fuze/vox_fuze" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/grca/vox_grca" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/gstf/vox_gstf" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/hdsn/vox_hdsn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/jckl/vox_jckl" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/kngs/vox_kngs" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/kngt/vox_kngt" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/ktsn/vox_ktsn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/lazr/vox_lazr" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/masn/vox_masn" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/maxi/vox_maxi" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/mcln/vox_mcln" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/mrs1/vox_mrs1" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/mrs2/vox_mrs2" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/mrs3/vox_mrs3" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/naga/vox_naga" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/park/vox_park" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/prce/vox_prce" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/ptnv/vox_ptnv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/rmbo/vox_rmbo" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/rvas/vox_rvas" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/rvnv/vox_rvnv" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/sala/vox_sala" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/sims/vox_sims" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/stch/vox_stch" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/stry/vox_stry" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/weav/vox_weav" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/wolf/vox_wolf" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/wood/vox_wood" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/wrth/vox_wrth" + voxType + languageType);
-                    CheckSoundName("vox/scripted/zm_operators/zyna/vox_zyna" + voxType + languageType);
+                    foreach (string taacomType in TAACOMTypes)
+                    {
+                        foreach (string languageType in LanguageTypes)
+                        {
+                            foreach (string opvoxType in OpVoxTypes)
+                            {
+                                CheckSoundName("" + weaponsoundType + genericsoundType);
+                                CheckSoundName("" + taacomType + languageType);
+                                CheckSoundName("" + opvoxType + languageType);
+
+                                CheckSoundName("fly/weapon/reload/ar_accurate/ar_accurate" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/ar_british/fly_ar_british" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/ar_damage/fly_ar_damage" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/ar_fastfire/fly_ar_fastfire" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/ar_fasthandling/fly_ar_fasthandling" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/ar_mobility/fly_ar_mobility" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/ar_season6/fly_ar_season6" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/ar_slowfire/fly_ar_slowfire" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/ar_slowhandling/fly_ar_slowhandling" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/ar_soviet/fly_ar_soviet" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/ar_standard/fly_ar_standard" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/grenade_launcher/fly_grenade_launcher" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/launcher_freefire/fly_launcher_freefire" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/launcher_standard/fly_launcher_standard" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/lmg_accurate/fly_lmg_accurate" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/lmg_fastfire/fly_lmg_fastfire" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/lmg_light/fly_lmg_light" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/lmg_slowfire/fly_lmg_slowfire" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/pistol_burst/fly_pistol_burst" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/pistol_fullauto/fly_pistol_fullauto" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/pistol_revolver/fly_pistol_revolver" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/pistol_semiauto/fly_pistol_semiauto" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/pistol_shotgun/fly_pistol_shotgun" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/shotgun_leveraction/fly_shotgun_leveraction" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/shotgun_pump/fly_shotgun_pump" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/shotgun_semi/fly_shotgun_semi" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_accurate/fly_smg_accurate" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_burst/fly_smg_burst" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_capacity/fly_smg_capacity" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_cqb/fly_smg_cqb" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_fastfire/fly_smg_fastfire" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_flechette/fly_smg_flechette" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_handling/fly_smg_handling" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_heavy/fly_smg_heavy" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_season6/fly_smg_season6" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_semiauto/fly_smg_semiauto" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_spray/fly_smg_spray" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/smg_standard/fly_smg_standard" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/sniper_accurate/fly_sniper_accurate" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/sniper_cannon/fly_sniper_cannon" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/sniper_powersemi/fly_sniper_powersemi" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/sniper_standard/sniper_standard" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/special_nailgun/fly_nailgun" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/tr_damagesemi/fly_tr_damagesemi" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/tr_fastburst/fly_tr_fastburst" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/tr_longburst/fly_tr_longburst" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/tr_powerburst/fly_tr_powerburst" + weaponsoundType + genericsoundType);
+                                CheckSoundName("fly/weapon/reload/tr_precision/fly_tr_precision" + weaponsoundType + genericsoundType);
+
+                                CheckSoundName("vox/scripted/mpl/abnd/vox_abnd" + taacomType + languageType);
+                                CheckSoundName("vox/scripted/mpl/adgi/vox_adgi" + taacomType + languageType);
+                                CheckSoundName("vox/scripted/mpl/ahva/vox_ahva" + taacomType + languageType);
+                                CheckSoundName("vox/scripted/mpl/ami6/vox_ami6" + taacomType + languageType);
+                                CheckSoundName("vox/scripted/mpl/anbo/vox_anbo" + taacomType + languageType);
+                                CheckSoundName("vox/scripted/mpl/anme/vox_anme" + taacomType + languageType);
+
+                                CheckSoundName("vox/scripted/adlr/vox_adlr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/antv/vox_antv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/bakr/vox_bakr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/bdzr/vox_bdzr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/beck/vox_beck" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/frs1/vox_frs1" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/frs2/vox_frs2" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/fuze/vox_fuze" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/grca/vox_grca" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/gstf/vox_gstf" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/hdsn/vox_hdsn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/jckl/vox_jckl" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/kngs/vox_kngs" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/kngt/vox_kngt" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ktsn/vox_ktsn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/lazr/vox_lazr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/masn/vox_masn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/maxi/vox_maxi" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/mcln/vox_mcln" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/mrs1/vox_mrs1" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/mrs2/vox_mrs2" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/mrs3/vox_mrs3" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/naga/vox_naga" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/park/vox_park" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/prce/vox_prce" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ptnv/vox_ptnv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/rmbo/vox_rmbo" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/rvas/vox_rvas" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/rvnv/vox_rvnv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/sala/vox_sala" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/sims/vox_sims" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/stch/vox_stch" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/stry/vox_stry" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/weav/vox_weav" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/wolf/vox_wolf" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/wood/vox_wood" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/wrth/vox_wrth" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zyna/vox_zyna" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/adlr/vox_adlr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/antv/vox_antv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/bakr/vox_bakr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/bdzr/vox_bdzr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/beck/vox_beck" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/frs1/vox_frs1" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/frs2/vox_frs2" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/fuze/vox_fuze" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/grca/vox_grca" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/gstf/vox_gstf" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/hdsn/vox_hdsn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/jckl/vox_jckl" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/kngs/vox_kngs" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/kngt/vox_kngt" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/ktsn/vox_ktsn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/lazr/vox_lazr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/masn/vox_masn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/maxi/vox_maxi" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/mcln/vox_mcln" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/mrs1/vox_mrs1" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/mrs2/vox_mrs2" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/mrs3/vox_mrs3" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/naga/vox_naga" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/park/vox_park" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/prce/vox_prce" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/ptnv/vox_ptnv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/rmbo/vox_rmbo" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/rvas/vox_rvas" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/rvnv/vox_rvnv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/sala/vox_sala" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/sims/vox_sims" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/stch/vox_stch" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/stry/vox_stry" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/weav/vox_weav" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/wolf/vox_wolf" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/wood/vox_wood" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/wrth/vox_wrth" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/operators/zyna/vox_zyna" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/adlr/vox_adlr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/antv/vox_antv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/bakr/vox_bakr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/bdzr/vox_bdzr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/beck/vox_beck" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/frs1/vox_frs1" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/frs2/vox_frs2" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/fuze/vox_fuze" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/grca/vox_grca" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/gstf/vox_gstf" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/hdsn/vox_hdsn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/jckl/vox_jckl" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/kngs/vox_kngs" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/kngt/vox_kngt" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/ktsn/vox_ktsn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/lazr/vox_lazr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/masn/vox_masn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/maxi/vox_maxi" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/mcln/vox_mcln" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/mrs1/vox_mrs1" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/mrs2/vox_mrs2" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/mrs3/vox_mrs3" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/naga/vox_naga" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/park/vox_park" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/prce/vox_prce" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/ptnv/vox_ptnv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/rmbo/vox_rmbo" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/rvas/vox_rvas" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/rvnv/vox_rvnv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/sala/vox_sala" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/sims/vox_sims" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/stch/vox_stch" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/stry/vox_stry" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/weav/vox_weav" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/wolf/vox_wolf" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/wood/vox_wood" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/wrth/vox_wrth" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/ping/zyna/vox_zyna" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/adlr/vox_adlr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/antv/vox_antv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/bakr/vox_bakr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/bdzr/vox_bdzr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/beck/vox_beck" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/frs1/vox_frs1" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/frs2/vox_frs2" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/fuze/vox_fuze" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/grca/vox_grca" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/gstf/vox_gstf" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/hdsn/vox_hdsn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/jckl/vox_jckl" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/kngs/vox_kngs" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/kngt/vox_kngt" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/ktsn/vox_ktsn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/lazr/vox_lazr" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/masn/vox_masn" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/maxi/vox_maxi" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/mcln/vox_mcln" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/mrs1/vox_mrs1" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/mrs2/vox_mrs2" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/mrs3/vox_mrs3" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/naga/vox_naga" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/park/vox_park" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/prce/vox_prce" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/ptnv/vox_ptnv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/rmbo/vox_rmbo" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/rvas/vox_rvas" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/rvnv/vox_rvnv" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/sala/vox_sala" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/sims/vox_sims" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/stch/vox_stch" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/stry/vox_stry" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/weav/vox_weav" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/wolf/vox_wolf" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/wood/vox_wood" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/wrth/vox_wrth" + opvoxType + languageType);
+                                CheckSoundName("vox/scripted/zm_operators/zyna/vox_zyna" + opvoxType + languageType);
+                            }
+                        }
+                    }
                 }
             }
             foreach (string stringType in StringTypes)

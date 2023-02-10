@@ -92,8 +92,8 @@ internal class FNV1A32
             string hashName = string.Format("{0:x}", Hash32Util.Hash32(stringName));
             if (Directory.Exists(Path + "\\bone_" + hashName))
             {
-                Console.WriteLine("Found String: {0:x}", hashName + "," + stringName);
-                File.AppendAllText(Path + "\\StringsFound.txt", hashName + "," + stringName + Environment.NewLine);
+                Console.WriteLine("Found Bone: {0:x}", hashName + "," + stringName);
+                File.AppendAllText(Path + "\\BonesFound.txt", hashName + "," + stringName + Environment.NewLine);
                 Directory.Delete(Path + "\\bone_" + hashName);
             }
         }
