@@ -1,0 +1,87 @@
+07/03/2023:
+
+With a lot going on, most changes listed are included with more in later updates:
+
+->Specified path now scans all sub folders and prints results back from the containing folder to the root path (target ..\Path)
+->Trimmed starting names on all hashes as they were already in a parent folder, writing assets for scanning is 50% faster (Reduced by 11MB)
+->Trimmed the main program down (less wording before and after asset checks to help reduce the literal string cap for large scans)
+->Removed fnv1a32 for it's high collision rate (false results)
+->Redone the BO3 AssetLog and also include missing additional images, materials and effects
+->Added all sounds from BO3/IW sabs/sabl
+->Updated BO4 AssetLog to contain all the raw sabs/sabl names from all/multilanguage plus the MS language from CDN
+->Merged all AssetLogs into single archive
+->Removed cain.txt, best to use relevant words from existing COD assets
+->Included a barebones version of the tool to use instantly for mass bruteforcing, no more seperate copies
+->Included latest Notepad++ v8.5 x64 Installer
+->General code cleanup (all warnings resolved, not suppressed)
+->Rephrased the docs
+->Updated xasset_generate to current
+->Changelog included
+
+Future updates:
+
+~Upgrade project from .Net 7 to .Net 8
+~All fnv hash functions
+~(fnv32,fnv1a32,fnv64,fnv1a64,fnv128,fnv1a128,fnv256,fnv1a256,fnv512,fnv1a512,fnv1024,fnv1a1024)
+~Add missing assets manually from COD IW: mp_rally as Parasyte couldn't load it
+~Add World at War AssetLog
+~Add BO1 AssetLog
+~Add missing images/fx from BO2
+~Read xassets from a txtfile
+~Add BO4 sound checks [Amorfirion]
+
+11/02/2023
+->Added more anim checks and reworked the sound checks for improved scan times for sounds [Amorfirion]
+->Updated xasset_generate
+
+09/02/2023
+->Removed Warzone2 AssetLog as MW5 S01 contained the full game and renamed to AssetLog_MW2022_S01
+->Archived cain
+
+07/02/2023
+->Added some anim, model and sound checks
+->Fixed program that was not scanning anything [Amorfirion]
+->Added HxD (FFF) to view memory dumps and not be recognised by COD Games running
+->Added FNV1A32 support for MW2022 bones
+->Script cleanup for fnv1a32 do bones only
+
+04/02/2023
+->Added BO2,MW5 Beta and S01 AssetLogs + t8-t9 decompiled scripts
+->Included SEAnimNoteDumper for VM Notetracks and 7z for unpacking the logs
+->Removed unneeded function that now greatly increases the scan speed [JohnWick]
+->Updated xasset_generate to current
+->Fixed the xasset_generate that was a .txt file rather .bat
+
+22/01/2023
+->Replace dnGrep with Agent Ransack for multithreaded string scanning
+
+11/01/2023
+->Added cain.txt
+->Added more BO4 checks
+
+10/01/2023
+->Updated BO4 AssetLog
+->Added more model Types
+
+08/01/2023
+->Updated dnGrep to v3.2.242.0
+
+05/01/2023
+->Updated xasset_generate
+
+04/01/2023
+->Few model Types were added
+->Draft for BO4 sounds
+->Added missing CW Burst Pistol model name
+->Re-added Ravenov sound check if the files return in future
+
+25/12/2022
+->Public release
+
+Pre-public changes:
+->Implemented majority of asset Types for BO4/CW
+->Added checks for all asset types
+->Removed padding
+->Physical assets not required, now uses folders
+->Removed SELib library
+->Merged the Hash Function into the main script
