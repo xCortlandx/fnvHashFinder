@@ -1,3 +1,8 @@
+14/03/2023 update 2:
+
+->Added Black Ops 4 weapon sounds (mostly dlc) and other words
+->Added application icon when compiling an .exe
+
 14/03/2023:
 This update addresses numerous issues that wouldn't allow the scan to finish properly with assistance from @Amorfirion on the tests and suggestions:
 
@@ -8,6 +13,9 @@ This update addresses numerous issues that wouldn't allow the scan to finish pro
 ->Removed a wpnsound list that was duped twice that wasn't supposed to be there
 ->Few more asset checks added
 ->Compile times are much faster, running a full scan on the main script only takes roughly 3mins
+
+10/03/2023
+->Read from text files instead of folders [xCortlandx]
 
 07/03/2023:
 

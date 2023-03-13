@@ -8,10 +8,15 @@
     <Platforms>x64</Platforms>
 	<PublishAot>true</PublishAot>
 	<StartupObject>FNV1A64</StartupObject>
+	<ApplicationIcon>fnvtiger.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Optimize>True</Optimize>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="fnvtiger.ico" />
+  </ItemGroup>
 
 </Project>
