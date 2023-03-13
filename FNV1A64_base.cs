@@ -1,64 +1,70 @@
-using fnvHashFinder;
+﻿using fnvHashFinder;
 using System.Diagnostics;
 
-internal class FNV1A64base
-{
-    private static void Main(string[] args)
-    {
+internal class FNV1A64base {
+    private static void Main(string[] args) {
         string? Path = string.Empty;
         string? xAsset = string.Empty;
 
         // You can add Direct names under any of the types
-        string[] xAnim =
-        {
+        string[] animCheck = {
 "",
 };
-        string[] xAIAnim =
-        {
+        string[] xAnim = {
 "",
 };
-        string[] xImage =
-        {
+        string[] imageCheck = {
 "",
 };
-        string[] xMaterial =
-        {
+        string[] xImage = {
 "",
 };
-        string[] xModel =
-        {
+        string[] materialCheck = {
 "",
 };
-        string[] xWpnAttachment =
-        {
+        string[] xMaterial = {
 "",
 };
-        string[] xWpnBlueprint =
-        {
+        string[] modelCheck = {
 "",
 };
-        string[] xOpVox =
-        {
+        string[] xModel = {
 "",
 };
-        string[] xTAACOM =
-        {
+        string[] xWpnAttachment = {
 "",
 };
-        string[] xGenericSound =
-        {
+        string[] xWpnBlueprint = {
 "",
 };
-        string[] xLanguage =
-        {
+        string[] soundWpnCheck = {
 "",
 };
-        string[] xWeaponSound =
-        {
+        string[] xWeaponSound = {
 "",
 };
-        string[] xString =
-        {
+        string[] soundOperaterCheck = {
+"",
+};
+        string[] soundTaacomCheck = {
+"",
+};
+        string[] xOpVox = {
+"",
+};
+        string[] xTAACOM = {
+"",
+};
+        string[] xGenericSound = {
+"",
+};
+        string[] xLanguage = {
+"",
+};
+        string[] stringCheck = {
+"",
+};
+        string[] xString = {
 "",
 };
 
@@ -82,12 +88,10 @@ internal class FNV1A64base
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Specify xAsset Directory:");
         Path = Console.ReadLine();
-        while (true)
-        {
+        while (true) {
             Console.WriteLine("[1] Start Scan");
             string? search = Console.ReadLine();
-            if (search == "1")
-            {
+            if (search == "1") {
                 Console.WriteLine("\nScanning for Assets... ");
                 Stopwatch stopWatch = new Stopwatch();
                 stopWatch.Start();
@@ -96,236 +100,92 @@ internal class FNV1A64base
                 TimeSpan ts = stopWatch.Elapsed;
                 string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                 ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-                Console.WriteLine("Scan completed in " + elapsedTime);
-            }
-        }
+                Console.WriteLine("Scan completed in " + elapsedTime); }}
 
-        void SearchForSpecificAsset(string xAsset)
-        {
-            foreach (string xanim in xAnim)
-            {
-                foreach (string xaianim in xAIAnim)
-                {
-                    CheckAnim("" + xanim);
-                }
-            }
-            foreach (string ximage in xImage)
-            {
-                foreach (string xwpnattachment in xWpnAttachment)
-                {
-                    foreach (string xwpnblueprint in xWpnBlueprint)
-                    {
-                        CheckImage("" + ximage);
-                    }
-                }
-            }
-            foreach (string xmaterial in xMaterial)
-            {
-                CheckMaterial("" + xmaterial);
-            }
-            foreach (string xmodel in xModel)
-            {
-                CheckModel("" + xmodel);
-            }
-            foreach (string xweaponsound in xWeaponSound)
-            {
-                foreach (string xgenericsound in xGenericSound)
-                {
-                    foreach (string xtaacom in xTAACOM)
-                    {
-                        foreach (string xlanguage in xLanguage)
-                        {
-                            foreach (string xopvox in xOpVox)
-                            {
-                                CheckSound("" + xweaponsound + xgenericsound);
-                                CheckSound("" + xtaacom + xlanguage);
-                                CheckSound("" + xopvox + xlanguage);
-                            }
-                        }
-                    }
-                }
-            }
-            foreach (string xstring in xString)
-            {
-                CheckString("" + xstring);
-            }
-        }
+         void SearchForSpecificAsset(string xAsset) {
 
-        void CheckAnim(string animName)
-        {
+            foreach (string animcheck in animCheck) {
+                foreach (string xanim in xAnim) {
+                    CheckAnim(animcheck + xanim); }}
+
+            foreach (string imagecheck in imageCheck) {
+                foreach (string ximage in xImage) {
+                    CheckImage(imagecheck + ximage); }}
+
+            foreach (string materialcheck in materialCheck) {
+                foreach (string xmaterial in xMaterial) {
+                    CheckMaterial(materialcheck + xmaterial); }}
+
+            foreach (string modelcheck in modelCheck) {
+                foreach (string xmodel in xModel) {
+				    CheckModel(modelcheck + xmodel); }}
+
+            foreach (string soundwpncheck in soundWpnCheck) {
+                foreach (string xweaponsound in xWeaponSound) {
+                    foreach (string xgenericsound in xGenericSound) {
+                        CheckSound(soundwpncheck + xweaponsound + xgenericsound); }}}
+
+            foreach (string soundoperatercheck in soundOperaterCheck) {
+                foreach (string xopvox in xOpVox) {
+                    foreach (string xlanguage in xLanguage) {
+                        CheckSound(soundoperatercheck + xopvox + xlanguage); }}}
+
+            foreach (string soundtaacomcheck in soundTaacomCheck) {
+                foreach (string xtaacom in xTAACOM) {
+                    foreach (string xlanguage in xLanguage) {
+                        CheckSound(soundtaacomcheck + xtaacom + xlanguage); }}}
+
+            foreach (string stringcheck in stringCheck) {
+			    foreach (string xstring in xString) {
+			        CheckString(stringcheck + xstring); }}}
+
+        void CheckAnim(string animName) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(animName));
-            string notFoundFilePath = Path + "\\AnimsNotFound.txt";
-            string foundFilePath = Path + "\\AnimsFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found Anim: {0:x}", hashName + "," + animName);
-                        File.AppendAllText(foundFilePath, hashName + "," + animName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
+            if (File.Exists(Path + "\\xanim\\" + hashName)) {
+                Console.WriteLine("Found Anim: {0:x}", hashName + "," + animName);
+                File.AppendAllText(Path + "\\AnimsFound.txt", hashName + "," + animName + Environment.NewLine);
+                File.Delete(Path + "\\xanim\\" + hashName); }}
 
-        void CheckImage(string imageName)
-        {
+        void CheckImage(string imageName) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(imageName));
-            string notFoundFilePath = Path + "\\ImagesNotFound.txt";
-            string foundFilePath = Path + "\\ImagesFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found Image: {0:x}", hashName + "," + imageName);
-                        File.AppendAllText(foundFilePath, hashName + "," + imageName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
+            if (File.Exists(Path + "\\ximage\\" + hashName)) {
+                Console.WriteLine("Found Image: {0:x}", hashName + "," + imageName);
+                File.AppendAllText(Path + "\\ImagesFound.txt", hashName + "," + imageName + Environment.NewLine);
+                File.Delete(Path + "\\ximage\\" + hashName); }}
 
-        void CheckMaterial(string materialName)
-        {
+        void CheckMaterial(string materialName) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(materialName));
-            string notFoundFilePath = Path + "\\MaterialsNotFound.txt";
-            string foundFilePath = Path + "\\MaterialsFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found Material: {0:x}", hashName + "," + materialName);
-                        File.AppendAllText(foundFilePath, hashName + "," + materialName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
+            if (File.Exists(Path + "\\xmaterial\\" + hashName)) {
+                Console.WriteLine("Found Material: {0:x}", hashName + "," + materialName);
+                File.AppendAllText(Path + "\\MaterialsFound.txt", hashName + "," + materialName + Environment.NewLine);
+                File.Delete(Path + "\\xmaterial\\" + hashName); }}
 
-        void CheckModel(string modelName)
-        {
+        void CheckModel(string modelName) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(modelName));
-            string notFoundFilePath = Path + "\\ModelsNotFound.txt";
-            string foundFilePath = Path + "\\ModelsFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found Model: {0:x}", hashName + "," + modelName);
-                        File.AppendAllText(foundFilePath, hashName + "," + modelName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
+            if (File.Exists(Path + "\\xmodel\\" + hashName)) {
+                Console.WriteLine("Found Model: {0:x}", hashName + "," + modelName);
+                File.AppendAllText(Path + "\\ModelsFound.txt", hashName + "," + modelName + Environment.NewLine);
+                File.Delete(Path + "\\xmodel\\" + hashName); }}
 
-        void CheckSound(string soundName)
-        {
+        void CheckSound(string soundName) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(soundName));
-            string notFoundFilePath = Path + "\\SoundsNotFound.txt";
-            string foundFilePath = Path + "\\SoundsFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found Sound: {0:x}", hashName + "," + soundName);
-                        File.AppendAllText(foundFilePath, hashName + "," + soundName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
+            if (File.Exists(Path + "\\xsound\\" + hashName)) {
+                Console.WriteLine("Found Sound: {0:x}", hashName + "," + soundName);
+                File.AppendAllText(Path + "\\SoundsFound.txt", hashName + "," + soundName + Environment.NewLine);
+                File.Delete(Path + "\\xsound\\" + hashName); }}
 
-        void CheckString(string stringName)
-        {
+        void CheckString(string stringName) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(stringName));
-            string notFoundFilePath = Path + "\\StringsNotFound.txt";
-            string foundFilePath = Path + "\\StringsFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found String: {0:x}", hashName + "," + stringName);
-                        File.AppendAllText(foundFilePath, hashName + "," + stringName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
-    }
-}
+            if (File.Exists(Path + "\\xstring\\" + hashName)) {
+                Console.WriteLine("Found String: {0:x}", hashName + "," + stringName);
+                File.AppendAllText(Path + "\\StringsFound.txt", hashName + "," + stringName + Environment.NewLine);
+                File.Delete(Path + "\\xstring\\" + hashName); }}}}
 
-namespace fnvHashFinder
-{
-    class Hash64baseUtil
-    {
-        public static ulong Hash64base(string input)
-        {
+namespace fnvHashFinder {
+    class Hash64baseUtil {
+        public static ulong Hash64base(string input) {
             ulong num = 14695981039346656037;
             for (int index = 0; index < input.Length; ++index)
                 num = (ulong)(((long)num ^ (long)input[index]) * 1099511628211L);
             num &= 0xFFFFFFFFFFFFFFF;
-            return num;
-        }
-    }
-}
+            return num; }}}

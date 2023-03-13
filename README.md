@@ -3,7 +3,7 @@
 A Multi-purpose Tool that verifies pre-defined assets
 
 NOTE 1: Delete and regenerate the xassets on each build as the hashes are removed for newer scans
-NOTE 2: Change the startup object to FNV1A64base if you are using it for large scans
+NOTE 2: Change the startup object to FNV1A64base if you are using it for large scans (default)
 NOTE 3: You can use Ladisk CascViewer to pull Black Ops 4 Sounds or the full game from their CDN to find assets manually through Greyhound.
 
 ## Overview
@@ -15,7 +15,7 @@ There is a good amount implemented and much more to be added, leads are crucial,
 Any assets found by other members will always go through mine and I will update the xAssets directory with verified submissions removed from the folders.
 Otherwise you can Memory Dump the process, often new names appear on minor title updates, at this point it's 90% looked through. This is how you find leads.
 All Asset Logs are provided, you do not need to own any of the games nor do you need to dump anything.
-You will need to generate folders with the given batch file of xAssets before scanning on them, this can take up to 30 minutes. Put this in a location outside the Project else Visual Studio will not load.
+You will need to extract the xassets files before scanning on them, this can take up to 10 minutes or more. Put this in a location outside the Project else Visual Studio will not load.
 You should stick to Debug mode, but do not Debug with a COD game running (Shadowban risk). If you wish to play a COD title while scanning then compile an AOT Release build.
 Agent Ransack is provided to scan strings from .XMODEL_EXPORT files. You should set the thread speed high.
 
@@ -27,7 +27,7 @@ Black Ops 4: xSound Languages (sabs/sabl)
 Black Ops CW: Vehicle xModel
 Vanguard: xSound
 (Soon) MW2022: xImage, xMaterial, xSound, bones (bones use fnv1a32)
-Create a textfile for assets to scan from and eliminate the use of folders
+Create a textfile for assets to scan from and eliminate the use of folders/files
 Multithreading
 
 ## Bruteforce Methods:
@@ -45,7 +45,5 @@ Multithreading
 6. Reword t8/p8 to t9/p9 and vice versa
 7. Removing generated junk words from old unverified hashes		^...........................
 8. Direct word attacks aka Dictionary Attack: Create a wordlist by finding all underscores and replace with \n , remove dupes
-9. If you have your own bruteforce technique you can inform me
-
-10. (Not tested yet but should be effective)
-Trim all words before the last word on raw names on all packages, now a wordlist, revert back to base, trim the last word end of every line on all packages, then trim all words before the last word on all the names on all packages, now your second wordlist to use as point A and the first wordlist created as point B. This way, we create a wordlist to slot in before the last word to work around capturing the last 2 words seperated to use against other hashes rather than creating a whole word that has 2 names together (more results).
+9. (Effective) Trim all words before the last word on raw names on all packages, now a wordlist, revert back to base, trim the last word end of every line on all packages, then trim all words before the last word on all the names on all packages, now your second wordlist to use as point A and the first wordlist created as point B. This way, we create a wordlist to slot in before the last word to work around capturing the last 2 words seperated to use against other hashes rather than creating a whole word that has 2 names together (more results).
+10. If you have your own bruteforce technique you can inform me

@@ -1,16 +1,297 @@
 ﻿using fnvHashFinder;
 using System.Diagnostics;
 
-internal class FNV1A64
-{
-    private static void Main(string[] args)
-    {
+internal class FNV1A64 {
+    private static void Main(string[] args) {
         string? Path = string.Empty;
         string? xAsset = string.Empty;
 
         // You can add Direct names under any of the types
-        string[] xAnim =
-        {
+        string[] animCheck = {
+// BO4 / CW Viewmodel & AI Anims
+// BO4 Weapon Missing Animations
+// Backhander
+// Eye of Apophis
+// Gift Axe
+// Rising Tide
+// Spknifeork
+// Spoon
+// Spork
+// Essex Model 07
+// Hitchcock M9
+// Kraken
+// vm_midburst - ABR 223 check this anim, we have already
+"",
+"ai_t8_zm_mob_brutus",
+"ai_t8_zm_twrs_hllpht",
+"ai_t8_zm_twrs_tgr",
+"ai_t8_zm_twrs_zg_dstyr",
+"ai_t8_zm_twrs_zg_mrdr",
+"ai_t8_zm_zod_bltfthr",
+"ai_t8_zm_zod_catalyst_electric",
+"ai_t8_zm_zod_catalyst_plasma",
+"ai_t8_zm_zod_catalyst_water",
+"ai_t8_zm_zod_stoker",
+"ai_t8_zm_zombie",
+"ai_t9_zm_abom",
+"ai_t9_zm_avogadro",
+"ai_t9_zm_hulkingsum",
+"ai_t9_zm_mechz",
+"ai_t9_zm_plague_hound",
+"ai_t9_zm_raz",
+"ai_t9_zm_steiner_base_com",
+"mm_brawler",
+"vm_action_figure",
+"vm_ar_accurate",
+"vm_ar_an94_t8",
+"vm_ar_damage",
+"vm_ar_double_barrel",
+"vm_ar_fastfire",
+"vm_ar_galil",
+"vm_ar_k57",
+"vm_ar_peacekeeper_t8",
+"vm_ar_standard",
+"vm_ar_stealth",
+"vm_argus_t8",
+"vm_ballistic_knife_t8",
+"vm_ballistic_knife_t8_dw",
+"vm_bowie_knife_t8",
+"vm_combat_knife_t8",
+"vm_demo_hammer",
+"vm_dg2",
+"vm_hades",
+"vm_homunculus",
+"vm_incendiary",
+"vm_katana",
+"vm_koshka",
+"vm_launcher_standard",
+"vm_lmg_heavy",
+"vm_lmg_mk48",
+"vm_lmg_mg08",
+"vm_money_bag_t8",
+"vm_mp40",
+"vm_mp9",
+"vm_pistol_auto",
+"vm_pistol_burst",
+"vm_pistol_revolver",
+"vm_pistol_standard",
+"vm_pistol_webley",
+"vm_polynesian_club_t8",
+"vm_raygun",
+"vm_reaper_lmg",
+"vm_scorpion",
+"vm_shotgun_full_auto",
+"vm_shotgun_pump",
+"vm_shotgun_semiauto",
+"vm_shotgun_trench",
+"vm_slaybell",
+"vm_smg_accurate",
+"vm_smg_capacity",
+"vm_smg_drum_pistol",
+"vm_smg_fastburst",
+"vm_smg_fastfire",
+"vm_smg_folding",
+"vm_smg_handling",
+"vm_smg_minigun",
+"vm_smg_thompson",
+"vm_smg_vmp_t8",
+"vm_sniper_damagesemi",
+"vm_sniper_fast_rechamber",
+"vm_sniper_locus_t8",
+"vm_sniper_mini14",
+"vm_sniper_power_semi",
+"vm_sniper_vanguard",
+"vm_special_crossbow",
+"vm_stop_sign",
+"vm_t8_zom_galvaknuckles",
+"vm_titan",
+"vm_tr_damageburst_t8",
+"vm_tr_flechette",
+"vm_tr_power_semi",
+"vm_tr_swordfish",
+"vm_ww_akud",
+"vm_ww_blundergat",
+"vm_zom_arm",
+"vm_zom_hammer",
+"vm_zom_monkey_bomb",
+"vm_zom_nesting_doll",
+"vm_zom_raygun_mk2",
+"vm_zom_scepter",
+"vm_zom_thundergun",
+// CW Playerbody / Playertorso & Weapon Animations
+"pt_ar_accurate_t9",
+"pt_ar_british_t9",
+"pt_ar_damage_t9",
+"pt_ar_fastfire_t9",
+"pt_ar_fasthandling_t9",
+"pt_ar_mobility_t9",
+"pt_ar_season6_t9",
+"pt_ar_slowfire_t9",
+"pt_ar_slowhandling_t9",
+"pt_ar_soviet_t9",
+"pt_ar_standard_t9",
+"pt_ballistic_knife_t9",
+"pt_baseball_bat_t9",
+"pt_battle_axe_t9",
+"pt_br_freefall",
+"pt_br_parachute",
+"pt_brawler_t9",
+"pt_cane_t9",
+"pt_com_t9",
+"pt_combat_knife_t9",
+"pt_concussion_grenade_t9",
+"pt_crossbow_t9",
+"pt_dual_sai_t9",
+"pt_etool_t9",
+"pt_flamethrower_t9",
+"pt_frag_grenade_t9",
+"pt_grapple_gun_t9",
+"pt_hammer_sickle_t9",
+"pt_hatchet_t9",
+"pt_launcher_freefire_t9",
+"pt_launcher_standard_t9",
+"pt_lmg_accurate_t9",
+"pt_lmg_fastfire_t9",
+"pt_lmg_light_t9",
+"pt_lmg_slowfire_t9",
+"pt_mace_t9",
+"pt_machete_t9",
+"pt_minigun_t9",
+"pt_nailgun_t9",
+"pt_pistol_burst_t9",
+"pt_pistol_fullauto_t9",
+"pt_pistol_revolver_t9",
+"pt_pistol_semiauto_t9",
+"pt_pistol_shotgun_t9",
+"pt_raygun_t9",
+"pt_scythe_t9",
+"pt_semtex_grenade_t9",
+"pt_shotgun_fullauto_t9",
+"pt_shotgun_leveraction_t9",
+"pt_shotgun_pump_t9",
+"pt_shotgun_semiauto_t9",
+"pt_sledgehammer_t9",
+"pt_smg_accurate_t9",
+"pt_smg_burst_t9",
+"pt_smg_capacity_t9",
+"pt_smg_cqb_t9",
+"pt_smg_fastfire_t9",
+"pt_smg_flechette_t9",
+"pt_smg_handling_t9",
+"pt_smg_heavy_t9",
+"pt_smg_season6_t9",
+"pt_smg_semiauto_t9",
+"pt_smg_spray_t9",
+"pt_smg_standard_t9",
+"pt_smoke_grenade_t9",
+"pt_sniper_accurate_t9",
+"pt_sniper_cannon_t9",
+"pt_sniper_powersemi_t9",
+"pt_sniper_quickscope_t9",
+"pt_sniper_standard_t9",
+"pt_special_grenade_launcher",
+"pt_tr_damagesemi_t9",
+"pt_tr_fastburst_t9",
+"pt_tr_longburst_t9",
+"pt_tr_powerburst_t9",
+"pt_tr_precisionsemi_t9",
+"pt_wakizashi_t9",
+"pt_zm_crystal_axe_melee_t9",
+"pt_zm_crystal_axe_smg_t9",
+"pt_zm_mega_barrel_blazer_beam_t9",
+"pt_zm_mega_barrel_micro_missile_t9",
+"pt_zm_mega_barrel_pistol_t9",
+"pt_zm_ray_rifle_t9",
+"pt_zm_silver_ww_t9",
+"vm_ar_accurate_t9",
+"vm_ar_british_t9",
+"vm_ar_damage_t9",
+"vm_ar_fastfire_t9",
+"vm_ar_fasthandling_t9",
+"vm_ar_mobility_t9",
+"vm_ar_season6_t9",
+"vm_ar_slowfire_t9",
+"vm_ar_slowhandling_t9",
+"vm_ar_soviet_t9",
+"vm_ar_standard_t9",
+"vm_ballistic_knife_t9",
+"vm_baseball_bat_t9",
+"vm_battle_axe_t9",
+"vm_br_freefall",
+"vm_br_parachute",
+"vm_brawler_t9",
+"vm_cane_t9",
+"vm_com",
+"vm_com_t9",
+"vm_combat_knife_t9",
+"vm_concussion_grenade_t9",
+"vm_crossbow_t9",
+"vm_dual_sai_t9",
+"vm_etool_t9",
+"vm_flamethrower_t9",
+"vm_frag_grenade_t9",
+"vm_grapple_gun_t9",
+"vm_hammer_sickle_t9",
+"vm_hatchet_t9",
+"vm_launcher_freefire_t9",
+"vm_launcher_standard_t9",
+"vm_lmg_accurate_t9",
+"vm_lmg_fastfire_t9",
+"vm_lmg_light_t9",
+"vm_lmg_slowfire_t9",
+"vm_mace_t9",
+"vm_machete_t9",
+"vm_minigun_t9",
+"vm_nailgun_t9",
+"vm_pistol_burst_t9",
+"vm_pistol_fullauto_t9",
+"vm_pistol_revolver_t9",
+"vm_pistol_semiauto_t9",
+"vm_pistol_shotgun_t9",
+"vm_ray_gun_t9",
+"vm_scythe_t9",
+"vm_semtex_grenade_t9",
+"vm_shotgun_fullauto_t9",
+"vm_shotgun_leveraction_t9",
+"vm_shotgun_pump_t9",
+"vm_shotgun_semiauto_t9",
+"vm_sledgehammer_t9",
+"vm_smg_accurate_t9",
+"vm_smg_burst_t9",
+"vm_smg_capacity_t9",
+"vm_smg_cqb_t9",
+"vm_smg_fastfire_t9",
+"vm_smg_flechette_t9",
+"vm_smg_handling_t9",
+"vm_smg_heavy_t9",
+"vm_smg_season6_t9",
+"vm_smg_semiauto_t9",
+"vm_smg_spray_t9",
+"vm_smg_standard_t9",
+"vm_smoke_grenade_t9",
+"vm_sniper_accurate_t9",
+"vm_sniper_cannon_t9",
+"vm_sniper_powersemi_t9",
+"vm_sniper_quickscope_t9",
+"vm_sniper_standard_t9",
+"vm_special_grenade_launcher",
+"vm_tactical",
+"vm_tr_damagesemi_t9",
+"vm_tr_fastburst_t9",
+"vm_tr_longburst_t9",
+"vm_tr_powerburst_t9",
+"vm_tr_precisionsemi_t9",
+"vm_wakizashi_t9",
+"vm_zm_crystal_axe_melee_t9",
+"vm_zm_crystal_axe_smg_t9",
+"vm_zm_mega_barrel_blazer_beam_t9",
+"vm_zm_mega_barrel_micro_missile_t9",
+"vm_zm_mega_barrel_pistol_t9",
+"vm_zm_ray_rifle_t9",
+"vm_zm_silver_ww_t9",
+};
+
+        string[] xAnim = {
 "",
 "_acknowledge",
 "_acknowledge_additive",
@@ -368,9 +649,9 @@ internal class FNV1A64
 "_loop_additive_dw",
 "_loop_additive_rh",
 "_loop_barehands",
+"_loop_dw",
 "_loop_rh",
 "_loop_rh_additive",
-"_loop_dw",
 "_male_crouch_idle",
 "_male_prone_fire",
 "_male_prone_first_raise",
@@ -379,9 +660,9 @@ internal class FNV1A64
 "_male_prone_reload_ext_empty",
 "_male_prone_reload_fast_empty",
 "_male_prone_reload_mixclip_empty",
-"_male_stand_idle",
 "_male_stand_fire",
 "_male_stand_first_raise",
+"_male_stand_idle",
 "_male_stand_reload",
 "_male_stand_reload_empty",
 "_male_stand_reload_ext_empty",
@@ -632,7 +913,6 @@ internal class FNV1A64
 "_throw",
 "_throw_additive",
 "_throw_back",
-"_throwback",
 "_throw_back_additive",
 "_throw_back_additive_rh",
 "_throw_back_lh",
@@ -641,15 +921,13 @@ internal class FNV1A64
 "_throw_bare_hands_additive",
 "_throw_dw",
 "_throw_lh",
+"_throw_quick",
 "_throw_rh",
 "_throw_rh_additive",
-"_throw_quick",
+"_throwback",
 "_walk",
 "_walk_f",
-};
-        string[] xAIAnim =
-        {
-"",
+// AI Anims
 "_aim_2",
 "_aim_4",
 "_aim_6",
@@ -899,8 +1177,267 @@ internal class FNV1A64
 "_walk_turn_r_90",
 "_walk_v1",
 };
-        string[] xImage =
-        {
+        string[] imageCheck = {
+// CW Weapon & Operator Images
+"",
+"i_mtl_wpn_t9_bp_smg_standard",
+"i_mtl_wpn_t9_bp_sniper_quickscope",
+"i_mtl_wpn_t9_bp_sniper_standard",
+"i_mtl_wpn_t9_bp_tr_damagesemi",
+"i_mtl_wpn_t9_bp_tr_longburst",
+"i_mtl_wpn_t9_combat_knife_american",
+"i_mtl_wpn_t9_grenade_launcher",
+"i_mtl_wpn_t9_lmg_accurate",
+"i_mtl_wpn_t9_lmg_accurate_cb",
+"i_mtl_wpn_t9_lmg_light",
+"i_mtl_wpn_t9_lmg_slowfire",
+"i_mtl_wpn_t9_loot_ar_fasthandling",
+"i_mtl_wpn_t9_loot_ar_slowfire",
+"i_mtl_wpn_t9_loot_ar_slowhandling",
+"i_mtl_wpn_t9_loot_ar_soviet",
+"i_mtl_wpn_t9_loot_bp",
+"i_mtl_wpn_t9_loot_lmg_fastfire",
+"i_mtl_wpn_t9_loot_shotgun_leveraction",
+"i_mtl_wpn_t9_loot_shotgun_sweeper",
+"i_mtl_wpn_t9_loot_smg_cqb",
+"i_mtl_wpn_t9_loot_smg_fastfire",
+"i_mtl_wpn_t9_loot_smg_ingram",
+"i_mtl_wpn_t9_loot_smg_lapa",
+"i_mtl_wpn_t9_loot_smg_semiauto",
+"i_mtl_wpn_t9_loot_smg_spray",
+"i_mtl_wpn_t9_loot_sniper_cannon",
+"i_mtl_wpn_t9_loot_tr_fastburst",
+"i_mtl_wpn_t9_melee_hammersickle_hammer",
+"i_mtl_wpn_t9_melee_hammersickle_sikle",
+"i_mtl_wpn_t9_melee_shovel",
+"i_mtl_wpn_t9_melee_wakizashi",
+"i_mtl_wpn_t9_pistol_burst",
+"i_mtl_wpn_t9_pistol_burst_cb",
+"i_mtl_wpn_t9_pistol_burst_cb_secondary",
+"i_mtl_wpn_t9_pistol_burst_secondary",
+"i_mtl_wpn_t9_pistol_revolver",
+"i_mtl_wpn_t9_pistol_semiauto",
+"i_mtl_wpn_t9_shotgun_pump",
+"i_mtl_wpn_t9_shotgun_semiauto_cb",
+"i_mtl_wpn_t9_smg_burst",
+"i_mtl_wpn_t9_smg_capacity",
+"i_mtl_wpn_t9_smg_handling",
+"i_mtl_wpn_t9_smg_heavy",
+"i_mtl_wpn_t9_smg_standard_cb",
+"i_mtl_wpn_t9_sniper_accurate",
+"i_mtl_wpn_t9_sniper_powersemi_cb",
+"i_mtl_wpn_t9_sniper_quickscope",
+"i_mtl_wpn_t9_sniper_standard",
+"i_mtl_wpn_t9_special_crossbow",
+"i_mtl_wpn_t9_tr_damagesemi",
+"i_mtl_wpn_t9_tr_fullauto_classic",
+"i_mtl_wpn_t9_tr_longburst",
+"i_mtl_wpn_t9_tr_powerburst_cb",
+"i_mtl_wpn_t9_tr_precisionsemi",
+"i_mtl_wpn_t9_zm_monkey",
+"i_mtl_wpn_t9_zm_raygun",
+"i_mtl_wpn_t9_ar_accurate",
+"i_mtl_wpn_t9_ar_british",
+"i_mtl_wpn_t9_ar_damage",
+"i_mtl_wpn_t9_ar_fastfire",
+"i_mtl_wpn_t9_ar_fasthandling",
+"i_mtl_wpn_t9_ar_krig6",
+"i_mtl_wpn_t9_ar_mercenary",
+"i_mtl_wpn_t9_ar_mobility",
+"i_mtl_wpn_t9_ar_season6",
+"i_mtl_wpn_t9_ar_slowfire",
+"i_mtl_wpn_t9_ar_slowhandling",
+"i_mtl_wpn_t9_ar_soviet",
+"i_mtl_wpn_t9_ar_standard",
+"i_mtl_wpn_t9_bp_ar_damage",
+"i_mtl_wpn_t9_bp_ar_fastfire",
+"i_mtl_wpn_t9_bp_ar_krig6",
+"i_mtl_wpn_t9_bp_ar_mercenary",
+"i_mtl_wpn_t9_bp_ar_mobility",
+"i_mtl_wpn_t9_bp_lmg_light",
+"i_mtl_wpn_t9_bp_loot_ar_fasthandling",
+"i_mtl_wpn_t9_bp_pistol_burst",
+"i_mtl_wpn_t9_bp_pistol_revolver",
+"i_mtl_wpn_t9_bp_pistol_semiauto",
+"i_mtl_wpn_t9_bp_shotgun_pump",
+"i_mtl_wpn_t9_bp_smg_burst",
+"i_mtl_wpn_t9_bp_smg_handling",
+"i_mtl_wpn_t9_bp_smg_heavy",
+"i_mtl_wpn_t9_combat_knife_american",
+"i_mtl_wpn_t9_grenade_launcher",
+"i_mtl_wpn_t9_knife_ballistic",
+"i_mtl_wpn_t9_launcher_freefire",
+"i_mtl_wpn_t9_launcher_standard",
+"i_mtl_wpn_t9_lmg_accurate",
+"i_mtl_wpn_t9_lmg_fastfire",
+"i_mtl_wpn_t9_lmg_light",
+"i_mtl_wpn_t9_lmg_slowfire",
+"i_mtl_wpn_t9_loot_ar_british",
+"i_mtl_wpn_t9_loot_ar_fasthandling",
+"i_mtl_wpn_t9_loot_ar_season6",
+"i_mtl_wpn_t9_loot_ar_slowfire",
+"i_mtl_wpn_t9_loot_ar_slowhandling",
+"i_mtl_wpn_t9_loot_ar_soviet",
+"i_mtl_wpn_t9_loot_lmg_fastfire",
+"i_mtl_wpn_t9_loot_nailgun",
+"i_mtl_wpn_t9_loot_pistol_fullauto",
+"i_mtl_wpn_t9_loot_pistol_shotgun",
+"i_mtl_wpn_t9_loot_shotgun_fullauto",
+"i_mtl_wpn_t9_loot_shotgun_leveraction",
+"i_mtl_wpn_t9_loot_smg_accurate",
+"i_mtl_wpn_t9_loot_smg_cqb",
+"i_mtl_wpn_t9_loot_smg_fastfire",
+"i_mtl_wpn_t9_loot_smg_flechette",
+"i_mtl_wpn_t9_loot_smg_lapa",
+"i_mtl_wpn_t9_loot_smg_semiauto",
+"i_mtl_wpn_t9_loot_smg_spray",
+"i_mtl_wpn_t9_loot_sniper_accurate",
+"i_mtl_wpn_t9_loot_sniper_cannon",
+"i_mtl_wpn_t9_loot_tr_fastburst",
+"i_mtl_wpn_t9_machete",
+"i_mtl_wpn_t9_melee_axe",
+"i_mtl_wpn_t9_melee_bat",
+"i_mtl_wpn_t9_melee_cane",
+"i_mtl_wpn_t9_melee_hammersickle_hammer",
+"i_mtl_wpn_t9_melee_hammersickle_sikle",
+"i_mtl_wpn_t9_melee_mace",
+"i_mtl_wpn_t9_melee_sais",
+"i_mtl_wpn_t9_melee_scythe",
+"i_mtl_wpn_t9_melee_shovel",
+"i_mtl_wpn_t9_melee_sledgehammer",
+"i_mtl_wpn_t9_melee_wakizashi",
+"i_mtl_wpn_t9_nailgun",
+"i_mtl_wpn_t9_pistol_burst",
+"i_mtl_wpn_t9_pistol_fullauto",
+"i_mtl_wpn_t9_pistol_revolver",
+"i_mtl_wpn_t9_pistol_semiauto",
+"i_mtl_wpn_t9_pistol_shotgun",
+"i_mtl_wpn_t9_shotgun_fullauto",
+"i_mtl_wpn_t9_shotgun_leveraction",
+"i_mtl_wpn_t9_shotgun_pump",
+"i_mtl_wpn_t9_shotgun_semiauto",
+"i_mtl_wpn_t9_smg_accurate",
+"i_mtl_wpn_t9_smg_burst",
+"i_mtl_wpn_t9_smg_capacity",
+"i_mtl_wpn_t9_smg_cqb",
+"i_mtl_wpn_t9_smg_fastfire",
+"i_mtl_wpn_t9_smg_flechette",
+"i_mtl_wpn_t9_smg_handling",
+"i_mtl_wpn_t9_smg_heavy",
+"i_mtl_wpn_t9_smg_lapa",
+"i_mtl_wpn_t9_smg_semiauto",
+"i_mtl_wpn_t9_smg_spray",
+"i_mtl_wpn_t9_smg_standard",
+"i_mtl_wpn_t9_sniper_accurate",
+"i_mtl_wpn_t9_sniper_cannon",
+"i_mtl_wpn_t9_sniper_powersemi",
+"i_mtl_wpn_t9_sniper_quickscope",
+"i_mtl_wpn_t9_sniper_standard",
+"i_mtl_wpn_t9_special_crossbow",
+"i_mtl_wpn_t9_tr_damagesemi",
+"i_mtl_wpn_t9_tr_fastburst",
+"i_mtl_wpn_t9_tr_longburst",
+"i_mtl_wpn_t9_tr_powerburst",
+"i_mtl_wpn_t9_tr_precisionsemi",
+"i_mtl_wpn_t9_zm_mega_barrel",
+"i_mtl_wpn_t9_zm_monkey",
+"i_mtl_wpn_t9_zm_raygun",
+"i_mtl_wpn_t9_zm_ray_rifle",
+"i_wpn_t9_ar_accurate",
+"i_wpn_t9_ar_british",
+"i_wpn_t9_ar_damage",
+"i_wpn_t9_ar_fastfire",
+"i_wpn_t9_ar_fasthandling",
+"i_wpn_t9_ar_krig6",
+"i_wpn_t9_ar_mercenary",
+"i_wpn_t9_ar_mobility",
+"i_wpn_t9_ar_season6",
+"i_wpn_t9_ar_slowfire",
+"i_wpn_t9_ar_slowhandling",
+"i_wpn_t9_ar_soviet",
+"i_wpn_t9_ar_standard",
+"i_wpn_t9_combat_knife_american",
+"i_wpn_t9_grenade_launcher",
+"i_wpn_t9_knife_ballistic",
+"i_wpn_t9_launcher_freefire",
+"i_wpn_t9_launcher_standard",
+"i_wpn_t9_lmg_accurate",
+"i_wpn_t9_lmg_fastfire",
+"i_wpn_t9_lmg_light",
+"i_wpn_t9_lmg_slowfire",
+"i_wpn_t9_loot_ar_british",
+"i_wpn_t9_loot_ar_fasthandling",
+"i_wpn_t9_loot_ar_season6",
+"i_wpn_t9_loot_ar_slowfire",
+"i_wpn_t9_loot_ar_slowhandling",
+"i_wpn_t9_loot_ar_soviet",
+"i_wpn_t9_loot_lmg_fastfire",
+"i_wpn_t9_loot_nailgun",
+"i_wpn_t9_loot_pistol_fullauto",
+"i_wpn_t9_loot_pistol_shotgun",
+"i_wpn_t9_loot_shotgun_fullauto",
+"i_wpn_t9_loot_shotgun_leveraction",
+"i_wpn_t9_loot_smg_accurate",
+"i_wpn_t9_loot_smg_cqb",
+"i_wpn_t9_loot_smg_fastfire",
+"i_wpn_t9_loot_smg_flechette",
+"i_wpn_t9_loot_smg_lapa",
+"i_wpn_t9_loot_smg_semiauto",
+"i_wpn_t9_loot_smg_spray",
+"i_wpn_t9_loot_sniper_accurate",
+"i_wpn_t9_loot_sniper_cannon",
+"i_wpn_t9_loot_tr_fastburst",
+"i_wpn_t9_machete",
+"i_wpn_t9_melee_axe",
+"i_wpn_t9_melee_bat",
+"i_wpn_t9_melee_cane",
+"i_wpn_t9_melee_hammersickle_hammer",
+"i_wpn_t9_melee_hammersickle_sikle",
+"i_wpn_t9_melee_mace",
+"i_wpn_t9_melee_sais",
+"i_wpn_t9_melee_scythe",
+"i_wpn_t9_melee_shovel",
+"i_wpn_t9_melee_sledgehammer",
+"i_wpn_t9_melee_wakizashi",
+"i_wpn_t9_nailgun",
+"i_wpn_t9_pistol_burst",
+"i_wpn_t9_pistol_fullauto",
+"i_wpn_t9_pistol_revolver",
+"i_wpn_t9_pistol_semiauto",
+"i_wpn_t9_pistol_shotgun",
+"i_wpn_t9_shotgun_fullauto",
+"i_wpn_t9_shotgun_leveraction",
+"i_wpn_t9_shotgun_pump",
+"i_wpn_t9_shotgun_semiauto",
+"i_wpn_t9_smg_accurate",
+"i_wpn_t9_smg_burst",
+"i_wpn_t9_smg_capacity",
+"i_wpn_t9_smg_cqb",
+"i_wpn_t9_smg_fastfire",
+"i_wpn_t9_smg_flechette",
+"i_wpn_t9_smg_handling",
+"i_wpn_t9_smg_heavy",
+"i_wpn_t9_smg_lapa",
+"i_wpn_t9_smg_semiauto",
+"i_wpn_t9_smg_spray",
+"i_wpn_t9_smg_standard",
+"i_wpn_t9_sniper_accurate",
+"i_wpn_t9_sniper_cannon",
+"i_wpn_t9_sniper_powersemi",
+"i_wpn_t9_sniper_quickscope",
+"i_wpn_t9_sniper_standard",
+"i_wpn_t9_special_crossbow",
+"i_wpn_t9_tr_damagesemi",
+"i_wpn_t9_tr_fastburst",
+"i_wpn_t9_tr_longburst",
+"i_wpn_t9_tr_powerburst",
+"i_wpn_t9_tr_precisionsemi",
+"i_wpn_t9_zm_mega_barrel",
+"i_wpn_t9_zm_monkey",
+"i_wpn_t9_zm_raygun",
+"i_wpn_t9_zm_ray_rifle",
+        };
+        string[] xImage = {
 "",
 "_a",
 "_c",
@@ -958,12 +1495,2296 @@ internal class FNV1A64
 "_v",
 "_xl",
 };
-        string[] xMaterial =
-{
+        string[] materialCheck = {
+// BO4 & CW Materials
+"",
+"ei/",
+"el/",
+"mc/",
+"mc/c_t7",
+"mc/c_t8",
+"mc/c_t9",
+"mc/i_mtl",
+"mc/i_mtl_mtl_mtl_veh_t7",
+"mc/i_mtl_mtl_mtl_veh_t8",
+"mc/i_mtl_mtl_mtl_veh_t9",
+"mc/i_mtl_mtl_veh_t7",
+"mc/i_mtl_mtl_veh_t8",
+"mc/i_mtl_mtl_veh_t9",
+"mc/i_mtl_veh_t7",
+"mc/i_mtl_veh_t8",
+"mc/i_mtl_veh_t9",
+"mc/i_p7",
+"mc/i_p8",
+"mc/i_p9",
+"mc/i_t7",
+"mc/i_t8",
+"mc/i_t9",
+"mc/i_veh",
+"mc/i_veh_t7",
+"mc/i_veh_t8",
+"mc/i_veh_t9",
+"mc/i_wpn_t7",
+"mc/i_wpn_t8",
+"mc/i_wpn_t9",
+"mc/mlt",
+"mc/mlt_mtl",
+"mc/mtl",
+"mc/mtl_c_t7",
+"mc/mtl_c_t8",
+"mc/mtl_c_t9",
+"mc/mtl_mlt",
+"mc/mtl_mtl",
+"mc/mtl_mtl_c_t7",
+"mc/mtl_mtl_c_t8",
+"mc/mtl_mtl_c_t9",
+"mc/mtl_mtl_mtl",
+"mc/mtl_mtl_mtl_c_t7",
+"mc/mtl_mtl_mtl_c_t8",
+"mc/mtl_mtl_mtl_c_t9",
+"mc/mtl_mtl_mtl_p7",
+"mc/mtl_mtl_mtl_p8",
+"mc/mtl_mtl_mtl_p9",
+"mc/mtl_mtl_mtl_t7",
+"mc/mtl_mtl_mtl_t8",
+"mc/mtl_mtl_mtl_t9",
+"mc/mtl_mtl_p7",
+"mc/mtl_mtl_p8",
+"mc/mtl_mtl_p9",
+"mc/mtl_mtl_t7",
+"mc/mtl_mtl_t8",
+"mc/mtl_mtl_t9",
+"mc/mtl_p7",
+"mc/mtl_p8",
+"mc/mtl_p9",
+"mc/mtl_t7",
+"mc/mtl_t8",
+"mc/mtl_t9",
+"mcs/",
+"vd/",
+"vdd/",
+"wc/",
+};
+        string[] xMaterial = {
 "",
 };
-        string[] xModel =
-{
+        string[] modelCheck = {
+// CW Operator Models & Skins
+// BO4 / CW Weapon Models & Blueprints
+// Rising Tide
+// ABR 223
+// Hades
+// Outlaw
+// Escargot
+// Essex_Model 07
+// Hitchcock_M9
+// Welling
+// Death of Orion
+// Kraken
+"",
+"c_t9_aml_komodo_dragon",
+"c_t9_aml_rabbit",
+"c_t9_aml_rottweiler",
+"c_t9_aml_snow_leopard",
+"c_t9_base_female_nude",
+"c_t9_base_male_nude_2",
+"c_t9_base_male_nude_buff",
+"c_t9_cp_rus_pl_f_agent_global_infil_combat",
+"c_t9_cp_rus_pl_f_agent_hub_infil",
+"c_t9_cp_rus_pl_f_agent_nam_infil_combat",
+"c_t9_cp_rus_pl_m_agent_global_infil_combat",
+"c_t9_cp_rus_pl_m_agent_global_undrcvr_civ",
+"c_t9_cp_rus_pl_m_agent_hub_infil_combat",
+"c_t9_cp_usa_pl_mason_infil_takedown",
+"c_t9_cp_usa_pl_mason_yam_winter",
+"c_t9_cub_pl_dgi_barrio",
+"c_t9_cub_pl_dgi_bongo",
+"c_t9_cub_pl_dgi_brawler",
+"c_t9_cub_pl_dgi_commando",
+"c_t9_cub_pl_dgi_el_jefe",
+"c_t9_cub_pl_dgi_flick",
+"c_t9_cub_pl_dgi_general",
+"c_t9_cub_pl_dgi_havana",
+"c_t9_cub_pl_dgi_hitman",
+"c_t9_cub_pl_dgi_infiltration",
+"c_t9_cub_pl_dgi_jack",
+"c_t9_cub_pl_dgi_jack_ms",
+"c_t9_cub_pl_dgi_jack_pc",
+"c_t9_cub_pl_dgi_jack_sy",
+"c_t9_cub_pl_dgi_lucha",
+"c_t9_cub_pl_dgi_mechanic",
+"c_t9_cub_pl_dgi_rebel_leader",
+"c_t9_cub_pl_dgi_sicario",
+"c_t9_cub_pl_dgi_slasher",
+"c_t9_cub_pl_dgi_tropas_ms",
+"c_t9_cub_pl_dgi_tropas_pc",
+"c_t9_cub_pl_dgi_tropas_sy",
+"c_t9_cub_pl_dgi_warlord",
+"c_t9_eg_pl_quicksand",
+"c_t9_eg_pl_quicksand_khopesh",
+"c_t9_eg_pl_quicksand_slither",
+"c_t9_esp_pl_goe_bomber",
+"c_t9_esp_pl_goe_bomber_scrapmetal",
+"c_t9_fin_pl_wraith",
+"c_t9_fin_pl_wraith_automaton",
+"c_t9_fin_pl_wraith_burnout",
+"c_t9_fin_pl_wraith_freya",
+"c_t9_fin_pl_wraith_havoc",
+"c_t9_fin_pl_wraith_white_queen",
+"c_t9_fra_pl_dgse_amped",
+"c_t9_fra_pl_dgse_arc",
+"c_t9_fra_pl_dgse_dakar",
+"c_t9_fra_pl_dgse_gign",
+"c_t9_fra_pl_dgse_infiltration",
+"c_t9_fra_pl_dgse_mademoiselle",
+"c_t9_gen_pl_esports_female",
+"c_t9_gen_pl_esports_female_ms",
+"c_t9_gen_pl_esports_female_pc",
+"c_t9_gen_pl_esports_female_sy",
+"c_t9_gen_pl_esports_male_ms",
+"c_t9_gen_pl_esports_male_pc",
+"c_t9_gen_pl_esports_male_sy",
+"c_t9_gen_pl_esports_watch_empire_ms",
+"c_t9_gen_pl_esports_watch_empire_pc",
+"c_t9_gen_pl_esports_watch_empire_sy",
+"c_t9_gen_pl_esports_watch_faze_ms",
+"c_t9_gen_pl_esports_watch_faze_pc",
+"c_t9_gen_pl_esports_watch_faze_sy",
+"c_t9_gen_pl_esports_watch_guerillas_ms",
+"c_t9_gen_pl_esports_watch_guerillas_pc",
+"c_t9_gen_pl_esports_watch_guerillas_sy",
+"c_t9_gen_pl_esports_watch_legion_ms",
+"c_t9_gen_pl_esports_watch_legion_pc",
+"c_t9_gen_pl_esports_watch_legion_sy",
+"c_t9_gen_pl_esports_watch_mutineers_ms",
+"c_t9_gen_pl_esports_watch_mutineers_pc",
+"c_t9_gen_pl_esports_watch_mutineers_sy",
+"c_t9_gen_pl_esports_watch_optic_ms",
+"c_t9_gen_pl_esports_watch_optic_pc",
+"c_t9_gen_pl_esports_watch_optic_sy",
+"c_t9_gen_pl_esports_watch_rokkr_ms",
+"c_t9_gen_pl_esports_watch_rokkr_pc",
+"c_t9_gen_pl_esports_watch_rokkr_sy",
+"c_t9_gen_pl_esports_watch_royalravens_ms",
+"c_t9_gen_pl_esports_watch_royalravens_pc",
+"c_t9_gen_pl_esports_watch_royalravens_sy",
+"c_t9_gen_pl_esports_watch_subliners_ms",
+"c_t9_gen_pl_esports_watch_subliners_pc",
+"c_t9_gen_pl_esports_watch_subliners_sy",
+"c_t9_gen_pl_esports_watch_surge_ms",
+"c_t9_gen_pl_esports_watch_surge_pc",
+"c_t9_gen_pl_esports_watch_surge_sy",
+"c_t9_gen_pl_esports_watch_thieves_ms",
+"c_t9_gen_pl_esports_watch_thieves_pc",
+"c_t9_gen_pl_esports_watch_thieves_sy",
+"c_t9_gen_pl_esports_watch_ultra_ms",
+"c_t9_gen_pl_esports_watch_ultra_pc",
+"c_t9_gen_pl_esports_watch_ultra_sy",
+"c_t9_gen_pl_starter1",
+"c_t9_gen_pl_starter1_hunter_dash",
+"c_t9_gen_pl_starter1_hunter_eagleeye",
+"c_t9_gen_pl_starter1_hunter_frontline",
+"c_t9_gen_pl_starter1_hunter_inferno",
+"c_t9_gen_pl_starter1_hunter_killer",
+"c_t9_gen_pl_starter1_hunter_rescue",
+"c_t9_gen_pl_starter2",
+"c_t9_gen_pl_starter2_vargas_bacano",
+"c_t9_gen_pl_starter2_vargas_bull_bull_ms",
+"c_t9_gen_pl_starter2_vargas_bull_bull_pc",
+"c_t9_gen_pl_starter2_vargas_bull_bull_sy",
+"c_t9_gen_pl_starter2_vargas_bunker",
+"c_t9_gen_pl_starter2_vargas_finishline",
+"c_t9_gen_pl_starter2_vargas_major",
+"c_t9_gen_pl_starter2_vargas_steel",
+"c_t9_gen_pl_starter2_vargas_stovepipe",
+"c_t9_gen_pl_starter3",
+"c_t9_gen_pl_starter3_stone_ash",
+"c_t9_gen_pl_starter3_stone_bollocks_ms",
+"c_t9_gen_pl_starter3_stone_bollocks_pc",
+"c_t9_gen_pl_starter3_stone_bollocks_sy",
+"c_t9_gen_pl_starter3_stone_bugscreen",
+"c_t9_gen_pl_starter3_stone_carver",
+"c_t9_gen_pl_starter3_stone_infestation",
+"c_t9_gen_pl_starter3_stone_insurgent",
+"c_t9_gen_pl_starter3_stone_jammy",
+"c_t9_gen_pl_starter3_stone_ripper",
+"c_t9_gen_pl_starter3_stone_seige",
+"c_t9_gen_pl_starter3_stone_squelch",
+"c_t9_gen_pl_starter3_stone_stoned",
+"c_t9_gen_pl_starter3_stone_storefront",
+"c_t9_gen_pl_starter4",
+"c_t9_gen_pl_starter4_song_backflip",
+"c_t9_gen_pl_starter4_song_bloom",
+"c_t9_gen_pl_starter4_song_busted",
+"c_t9_gen_pl_starter4_song_counter",
+"c_t9_gen_pl_starter4_song_dagger",
+"c_t9_gen_pl_starter4_song_flare",
+"c_t9_gen_pl_starter4_song_mechanic_ms",
+"c_t9_gen_pl_starter4_song_mechanic_pc",
+"c_t9_gen_pl_starter4_song_mechanic_sy",
+"c_t9_gen_pl_starter4_song_observer",
+"c_t9_gen_pl_starter4_song_tiger",
+"c_t9_gen_pl_starter5",
+"c_t9_gen_pl_starter5_powers_cameroon",
+"c_t9_gen_pl_starter5_powers_desert",
+"c_t9_gen_pl_starter5_powers_driver",
+"c_t9_gen_pl_starter5_powers_dust",
+"c_t9_gen_pl_starter5_powers_ffl",
+"c_t9_gen_pl_starter5_powers_gun",
+"c_t9_gen_pl_starter5_powers_stealth",
+"c_t9_gen_pl_starter5_powers_swift",
+"c_t9_ger_pl_maxis_berlin",
+"c_t9_ger_pl_maxis_bride",
+"c_t9_ger_pl_maxis_dark",
+"c_t9_ger_pl_maxis_lumens",
+"c_t9_ger_pl_maxis_phantom",
+"c_t9_ger_pl_maxis_scythe",
+"c_t9_ger_pl_maxis_traveler",
+"c_t9_ger_pl_west_bomber",
+"c_t9_ger_pl_west_carnage",
+"c_t9_ger_pl_west_gothic",
+"c_t9_ger_pl_west_gsg9_3",
+"c_t9_ger_pl_west_gsg9_hardhat",
+"c_t9_ger_pl_west_infiltration",
+"c_t9_ger_pl_west_judge_dredd",
+"c_t9_ger_pl_west_klown",
+"c_t9_ger_pl_west_nightops",
+"c_t9_ger_pl_west_paratrooper",
+"c_t9_ger_pl_west_patrol",
+"c_t9_ger_pl_west_police",
+"c_t9_ger_pl_west_professor",
+"c_t9_ger_pl_west_racer",
+"c_t9_ger_pl_west_raider",
+"c_t9_ger_pl_west_stalker",
+"c_t9_ger_pl_west_stealth",
+"c_t9_ger_pl_west_stronghold",
+"c_t9_ger_pl_west_swat",
+"c_t9_ger_pl_west_tagger_ii",
+"c_t9_ger_pl_west_winter",
+"c_t9_isr_pl_lazar_idf",
+"c_t9_jpn_pl_kitsune",
+"c_t9_jpn_pl_kitsune_biteme",
+"c_t9_jpn_pl_kitsune_boss",
+"c_t9_jpn_pl_kitsune_ultra",
+"c_t9_jpn_pl_kitsune_yokai",
+"c_t9_lao_pl_serpent",
+"c_t9_lao_pl_serpent_haggler",
+"c_t9_lao_pl_serpent_hollow",
+"c_t9_lao_pl_serpent_overgrowth",
+"c_t9_lao_pl_serpent_shadow",
+"c_t9_lao_pl_serpent_warlord",
+"c_t9_nic_pl_smuggler",
+"c_t9_nic_pl_smuggler_mural",
+"c_t9_nic_pl_smuggler_stinger",
+"c_t9_nic_pl_smuggler_whiskey",
+"c_t9_pl_f_agent_global_undrcvr_civ",
+"c_t9_pl_f_agent_global_undrcvr_civ_asian",
+"c_t9_pl_f_agent_global_undrcvr_civ_asian2",
+"c_t9_pl_f_agent_global_undrcvr_civ_black",
+"c_t9_pl_f_agent_global_undrcvr_civ_black2",
+"c_t9_pl_f_agent_global_undrcvr_civ_mideast",
+"c_t9_pl_f_agent_global_undrcvr_civ_mideast2",
+"c_t9_pl_f_agent_global_undrcvr_civ_white",
+"c_t9_pl_f_agent_global_undrcvr_civ_white2",
+"c_t9_pl_f_agent_kgb_exfil_asian",
+"c_t9_pl_f_agent_kgb_exfil_asian2",
+"c_t9_pl_f_agent_kgb_exfil_black",
+"c_t9_pl_f_agent_kgb_exfil_black2",
+"c_t9_pl_f_agent_kgb_exfil_mideast",
+"c_t9_pl_f_agent_kgb_exfil_mideast2",
+"c_t9_pl_f_agent_kgb_exfil_white",
+"c_t9_pl_f_agent_kgb_exfil_white2",
+"c_t9_pl_f_agent_kgb_undrcvr_asian",
+"c_t9_pl_f_agent_kgb_undrcvr_asian2",
+"c_t9_pl_f_agent_kgb_undrcvr_black",
+"c_t9_pl_f_agent_kgb_undrcvr_black2",
+"c_t9_pl_f_agent_kgb_undrcvr_mideast",
+"c_t9_pl_f_agent_kgb_undrcvr_mideast2",
+"c_t9_pl_f_agent_kgb_undrcvr_white",
+"c_t9_pl_f_agent_kgb_undrcvr_white2",
+"c_t9_pl_m_agent_kgb_officer_exfil",
+"c_t9_pl_m_agent_kgb_officer_exfil_asian",
+"c_t9_pl_m_agent_kgb_officer_exfil_asian2",
+"c_t9_pl_m_agent_kgb_officer_exfil_black",
+"c_t9_pl_m_agent_kgb_officer_exfil_black2",
+"c_t9_pl_m_agent_kgb_officer_exfil_body_asian",
+"c_t9_pl_m_agent_kgb_officer_exfil_body_asian2",
+"c_t9_pl_m_agent_kgb_officer_exfil_body_black",
+"c_t9_pl_m_agent_kgb_officer_exfil_body_black2",
+"c_t9_pl_m_agent_kgb_officer_exfil_body_mideast",
+"c_t9_pl_m_agent_kgb_officer_exfil_body_mideast2",
+"c_t9_pl_m_agent_kgb_officer_exfil_body_white",
+"c_t9_pl_m_agent_kgb_officer_exfil_body_white2",
+"c_t9_pl_m_agent_kgb_officer_exfil_mideast",
+"c_t9_pl_m_agent_kgb_officer_exfil_mideast2",
+"c_t9_pl_m_agent_kgb_officer_exfil_white",
+"c_t9_pl_m_agent_kgb_officer_exfil_white2",
+"c_t9_pl_m_agent_undcvr_kgb_guard",
+"c_t9_pl_m_agent_undcvr_kgb_guard_asian",
+"c_t9_pl_m_agent_undcvr_kgb_guard_asian2",
+"c_t9_pl_m_agent_undcvr_kgb_guard_black",
+"c_t9_pl_m_agent_undcvr_kgb_guard_black2",
+"c_t9_pl_m_agent_undcvr_kgb_guard_mideast",
+"c_t9_pl_m_agent_undcvr_kgb_guard_mideast2",
+"c_t9_pl_m_agent_undcvr_kgb_guard_white",
+"c_t9_pl_m_agent_undcvr_kgb_guard_white2",
+"c_t9_pl_m_agent_undcvr_takedown",
+"c_t9_pl_m_agent_undcvr_takedown_body",
+"c_t9_pl_mason_infil_stealth_viewmodel",
+"c_t9_rus_pl_kgb_assassin",
+"c_t9_rus_pl_kgb_breakout",
+"c_t9_rus_pl_kgb_bunny",
+"c_t9_rus_pl_kgb_burglar",
+"c_t9_rus_pl_kgb_funnybone",
+"c_t9_rus_pl_kgb_ghost",
+"c_t9_rus_pl_kgb_gunshow",
+"c_t9_rus_pl_kgb_hash",
+"c_t9_rus_pl_kgb_infantry",
+"c_t9_rus_pl_kgb_infiltration",
+"c_t9_rus_pl_kgb_lab",
+"c_t9_rus_pl_kgb_mach1_ms",
+"c_t9_rus_pl_kgb_mach1_pc",
+"c_t9_rus_pl_kgb_mach1_sy",
+"c_t9_rus_pl_kgb_poison",
+"c_t9_rus_pl_kgb_punk",
+"c_t9_rus_pl_kgb_shadow",
+"c_t9_rus_pl_kgb_smoker",
+"c_t9_rus_pl_kgb_spyglass",
+"c_t9_rus_pl_kgb_tacticalgoth",
+"c_t9_rus_pl_kgb_thekid",
+"c_t9_rus_pl_kgb_urban",
+"c_t9_rus_pl_kgb_valentines",
+"c_t9_rus_pl_kgb_winter",
+"c_t9_rus_pl_mason_winter_yam",
+"c_t9_rus_pl_spetsnaz_afghan_sniper",
+"c_t9_rus_pl_spetsnaz_chernobyl",
+"c_t9_rus_pl_spetsnaz_grudge",
+"c_t9_rus_pl_spetsnaz_infiltration",
+"c_t9_rus_pl_spetsnaz_melted",
+"c_t9_rus_pl_stitch_01",
+"c_t9_rus_pl_stitch_brute",
+"c_t9_rus_pl_stitch_cultist",
+"c_t9_rus_pl_stitch_cultist_ms",
+"c_t9_rus_pl_stitch_cultist_pc",
+"c_t9_rus_pl_stitch_cultist_sy",
+"c_t9_rus_pl_stitch_echo",
+"c_t9_rus_pl_stitch_manga",
+"c_t9_rus_pl_stitch_prisoner",
+"c_t9_rus_pl_stitch_torn",
+"c_t9_sa_pl_deathstalker",
+"c_t9_sa_pl_deathstalker_bearclaw",
+"c_t9_sa_pl_deathstalker_bearclaw_ms",
+"c_t9_sa_pl_deathstalker_bearclaw_pc",
+"c_t9_sa_pl_deathstalker_bearclaw_sy",
+"c_t9_sa_pl_deathstalker_snake",
+"c_t9_uk_pl_kingsley",
+"c_t9_uk_pl_mi6_aftermath",
+"c_t9_uk_pl_mi6_badblood",
+"c_t9_uk_pl_mi6_checker",
+"c_t9_uk_pl_mi6_clandestine",
+"c_t9_uk_pl_mi6_coal",
+"c_t9_uk_pl_mi6_derby",
+"c_t9_uk_pl_mi6_doubleagent",
+"c_t9_uk_pl_mi6_dystopia",
+"c_t9_uk_pl_mi6_fob",
+"c_t9_uk_pl_mi6_football",
+"c_t9_uk_pl_mi6_glam",
+"c_t9_uk_pl_mi6_guard",
+"c_t9_uk_pl_mi6_handler",
+"c_t9_uk_pl_mi6_heist",
+"c_t9_uk_pl_mi6_ignite",
+"c_t9_uk_pl_mi6_infiltration",
+"c_t9_uk_pl_mi6_napalm",
+"c_t9_uk_pl_mi6_racer",
+"c_t9_uk_pl_mi6_scorch",
+"c_t9_uk_pl_mi6_sis",
+"c_t9_uk_pl_mi6_skyhook_ms",
+"c_t9_uk_pl_mi6_skyhook_pc",
+"c_t9_uk_pl_mi6_skyhook_sy",
+"c_t9_uk_pl_mi6_snapshot",
+"c_t9_uk_pl_mi6_standoff",
+"c_t9_uk_pl_mi6_survivor",
+"c_t9_uk_pl_mi6_tagger",
+"c_t9_uk_pl_mi6_uncharted",
+"c_t9_uk_pl_mi6_xray",
+"c_t9_uk_pl_price",
+"c_t9_uk_pl_sas_blackknight",
+"c_t9_uk_pl_sas_gridlock",
+"c_t9_usa_pl_adler_airborne",
+"c_t9_usa_pl_adler_buoy",
+"c_t9_usa_pl_adler_control",
+"c_t9_usa_pl_adler_detective",
+"c_t9_usa_pl_adler_detective_ms",
+"c_t9_usa_pl_adler_detective_pc",
+"c_t9_usa_pl_adler_detective_sy",
+"c_t9_usa_pl_adler_game_fuel",
+"c_t9_usa_pl_adler_gator",
+"c_t9_usa_pl_adler_gunslinger",
+"c_t9_usa_pl_adler_hostage",
+"c_t9_usa_pl_adler_infiltration",
+"c_t9_usa_pl_adler_lancer",
+"c_t9_usa_pl_adler_miami",
+"c_t9_usa_pl_adler_pressed",
+"c_t9_usa_pl_adler_ranger",
+"c_t9_usa_pl_adler_red",
+"c_t9_usa_pl_adler_renegade",
+"c_t9_usa_pl_adler_slayer",
+"c_t9_usa_pl_adler_tropic",
+"c_t9_usa_pl_adler_vbss",
+"c_t9_usa_pl_adler_wire",
+"c_t9_usa_pl_bulldozer_01",
+"c_t9_usa_pl_bulldozer_boom",
+"c_t9_usa_pl_bulldozer_forged",
+"c_t9_usa_pl_bulldozer_hawk",
+"c_t9_usa_pl_bulldozer_panda",
+"c_t9_usa_pl_bulldozer_toxin",
+"c_t9_usa_pl_cia_adler_bloodhound",
+"c_t9_usa_pl_cia_adler_traveler",
+"c_t9_usa_pl_cia_advisor",
+"c_t9_usa_pl_cia_agent",
+"c_t9_usa_pl_cia_big_joke_3",
+"c_t9_usa_pl_cia_boss",
+"c_t9_usa_pl_cia_captain",
+"c_t9_usa_pl_cia_climber",
+"c_t9_usa_pl_cia_commando",
+"c_t9_usa_pl_cia_covert",
+"c_t9_usa_pl_cia_grit",
+"c_t9_usa_pl_cia_infiltration",
+"c_t9_usa_pl_cia_kick",
+"c_t9_usa_pl_cia_logger",
+"c_t9_usa_pl_cia_macv",
+"c_t9_usa_pl_cia_macv_code_ms",
+"c_t9_usa_pl_cia_macv_code_pc",
+"c_t9_usa_pl_cia_macv_code_sy",
+"c_t9_usa_pl_cia_penumbra_ms",
+"c_t9_usa_pl_cia_penumbra_pc",
+"c_t9_usa_pl_cia_penumbra_sy",
+"c_t9_usa_pl_cia_regulator",
+"c_t9_usa_pl_cia_snatch",
+"c_t9_usa_pl_cia_sogman",
+"c_t9_usa_pl_cia_tee",
+"c_t9_usa_pl_deltaforce_brutalist",
+"c_t9_usa_pl_deltaforce_brutalist_ms",
+"c_t9_usa_pl_deltaforce_brutalist_pc",
+"c_t9_usa_pl_deltaforce_brutalist_sy",
+"c_t9_usa_pl_deltaforce_cyclone",
+"c_t9_usa_pl_deltaforce_dynamite",
+"c_t9_usa_pl_deltaforce_halo",
+"c_t9_usa_pl_deltaforce_infiltration",
+"c_t9_usa_pl_deltaforce_infiltration_body",
+"c_t9_usa_pl_deltaforce_jungle_warfare",
+"c_t9_usa_pl_deltaforce_urgentfury",
+"c_t9_usa_pl_ghostface",
+"c_t9_usa_pl_hudson",
+"c_t9_usa_pl_hudson_hazmat_ms",
+"c_t9_usa_pl_hudson_hazmat_pc",
+"c_t9_usa_pl_hudson_hazmat_sy",
+"c_t9_usa_pl_hudson_rock",
+"c_t9_usa_pl_mason",
+"c_t9_usa_pl_mason_ultra",
+"c_t9_usa_pl_masongame",
+"c_t9_usa_pl_mcclane",
+"c_t9_usa_pl_navyseal_air_ms",
+"c_t9_usa_pl_navyseal_air_pc",
+"c_t9_usa_pl_navyseal_air_sy",
+"c_t9_usa_pl_navyseal_blue_devil",
+"c_t9_usa_pl_navyseal_breaker",
+"c_t9_usa_pl_navyseal_business",
+"c_t9_usa_pl_navyseal_clown",
+"c_t9_usa_pl_navyseal_dissident",
+"c_t9_usa_pl_navyseal_endurance_ms",
+"c_t9_usa_pl_navyseal_endurance_pc",
+"c_t9_usa_pl_navyseal_endurance_sy",
+"c_t9_usa_pl_navyseal_frank",
+"c_t9_usa_pl_navyseal_frogman",
+"c_t9_usa_pl_navyseal_gigawatt",
+"c_t9_usa_pl_navyseal_grip",
+"c_t9_usa_pl_navyseal_grunge",
+"c_t9_usa_pl_navyseal_hopper",
+"c_t9_usa_pl_navyseal_hunter",
+"c_t9_usa_pl_navyseal_infiltration",
+"c_t9_usa_pl_navyseal_knucklehead",
+"c_t9_usa_pl_navyseal_land_ms",
+"c_t9_usa_pl_navyseal_land_pc",
+"c_t9_usa_pl_navyseal_land_sy",
+"c_t9_usa_pl_navyseal_maverick",
+"c_t9_usa_pl_navyseal_ringleader",
+"c_t9_usa_pl_navyseal_sea_ms",
+"c_t9_usa_pl_navyseal_sea_pc",
+"c_t9_usa_pl_navyseal_sea_sy",
+"c_t9_usa_pl_navyseal_slugger",
+"c_t9_usa_pl_navyseal_sniper",
+"c_t9_usa_pl_navyseal_solitude",
+"c_t9_usa_pl_navyseal_strike",
+"c_t9_usa_pl_navyseal_wolf",
+"c_t9_usa_pl_rambo",
+"c_t9_usa_pl_spy_female_investigator",
+"c_t9_usa_pl_spy_investigator",
+"c_t9_usa_pl_surge",
+"c_t9_usa_pl_surge_meta",
+"c_t9_usa_pl_vip",
+"c_t9_usa_pl_vip2_axis_side",
+"c_t9_usa_pl_weaver_aftermath",
+"c_t9_usa_pl_weaver_cosmodrome",
+"c_t9_usa_pl_weaver_rebirth",
+"c_t9_usa_pl_weaver_sonsoforda",
+"c_t9_usa_pl_woods_biker",
+"c_t9_usa_pl_woods_conquer",
+"c_t9_usa_pl_woods_dapper",
+"c_t9_usa_pl_woods_dope",
+"c_t9_usa_pl_woods_eagleclaw",
+"c_t9_usa_pl_woods_eliminator",
+"c_t9_usa_pl_woods_fisherman",
+"c_t9_usa_pl_woods_haha",
+"c_t9_usa_pl_woods_holidaywoods",
+"c_t9_usa_pl_woods_infiltration",
+"c_t9_usa_pl_woods_mellow",
+"c_t9_usa_pl_woods_payback",
+"c_t9_usa_pl_woods_pow",
+"c_t9_usa_pl_woods_pow_body",
+"c_t9_usa_pl_woods_rogue",
+"c_t9_usa_pl_woods_sandstorm",
+"c_t9_usa_pl_woods_slaughter",
+"c_t9_usa_pl_woods_swamp",
+"c_t9_usa_pl_woods_trucker",
+"c_t9_usa_pl_woods_whirlwind",
+"wpn_t8_ar_accurate",
+"wpn_t8_ar_fastfire",
+"wpn_t8_ar_galil",
+"wpn_t8_ar_heavy",
+"wpn_t8_ar_k57",
+"wpn_t8_ar_stealth",
+"wpn_t8_crossbow_special",
+"wpn_t8_knife_combat",
+"wpn_t8_launcher_standard",
+"wpn_t8_lmg_plr",
+"wpn_t8_lmg_titan",
+"wpn_t8_loot_ar_an94",
+"wpn_t8_loot_ar_double_barrel",
+"wpn_t8_loot_ar_peacekeeper",
+"wpn_t8_loot_ar_standard",
+"wpn_t8_loot_knife_ballistic",
+"wpn_t8_loot_knife_ballistic_dw",
+"wpn_t8_loot_knife_ballistic_karambit_dw",
+"wpn_t8_loot_lmg_mk48",
+"wpn_t8_loot_melee_action_figure",
+"wpn_t8_loot_melee_amulet",
+"wpn_t8_loot_melee_coinbag",
+"wpn_t8_loot_melee_gift_axe",
+"wpn_t8_loot_melee_hammer_demo",
+"wpn_t8_loot_melee_polynesian_club",
+"wpn_t8_loot_melee_slay_bell",
+"wpn_t8_loot_melee_stop_sign",
+"wpn_t8_loot_melee_zombie_arm",
+"wpn_t8_loot_pistol_auto",
+"wpn_t8_loot_shotgun_fullauto",
+"wpn_t8_loot_shotgun_prec",
+"wpn_t8_loot_smg_fastburst",
+"wpn_t8_loot_smg_folding",
+"wpn_t8_loot_smg_minigun",
+"wpn_t8_loot_smg_vmp",
+"wpn_t8_loot_sniper_locus",
+"wpn_t8_loot_sniper_mini14",
+"wpn_t8_loot_tac_rifle_damageburst",
+"wpn_t8_loot_tac_rifle_flechette",
+"wpn_t8_pistol_burst",
+"wpn_t8_pistol_revolver",
+"wpn_t8_pistol_standard",
+"wpn_t8_shotgun_pump",
+"wpn_t8_shotgun_semi",
+"wpn_t8_smg_accurate",
+"wpn_t8_smg_capacity",
+"wpn_t8_smg_fastfire",
+"wpn_t8_smg_handling",
+"wpn_t8_smg_mp9",
+"wpn_t8_sniper_koshka",
+"wpn_t8_sniper_power_semi",
+"wpn_t8_sniper_semiauto",
+"wpn_t8_sniper_vanguard",
+"wpn_t8_sumbarbrandr",
+"wpn_t8_tac_rifle_surgeon",
+"wpn_t8_tac_rifle_swordfish",
+"wpn_t8_zm_akud",
+"wpn_t8_zm_akud_scope",
+"wpn_t8_zm_blundergat",
+"wpn_t8_zm_blundergat_acid",
+"wpn_t8_zm_blundergat_fire",
+"wpn_t8_zm_crossbow_impaler",
+"wpn_t8_zm_dg1",
+"wpn_t8_zm_dg2",
+"wpn_t8_zm_freeze_gun",
+"wpn_t8_zm_galvaknuckles",
+"wpn_t8_zm_goldenknife",
+"wpn_t8_zm_hand_charon",
+"wpn_t8_zm_hand_gaia",
+"wpn_t8_zm_hand_hemera",
+"wpn_t8_zm_hand_ouranos",
+"wpn_t8_zm_homunculus",
+"wpn_t8_zm_knife_bowie",
+"wpn_t8_zm_knife_stake",
+"wpn_t8_zm_lmg_mg08",
+"wpn_t8_zm_melee_chakram",
+"wpn_t8_zm_melee_dw_hand_cannon",
+"wpn_t8_zm_melee_hammer",
+"wpn_t8_zm_melee_staff_ra",
+"wpn_t8_zm_melee_sword",
+"wpn_t8_zm_monkey_bomb",
+"wpn_t8_zm_mp40",
+"wpn_t8_zm_nesting_dolls",
+"wpn_t8_zm_raygun",
+"wpn_t8_zm_raygun_dw",
+"wpn_t8_zm_raygun_mk2",
+"wpn_t8_zm_raygun_upg",
+"wpn_t8_zm_red_shield",
+"wpn_t8_zm_red_spear",
+"wpn_t8_zm_shotgun_trenchgun",
+"wpn_t8_zm_smg_thompson",
+"wpn_t8_zm_snowball",
+"wpn_t8_zm_snowball_yellow",
+"wpn_t8_zm_spknifeork",
+"wpn_t8_zm_spoon",
+"wpn_t8_zm_spork",
+"wpn_t8_zm_thundergun",
+"wpn_t8_zm_tomahawk",
+"wpn_t8_zm_tundra_gun",
+"wpn_t9_ar_damage",
+"wpn_t9_ar_damage_8bit",
+"wpn_t9_ar_damage_achill",
+"wpn_t9_ar_damage_animedark",
+"wpn_t9_ar_damage_arvnr1",
+"wpn_t9_ar_damage_batts",
+"wpn_t9_ar_damage_catbud",
+"wpn_t9_ar_damage_champs_ms",
+"wpn_t9_ar_damage_champs_pc",
+"wpn_t9_ar_damage_champs_sy",
+"wpn_t9_ar_damage_checkmate",
+"wpn_t9_ar_damage_chrome",
+"wpn_t9_ar_damage_cubarevo",
+"wpn_t9_ar_damage_czar",
+"wpn_t9_ar_damage_evil",
+"wpn_t9_ar_damage_go_bananas",
+"wpn_t9_ar_damage_grey_ranger",
+"wpn_t9_ar_damage_halloween",
+"wpn_t9_ar_damage_heartbreak",
+"wpn_t9_ar_damage_modernp",
+"wpn_t9_ar_damage_moonshine",
+"wpn_t9_ar_damage_motocross",
+"wpn_t9_ar_damage_nightf",
+"wpn_t9_ar_damage_ole",
+"wpn_t9_ar_damage_penumbra",
+"wpn_t9_ar_damage_psa",
+"wpn_t9_ar_damage_ram",
+"wpn_t9_ar_damage_resist",
+"wpn_t9_ar_damage_roadwar",
+"wpn_t9_ar_damage_s05challenge_sy",
+"wpn_t9_ar_damage_strace",
+"wpn_t9_ar_damage_tchern",
+"wpn_t9_ar_damage_ufo",
+"wpn_t9_ar_damage_wargames",
+"wpn_t9_ar_damage_yokai",
+"wpn_t9_ar_damagenificent",
+"wpn_t9_ar_fastfire",
+"wpn_t9_ar_fastfire_animeskater",
+"wpn_t9_ar_fastfire_arcade",
+"wpn_t9_ar_fastfire_bowling",
+"wpn_t9_ar_fastfire_bwarrior_ms",
+"wpn_t9_ar_fastfire_bwarrior_pc",
+"wpn_t9_ar_fastfire_bwarrior_sy",
+"wpn_t9_ar_fastfire_dbreath",
+"wpn_t9_ar_fastfire_dynasty",
+"wpn_t9_ar_fastfire_egyptian",
+"wpn_t9_ar_fastfire_guerilla",
+"wpn_t9_ar_fastfire_hcover",
+"wpn_t9_ar_fastfire_hollywood",
+"wpn_t9_ar_fastfire_jet",
+"wpn_t9_ar_fastfire_junglewarfare",
+"wpn_t9_ar_fastfire_kwanzaa",
+"wpn_t9_ar_fastfire_legion_sy",
+"wpn_t9_ar_fastfire_leprecon",
+"wpn_t9_ar_fastfire_lifesaver",
+"wpn_t9_ar_fastfire_maneater",
+"wpn_t9_ar_fastfire_medical",
+"wpn_t9_ar_fastfire_ninja",
+"wpn_t9_ar_fastfire_nugget",
+"wpn_t9_ar_fastfire_opulence",
+"wpn_t9_ar_fastfire_reactor",
+"wpn_t9_ar_fastfire_renegade",
+"wpn_t9_ar_fastfire_smoulder",
+"wpn_t9_ar_fastfire_spacehead",
+"wpn_t9_ar_fastfire_stamp",
+"wpn_t9_ar_fastfire_ultrafunk",
+"wpn_t9_ar_fastfire_wsow_ms",
+"wpn_t9_ar_fastfire_wsow_pc",
+"wpn_t9_ar_fastfire_wsow_solo",
+"wpn_t9_ar_fastfire_wsow_sy",
+"wpn_t9_ar_fastfire_zombied",
+"wpn_t9_ar_krig6",
+"wpn_t9_ar_krig6_ace",
+"wpn_t9_ar_krig6_bee",
+"wpn_t9_ar_krig6_blazer",
+"wpn_t9_ar_krig6_boar_ms",
+"wpn_t9_ar_krig6_boar_pc",
+"wpn_t9_ar_krig6_boar_sy",
+"wpn_t9_ar_krig6_burgertown",
+"wpn_t9_ar_krig6_cdl_ms",
+"wpn_t9_ar_krig6_cdl_pc",
+"wpn_t9_ar_krig6_cdl_sy",
+"wpn_t9_ar_krig6_coyote",
+"wpn_t9_ar_krig6_darkaether",
+"wpn_t9_ar_krig6_dragon",
+"wpn_t9_ar_krig6_draid",
+"wpn_t9_ar_krig6_especial",
+"wpn_t9_ar_krig6_fchance",
+"wpn_t9_ar_krig6_glitch",
+"wpn_t9_ar_krig6_ilazar",
+"wpn_t9_ar_krig6_leagueplay",
+"wpn_t9_ar_krig6_lfg",
+"wpn_t9_ar_krig6_midnight_express",
+"wpn_t9_ar_krig6_rbaron",
+"wpn_t9_ar_krig6_rdecree",
+"wpn_t9_ar_krig6_rebel",
+"wpn_t9_ar_krig6_rebirth",
+"wpn_t9_ar_krig6_redbaron",
+"wpn_t9_ar_krig6_royal",
+"wpn_t9_ar_krig6_space",
+"wpn_t9_ar_krig6_spirit",
+"wpn_t9_ar_krig6_stitch",
+"wpn_t9_ar_krig6_surge",
+"wpn_t9_ar_krig6_tagger3",
+"wpn_t9_ar_krig6_typhoon",
+"wpn_t9_ar_krig6_undead",
+"wpn_t9_ar_mercenary",
+"wpn_t9_ar_mercenary_animemon",
+"wpn_t9_ar_mercenary_arabian",
+"wpn_t9_ar_mercenary_armored",
+"wpn_t9_ar_mercenary_brutus",
+"wpn_t9_ar_mercenary_caiman",
+"wpn_t9_ar_mercenary_carolina",
+"wpn_t9_ar_mercenary_charden",
+"wpn_t9_ar_mercenary_codemam",
+"wpn_t9_ar_mercenary_codemam_ms",
+"wpn_t9_ar_mercenary_codemam_pc",
+"wpn_t9_ar_mercenary_codemam_sy",
+"wpn_t9_ar_mercenary_declar",
+"wpn_t9_ar_mercenary_devilwoman",
+"wpn_t9_ar_mercenary_firework",
+"wpn_t9_ar_mercenary_frogmen",
+"wpn_t9_ar_mercenary_gigaswatt",
+"wpn_t9_ar_mercenary_gladia",
+"wpn_t9_ar_mercenary_hologram",
+"wpn_t9_ar_mercenary_jester",
+"wpn_t9_ar_mercenary_junglec",
+"wpn_t9_ar_mercenary_knight",
+"wpn_t9_ar_mercenary_law",
+"wpn_t9_ar_mercenary_leagueplay",
+"wpn_t9_ar_mercenary_mrfix",
+"wpn_t9_ar_mercenary_mvs",
+"wpn_t9_ar_mercenary_oktober",
+"wpn_t9_ar_mercenary_poison",
+"wpn_t9_ar_mercenary_predator",
+"wpn_t9_ar_mercenary_resist",
+"wpn_t9_ar_mercenary_spacegun",
+"wpn_t9_ar_mercenary_titanium",
+"wpn_t9_ar_mercenary_voodoo",
+"wpn_t9_ar_mercenary_wasteland",
+"wpn_t9_ar_mercenary_wonder",
+"wpn_t9_ar_mercenary_wonder_catapillar",
+"wpn_t9_ar_mercenary_zenya",
+"wpn_t9_ar_mercenary_zslayer",
+"wpn_t9_ar_mercenary_ztheme",
+"wpn_t9_ar_mobility",
+"wpn_t9_ar_mobility_aagirl",
+"wpn_t9_ar_mobility_arcticwind",
+"wpn_t9_ar_mobility_bloodhawk_sy",
+"wpn_t9_ar_mobility_camera",
+"wpn_t9_ar_mobility_colds",
+"wpn_t9_ar_mobility_commando",
+"wpn_t9_ar_mobility_ddaemon",
+"wpn_t9_ar_mobility_dfoilage",
+"wpn_t9_ar_mobility_electro",
+"wpn_t9_ar_mobility_fastlane",
+"wpn_t9_ar_mobility_fchina2",
+"wpn_t9_ar_mobility_firestorm",
+"wpn_t9_ar_mobility_flashf",
+"wpn_t9_ar_mobility_frostbite",
+"wpn_t9_ar_mobility_gaudy",
+"wpn_t9_ar_mobility_importer",
+"wpn_t9_ar_mobility_lochness",
+"wpn_t9_ar_mobility_lucha",
+"wpn_t9_ar_mobility_lunar",
+"wpn_t9_ar_mobility_milboots",
+"wpn_t9_ar_mobility_muerte",
+"wpn_t9_ar_mobility_nature",
+"wpn_t9_ar_mobility_peace",
+"wpn_t9_ar_mobility_poseidon",
+"wpn_t9_ar_mobility_shark",
+"wpn_t9_ar_mobility_sneaker",
+"wpn_t9_ar_mobility_soul",
+"wpn_t9_ar_mobility_supers",
+"wpn_t9_ar_mobility_tattoo",
+"wpn_t9_ar_mobility_wanker",
+"wpn_t9_boomstick_prop_weapon",
+"wpn_t9_bp_ar_damage_bthroat",
+"wpn_t9_bp_ar_damage_confront_ms",
+"wpn_t9_bp_ar_damage_confront_pc",
+"wpn_t9_bp_ar_damage_confront_sy",
+"wpn_t9_bp_ar_damage_fires",
+"wpn_t9_bp_ar_damage_nocturne",
+"wpn_t9_bp_ar_damage_tagger",
+"wpn_t9_bp_ar_damage_vcp",
+"wpn_t9_bp_ar_fastfire_aconstrictor",
+"wpn_t9_bp_ar_fastfire_carbongold_ms",
+"wpn_t9_bp_ar_fastfire_carbongold_pc",
+"wpn_t9_bp_ar_fastfire_carbongold_sy",
+"wpn_t9_bp_ar_fastfire_mallrat",
+"wpn_t9_bp_ar_fastfire_sterile",
+"wpn_t9_bp_ar_fastfire_street",
+"wpn_t9_bp_ar_krig6_ace",
+"wpn_t9_bp_ar_krig6_confront",
+"wpn_t9_bp_ar_krig6_eclipse",
+"wpn_t9_bp_ar_krig6_geo_sy",
+"wpn_t9_bp_ar_krig6_opulence",
+"wpn_t9_bp_ar_krig6_reaper",
+"wpn_t9_bp_ar_krig6_rebirth",
+"wpn_t9_bp_ar_krig6_samurai",
+"wpn_t9_bp_ar_mercenary_bluereaper",
+"wpn_t9_bp_ar_mercenary_miami",
+"wpn_t9_bp_ar_mercenary_rifleer",
+"wpn_t9_bp_ar_mercenary_sea_ms",
+"wpn_t9_bp_ar_mercenary_sea_pc",
+"wpn_t9_bp_ar_mercenary_sea_sy",
+"wpn_t9_bp_ar_mercenary_tagger",
+"wpn_t9_bp_ar_mobility_spirit",
+"wpn_t9_bp_lmg_accurate_cb_opulence",
+"wpn_t9_bp_lmg_light",
+"wpn_t9_bp_lmg_light_bcowboy",
+"wpn_t9_bp_lmg_light_beachcomber",
+"wpn_t9_bp_lmg_light_gambit",
+"wpn_t9_bp_lmg_light_six",
+"wpn_t9_bp_lmg_light_trawler",
+"wpn_t9_bp_loot_ar_fasthandling_sterile",
+"wpn_t9_bp_loot_ar_slowfire_muzzle_waterpark",
+"wpn_t9_bp_loot_ar_slowfire_waterpark",
+"wpn_t9_bp_loot_ar_slowhandling_420",
+"wpn_t9_bp_loot_shotgun_fullauto_maelstrom",
+"wpn_t9_bp_loot_shotgun_fullauto_red",
+"wpn_t9_bp_loot_smg_accurate_jet",
+"wpn_t9_bp_loot_smg_fastfire_gknight",
+"wpn_t9_bp_loot_smg_spray_jetfighter",
+"wpn_t9_bp_pistol_burst_avalanche",
+"wpn_t9_bp_pistol_burst_cb_bullshark",
+"wpn_t9_bp_pistol_burst_cb_dw_primal_sy",
+"wpn_t9_bp_pistol_burst_cb_rbaron",
+"wpn_t9_bp_pistol_burst_devil",
+"wpn_t9_bp_pistol_burst_primal_sy",
+"wpn_t9_bp_pistol_revolver_84",
+"wpn_t9_bp_pistol_revolver_adder",
+"wpn_t9_bp_pistol_revolver_noir",
+"wpn_t9_bp_pistol_revolver_scorpion",
+"wpn_t9_bp_pistol_revolver_six",
+"wpn_t9_bp_pistol_semiauto_air_dw_ms",
+"wpn_t9_bp_pistol_semiauto_air_dw_pc",
+"wpn_t9_bp_pistol_semiauto_air_dw_sy",
+"wpn_t9_bp_pistol_semiauto_air_ms",
+"wpn_t9_bp_pistol_semiauto_air_pc",
+"wpn_t9_bp_pistol_semiauto_air_sy",
+"wpn_t9_bp_pistol_semiauto_arvnr1_sy",
+"wpn_t9_bp_pistol_semiauto_code_dw_ms",
+"wpn_t9_bp_pistol_semiauto_code_dw_pc",
+"wpn_t9_bp_pistol_semiauto_code_dw_sy",
+"wpn_t9_bp_pistol_semiauto_code_ms",
+"wpn_t9_bp_pistol_semiauto_code_pc",
+"wpn_t9_bp_pistol_semiauto_code_sy",
+"wpn_t9_bp_pistol_semiauto_dw_fixit",
+"wpn_t9_bp_pistol_semiauto_fixit",
+"wpn_t9_bp_pistol_semiauto_midnight",
+"wpn_t9_bp_pistol_semiauto_mvice",
+"wpn_t9_bp_pistol_semiauto_rifleer",
+"wpn_t9_bp_pistol_semiauto_teal",
+"wpn_t9_bp_shotgun_pump_land_ms",
+"wpn_t9_bp_shotgun_pump_land_pc",
+"wpn_t9_bp_shotgun_pump_land_sy",
+"wpn_t9_bp_shotgun_pump_nightfall",
+"wpn_t9_bp_shotgun_pump_nt6_bus",
+"wpn_t9_bp_shotgun_pump_ripper",
+"wpn_t9_bp_shotgun_pump_schwagger",
+"wpn_t9_bp_shotgun_semiauto_cb_gnr",
+"wpn_t9_bp_shotgun_semiauto_cb_predator",
+"wpn_t9_bp_shotgun_semiauto_cb_taffy",
+"wpn_t9_bp_shotgun_semiauto_cb_valya",
+"wpn_t9_bp_shotgun_semiauto_cb_zslayer",
+"wpn_t9_bp_shotgun_semiauto_uglysweater",
+"wpn_t9_bp_smg_burst_absinthe",
+"wpn_t9_bp_smg_burst_flak",
+"wpn_t9_bp_smg_burst_forged",
+"wpn_t9_bp_smg_burst_kwanzaa",
+"wpn_t9_bp_smg_burst_mechanic",
+"wpn_t9_bp_smg_burst_red",
+"wpn_t9_bp_smg_burst_runman",
+"wpn_t9_bp_smg_capacity_alleywayamb",
+"wpn_t9_bp_smg_capacity_bluereaper",
+"wpn_t9_bp_smg_capacity_fulltank",
+"wpn_t9_bp_smg_capacity_gcompany",
+"wpn_t9_bp_smg_capacity_muzzle_bluereaper",
+"wpn_t9_bp_smg_capacity_prpsunder",
+"wpn_t9_bp_smg_capacity_rocketscience",
+"wpn_t9_bp_smg_handling_avalanche",
+"wpn_t9_bp_smg_handling_beta",
+"wpn_t9_bp_smg_handling_density",
+"wpn_t9_bp_smg_handling_schwagger",
+"wpn_t9_bp_smg_heavy_brawler",
+"wpn_t9_bp_smg_heavy_dinotoy",
+"wpn_t9_bp_smg_heavy_polar",
+"wpn_t9_bp_smg_heavy_smdest",
+"wpn_t9_bp_smg_standard_cb_blkmamba",
+"wpn_t9_bp_smg_standard_cb_bwidow",
+"wpn_t9_bp_smg_standard_cb_crypto",
+"wpn_t9_bp_smg_standard_cb_urbangold",
+"wpn_t9_bp_smg_standard_roman",
+"wpn_t9_bp_sniper_powersemi_frostbite",
+"wpn_t9_bp_sniper_powersemi_frostbite_frontend",
+"wpn_t9_bp_sniper_powersemi_scope_ads_frostbite",
+"wpn_t9_bp_sniper_powersemi_scope_frostbite",
+"wpn_t9_bp_sniper_quickscope_collectors",
+"wpn_t9_bp_sniper_quickscope_collectors_scope",
+"wpn_t9_bp_sniper_quickscope_scope_collectors_ads",
+"wpn_t9_bp_sniper_standard_crypto",
+"wpn_t9_bp_sniper_standard_crypto_scope",
+"wpn_t9_bp_sniper_standard_crypto_scope_ads",
+"wpn_t9_bp_sniper_standard_ghostwood",
+"wpn_t9_bp_sniper_standard_ghostwood_scope",
+"wpn_t9_bp_sniper_standard_ghostwood_scope_ads",
+"wpn_t9_bp_sniper_standard_moa_sy",
+"wpn_t9_bp_sniper_standard_scope_ads_moa_sy",
+"wpn_t9_bp_sniper_standard_scope_ads_urbangold",
+"wpn_t9_bp_sniper_standard_scope_crypto",
+"wpn_t9_bp_sniper_standard_scope_ghostwood",
+"wpn_t9_bp_sniper_standard_scope_moa_sy",
+"wpn_t9_bp_sniper_standard_scope_teal",
+"wpn_t9_bp_sniper_standard_scope_urbangold",
+"wpn_t9_bp_sniper_standard_teal",
+"wpn_t9_bp_sniper_standard_teal_scope",
+"wpn_t9_bp_sniper_standard_teal_scope_ads",
+"wpn_t9_bp_sniper_standard_urbangold",
+"wpn_t9_bp_tr_damagesemi_adder",
+"wpn_t9_bp_tr_damagesemi_armyrv",
+"wpn_t9_bp_tr_damagesemi_bwidow",
+"wpn_t9_bp_tr_damagesemi_crowstorm_sy",
+"wpn_t9_bp_tr_damagesemi_fighter",
+"wpn_t9_bp_tr_damagesemi_six",
+"wpn_t9_bp_tr_damagesemi_soviet_ops",
+"wpn_t9_bp_tr_longburst_code_ms",
+"wpn_t9_bp_tr_longburst_code_pc",
+"wpn_t9_bp_tr_longburst_code_sy",
+"wpn_t9_bp_tr_longburst_confront_ms",
+"wpn_t9_bp_tr_longburst_confront_pc",
+"wpn_t9_bp_tr_longburst_confront_sy",
+"wpn_t9_bp_tr_longburst_gaudy",
+"wpn_t9_bp_tr_longburst_pink",
+"wpn_t9_bp_tr_longburst_resp",
+"wpn_t9_bp_tr_longburst_twotone",
+"wpn_t9_bp_tr_longburst_verde",
+"wpn_t9_bp_tr_powerburst_cb_cupid",
+"wpn_t9_bp_tr_powerburst_cb_lurker",
+"wpn_t9_bp_tr_powerburst_cb_midnight_xp",
+"wpn_t9_bp_tr_powerburst_cb_racer02",
+"wpn_t9_bp_tr_powerburst_cb_scope_ads_lurker",
+"wpn_t9_bp_tr_powerburst_cb_scope_ads_midnight_xp",
+"wpn_t9_bp_tr_powerburst_cb_scope_ads_target_practice",
+"wpn_t9_bp_tr_powerburst_cb_scope_cupid",
+"wpn_t9_bp_tr_powerburst_cb_scope_cupid_ads",
+"wpn_t9_bp_tr_powerburst_cb_scope_fcarbon",
+"wpn_t9_bp_tr_powerburst_cb_scope_fcarbon_ads",
+"wpn_t9_bp_tr_powerburst_cb_scope_lunar",
+"wpn_t9_bp_tr_powerburst_cb_scope_lunar_ads",
+"wpn_t9_bp_tr_powerburst_cb_scope_lurker",
+"wpn_t9_bp_tr_powerburst_cb_scope_midnight_xp",
+"wpn_t9_bp_tr_powerburst_cb_scope_racer02",
+"wpn_t9_bp_tr_powerburst_cb_scope_racer02_ads",
+"wpn_t9_bp_tr_powerburst_cb_scope_target_practice",
+"wpn_t9_bp_tr_powerburst_cb_target_practice",
+"wpn_t9_bp_tr_precisionsemi_arrow",
+"wpn_t9_cigar_prop",
+"wpn_t9_eqp_ammo_pack",
+"wpn_t9_eqp_ammo_pack_fx2",
+"wpn_t9_eqp_ammo_pack_fx_ammo1",
+"wpn_t9_eqp_ammo_pack_fx_base",
+"wpn_t9_eqp_ammo_pack_fx_bigmag",
+"wpn_t9_eqp_ammo_pack_fx_cover",
+"wpn_t9_eqp_ammo_pack_prop",
+"wpn_t9_eqp_ammo_pack_prop_cac",
+"wpn_t9_eqp_armor_plate",
+"wpn_t9_eqp_ascender",
+"wpn_t9_eqp_claymore",
+"wpn_t9_eqp_data_pad",
+"wpn_t9_eqp_flashbang",
+"wpn_t9_eqp_flashbang_projectile",
+"wpn_t9_eqp_garrot_wire_prop_weapon",
+"wpn_t9_eqp_gersh_device",
+"wpn_t9_eqp_grenade_concussion",
+"wpn_t9_eqp_grenade_concussion_projectile",
+"wpn_t9_eqp_grenade_decoy_projectile",
+"wpn_t9_eqp_grenade_frag",
+"wpn_t9_eqp_grenade_frag_projectile",
+"wpn_t9_eqp_grenade_frag_prop_weapon",
+"wpn_t9_eqp_grenade_semtex",
+"wpn_t9_eqp_grenade_semtex_projectile",
+"wpn_t9_eqp_hatchet",
+"wpn_t9_eqp_hatchet_projectile",
+"wpn_t9_eqp_hatchet_prop_weapon",
+"wpn_t9_eqp_jammer",
+"wpn_t9_eqp_jammer_fx_base",
+"wpn_t9_eqp_jammer_fx_left_panel",
+"wpn_t9_eqp_jammer_fx_round_atenna",
+"wpn_t9_eqp_jammer_fx_small_atenna",
+"wpn_t9_eqp_jammer_fx_tiny_atenna",
+"wpn_t9_eqp_land_mine",
+"wpn_t9_eqp_listening_device",
+"wpn_t9_eqp_listening_device_fx_dish",
+"wpn_t9_eqp_listening_device_fx_leg",
+"wpn_t9_eqp_listening_device_fx_mic",
+"wpn_t9_eqp_listening_device_fx_radio",
+"wpn_t9_eqp_map_streak",
+"wpn_t9_eqp_medical_injection_sml",
+"wpn_t9_eqp_mobile_cover",
+"wpn_t9_eqp_molotov",
+"wpn_t9_eqp_nightingale",
+"wpn_t9_eqp_nightingale_projectile",
+"wpn_t9_eqp_parachute",
+"wpn_t9_eqp_rcxd_remote",
+"wpn_t9_eqp_satchel_charge",
+"wpn_t9_eqp_satchel_charge_clacker",
+"wpn_t9_eqp_satchel_charge_projectile",
+"wpn_t9_eqp_small_radio",
+"wpn_t9_eqp_smoke_grenade",
+"wpn_t9_eqp_smoke_grenade_projectile",
+"wpn_t9_eqp_smoke_grenade_red",
+"wpn_t9_eqp_smoke_grenade_yellow",
+"wpn_t9_eqp_teargas_mine",
+"wpn_t9_eqp_teargas_mine_fx_cap",
+"wpn_t9_eqp_teargas_mine_fx_lever",
+"wpn_t9_eqp_teargas_mine_fx_pin_1",
+"wpn_t9_eqp_teargas_mine_fx_pin_2",
+"wpn_t9_eqp_teargas_mine_fx_pin_3",
+"wpn_t9_eqp_teargas_mine_sprung",
+"wpn_t9_eqp_trophy_system",
+"wpn_t9_eqp_trophy_system_fx_head_01",
+"wpn_t9_eqp_trophy_system_fx_leg_01",
+"wpn_t9_eqp_trophy_system_fx_main",
+"wpn_t9_eqp_trophy_system_fx_plate",
+"wpn_t9_eqp_trophy_system_knob_01",
+"wpn_t9_eqp_ultimate_turret",
+"wpn_t9_eqp_ultimate_turret_fx_ammo",
+"wpn_t9_eqp_ultimate_turret_fx_barrel",
+"wpn_t9_eqp_ultimate_turret_fx_camera",
+"wpn_t9_eqp_ultimate_turret_fx_handle",
+"wpn_t9_eqp_ultimate_turret_fx_legs",
+"wpn_t9_eqp_ultimate_turret_fx_main",
+"wpn_t9_eqp_ultimate_turret_pickup",
+"wpn_t9_eqp_ultimate_turret_prop",
+"wpn_t9_eqp_vip_harness",
+"wpn_t9_eqp_zipline_trolley",
+"wpn_t9_ges_bottle_vodka_accessory",
+"wpn_t9_ges_bullet_127_108mm_cartridge",
+"wpn_t9_ges_bunny_reaper_accessory",
+"wpn_t9_ges_ferrofluid_accessory",
+"wpn_t9_ges_fortunecookie_accessory",
+"wpn_t9_ges_jack_o_lantern_accessory",
+"wpn_t9_ges_microphone_accessory",
+"wpn_t9_ges_scorpion_accessory",
+"wpn_t9_ges_teabag_accessory",
+"wpn_t9_ges_zombie_arm_accessory",
+"wpn_t9_ges_zombie_head_accessory",
+"wpn_t9_grenade_frag_prop",
+"wpn_t9_grenade_launcher",
+"wpn_t9_grenade_launcher_bomber",
+"wpn_t9_grenade_launcher_oozeball",
+"wpn_t9_grenade_launcher_projectile",
+"wpn_t9_grenade_launcher_shadow",
+"wpn_t9_knife_ballistic",
+"wpn_t9_knife_ballistic_babayaga",
+"wpn_t9_knife_ballistic_oktober",
+"wpn_t9_knife_ballistic_projectile",
+"wpn_t9_knife_ballistic_spycraft",
+"wpn_t9_knife_bowie_predator_sy",
+"wpn_t9_knife_combat_american",
+"wpn_t9_knife_combat_american_cmoney",
+"wpn_t9_knife_combat_american_lile",
+"wpn_t9_knife_combat_american_prop",
+"wpn_t9_knife_combat_babayaga_le",
+"wpn_t9_knife_combat_bope",
+"wpn_t9_knife_combat_le",
+"wpn_t9_knife_combat_le_oktober",
+"wpn_t9_knife_combat_russian_aagirl",
+"wpn_t9_knife_combat_russian_go_bananas",
+"wpn_t9_knife_combat_scream",
+"wpn_t9_knife_combat_spycraft_le",
+"wpn_t9_knife_combat_switchblade",
+"wpn_t9_knife_combat_wooden",
+"wpn_t9_knife_dagger_predator",
+"wpn_t9_launcher_freefire",
+"wpn_t9_launcher_freefire_projectile",
+"wpn_t9_launcher_freefire_stow",
+"wpn_t9_launcher_standard",
+"wpn_t9_launcher_standard_ads",
+"wpn_t9_launcher_standard_optic",
+"wpn_t9_launcher_standard_projectile",
+"wpn_t9_lmg_accurate",
+"wpn_t9_lmg_accurate_cb_bayou",
+"wpn_t9_lmg_accurate_cb_bite",
+"wpn_t9_lmg_accurate_cb_bowling",
+"wpn_t9_lmg_accurate_cb_bsilver",
+"wpn_t9_lmg_accurate_cb_bstreet",
+"wpn_t9_lmg_accurate_cb_carnival",
+"wpn_t9_lmg_accurate_cb_crimson",
+"wpn_t9_lmg_accurate_cb_endtimes",
+"wpn_t9_lmg_accurate_cb_knight",
+"wpn_t9_lmg_accurate_cb_mummy",
+"wpn_t9_lmg_accurate_cb_mvs",
+"wpn_t9_lmg_accurate_cb_nuclear",
+"wpn_t9_lmg_accurate_cb_numbers",
+"wpn_t9_lmg_accurate_cb_overkill",
+"wpn_t9_lmg_accurate_cb_ratrod",
+"wpn_t9_lmg_accurate_cb_scrap",
+"wpn_t9_lmg_accurate_cb_sshovel",
+"wpn_t9_lmg_accurate_cb_street",
+"wpn_t9_lmg_accurate_cb_zweed",
+"wpn_t9_lmg_light",
+"wpn_t9_lmg_light_angel",
+"wpn_t9_lmg_light_animetankg",
+"wpn_t9_lmg_light_arcade",
+"wpn_t9_lmg_light_armyrv",
+"wpn_t9_lmg_light_beachcomber",
+"wpn_t9_lmg_light_carbongold_ms",
+"wpn_t9_lmg_light_carbongold_pc",
+"wpn_t9_lmg_light_carbongold_sy",
+"wpn_t9_lmg_light_cmachine",
+"wpn_t9_lmg_light_dpharao_sy",
+"wpn_t9_lmg_light_ferfluid",
+"wpn_t9_lmg_light_gladia",
+"wpn_t9_lmg_light_milhack",
+"wpn_t9_lmg_light_orda",
+"wpn_t9_lmg_light_rebirth",
+"wpn_t9_lmg_light_tchern",
+"wpn_t9_lmg_light_warship",
+"wpn_t9_lmg_light_x2",
+"wpn_t9_lmg_slowfire",
+"wpn_t9_lmg_slowfire_armored",
+"wpn_t9_lmg_slowfire_btank",
+"wpn_t9_lmg_slowfire_chemburn_sy",
+"wpn_t9_lmg_slowfire_chewing",
+"wpn_t9_lmg_slowfire_cia",
+"wpn_t9_lmg_slowfire_darkaether",
+"wpn_t9_lmg_slowfire_krieger",
+"wpn_t9_lmg_slowfire_leprecon",
+"wpn_t9_lmg_slowfire_necroking",
+"wpn_t9_lmg_slowfire_notcryo",
+"wpn_t9_lmg_slowfire_pigs",
+"wpn_t9_lmg_slowfire_ram",
+"wpn_t9_lmg_slowfire_reactor",
+"wpn_t9_lmg_slowfire_samurai",
+"wpn_t9_loot_ar_british",
+"wpn_t9_loot_ar_british_eclipse",
+"wpn_t9_loot_ar_british_gilded",
+"wpn_t9_loot_ar_british_gilded_muzzle",
+"wpn_t9_loot_ar_british_lightw",
+"wpn_t9_loot_ar_british_muzzle",
+"wpn_t9_loot_ar_british_scope",
+"wpn_t9_loot_ar_british_scope_ads",
+"wpn_t9_loot_ar_british_scope_eclipse",
+"wpn_t9_loot_ar_british_scope_eclipse_ads",
+"wpn_t9_loot_ar_british_sultan",
+"wpn_t9_loot_ar_fasthandling",
+"wpn_t9_loot_ar_fasthandling_animeninja",
+"wpn_t9_loot_ar_fasthandling_babayaga",
+"wpn_t9_loot_ar_fasthandling_bbear",
+"wpn_t9_loot_ar_fasthandling_charged_sy",
+"wpn_t9_loot_ar_fasthandling_circuit",
+"wpn_t9_loot_ar_fasthandling_classic",
+"wpn_t9_loot_ar_fasthandling_firestorm",
+"wpn_t9_loot_ar_fasthandling_joke",
+"wpn_t9_loot_ar_fasthandling_leaf",
+"wpn_t9_loot_ar_fasthandling_longshot",
+"wpn_t9_loot_ar_fasthandling_lorider",
+"wpn_t9_loot_ar_fasthandling_opulence",
+"wpn_t9_loot_ar_fasthandling_silver_streak",
+"wpn_t9_loot_ar_fasthandling_snavy",
+"wpn_t9_loot_ar_fasthandling_sterile",
+"wpn_t9_loot_ar_fasthandling_tagger_ms",
+"wpn_t9_loot_ar_fasthandling_tagger_pc",
+"wpn_t9_loot_ar_fasthandling_tagger_solo",
+"wpn_t9_loot_ar_fasthandling_tagger_sy",
+"wpn_t9_loot_ar_fasthandling_tiger",
+"wpn_t9_loot_ar_fasthandling_triton",
+"wpn_t9_loot_ar_fasthandling_wetops",
+"wpn_t9_loot_ar_season6",
+"wpn_t9_loot_ar_season6_artdeco",
+"wpn_t9_loot_ar_season6_scream",
+"wpn_t9_loot_ar_season6_unicorn",
+"wpn_t9_loot_ar_season6_venom",
+"wpn_t9_loot_ar_slowfire",
+"wpn_t9_loot_ar_slowfire_assassin",
+"wpn_t9_loot_ar_slowfire_donnie",
+"wpn_t9_loot_ar_slowfire_judged",
+"wpn_t9_loot_ar_slowfire_laser_mount",
+"wpn_t9_loot_ar_slowfire_laser_mount_assassin",
+"wpn_t9_loot_ar_slowfire_media",
+"wpn_t9_loot_ar_slowfire_muzzle",
+"wpn_t9_loot_ar_slowfire_muzzle_ww",
+"wpn_t9_loot_ar_slowfire_rockcold",
+"wpn_t9_loot_ar_slowfire_special",
+"wpn_t9_loot_ar_slowfire_special_muzzle",
+"wpn_t9_loot_ar_slowfire_ww",
+"wpn_t9_loot_ar_slowfirewell_adapter",
+"wpn_t9_loot_ar_slowhandling",
+"wpn_t9_loot_ar_slowhandling_carbonchrome_ms",
+"wpn_t9_loot_ar_slowhandling_carbonchrome_pc",
+"wpn_t9_loot_ar_slowhandling_carbonchrome_sy",
+"wpn_t9_loot_ar_slowhandling_dh",
+"wpn_t9_loot_ar_slowhandling_endgame",
+"wpn_t9_loot_ar_slowhandling_fishtank",
+"wpn_t9_loot_ar_slowhandling_frost",
+"wpn_t9_loot_ar_slowhandling_gmaxis",
+"wpn_t9_loot_ar_slowhandling_kreiger",
+"wpn_t9_loot_ar_slowhandling_lightup",
+"wpn_t9_loot_ar_slowhandling_orda",
+"wpn_t9_loot_ar_slowhandling_somberv",
+"wpn_t9_loot_ar_slowhandling_wildchild",
+"wpn_t9_loot_ar_slowhandling_xray",
+"wpn_t9_loot_ar_soviet",
+"wpn_t9_loot_ar_soviet_bw",
+"wpn_t9_loot_ar_soviet_ferrofluid",
+"wpn_t9_loot_lmg_fastfire",
+"wpn_t9_loot_lmg_fastfire_electro",
+"wpn_t9_loot_lmg_fastfire_highnoon",
+"wpn_t9_loot_lmg_fastfire_highstakes",
+"wpn_t9_loot_lmg_fastfire_jester",
+"wpn_t9_loot_lmg_fastfire_lochness",
+"wpn_t9_loot_lmg_fastfire_nightf",
+"wpn_t9_loot_pistol_fullauto",
+"wpn_t9_loot_pistol_fullauto_eburial",
+"wpn_t9_loot_pistol_fullauto_eburial_le",
+"wpn_t9_loot_pistol_fullauto_egyptian",
+"wpn_t9_loot_pistol_fullauto_egyptian_le",
+"wpn_t9_loot_pistol_fullauto_gilded",
+"wpn_t9_loot_pistol_fullauto_gilded_le",
+"wpn_t9_loot_pistol_fullauto_judged",
+"wpn_t9_loot_pistol_fullauto_le",
+"wpn_t9_loot_pistol_fullauto_le_judged",
+"wpn_t9_loot_pistol_fullauto_le_poison",
+"wpn_t9_loot_pistol_fullauto_phased",
+"wpn_t9_loot_pistol_fullauto_phased_le",
+"wpn_t9_loot_pistol_fullauto_poison",
+"wpn_t9_loot_pistol_shotgun",
+"wpn_t9_loot_pistol_shotgun_le",
+"wpn_t9_loot_pistol_shotgun_throwback",
+"wpn_t9_loot_pistol_shotgun_throwback_le",
+"wpn_t9_loot_shotgun_fullauto",
+"wpn_t9_loot_shotgun_fullauto_acid",
+"wpn_t9_loot_shotgun_fullauto_base_muzzle",
+"wpn_t9_loot_shotgun_fullauto_blue",
+"wpn_t9_loot_shotgun_fullauto_bronze",
+"wpn_t9_loot_shotgun_fullauto_carapace",
+"wpn_t9_loot_shotgun_fullauto_carnival",
+"wpn_t9_loot_shotgun_fullauto_commando",
+"wpn_t9_loot_shotgun_fullauto_coyote",
+"wpn_t9_loot_shotgun_fullauto_cyber",
+"wpn_t9_loot_shotgun_fullauto_lightup",
+"wpn_t9_loot_shotgun_fullauto_lion",
+"wpn_t9_loot_shotgun_fullauto_mutant",
+"wpn_t9_loot_shotgun_fullauto_numbers",
+"wpn_t9_loot_shotgun_fullauto_summer",
+"wpn_t9_loot_shotgun_fullauto_surge",
+"wpn_t9_loot_shotgun_fullauto_wanker",
+"wpn_t9_loot_shotgun_fullauto_wasteland",
+"wpn_t9_loot_shotgun_leveraction",
+"wpn_t9_loot_shotgun_leveraction_carnival",
+"wpn_t9_loot_shotgun_leveraction_freya",
+"wpn_t9_loot_shotgun_leveraction_ripper",
+"wpn_t9_loot_shotgun_leveraction_shell",
+"wpn_t9_loot_smg_accurate",
+"wpn_t9_loot_smg_accurate_bod",
+"wpn_t9_loot_smg_accurate_evil",
+"wpn_t9_loot_smg_accurate_grunge",
+"wpn_t9_loot_smg_accurate_gunking",
+"wpn_t9_loot_smg_accurate_halloween",
+"wpn_t9_loot_smg_accurate_joke4_ms",
+"wpn_t9_loot_smg_accurate_joke4_pc",
+"wpn_t9_loot_smg_accurate_joke4_solo",
+"wpn_t9_loot_smg_accurate_joke4_sy",
+"wpn_t9_loot_smg_accurate_maxpurp",
+"wpn_t9_loot_smg_accurate_poison",
+"wpn_t9_loot_smg_accurate_soccer",
+"wpn_t9_loot_smg_accurate_sweet",
+"wpn_t9_loot_smg_accurate_zombied",
+"wpn_t9_loot_smg_cqb",
+"wpn_t9_loot_smg_cqb_cyber",
+"wpn_t9_loot_smg_cqb_donnie",
+"wpn_t9_loot_smg_cqb_kgb",
+"wpn_t9_loot_smg_cqb_mind",
+"wpn_t9_loot_smg_fastfire",
+"wpn_t9_loot_smg_fastfire_angel",
+"wpn_t9_loot_smg_fastfire_base_muzzle",
+"wpn_t9_loot_smg_fastfire_camera",
+"wpn_t9_loot_smg_fastfire_cshinobi",
+"wpn_t9_loot_smg_fastfire_faberge",
+"wpn_t9_loot_smg_fastfire_fires",
+"wpn_t9_loot_smg_fastfire_frost",
+"wpn_t9_loot_smg_fastfire_intercell",
+"wpn_t9_loot_smg_fastfire_jefes",
+"wpn_t9_loot_smg_fastfire_judged",
+"wpn_t9_loot_smg_fastfire_maverick",
+"wpn_t9_loot_smg_fastfire_mummycat",
+"wpn_t9_loot_smg_fastfire_overrun",
+"wpn_t9_loot_smg_fastfire_scrap",
+"wpn_t9_loot_smg_fastfire_stitch",
+"wpn_t9_loot_smg_fastfire_sweet",
+"wpn_t9_loot_smg_fastfire_toke",
+"wpn_t9_loot_smg_fastfire_wsow_ms",
+"wpn_t9_loot_smg_fastfire_wsow_pc",
+"wpn_t9_loot_smg_fastfire_wsow_solo",
+"wpn_t9_loot_smg_fastfire_wsow_sy",
+"wpn_t9_loot_smg_fastfire_ztheme",
+"wpn_t9_loot_smg_flechette",
+"wpn_t9_loot_smg_flechette_endgame",
+"wpn_t9_loot_smg_flechette_ilazar",
+"wpn_t9_loot_smg_lapa",
+"wpn_t9_loot_smg_lapa_horror",
+"wpn_t9_loot_smg_lapa_ripper",
+"wpn_t9_loot_smg_semiauto",
+"wpn_t9_loot_smg_semiauto_counter",
+"wpn_t9_loot_smg_semiauto_endgame",
+"wpn_t9_loot_smg_semiauto_heatwave",
+"wpn_t9_loot_smg_semiauto_mdriving",
+"wpn_t9_loot_smg_semiauto_scream",
+"wpn_t9_loot_smg_spray",
+"wpn_t9_loot_smg_spray_betty_ms",
+"wpn_t9_loot_smg_spray_betty_pc",
+"wpn_t9_loot_smg_spray_betty_sy",
+"wpn_t9_loot_smg_spray_ferfluid",
+"wpn_t9_loot_smg_spray_ghostship",
+"wpn_t9_loot_smg_spray_hypno",
+"wpn_t9_loot_smg_spray_jester",
+"wpn_t9_loot_smg_spray_milspec",
+"wpn_t9_loot_smg_spray_space",
+"wpn_t9_loot_smg_spray_tagger_ms",
+"wpn_t9_loot_smg_spray_tagger_pc",
+"wpn_t9_loot_smg_spray_tagger_solo",
+"wpn_t9_loot_smg_spray_tagger_sy",
+"wpn_t9_loot_smg_spray_tuningf",
+"wpn_t9_loot_smg_spray_urban",
+"wpn_t9_loot_sniper_accurate",
+"wpn_t9_loot_sniper_accurate_animemon",
+"wpn_t9_loot_sniper_accurate_cybersnake",
+"wpn_t9_loot_sniper_accurate_deaths",
+"wpn_t9_loot_sniper_accurate_donnie",
+"wpn_t9_loot_sniper_accurate_egyptian",
+"wpn_t9_loot_sniper_accurate_hollywood",
+"wpn_t9_loot_sniper_accurate_roman",
+"wpn_t9_loot_sniper_accurate_scope_cybersnake",
+"wpn_t9_loot_sniper_accurate_scope_cybersnake_ads",
+"wpn_t9_loot_sniper_accurate_unicorn",
+"wpn_t9_loot_sniper_cannon",
+"wpn_t9_loot_sniper_cannon_8bit",
+"wpn_t9_loot_sniper_cannon_aces",
+"wpn_t9_loot_sniper_cannon_bullet_casing",
+"wpn_t9_loot_sniper_cannon_debonair",
+"wpn_t9_loot_sniper_cannon_ghillie",
+"wpn_t9_loot_sniper_cannon_rave",
+"wpn_t9_loot_sniper_cannon_rebel",
+"wpn_t9_loot_sniper_cannon_scope",
+"wpn_t9_loot_sniper_cannon_scope_8bit",
+"wpn_t9_loot_sniper_cannon_scope_aces",
+"wpn_t9_loot_sniper_cannon_scope_ads",
+"wpn_t9_loot_sniper_cannon_scope_ads_8bit",
+"wpn_t9_loot_sniper_cannon_scope_ads_aces",
+"wpn_t9_loot_sniper_cannon_scope_ads_debonair",
+"wpn_t9_loot_sniper_cannon_scope_ads_ghillie",
+"wpn_t9_loot_sniper_cannon_scope_ads_rave",
+"wpn_t9_loot_sniper_cannon_scope_ads_rebel",
+"wpn_t9_loot_sniper_cannon_scope_debonair",
+"wpn_t9_loot_sniper_cannon_scope_ghillie",
+"wpn_t9_loot_sniper_cannon_scope_rave",
+"wpn_t9_loot_sniper_cannon_scope_rebel",
+"wpn_t9_loot_sniper_cannon_scope_yokai",
+"wpn_t9_loot_sniper_cannon_yokai",
+"wpn_t9_loot_special_nailgun",
+"wpn_t9_loot_special_nailgun_maxpurp",
+"wpn_t9_loot_special_nailgun_naildome",
+"wpn_t9_loot_special_nailgun_soulripper",
+"wpn_t9_loot_tr_fastburst",
+"wpn_t9_loot_tr_fastburst_chewing",
+"wpn_t9_loot_tr_fastburst_controller",
+"wpn_t9_loot_tr_fastburst_cuddly",
+"wpn_t9_loot_tr_fastburst_halloween",
+"wpn_t9_loot_tr_fastburst_mdriving",
+"wpn_t9_loot_tr_fastburst_metamorph",
+"wpn_t9_loot_tr_fastburst_toke",
+"wpn_t9_loot_tr_fastburst_wilder",
+"wpn_t9_loot_tr_fastburst_wood",
+"wpn_t9_melee_axe",
+"wpn_t9_melee_axe_berserker",
+"wpn_t9_melee_axe_ripper",
+"wpn_t9_melee_bat",
+"wpn_t9_melee_bat_bayou",
+"wpn_t9_melee_bat_heavyhit",
+"wpn_t9_melee_bat_penumbra",
+"wpn_t9_melee_cane",
+"wpn_t9_melee_cane_class",
+"wpn_t9_melee_cane_joke_ms",
+"wpn_t9_melee_cane_joke_pc",
+"wpn_t9_melee_cane_joke_solo",
+"wpn_t9_melee_cane_joke_sy",
+"wpn_t9_melee_crystalaxe",
+"wpn_t9_melee_halligan_tool_prop_weapon",
+"wpn_t9_melee_hammersickle_agony_hammer_le",
+"wpn_t9_melee_hammersickle_agony_sickle",
+"wpn_t9_melee_hammersickle_hammer_le",
+"wpn_t9_melee_hammersickle_sickle",
+"wpn_t9_melee_knuckle_knife_prop",
+"wpn_t9_melee_kukri_dw_prop_weapon",
+"wpn_t9_melee_kukri_prop_weapon",
+"wpn_t9_melee_mace",
+"wpn_t9_melee_mace_scepter",
+"wpn_t9_melee_machete",
+"wpn_t9_melee_machete_croc",
+"wpn_t9_melee_machete_daether",
+"wpn_t9_melee_machete_hollywood",
+"wpn_t9_melee_sais",
+"wpn_t9_melee_sais_le",
+"wpn_t9_melee_sais_le_ninja",
+"wpn_t9_melee_sais_le_rainbow_jewel",
+"wpn_t9_melee_sais_ninja",
+"wpn_t9_melee_sais_rainbow_jewel",
+"wpn_t9_melee_scythe",
+"wpn_t9_melee_scythe_rbunny",
+"wpn_t9_melee_shovel",
+"wpn_t9_melee_shovel_angel",
+"wpn_t9_melee_shovel_assassin",
+"wpn_t9_melee_shovel_jefe",
+"wpn_t9_melee_shovel_warlord",
+"wpn_t9_melee_sledgehammer",
+"wpn_t9_melee_sledgehammer_assassin",
+"wpn_t9_melee_sledgehammer_dozer",
+"wpn_t9_melee_sledgehammer_predator_sy",
+"wpn_t9_melee_sledgehammer_prop",
+"wpn_t9_melee_sledgehammer_rranch",
+"wpn_t9_melee_sledgehammer_zhunter",
+"wpn_t9_melee_wakizashi_base",
+"wpn_t9_melee_wakizashi_base_metamorph",
+"wpn_t9_melee_wakizashi_base_rebel",
+"wpn_t9_melee_wakizashi_gladiator",
+"wpn_t9_melee_wakizashi_ornate",
+"wpn_t9_melee_warmace_prop_weapon",
+"wpn_t9_pistol_burst",
+"wpn_t9_pistol_burst_cb_animetankg",
+"wpn_t9_pistol_burst_cb_blade",
+"wpn_t9_pistol_burst_cb_decree",
+"wpn_t9_pistol_burst_cb_dw_avalanche",
+"wpn_t9_pistol_burst_cb_dw_blade",
+"wpn_t9_pistol_burst_cb_dw_bullshark",
+"wpn_t9_pistol_burst_cb_dw_decree",
+"wpn_t9_pistol_burst_cb_dw_devil",
+"wpn_t9_pistol_burst_cb_dw_especial",
+"wpn_t9_pistol_burst_cb_dw_faberge",
+"wpn_t9_pistol_burst_cb_dw_firestorm",
+"wpn_t9_pistol_burst_cb_dw_fumigator",
+"wpn_t9_pistol_burst_cb_dw_highfidelity",
+"wpn_t9_pistol_burst_cb_dw_leagueplay",
+"wpn_t9_pistol_burst_cb_dw_rbaron",
+"wpn_t9_pistol_burst_cb_dw_samurai",
+"wpn_t9_pistol_burst_cb_dw_sheriff",
+"wpn_t9_pistol_burst_cb_dw_souleat",
+"wpn_t9_pistol_burst_cb_dw_surge",
+"wpn_t9_pistol_burst_cb_dw_ubronze",
+"wpn_t9_pistol_burst_cb_dw_whunter",
+"wpn_t9_pistol_burst_cb_dw_yokai",
+"wpn_t9_pistol_burst_cb_especial",
+"wpn_t9_pistol_burst_cb_faberge",
+"wpn_t9_pistol_burst_cb_firestorm",
+"wpn_t9_pistol_burst_cb_fumigator",
+"wpn_t9_pistol_burst_cb_highfidelity",
+"wpn_t9_pistol_burst_cb_leagueplay",
+"wpn_t9_pistol_burst_cb_samurai",
+"wpn_t9_pistol_burst_cb_secondary",
+"wpn_t9_pistol_burst_cb_sheriff",
+"wpn_t9_pistol_burst_cb_souleat",
+"wpn_t9_pistol_burst_cb_surge",
+"wpn_t9_pistol_burst_cb_ubronze",
+"wpn_t9_pistol_burst_cb_ultrafunk",
+"wpn_t9_pistol_burst_cb_ultrafunk_dw",
+"wpn_t9_pistol_burst_cb_whunter",
+"wpn_t9_pistol_burst_cb_yokai",
+"wpn_t9_pistol_burst_dw",
+"wpn_t9_pistol_burst_dw_prop",
+"wpn_t9_pistol_revolver",
+"wpn_t9_pistol_revolver_bbear",
+"wpn_t9_pistol_revolver_bite",
+"wpn_t9_pistol_revolver_bite_dw",
+"wpn_t9_pistol_revolver_debonai",
+"wpn_t9_pistol_revolver_dw",
+"wpn_t9_pistol_revolver_dw_84",
+"wpn_t9_pistol_revolver_dw_adder",
+"wpn_t9_pistol_revolver_dw_bbear",
+"wpn_t9_pistol_revolver_dw_bite",
+"wpn_t9_pistol_revolver_dw_debonai",
+"wpn_t9_pistol_revolver_dw_finec",
+"wpn_t9_pistol_revolver_dw_modernp",
+"wpn_t9_pistol_revolver_dw_murder",
+"wpn_t9_pistol_revolver_dw_noir",
+"wpn_t9_pistol_revolver_dw_pollock",
+"wpn_t9_pistol_revolver_dw_prop",
+"wpn_t9_pistol_revolver_dw_scorpion",
+"wpn_t9_pistol_revolver_dw_six",
+"wpn_t9_pistol_revolver_dw_srave",
+"wpn_t9_pistol_revolver_dw_swashbuck",
+"wpn_t9_pistol_revolver_dw_winters",
+"wpn_t9_pistol_revolver_finec",
+"wpn_t9_pistol_revolver_hvt",
+"wpn_t9_pistol_revolver_hvt_dw",
+"wpn_t9_pistol_revolver_modernp",
+"wpn_t9_pistol_revolver_murder",
+"wpn_t9_pistol_revolver_pollock",
+"wpn_t9_pistol_revolver_srave",
+"wpn_t9_pistol_revolver_swashbuck",
+"wpn_t9_pistol_revolver_winters",
+"wpn_t9_pistol_semiauto",
+"wpn_t9_pistol_semiauto_8bit",
+"wpn_t9_pistol_semiauto_classic",
+"wpn_t9_pistol_semiauto_classic_dw",
+"wpn_t9_pistol_semiauto_cp",
+"wpn_t9_pistol_semiauto_cuddly",
+"wpn_t9_pistol_semiauto_dw",
+"wpn_t9_pistol_semiauto_dw_8bit",
+"wpn_t9_pistol_semiauto_dw_cuddly",
+"wpn_t9_pistol_semiauto_dw_endtimes",
+"wpn_t9_pistol_semiauto_dw_fchina",
+"wpn_t9_pistol_semiauto_dw_firework",
+"wpn_t9_pistol_semiauto_dw_midnight",
+"wpn_t9_pistol_semiauto_dw_muerte",
+"wpn_t9_pistol_semiauto_dw_mvice",
+"wpn_t9_pistol_semiauto_dw_pow",
+"wpn_t9_pistol_semiauto_dw_presone",
+"wpn_t9_pistol_semiauto_dw_prop",
+"wpn_t9_pistol_semiauto_dw_rifleer",
+"wpn_t9_pistol_semiauto_dw_sweet",
+"wpn_t9_pistol_semiauto_dw_teal",
+"wpn_t9_pistol_semiauto_dw_tunnel",
+"wpn_t9_pistol_semiauto_endtimes",
+"wpn_t9_pistol_semiauto_eqp_hatchet_prop_weapon",
+"wpn_t9_pistol_semiauto_finechina",
+"wpn_t9_pistol_semiauto_firework",
+"wpn_t9_pistol_semiauto_muerte",
+"wpn_t9_pistol_semiauto_pow",
+"wpn_t9_pistol_semiauto_presone",
+"wpn_t9_pistol_semiauto_prop",
+"wpn_t9_pistol_semiauto_prop_animate",
+"wpn_t9_pistol_semiauto_prop_weapon",
+"wpn_t9_pistol_semiauto_sweet",
+"wpn_t9_pistol_semiauto_tunnel",
+"wpn_t9_red_card_prop",
+"wpn_t9_shotgun_pump",
+"wpn_t9_shotgun_pump_albino_serpent",
+"wpn_t9_shotgun_pump_battery",
+"wpn_t9_shotgun_pump_blazer",
+"wpn_t9_shotgun_pump_collect",
+"wpn_t9_shotgun_pump_dark",
+"wpn_t9_shotgun_pump_dozer",
+"wpn_t9_shotgun_pump_glitch",
+"wpn_t9_shotgun_pump_great",
+"wpn_t9_shotgun_pump_grunge",
+"wpn_t9_shotgun_pump_gunzroses",
+"wpn_t9_shotgun_pump_jefe",
+"wpn_t9_shotgun_pump_lawman",
+"wpn_t9_shotgun_pump_lfg",
+"wpn_t9_shotgun_pump_motocross",
+"wpn_t9_shotgun_pump_mvs",
+"wpn_t9_shotgun_pump_nature",
+"wpn_t9_shotgun_pump_nucleard",
+"wpn_t9_shotgun_pump_tunnel",
+"wpn_t9_shotgun_pump_wilder",
+"wpn_t9_shotgun_semiauto",
+"wpn_t9_shotgun_semiauto_cb_aether",
+"wpn_t9_shotgun_semiauto_cb_animepilot",
+"wpn_t9_shotgun_semiauto_cb_assassin",
+"wpn_t9_shotgun_semiauto_cb_cosplay",
+"wpn_t9_shotgun_semiauto_cb_darkaether",
+"wpn_t9_shotgun_semiauto_cb_doomsday",
+"wpn_t9_shotgun_semiauto_cb_elegant",
+"wpn_t9_shotgun_semiauto_cb_gmaxis",
+"wpn_t9_shotgun_semiauto_cb_hudson_ms",
+"wpn_t9_shotgun_semiauto_cb_hudson_pc",
+"wpn_t9_shotgun_semiauto_cb_hudson_sy",
+"wpn_t9_shotgun_semiauto_cb_jokerh",
+"wpn_t9_shotgun_semiauto_cb_miami",
+"wpn_t9_shotgun_semiauto_cb_rainbow",
+"wpn_t9_shotgun_semiauto_cb_resp",
+"wpn_t9_shotgun_semiauto_cb_sunset",
+"wpn_t9_shotgun_semiauto_cb_supers",
+"wpn_t9_shotgun_semiauto_cb_tuningf",
+"wpn_t9_shotgun_semiauto_cb_voodoo",
+"wpn_t9_shotgun_semiauto_frogmen",
+"wpn_t9_shotgun_semiauto_unfolded_stock",
+"wpn_t9_sig_grapple_gun",
+"wpn_t9_smg_burst",
+"wpn_t9_smg_burst_absinthe_barrel_laser_mount",
+"wpn_t9_smg_burst_assassin",
+"wpn_t9_smg_burst_barrel_laser_mount",
+"wpn_t9_smg_burst_barrel_laser_mount_assassin",
+"wpn_t9_smg_burst_barrel_laser_mount_rainbow",
+"wpn_t9_smg_burst_barrel_laser_mount_scarab",
+"wpn_t9_smg_burst_barrel_laser_mount_wonder",
+"wpn_t9_smg_burst_barrel_light_mount",
+"wpn_t9_smg_burst_brutus",
+"wpn_t9_smg_burst_bullshark",
+"wpn_t9_smg_burst_dino",
+"wpn_t9_smg_burst_fumigator",
+"wpn_t9_smg_burst_improvt",
+"wpn_t9_smg_burst_jade",
+"wpn_t9_smg_burst_maneater",
+"wpn_t9_smg_burst_metamorph",
+"wpn_t9_smg_burst_milspec",
+"wpn_t9_smg_burst_motocross",
+"wpn_t9_smg_burst_nest",
+"wpn_t9_smg_burst_nugget",
+"wpn_t9_smg_burst_purpsun",
+"wpn_t9_smg_burst_rainbow",
+"wpn_t9_smg_burst_ruby",
+"wpn_t9_smg_burst_scarab",
+"wpn_t9_smg_burst_sneaker",
+"wpn_t9_smg_burst_sultan",
+"wpn_t9_smg_burst_sunkissed",
+"wpn_t9_smg_burst_wonder",
+"wpn_t9_smg_capacity",
+"wpn_t9_smg_capacity_arctic",
+"wpn_t9_smg_capacity_body_mount",
+"wpn_t9_smg_capacity_body_mount_summer",
+"wpn_t9_smg_capacity_body_mount_undead",
+"wpn_t9_smg_capacity_body_ring_mount",
+"wpn_t9_smg_capacity_body_ring_mount_rockcold",
+"wpn_t9_smg_capacity_cocktail",
+"wpn_t9_smg_capacity_dark",
+"wpn_t9_smg_capacity_deaths",
+"wpn_t9_smg_capacity_electric",
+"wpn_t9_smg_capacity_electric_muzzle",
+"wpn_t9_smg_capacity_fishtank",
+"wpn_t9_smg_capacity_gigaswatt",
+"wpn_t9_smg_capacity_goth",
+"wpn_t9_smg_capacity_hanukkah",
+"wpn_t9_smg_capacity_hipower",
+"wpn_t9_smg_capacity_insect",
+"wpn_t9_smg_capacity_jade",
+"wpn_t9_smg_capacity_jwarrior",
+"wpn_t9_smg_capacity_media",
+"wpn_t9_smg_capacity_monte",
+"wpn_t9_smg_capacity_muzzle",
+"wpn_t9_smg_capacity_muzzle_dark",
+"wpn_t9_smg_capacity_muzzle_jade",
+"wpn_t9_smg_capacity_muzzle_monte",
+"wpn_t9_smg_capacity_muzzle_nugget",
+"wpn_t9_smg_capacity_muzzle_summer",
+"wpn_t9_smg_capacity_nugget",
+"wpn_t9_smg_capacity_pink",
+"wpn_t9_smg_capacity_racer",
+"wpn_t9_smg_capacity_rebel",
+"wpn_t9_smg_capacity_rockcold",
+"wpn_t9_smg_capacity_rranch",
+"wpn_t9_smg_capacity_somberv",
+"wpn_t9_smg_capacity_summer",
+"wpn_t9_smg_capacity_undead",
+"wpn_t9_smg_capacityer_sy",
+"wpn_t9_smg_crystalaxe",
+"wpn_t9_smg_handling",
+"wpn_t9_smg_handling_achill",
+"wpn_t9_smg_handling_angel_fish",
+"wpn_t9_smg_handling_animeninja",
+"wpn_t9_smg_handling_assassin",
+"wpn_t9_smg_handling_bguard",
+"wpn_t9_smg_handling_blow_runner",
+"wpn_t9_smg_handling_cell",
+"wpn_t9_smg_handling_cheese",
+"wpn_t9_smg_handling_cmoney",
+"wpn_t9_smg_handling_cubarevo",
+"wpn_t9_smg_handling_deepblue",
+"wpn_t9_smg_handling_electro",
+"wpn_t9_smg_handling_flower",
+"wpn_t9_smg_handling_gilded",
+"wpn_t9_smg_handling_heartbreak",
+"wpn_t9_smg_handling_high_end",
+"wpn_t9_smg_handling_hudson_ms",
+"wpn_t9_smg_handling_hudson_pc",
+"wpn_t9_smg_handling_hudson_sy",
+"wpn_t9_smg_handling_jewel",
+"wpn_t9_smg_handling_jungle",
+"wpn_t9_smg_handling_lucha",
+"wpn_t9_smg_handling_lycan",
+"wpn_t9_smg_handling_miami",
+"wpn_t9_smg_handling_microfilm",
+"wpn_t9_smg_handling_nights",
+"wpn_t9_smg_handling_rebirth",
+"wpn_t9_smg_handling_sim",
+"wpn_t9_smg_handling_ssilver",
+"wpn_t9_smg_handling_toohot",
+"wpn_t9_smg_handling_wanker",
+"wpn_t9_smg_heavy",
+"wpn_t9_smg_heavy_aagirl",
+"wpn_t9_smg_heavy_animetankg",
+"wpn_t9_smg_heavy_apache",
+"wpn_t9_smg_heavy_arabian",
+"wpn_t9_smg_heavy_armadillo",
+"wpn_t9_smg_heavy_batts",
+"wpn_t9_smg_heavy_big_joke",
+"wpn_t9_smg_heavy_blade",
+"wpn_t9_smg_heavy_carbonchrome_ms",
+"wpn_t9_smg_heavy_carbonchrome_pc",
+"wpn_t9_smg_heavy_carbonchrome_sy",
+"wpn_t9_smg_heavy_cdummy",
+"wpn_t9_smg_heavy_checkmate",
+"wpn_t9_smg_heavy_concrete",
+"wpn_t9_smg_heavy_gasoline",
+"wpn_t9_smg_heavy_leagueplay",
+"wpn_t9_smg_heavy_oktober",
+"wpn_t9_smg_heavy_orda",
+"wpn_t9_smg_heavy_panda",
+"wpn_t9_smg_heavy_penumbra",
+"wpn_t9_smg_heavy_pow",
+"wpn_t9_smg_heavy_ratrod",
+"wpn_t9_smg_heavy_rbunny",
+"wpn_t9_smg_heavy_rebel",
+"wpn_t9_smg_heavy_rsurvival",
+"wpn_t9_smg_heavy_soulripper",
+"wpn_t9_smg_heavy_standoff",
+"wpn_t9_smg_heavy_striked",
+"wpn_t9_smg_heavy_swiss",
+"wpn_t9_smg_heavy_tagger3",
+"wpn_t9_smg_heavy_washed",
+"wpn_t9_smg_heavy_zslayer",
+"wpn_t9_smg_standard",
+"wpn_t9_smg_standard_barrel_light_mount",
+"wpn_t9_smg_standard_barrel_mount",
+"wpn_t9_smg_standard_cb_apilot",
+"wpn_t9_smg_standard_cb_bomber",
+"wpn_t9_smg_standard_cb_carnival",
+"wpn_t9_smg_standard_cb_chewing",
+"wpn_t9_smg_standard_cb_cia",
+"wpn_t9_smg_standard_cb_coyote",
+"wpn_t9_smg_standard_cb_cryo",
+"wpn_t9_smg_standard_cb_cuddly",
+"wpn_t9_smg_standard_cb_ddaemon",
+"wpn_t9_smg_standard_cb_debonair",
+"wpn_t9_smg_standard_cb_dh",
+"wpn_t9_smg_standard_cb_evintage",
+"wpn_t9_smg_standard_cb_finec1",
+"wpn_t9_smg_standard_cb_firework",
+"wpn_t9_smg_standard_cb_gambit",
+"wpn_t9_smg_standard_cb_infest",
+"wpn_t9_smg_standard_cb_leaf",
+"wpn_t9_smg_standard_cb_nature",
+"wpn_t9_smg_standard_cb_numbers",
+"wpn_t9_smg_standard_cb_operator",
+"wpn_t9_smg_standard_cb_pollock",
+"wpn_t9_smg_standard_cb_roadwar",
+"wpn_t9_smg_standard_cb_roman",
+"wpn_t9_smg_standard_cb_shadow",
+"wpn_t9_smg_standard_cb_spacehead",
+"wpn_t9_smg_standard_cb_strace",
+"wpn_t9_smg_standard_cb_taffy",
+"wpn_t9_smg_standard_cb_zenya",
+"wpn_t9_smg_standard_cb_znaga",
+"wpn_t9_smg_standard_chewing",
+"wpn_t9_smg_standard_cuddly",
+"wpn_t9_smg_standard_infest",
+"wpn_t9_smg_standard_leaf",
+"wpn_t9_sniper_accurate_scope",
+"wpn_t9_sniper_accurate_scope_ads",
+"wpn_t9_sniper_accurate_scope_ads_animemon",
+"wpn_t9_sniper_accurate_scope_animemon",
+"wpn_t9_sniper_accurate_scope_deaths",
+"wpn_t9_sniper_accurate_scope_deaths_ads",
+"wpn_t9_sniper_accurate_scope_donnie",
+"wpn_t9_sniper_accurate_scope_donnie_ads",
+"wpn_t9_sniper_accurate_scope_egyptian",
+"wpn_t9_sniper_accurate_scope_egyptian_ads",
+"wpn_t9_sniper_accurate_scope_unicorn",
+"wpn_t9_sniper_accurate_scope_unicorn_ads",
+"wpn_t9_sniper_powersemi",
+"wpn_t9_sniper_powersemi_animelight",
+"wpn_t9_sniper_powersemi_cb_acid",
+"wpn_t9_sniper_powersemi_cb_acid_frontend",
+"wpn_t9_sniper_powersemi_cb_animelight",
+"wpn_t9_sniper_powersemi_cb_animelight_frontend",
+"wpn_t9_sniper_powersemi_cb_biggame",
+"wpn_t9_sniper_powersemi_cb_biggame_frontend",
+"wpn_t9_sniper_powersemi_cb_circuit",
+"wpn_t9_sniper_powersemi_cb_circuit_frontend",
+"wpn_t9_sniper_powersemi_cb_hologram",
+"wpn_t9_sniper_powersemi_cb_hologram_frontend",
+"wpn_t9_sniper_powersemi_cb_hypno",
+"wpn_t9_sniper_powersemi_cb_hypno_frontend",
+"wpn_t9_sniper_powersemi_cb_improvt",
+"wpn_t9_sniper_powersemi_cb_improvt_frontend",
+"wpn_t9_sniper_powersemi_cb_intercell",
+"wpn_t9_sniper_powersemi_cb_intercell_frontend",
+"wpn_t9_sniper_powersemi_cb_jungle",
+"wpn_t9_sniper_powersemi_cb_jungle_frontend",
+"wpn_t9_sniper_powersemi_cb_lancer",
+"wpn_t9_sniper_powersemi_cb_lancer_frontend",
+"wpn_t9_sniper_powersemi_cb_rain",
+"wpn_t9_sniper_powersemi_cb_ruby",
+"wpn_t9_sniper_powersemi_cb_ruby_frontend",
+"wpn_t9_sniper_powersemi_cb_scarab",
+"wpn_t9_sniper_powersemi_cb_scarab_frontend",
+"wpn_t9_sniper_powersemi_cb_scope_acid",
+"wpn_t9_sniper_powersemi_cb_scope_ads_acid",
+"wpn_t9_sniper_powersemi_cb_scope_ads_animelight",
+"wpn_t9_sniper_powersemi_cb_scope_ads_biggame",
+"wpn_t9_sniper_powersemi_cb_scope_ads_circuit",
+"wpn_t9_sniper_powersemi_cb_scope_ads_jungle",
+"wpn_t9_sniper_powersemi_cb_scope_ads_lancer",
+"wpn_t9_sniper_powersemi_cb_scope_ads_rain",
+"wpn_t9_sniper_powersemi_cb_scope_ads_ruby",
+"wpn_t9_sniper_powersemi_cb_scope_ads_scarab",
+"wpn_t9_sniper_powersemi_cb_scope_ads_stalker",
+"wpn_t9_sniper_powersemi_cb_scope_animelight",
+"wpn_t9_sniper_powersemi_cb_scope_biggame",
+"wpn_t9_sniper_powersemi_cb_scope_circuit",
+"wpn_t9_sniper_powersemi_cb_scope_improvt",
+"wpn_t9_sniper_powersemi_cb_scope_improvt_ads",
+"wpn_t9_sniper_powersemi_cb_scope_jungle",
+"wpn_t9_sniper_powersemi_cb_scope_lancer",
+"wpn_t9_sniper_powersemi_cb_scope_rain",
+"wpn_t9_sniper_powersemi_cb_scope_rain_frontend",
+"wpn_t9_sniper_powersemi_cb_scope_ruby",
+"wpn_t9_sniper_powersemi_cb_scope_scarab",
+"wpn_t9_sniper_powersemi_cb_scope_stalker",
+"wpn_t9_sniper_powersemi_cb_stalker",
+"wpn_t9_sniper_powersemi_cb_stalker_frontend",
+"wpn_t9_sniper_powersemi_cmoney",
+"wpn_t9_sniper_powersemi_cmoney_frontend",
+"wpn_t9_sniper_powersemi_frontend",
+"wpn_t9_sniper_powersemi_hypno",
+"wpn_t9_sniper_powersemi_scope",
+"wpn_t9_sniper_powersemi_scope_ads",
+"wpn_t9_sniper_powersemi_scope_ads_cmoney",
+"wpn_t9_sniper_powersemi_scope_cmoney",
+"wpn_t9_sniper_quickscope",
+"wpn_t9_sniper_quickscope_animewidow",
+"wpn_t9_sniper_quickscope_bullet",
+"wpn_t9_sniper_quickscope_bwarrior_ms",
+"wpn_t9_sniper_quickscope_bwarrior_pc",
+"wpn_t9_sniper_quickscope_bwarrior_sy",
+"wpn_t9_sniper_quickscope_cotton",
+"wpn_t9_sniper_quickscope_coyote",
+"wpn_t9_sniper_quickscope_darkg",
+"wpn_t9_sniper_quickscope_darkg_scope",
+"wpn_t9_sniper_quickscope_darkg_scope_ads",
+"wpn_t9_sniper_quickscope_endgame",
+"wpn_t9_sniper_quickscope_endgame_scope",
+"wpn_t9_sniper_quickscope_endgame_scope_ads",
+"wpn_t9_sniper_quickscope_eyerelief",
+"wpn_t9_sniper_quickscope_gasoline",
+"wpn_t9_sniper_quickscope_ghillie_sy",
+"wpn_t9_sniper_quickscope_holiday",
+"wpn_t9_sniper_quickscope_holiday_scope",
+"wpn_t9_sniper_quickscope_holiday_scope_ads",
+"wpn_t9_sniper_quickscope_manguish",
+"wpn_t9_sniper_quickscope_mvs",
+"wpn_t9_sniper_quickscope_opulence",
+"wpn_t9_sniper_quickscope_pearl",
+"wpn_t9_sniper_quickscope_psa",
+"wpn_t9_sniper_quickscope_psa_scope",
+"wpn_t9_sniper_quickscope_psa_scope_ads",
+"wpn_t9_sniper_quickscope_rbunny",
+"wpn_t9_sniper_quickscope_rbunny_scope",
+"wpn_t9_sniper_quickscope_rbunny_scope_ads",
+"wpn_t9_sniper_quickscope_redwave",
+"wpn_t9_sniper_quickscope_scope",
+"wpn_t9_sniper_quickscope_scope_ads",
+"wpn_t9_sniper_quickscope_scope_ads_animewidow",
+"wpn_t9_sniper_quickscope_scope_ads_cotton",
+"wpn_t9_sniper_quickscope_scope_ads_coyote",
+"wpn_t9_sniper_quickscope_scope_ads_ghillie_sy",
+"wpn_t9_sniper_quickscope_scope_ads_manguish",
+"wpn_t9_sniper_quickscope_scope_ads_opulence",
+"wpn_t9_sniper_quickscope_scope_ads_pearl",
+"wpn_t9_sniper_quickscope_scope_ads_somberv",
+"wpn_t9_sniper_quickscope_scope_ads_wrap",
+"wpn_t9_sniper_quickscope_scope_animewidow",
+"wpn_t9_sniper_quickscope_scope_cotton",
+"wpn_t9_sniper_quickscope_scope_coyote",
+"wpn_t9_sniper_quickscope_scope_gasoline",
+"wpn_t9_sniper_quickscope_scope_ghillie_sy",
+"wpn_t9_sniper_quickscope_scope_manguish",
+"wpn_t9_sniper_quickscope_scope_mvs",
+"wpn_t9_sniper_quickscope_scope_opulence",
+"wpn_t9_sniper_quickscope_scope_pearl",
+"wpn_t9_sniper_quickscope_scope_skeleton",
+"wpn_t9_sniper_quickscope_scope_skeleton_ads",
+"wpn_t9_sniper_quickscope_scope_somberv",
+"wpn_t9_sniper_quickscope_scope_wrap",
+"wpn_t9_sniper_quickscope_skeleton",
+"wpn_t9_sniper_quickscope_somberv",
+"wpn_t9_sniper_quickscope_vietnam_bullet",
+"wpn_t9_sniper_quickscope_wind",
+"wpn_t9_sniper_quickscope_wrap",
+"wpn_t9_sniper_standard",
+"wpn_t9_sniper_standard_achill",
+"wpn_t9_sniper_standard_animesg",
+"wpn_t9_sniper_standard_apex",
+"wpn_t9_sniper_standard_beachcomber",
+"wpn_t9_sniper_standard_carbon_fiber",
+"wpn_t9_sniper_standard_carbon_fiber_scope",
+"wpn_t9_sniper_standard_carbon_fiber_scope_ads",
+"wpn_t9_sniper_standard_dino",
+"wpn_t9_sniper_standard_dino_scope",
+"wpn_t9_sniper_standard_ghost",
+"wpn_t9_sniper_standard_ghost_scope",
+"wpn_t9_sniper_standard_ghost_scope_ads",
+"wpn_t9_sniper_standard_milspec",
+"wpn_t9_sniper_standard_nonuke",
+"wpn_t9_sniper_standard_prof",
+"wpn_t9_sniper_standard_qjackal",
+"wpn_t9_sniper_standard_scope",
+"wpn_t9_sniper_standard_scope_ads",
+"wpn_t9_sniper_standard_scope_ads_animesg",
+"wpn_t9_sniper_standard_scope_ads_prof",
+"wpn_t9_sniper_standard_scope_ads_space",
+"wpn_t9_sniper_standard_scope_animesg",
+"wpn_t9_sniper_standard_scope_apex",
+"wpn_t9_sniper_standard_scope_apex_ads",
+"wpn_t9_sniper_standard_scope_prof",
+"wpn_t9_sniper_standard_scope_space",
+"wpn_t9_sniper_standard_scope_wandering",
+"wpn_t9_sniper_standard_scope_wandering_ads",
+"wpn_t9_sniper_standard_scopeer_ads_ms",
+"wpn_t9_sniper_standard_scopeer_ads_pc",
+"wpn_t9_sniper_standard_scopeer_ads_sy",
+"wpn_t9_sniper_standard_scopeer_ms",
+"wpn_t9_sniper_standard_scopeer_pc",
+"wpn_t9_sniper_standard_scopeer_sy",
+"wpn_t9_sniper_standard_sorrow",
+"wpn_t9_sniper_standard_space",
+"wpn_t9_sniper_standard_wandering",
+"wpn_t9_sniper_standarder_ms",
+"wpn_t9_sniper_standarder_pc",
+"wpn_t9_sniper_standarder_sy",
+"wpn_t9_sparkler_prop",
+"wpn_t9_special_crossbow",
+"wpn_t9_special_crossbow_diynot",
+"wpn_t9_special_crossbow_goth",
+"wpn_t9_special_crossbow_lancehead",
+"wpn_t9_special_crossbow_lastzombie",
+"wpn_t9_special_crossbow_projectile",
+"wpn_t9_special_crossbow_ztheme",
+"wpn_t9_special_nailgun_projectile",
+"wpn_t9_sr_electric_avogadro_projectile",
+"wpn_t9_streak_annihilator",
+"wpn_t9_streak_bow",
+"wpn_t9_streak_bow_arrow_03_projectile",
+"wpn_t9_streak_bow_pickup",
+"wpn_t9_streak_care_package",
+"wpn_t9_streak_care_package_booby_trap",
+"wpn_t9_streak_care_package_friendly",
+"wpn_t9_streak_care_package_friendly_nosight",
+"wpn_t9_streak_care_package_fx_corner",
+"wpn_t9_streak_care_package_fx_ratchet",
+"wpn_t9_streak_death_machine",
+"wpn_t9_streak_flamethrower",
+"wpn_t9_streak_missile_turret",
+"wpn_t9_streak_missile_turret_fx_arm",
+"wpn_t9_streak_missile_turret_fx_base",
+"wpn_t9_streak_missile_turret_fx_leg",
+"wpn_t9_streak_missile_turret_fx_senors",
+"wpn_t9_streak_missile_turret_projectile",
+"wpn_t9_streak_war_machine",
+"wpn_t9_tr_damagesemi",
+"wpn_t9_tr_damagesemi_apache",
+"wpn_t9_tr_damagesemi_babayaga",
+"wpn_t9_tr_damagesemi_batts",
+"wpn_t9_tr_damagesemi_cdummy",
+"wpn_t9_tr_damagesemi_checkp",
+"wpn_t9_tr_damagesemi_codename",
+"wpn_t9_tr_damagesemi_faberge",
+"wpn_t9_tr_damagesemi_flashf",
+"wpn_t9_tr_damagesemi_fuego",
+"wpn_t9_tr_damagesemi_jfighter_sy",
+"wpn_t9_tr_damagesemi_king_scorpion",
+"wpn_t9_tr_damagesemi_onyx_sy",
+"wpn_t9_tr_damagesemi_wildchild",
+"wpn_t9_tr_longburst",
+"wpn_t9_tr_longburst_aerobics",
+"wpn_t9_tr_longburst_animepilot",
+"wpn_t9_tr_longburst_arvnr1",
+"wpn_t9_tr_longburst_arvnr2",
+"wpn_t9_tr_longburst_boar_ms",
+"wpn_t9_tr_longburst_boar_pc",
+"wpn_t9_tr_longburst_boar_sy",
+"wpn_t9_tr_longburst_bope",
+"wpn_t9_tr_longburst_cyborg",
+"wpn_t9_tr_longburst_devilwoman",
+"wpn_t9_tr_longburst_dhawk",
+"wpn_t9_tr_longburst_dozer",
+"wpn_t9_tr_longburst_electric",
+"wpn_t9_tr_longburst_fallenh",
+"wpn_t9_tr_longburst_freya",
+"wpn_t9_tr_longburst_gchoice",
+"wpn_t9_tr_longburst_goth",
+"wpn_t9_tr_longburst_highnoon",
+"wpn_t9_tr_longburst_infest",
+"wpn_t9_tr_longburst_joke4_ms",
+"wpn_t9_tr_longburst_joke4_pc",
+"wpn_t9_tr_longburst_joke4_solo",
+"wpn_t9_tr_longburst_joke4_sy",
+"wpn_t9_tr_longburst_jokerh",
+"wpn_t9_tr_longburst_kjackal",
+"wpn_t9_tr_longburst_lastzombie",
+"wpn_t9_tr_longburst_mind",
+"wpn_t9_tr_longburst_mvs",
+"wpn_t9_tr_longburst_opulence",
+"wpn_t9_tr_longburst_peace",
+"wpn_t9_tr_longburst_resp",
+"wpn_t9_tr_longburst_sforces_sy",
+"wpn_t9_tr_longburst_smu",
+"wpn_t9_tr_longburst_ufo",
+"wpn_t9_tr_longburst_warlock",
+"wpn_t9_tr_powerburst",
+"wpn_t9_tr_powerburst_cb_animemeow",
+"wpn_t9_tr_powerburst_cb_blade",
+"wpn_t9_tr_powerburst_cb_bush",
+"wpn_t9_tr_powerburst_cb_carapace",
+"wpn_t9_tr_powerburst_cb_carolina",
+"wpn_t9_tr_powerburst_cb_chems",
+"wpn_t9_tr_powerburst_cb_dieh",
+"wpn_t9_tr_powerburst_cb_draid",
+"wpn_t9_tr_powerburst_cb_fcarbon",
+"wpn_t9_tr_powerburst_cb_ghostship",
+"wpn_t9_tr_powerburst_cb_jewel",
+"wpn_t9_tr_powerburst_cb_lunar",
+"wpn_t9_tr_powerburst_cb_maxpurp",
+"wpn_t9_tr_powerburst_cb_monte",
+"wpn_t9_tr_powerburst_cb_rthunder",
+"wpn_t9_tr_powerburst_cb_scope_ads_animemeow",
+"wpn_t9_tr_powerburst_cb_scope_ads_blade",
+"wpn_t9_tr_powerburst_cb_scope_ads_bush",
+"wpn_t9_tr_powerburst_cb_scope_ads_dieh",
+"wpn_t9_tr_powerburst_cb_scope_ads_draid",
+"wpn_t9_tr_powerburst_cb_scope_ads_ghostship",
+"wpn_t9_tr_powerburst_cb_scope_animemeow",
+"wpn_t9_tr_powerburst_cb_scope_blade",
+"wpn_t9_tr_powerburst_cb_scope_bush",
+"wpn_t9_tr_powerburst_cb_scope_dieh",
+"wpn_t9_tr_powerburst_cb_scope_draid",
+"wpn_t9_tr_powerburst_cb_scope_ghostship",
+"wpn_t9_tr_powerburst_cb_scope_sweet",
+"wpn_t9_tr_powerburst_cb_scope_sweet_ads",
+"wpn_t9_tr_powerburst_cb_scope_urban",
+"wpn_t9_tr_powerburst_cb_scope_urban_ads",
+"wpn_t9_tr_powerburst_cb_srave_sy",
+"wpn_t9_tr_powerburst_cb_standoff",
+"wpn_t9_tr_powerburst_cb_sweet",
+"wpn_t9_tr_powerburst_cb_tanner",
+"wpn_t9_tr_powerburst_cb_urban",
+"wpn_t9_tr_powerburst_scope",
+"wpn_t9_tr_powerburst_scope_ads",
+"wpn_t9_tr_precisionsemi",
+"wpn_t9_tr_precisionsemi_egypt",
+"wpn_t9_tr_precisionsemi_excellence",
+"wpn_t9_tr_precisionsemi_ivory",
+"wpn_t9_tr_precisionsemi_mutant",
+"wpn_t9_tr_precisionsemi_ninja_v2",
+"wpn_t9_tr_precisionsemi_punk",
+"wpn_t9_tr_precisionsemi_reinforced",
+"wpn_t9_tr_precisionsemi_speckled",
+"wpn_t9_tr_precisionsemi_tiki",
+"wpn_t9_tr_precisionsemi_v2_8bit",
+"wpn_t9_tr_precisionsemi_v2_doomsday",
+"wpn_t9_tr_precisionsemi_v2_draid",
+"wpn_t9_tr_precisionsemi_v2_fieldm",
+"wpn_t9_tr_precisionsemi_v2_lightm",
+"wpn_t9_tr_precisionsemi_v2_wandering",
+"wpn_t9_zm_knife_bowie",
+"wpn_t9_zm_mega_barrel_blazer_beam",
+"wpn_t9_zm_mega_barrel_micro",
+"wpn_t9_zm_mega_barrel_pistol",
+"wpn_t9_zm_mega_barrel_spreadshot",
+"wpn_t9_zm_monkey_bomb",
+"wpn_t9_zm_perk_can_deadshot",
+"wpn_t9_zm_perk_can_death_perception",
+"wpn_t9_zm_perk_can_elemental",
+"wpn_t9_zm_perk_can_juggernog",
+"wpn_t9_zm_perk_can_mule_kick",
+"wpn_t9_zm_perk_can_phd_slider",
+"wpn_t9_zm_perk_can_powerup",
+"wpn_t9_zm_perk_can_quick_revive",
+"wpn_t9_zm_perk_can_speed_cola",
+"wpn_t9_zm_perk_can_stamina_up",
+"wpn_t9_zm_perk_can_tombstone",
+"wpn_t9_zm_ray_rifle",
+"wpn_t9_zm_raygun",
+"wpn_t9_zm_raygun_upg",
+"wpn_t9_zm_silver_panic_knife",
+"wpn_t9_zm_silver_ww",
+"wpn_t9_zm_silver_ww_01",
+"wpn_t9_zm_wand_aether_shround",
+"wpn_t9_zm_wand_energy_mine",
+"wpn_t9_zm_wand_frenzied_guard",
+"wpn_t9_zm_wand_frost_blast",
+"wpn_t9_zm_wand_healing_aura",
+"wpn_t9_zm_wand_lightning_links",
+"wpn_t9_zm_wand_ring_fire",
+"wpn_t9_zm_wand_toxic_growth",
+"wpn_t9_zm_wand_closed_aether_shround",
+"wpn_t9_zm_wand_closed_energy_mine",
+"wpn_t9_zm_wand_closed_frenzied_guard",
+"wpn_t9_zm_wand_closed_frost_blast",
+"wpn_t9_zm_wand_closed_healing_aura",
+"wpn_t9_zm_wand_closed_lightning_links",
+"wpn_t9_zm_wand_closed_ring_fire",
+"wpn_t9_zm_wand_closed_toxic_growth",
+"wrist_watch_t9_s1_analog_aviator_02",
+"wrist_watch_t9_s1_analog_aviator_x2",
+"wrist_watch_t9_s1_analog_bope_01",
+"wrist_watch_t9_s1_analog_brawler_01",
+"wrist_watch_t9_s1_analog_broken_fancy",
+"wrist_watch_t9_s1_analog_fancy_debt_collector",
+"wrist_watch_t9_s1_analog_fancy_gold",
+"wrist_watch_t9_s1_analog_kremlin_01",
+"wrist_watch_t9_s1_analog_origin_01",
+"wrist_watch_t9_s1_analog_private_eye_01",
+"wrist_watch_t9_s1_analog_private_eye_02",
+"wrist_watch_t9_s1_analog_private_eye_03",
+"wrist_watch_t9_s1_analog_retroren_02",
+"wrist_watch_t9_s1_bracelet_01",
+"wrist_watch_t9_s1_bracelet_braided_02",
+"wrist_watch_t9_s1_bracelet_gold_chain_01",
+"wrist_watch_t9_s1_bracelet_silver_chain_01",
+"wrist_watch_t9_s1_bracelet_skull_01",
+"wrist_watch_t9_s1_digital_compass",
+"wrist_watch_t9_s1_digital_diver",
+"wrist_watch_t9_s1_digital_first_spy",
+"wrist_watch_t9_s1_digital_gambit_01",
+"wrist_watch_t9_s1_digital_gaudy",
+"wrist_watch_t9_s1_digital_inteculo_01",
+"wrist_watch_t9_s1_digital_kazuya_01",
+"wrist_watch_t9_s1_digital_rank_01",
+"wrist_watch_t9_s1_digital_rank_penumbra_sy",
+"wrist_watch_t9_s1_digital_zm_heart_rate_01",
+"wrist_watch_t9_s1_digital_zm_heart_rate_black_02",
+"wrist_watch_t9_s2_analog_420",
+"wrist_watch_t9_s2_analog_black_silver",
+"wrist_watch_t9_s2_analog_caiman",
+"wrist_watch_t9_s2_analog_cold_hearted",
+"wrist_watch_t9_s2_analog_dark_aether",
+"wrist_watch_t9_s2_analog_jungle_aviator",
+"wrist_watch_t9_s2_analog_mayan",
+"wrist_watch_t9_s2_analog_mortal",
+"wrist_watch_t9_s2_analog_naval_warfare",
+"wrist_watch_t9_s2_analog_necro_king",
+"wrist_watch_t9_s2_analog_paratroop",
+"wrist_watch_t9_s2_analog_rebel",
+"wrist_watch_t9_s2_bracelet_lure",
+"wrist_watch_t9_s2_bracelet_mardi_gras",
+"wrist_watch_t9_s2_digital_jade",
+"wrist_watch_t9_s2_digital_mayan",
+"wrist_watch_t9_s2_digital_mini_map",
+"wrist_watch_t9_s2_digital_mini_map_hot_rod",
+"wrist_watch_t9_s2_digital_river_slasher",
+"wrist_watch_t9_s2_digital_sforce",
+"wrist_watch_t9_s3_analog_chrono_sea",
+"wrist_watch_t9_s3_analog_mctag",
+"wrist_watch_t9_s3_analog_nuclear_fallout",
+"wrist_watch_t9_s3_analog_rebel_fighter_sy",
+"wrist_watch_t9_s3_analog_winter_ash",
+"wrist_watch_t9_s3_analog_zombie_naga",
+"wrist_watch_t9_s3_bracelet_01",
+"wrist_watch_t9_s3_digital_big_joke",
+"wrist_watch_t9_s3_digital_death_touch",
+"wrist_watch_t9_s3_digital_heart_rate_alien",
+"wrist_watch_t9_s3_digital_inteculo_spycraft",
+"wrist_watch_t9_s3_digital_inteculo_w_fallout",
+"wrist_watch_t9_s3_digital_nuclear_fallout",
+"wrist_watch_t9_s3_digital_radiation",
+"wrist_watch_t9_s3_digital_rank_winter_fallout",
+"wrist_watch_t9_s3_digital_ultrafunk",
+"wrist_watch_t9_s3_digitalic8",
+"wrist_watch_t9_s4_analog_assassin",
+"wrist_watch_t9_s4_analog_fire_storm",
+"wrist_watch_t9_s4_analog_future_soldier",
+"wrist_watch_t9_s4_analog_horror",
+"wrist_watch_t9_s4_analog_jefe",
+"wrist_watch_t9_s4_analog_rbear",
+"wrist_watch_t9_s4_analog_roadwar",
+"wrist_watch_t9_s4_analog_sleek_assassin",
+"wrist_watch_t9_s4_analog_spaceship",
+"wrist_watch_t9_s4_analog_wasteland",
+"wrist_watch_t9_s4_bracelet_leather_studd",
+"wrist_watch_t9_s4_bracelet_weathered",
+"wrist_watch_t9_s4_digital_big_joke",
+"wrist_watch_t9_s4_digital_blade",
+"wrist_watch_t9_s4_digital_evil",
+"wrist_watch_t9_s4_digital_holographic",
+"wrist_watch_t9_s4_digital_holographic_rank",
+"wrist_watch_t9_s4_digital_holographic_rank_cyber",
+"wrist_watch_t9_s4_digital_roadwarrior",
+"wrist_watch_t9_s4_digital_royal_decree",
+"wrist_watch_t9_s5_analog_beer_o_clock",
+"wrist_watch_t9_s5_analog_blood_fancy",
+"wrist_watch_t9_s5_analog_classic",
+"wrist_watch_t9_s5_analog_demon",
+"wrist_watch_t9_s5_analog_dis_assassin",
+"wrist_watch_t9_s5_analog_egy_burial",
+"wrist_watch_t9_s5_analog_hacking_code",
+"wrist_watch_t9_s5_analog_holographic",
+"wrist_watch_t9_s5_analog_no_numbers",
+"wrist_watch_t9_s5_analog_onyx_sy",
+"wrist_watch_t9_s5_analog_retrotac",
+"wrist_watch_t9_s5_digital_arabian",
+"wrist_watch_t9_s5_digital_checkmate",
+"wrist_watch_t9_s5_digital_critical_kill",
+"wrist_watch_t9_s5_digital_dark_weaver",
+"wrist_watch_t9_s5_digital_ghosted",
+"wrist_watch_t9_s5_digital_judge_d",
+"wrist_watch_t9_s5_digital_mummy_cat",
+"wrist_watch_t9_s5_digital_rank_countdwn",
+"wrist_watch_t9_s5_digital_tagger",
+"wrist_watch_t9_s5_digital_wonderland",
+"wrist_watch_t9_s6_analog_agony",
+"wrist_watch_t9_s6_analog_big_joke4_ms",
+"wrist_watch_t9_s6_analog_big_joke4_pc",
+"wrist_watch_t9_s6_analog_big_joke4_solo",
+"wrist_watch_t9_s6_analog_big_joke4_sy",
+"wrist_watch_t9_s6_analog_bite_me",
+"wrist_watch_t9_s6_analog_blue_chroma",
+"wrist_watch_t9_s6_analog_bog_ops",
+"wrist_watch_t9_s6_analog_camo",
+"wrist_watch_t9_s6_analog_cyber_venom",
+"wrist_watch_t9_s6_analog_gilded",
+"wrist_watch_t9_s6_analog_halloween",
+"wrist_watch_t9_s6_analog_hypnosis",
+"wrist_watch_t9_s6_analog_krieger",
+"wrist_watch_t9_s6_analog_scrapyard",
+"wrist_watch_t9_s6_analog_scream",
+"wrist_watch_t9_s6_analog_street_mech_sy",
+"wrist_watch_t9_s6_digital_atomic_ash",
+"wrist_watch_t9_s6_digital_egyptian_fire",
+"wrist_watch_t9_s6_digital_endgame",
+"wrist_watch_t9_s6_digital_frost",
+"wrist_watch_t9_s6_digital_gov1",
+"wrist_watch_t9_s6_digital_gov2",
+"wrist_watch_t9_s6_digital_nightmare_fuel",
+"wrist_watch_t9_s6_digital_rank_carnival",
+"wrist_watch_t9_s6_digital_reaper_bunny",
+"wrist_watch_t9_s6_digital_sultan",
+"wrist_watch_t9_s6_digital_tagger_ms",
+"wrist_watch_t9_s6_digital_tagger_pc",
+"wrist_watch_t9_s6_digital_tagger_solo",
+"wrist_watch_t9_s6_digital_tagger_sy",
+"wrist_watch_t9_s6_digital_undead_warrior",
+"wrist_watch_t9_s6_digital_undeadic",
+"wrist_watch_t9_s6_digital_ww",
+"wrist_watch_t9_s6_digital_zm_critical_kill",
+};
+        string[] xModel = {
 "",
 "_anim",
 "_armorheavy",
@@ -1153,6 +3974,12 @@ internal class FNV1A64
 "_lowerbody_viewbody8_cst",
 "_lowerbody_viewbody9",
 "_lowerbody_viewbody9_cst",
+"_lvl1_view",
+"_lvl1_world",
+"_lvl2_view",
+"_lvl2_world",
+"_lvl3_view",
+"_lvl3_world",
 "_mag_sig_01_view",
 "_mag_sig_01_world",
 "_mag_sig_02_view",
@@ -1305,12 +4132,11 @@ internal class FNV1A64
 "_world_purple",
 "_world_red",
 "_world_sy",
-"_world_yellow",
 "_world_upgraded",
+"_world_yellow",
 "_xmodel",
 };
-        string[] xWpnAttachment =
-        {
+        string[] xWpnAttachment = {
 "",
 "_acc_bpu",
 "_accessories",
@@ -1497,8 +4323,7 @@ internal class FNV1A64
 "_upper",
 "_wires",
 };
-        string[] xWpnBlueprint =
-        {
+        string[] xWpnBlueprint = {
 "",
 "_84",
 "_aagirl",
@@ -1654,8 +4479,502 @@ internal class FNV1A64
 "_weapon_wetop",
 "_zslayer",
 };
-        string[] xOpVox =
-{
+        string[] soundWpnCheck = {
+// CW Weapon Sounds (Reloads only at the moment)
+"fly/weapon/reload/ar_accurate/ar_accurate",
+"fly/weapon/reload/ar_british/fly_ar_british",
+"fly/weapon/reload/ar_damage/fly_ar_damage",
+"fly/weapon/reload/ar_fastfire/fly_ar_fastfire",
+"fly/weapon/reload/ar_fasthandling/fly_ar_fasthandling",
+"fly/weapon/reload/ar_mobility/fly_ar_mobility",
+"fly/weapon/reload/ar_season6/fly_ar_season6",
+"fly/weapon/reload/ar_slowfire/fly_ar_slowfire",
+"fly/weapon/reload/ar_slowhandling/fly_ar_slowhandling",
+"fly/weapon/reload/ar_soviet/fly_ar_soviet",
+"fly/weapon/reload/ar_standard/fly_ar_standard",
+"fly/weapon/reload/grenade_launcher/fly_grenade_launcher",
+"fly/weapon/reload/launcher_freefire/fly_launcher_freefire",
+"fly/weapon/reload/launcher_standard/fly_launcher_standard",
+"fly/weapon/reload/lmg_accurate/fly_lmg_accurate",
+"fly/weapon/reload/lmg_fastfire/fly_lmg_fastfire",
+"fly/weapon/reload/lmg_light/fly_lmg_light",
+"fly/weapon/reload/lmg_slowfire/fly_lmg_slowfire",
+"fly/weapon/reload/pistol_burst/fly_pistol_burst",
+"fly/weapon/reload/pistol_fullauto/fly_pistol_fullauto",
+"fly/weapon/reload/pistol_revolver/fly_pistol_revolver",
+"fly/weapon/reload/pistol_semiauto/fly_pistol_semiauto",
+"fly/weapon/reload/pistol_shotgun/fly_pistol_shotgun",
+"fly/weapon/reload/shotgun_leveraction/fly_shotgun_leveraction",
+"fly/weapon/reload/shotgun_pump/fly_shotgun_pump",
+"fly/weapon/reload/shotgun_semi/fly_shotgun_semi",
+"fly/weapon/reload/smg_accurate/fly_smg_accurate",
+"fly/weapon/reload/smg_burst/fly_smg_burst",
+"fly/weapon/reload/smg_capacity/fly_smg_capacity",
+"fly/weapon/reload/smg_cqb/fly_smg_cqb",
+"fly/weapon/reload/smg_fastfire/fly_smg_fastfire",
+"fly/weapon/reload/smg_flechette/fly_smg_flechette",
+"fly/weapon/reload/smg_handling/fly_smg_handling",
+"fly/weapon/reload/smg_heavy/fly_smg_heavy",
+"fly/weapon/reload/smg_season6/fly_smg_season6",
+"fly/weapon/reload/smg_semiauto/fly_smg_semiauto",
+"fly/weapon/reload/smg_spray/fly_smg_spray",
+"fly/weapon/reload/smg_standard/fly_smg_standard",
+"fly/weapon/reload/sniper_accurate/fly_sniper_accurate",
+"fly/weapon/reload/sniper_cannon/fly_sniper_cannon",
+"fly/weapon/reload/sniper_powersemi/fly_sniper_powersemi",
+"fly/weapon/reload/sniper_standard/sniper_standard",
+"fly/weapon/reload/special_nailgun/fly_nailgun",
+"fly/weapon/reload/tr_damagesemi/fly_tr_damagesemi",
+"fly/weapon/reload/tr_fastburst/fly_tr_fastburst",
+"fly/weapon/reload/tr_longburst/fly_tr_longburst",
+"fly/weapon/reload/tr_powerburst/fly_tr_powerburst",
+"fly/weapon/reload/tr_precision/fly_tr_precision",
+};
+        string[] xWeaponSound = {
+"_act",
+"_act_loop_npc",
+"_act_lp_npc",
+"_active",
+"_back",
+"_belt_feed",
+"_bolt_back",
+"_bolt_back_00",
+"_bolt_back_01",
+"_bolt_back_02",
+"_bolt_back_03",
+"_bolt_back_04",
+"_bolt_back_05",
+"_bolt_forward",
+"_bolt_forward_00",
+"_bolt_forward_01",
+"_bolt_forward_02",
+"_bolt_forward_03",
+"_bolt_forward_04",
+"_bolt_forward_05",
+"_bolt_release",
+"_bolt_release_00",
+"_bolt_release_01",
+"_bolt_release_02",
+"_bolt_release_03",
+"_bolt_release_04",
+"_bolt_release_05",
+"_burst",
+"_burst_act",
+"_burst_lfe",
+"_button",
+"_button_press",
+"_button_press_00",
+"_button_press_01",
+"_button_press_02",
+"_button_press_03",
+"_button_press_04",
+"_button_press_05",
+"_chamber_bolt_back",
+"_chamber_bolt_back_00",
+"_chamber_bolt_back_01",
+"_chamber_bolt_back_02",
+"_chamber_bolt_back_03",
+"_chamber_bolt_back_04",
+"_chamber_bolt_back_05",
+"_chamber_bolt_forward",
+"_chamber_bolt_forward_00",
+"_chamber_bolt_forward_01",
+"_chamber_bolt_forward_02",
+"_chamber_bolt_forward_03",
+"_chamber_bolt_forward_04",
+"_chamber_bolt_forward_05",
+"_chamber_cyl_in",
+"_chamber_cyl_in_00",
+"_chamber_cyl_in_01",
+"_chamber_cyl_in_02",
+"_chamber_cyl_in_03",
+"_chamber_cyl_in_04",
+"_chamber_cyl_in_05",
+"_chamber_cyl_out",
+"_chamber_cyl_out_00",
+"_chamber_cyl_out_01",
+"_chamber_cyl_out_02",
+"_chamber_cyl_out_03",
+"_chamber_cyl_out_04",
+"_chamber_cyl_out_05",
+"_chamber_first",
+"_chamber_first_00",
+"_chamber_first_01",
+"_chamber_first_02",
+"_chamber_first_03",
+"_chamber_first_04",
+"_chamber_first_05",
+"_close",
+"_cyl_in",
+"_cyl_out",
+"_cylinder_close",
+"_cylinder_latch",
+"_cylinder_open",
+"_dist_loop",
+"_drum_in",
+"_drum_out",
+"_empty_mag_in",
+"_empty_mag_in_start",
+"_empty_mag_out",
+"_empty_mag_out_start",
+"_empty_mag_tap",
+"_end",
+"_ext_mag_in",
+"_ext_mag_out",
+"_ext_mag_tap",
+"_fast_bolt_release",
+"_fast_mag_in",
+"_fast_mag_out",
+"_fire",
+"_fire_act",
+"_fire_last",
+"_fire_start",
+"_fire_stop",
+"_first",
+"_first_bolt_back",
+"_first_bolt_release",
+"_first_grab_end",
+"_first_grab_start",
+"_first_quick",
+"_first_raise",
+"_first_raise_00",
+"_first_raise_01",
+"_first_raise_02",
+"_first_raise_03",
+"_first_raise_04",
+"_first_raise_05",
+"_firstraise",
+"_firstraise_00",
+"_firstraise_01",
+"_firstraise_02",
+"_firstraise_03",
+"_firstraise_04",
+"_firstraise_05",
+"_flap_close",
+"_flap_open",
+"_forward",
+"_grab",
+"_grab_end",
+"_grab_start",
+"_hammer_back",
+"_in",
+"_inspect",
+"_inspect_fast",
+"_inspect_fast_pt1",
+"_inspect_fast_pt2",
+"_inspect_pt1",
+"_inspect_pt2",
+"_lfe",
+"_lid_close",
+"_lid_open",
+"_load",
+"_loop",
+"_loop_act",
+"_loop_active",
+"_loop_ads",
+"_loop_lfe",
+"_loop_plr",
+"_lp",
+"_lp_act",
+"_lp_active",
+"_mag_empty",
+"_mag_grab",
+"_mag_in",
+"_mag_in_00",
+"_mag_in_01",
+"_mag_in_02",
+"_mag_in_03",
+"_mag_in_04",
+"_mag_in_05",
+"_mag_in_raise",
+"_mag_in_start",
+"_mag_in_start_00",
+"_mag_in_start_01",
+"_mag_in_start_02",
+"_mag_in_start_03",
+"_mag_in_start_04",
+"_mag_in_start_05",
+"_mag_lock",
+"_mag_out",
+"_mag_out_00",
+"_mag_out_01",
+"_mag_out_02",
+"_mag_out_03",
+"_mag_out_04",
+"_mag_out_05",
+"_mag_release",
+"_mag_slide",
+"_mag_slide_out",
+"_mag_tap",
+"_mag_tap_00",
+"_mag_tap_01",
+"_mag_tap_02",
+"_mag_tap_03",
+"_mag_tap_04",
+"_mag_tap_05",
+"_mag_unlock",
+"_open",
+"_out",
+"_pull_back",
+"_pullout",
+"_pump_back",
+"_pump_forward",
+"_push_forward",
+"_putaway",
+"_raise",
+"_rechamber",
+"_rechamber_00",
+"_rechamber_01",
+"_rechamber_02",
+"_rechamber_03",
+"_rechamber_04",
+"_rechamber_05",
+"_rechamber_ads",
+"_rechamber_ads_00",
+"_rechamber_ads_01",
+"_rechamber_ads_02",
+"_rechamber_ads_03",
+"_rechamber_ads_04",
+"_rechamber_ads_05",
+"_rocket_load",
+"_rocket_lock",
+"_shell_00",
+"_shell_01",
+"_shell_02",
+"_shell_03",
+"_shell_04",
+"_shell_05",
+"_shells_in",
+"_shells_out",
+"_sight_open",
+"_slide_back",
+"_slide_back_00",
+"_slide_back_01",
+"_slide_back_02",
+"_slide_back_03",
+"_slide_back_04",
+"_slide_back_05",
+"_slide_forward",
+"_slide_forward_00",
+"_slide_forward_01",
+"_slide_forward_02",
+"_slide_forward_03",
+"_slide_forward_04",
+"_slide_forward_05",
+"_slide_release",
+"_slide_release_00",
+"_slide_release_01",
+"_slide_release_02",
+"_slide_release_03",
+"_slide_release_04",
+"_slide_release_05",
+"_spin",
+"_start",
+"_start_act",
+"_start_ads",
+"_start_fire",
+"_stop",
+"_stop_act",
+"_stop_ads",
+"_suppressed",
+"_suppressed_loop_act",
+"_suppressed_start_act",
+"_suppressed_stop_act",
+"_switch",
+"_tac_mag_in",
+"_tac_mag_out",
+"_tap",
+"_tap_00",
+"_tap_01",
+"_tap_02",
+"_tap_03",
+"_tap_04",
+"_tap_05",
+"_wheel",
+"_wheel_close",
+"_zm_pap",
+"cylinder_close",
+"cylinder_open",
+"flap_close",
+"flap_open",
+"revolver_shell_00",
+"revolver_shell_01",
+"revolver_shell_02",
+"revolver_shell_03",
+"revolver_shell_04",
+"revolver_shell_05",
+"revolver_spin",
+"rocket_load",
+"rocket_lock",
+"shell_in_speed_00",
+"shells_out_00",
+"shells_out_01",
+"shells_out_02",
+"sight_open",
+};
+        string[] soundOperaterCheck = {
+"vox/scripted/adlr/vox_adlr",
+"vox/scripted/antv/vox_antv",
+"vox/scripted/bakr/vox_bakr",
+"vox/scripted/bdzr/vox_bdzr",
+"vox/scripted/beck/vox_beck",
+"vox/scripted/frs1/vox_frs1",
+"vox/scripted/frs2/vox_frs2",
+"vox/scripted/fuze/vox_fuze",
+"vox/scripted/grca/vox_grca",
+"vox/scripted/gstf/vox_gstf",
+"vox/scripted/hdsn/vox_hdsn",
+"vox/scripted/jckl/vox_jckl",
+"vox/scripted/kngs/vox_kngs",
+"vox/scripted/kngt/vox_kngt",
+"vox/scripted/ktsn/vox_ktsn",
+"vox/scripted/lazr/vox_lazr",
+"vox/scripted/masn/vox_masn",
+"vox/scripted/maxi/vox_maxi",
+"vox/scripted/mcln/vox_mcln",
+"vox/scripted/mrs1/vox_mrs1",
+"vox/scripted/mrs2/vox_mrs2",
+"vox/scripted/mrs3/vox_mrs3",
+"vox/scripted/naga/vox_naga",
+"vox/scripted/park/vox_park",
+"vox/scripted/prce/vox_prce",
+"vox/scripted/ptnv/vox_ptnv",
+"vox/scripted/rmbo/vox_rmbo",
+"vox/scripted/rvas/vox_rvas",
+"vox/scripted/rvnv/vox_rvnv",
+"vox/scripted/sala/vox_sala",
+"vox/scripted/sims/vox_sims",
+"vox/scripted/stch/vox_stch",
+"vox/scripted/stry/vox_stry",
+"vox/scripted/weav/vox_weav",
+"vox/scripted/wolf/vox_wolf",
+"vox/scripted/wood/vox_wood",
+"vox/scripted/wrth/vox_wrth",
+"vox/scripted/zyna/vox_zyna",
+"vox/scripted/operators/adlr/vox_adlr",
+"vox/scripted/operators/antv/vox_antv",
+"vox/scripted/operators/bakr/vox_bakr",
+"vox/scripted/operators/bdzr/vox_bdzr",
+"vox/scripted/operators/beck/vox_beck",
+"vox/scripted/operators/frs1/vox_frs1",
+"vox/scripted/operators/frs2/vox_frs2",
+"vox/scripted/operators/fuze/vox_fuze",
+"vox/scripted/operators/grca/vox_grca",
+"vox/scripted/operators/gstf/vox_gstf",
+"vox/scripted/operators/hdsn/vox_hdsn",
+"vox/scripted/operators/jckl/vox_jckl",
+"vox/scripted/operators/kngs/vox_kngs",
+"vox/scripted/operators/kngt/vox_kngt",
+"vox/scripted/operators/ktsn/vox_ktsn",
+"vox/scripted/operators/lazr/vox_lazr",
+"vox/scripted/operators/masn/vox_masn",
+"vox/scripted/operators/maxi/vox_maxi",
+"vox/scripted/operators/mcln/vox_mcln",
+"vox/scripted/operators/mrs1/vox_mrs1",
+"vox/scripted/operators/mrs2/vox_mrs2",
+"vox/scripted/operators/mrs3/vox_mrs3",
+"vox/scripted/operators/naga/vox_naga",
+"vox/scripted/operators/park/vox_park",
+"vox/scripted/operators/prce/vox_prce",
+"vox/scripted/operators/ptnv/vox_ptnv",
+"vox/scripted/operators/rmbo/vox_rmbo",
+"vox/scripted/operators/rvas/vox_rvas",
+"vox/scripted/operators/rvnv/vox_rvnv",
+"vox/scripted/operators/sala/vox_sala",
+"vox/scripted/operators/sims/vox_sims",
+"vox/scripted/operators/stch/vox_stch",
+"vox/scripted/operators/stry/vox_stry",
+"vox/scripted/operators/weav/vox_weav",
+"vox/scripted/operators/wolf/vox_wolf",
+"vox/scripted/operators/wood/vox_wood",
+"vox/scripted/operators/wrth/vox_wrth",
+"vox/scripted/operators/zyna/vox_zyna",
+"vox/scripted/ping/adlr/vox_adlr",
+"vox/scripted/ping/antv/vox_antv",
+"vox/scripted/ping/bakr/vox_bakr",
+"vox/scripted/ping/bdzr/vox_bdzr",
+"vox/scripted/ping/beck/vox_beck",
+"vox/scripted/ping/frs1/vox_frs1",
+"vox/scripted/ping/frs2/vox_frs2",
+"vox/scripted/ping/fuze/vox_fuze",
+"vox/scripted/ping/grca/vox_grca",
+"vox/scripted/ping/gstf/vox_gstf",
+"vox/scripted/ping/hdsn/vox_hdsn",
+"vox/scripted/ping/jckl/vox_jckl",
+"vox/scripted/ping/kngs/vox_kngs",
+"vox/scripted/ping/kngt/vox_kngt",
+"vox/scripted/ping/ktsn/vox_ktsn",
+"vox/scripted/ping/lazr/vox_lazr",
+"vox/scripted/ping/masn/vox_masn",
+"vox/scripted/ping/maxi/vox_maxi",
+"vox/scripted/ping/mcln/vox_mcln",
+"vox/scripted/ping/mrs1/vox_mrs1",
+"vox/scripted/ping/mrs2/vox_mrs2",
+"vox/scripted/ping/mrs3/vox_mrs3",
+"vox/scripted/ping/naga/vox_naga",
+"vox/scripted/ping/park/vox_park",
+"vox/scripted/ping/prce/vox_prce",
+"vox/scripted/ping/ptnv/vox_ptnv",
+"vox/scripted/ping/rmbo/vox_rmbo",
+"vox/scripted/ping/rvas/vox_rvas",
+"vox/scripted/ping/rvnv/vox_rvnv",
+"vox/scripted/ping/sala/vox_sala",
+"vox/scripted/ping/sims/vox_sims",
+"vox/scripted/ping/stch/vox_stch",
+"vox/scripted/ping/stry/vox_stry",
+"vox/scripted/ping/weav/vox_weav",
+"vox/scripted/ping/wolf/vox_wolf",
+"vox/scripted/ping/wood/vox_wood",
+"vox/scripted/ping/wrth/vox_wrth",
+"vox/scripted/ping/zyna/vox_zyna",
+"vox/scripted/zm_operators/adlr/vox_adlr",
+"vox/scripted/zm_operators/antv/vox_antv",
+"vox/scripted/zm_operators/bakr/vox_bakr",
+"vox/scripted/zm_operators/bdzr/vox_bdzr",
+"vox/scripted/zm_operators/beck/vox_beck",
+"vox/scripted/zm_operators/frs1/vox_frs1",
+"vox/scripted/zm_operators/frs2/vox_frs2",
+"vox/scripted/zm_operators/fuze/vox_fuze",
+"vox/scripted/zm_operators/grca/vox_grca",
+"vox/scripted/zm_operators/gstf/vox_gstf",
+"vox/scripted/zm_operators/hdsn/vox_hdsn",
+"vox/scripted/zm_operators/jckl/vox_jckl",
+"vox/scripted/zm_operators/kngs/vox_kngs",
+"vox/scripted/zm_operators/kngt/vox_kngt",
+"vox/scripted/zm_operators/ktsn/vox_ktsn",
+"vox/scripted/zm_operators/lazr/vox_lazr",
+"vox/scripted/zm_operators/masn/vox_masn",
+"vox/scripted/zm_operators/maxi/vox_maxi",
+"vox/scripted/zm_operators/mcln/vox_mcln",
+"vox/scripted/zm_operators/mrs1/vox_mrs1",
+"vox/scripted/zm_operators/mrs2/vox_mrs2",
+"vox/scripted/zm_operators/mrs3/vox_mrs3",
+"vox/scripted/zm_operators/naga/vox_naga",
+"vox/scripted/zm_operators/park/vox_park",
+"vox/scripted/zm_operators/prce/vox_prce",
+"vox/scripted/zm_operators/ptnv/vox_ptnv",
+"vox/scripted/zm_operators/rmbo/vox_rmbo",
+"vox/scripted/zm_operators/rvas/vox_rvas",
+"vox/scripted/zm_operators/rvnv/vox_rvnv",
+"vox/scripted/zm_operators/sala/vox_sala",
+"vox/scripted/zm_operators/sims/vox_sims",
+"vox/scripted/zm_operators/stch/vox_stch",
+"vox/scripted/zm_operators/stry/vox_stry",
+"vox/scripted/zm_operators/weav/vox_weav",
+"vox/scripted/zm_operators/wolf/vox_wolf",
+"vox/scripted/zm_operators/wood/vox_wood",
+"vox/scripted/zm_operators/wrth/vox_wrth",
+"vox/scripted/zm_operators/zyna/vox_zyna",
+};
+        string[] soundTaacomCheck = {
+"vox/scripted/mpl/abnd/vox_abnd",
+"vox/scripted/mpl/adgi/vox_adgi",
+"vox/scripted/mpl/ahva/vox_ahva",
+"vox/scripted/mpl/ami6/vox_ami6",
+"vox/scripted/mpl/anbo/vox_anbo",
+"vox/scripted/mpl/anme/vox_anme",
+};
+        string[] xOpVox = {
 // Operator Voicelines
 "_boost_draw_00",
 "_boost_draw_01",
@@ -3344,9 +6663,8 @@ internal class FNV1A64
 "_zm_se_kill_special_04",
 "_zm_se_kill_special_05",
 };
-        string[] xTAACOM =
-        {
-// TAACOM announcers
+        string[] xTAACOM = {
+// TAACOM Voicelines
 "_bb_control_start_00",
 "_bb_control_start_hardcore_00",
 "_bb_ctf_start_00",
@@ -4391,9 +7709,7 @@ internal class FNV1A64
 "_winning_02",
 "_winning_03",
 };
-        string[] xGenericSound =
-        {
-"",
+        string[] xGenericSound = {
 ".fl75.pc.all.snd",
 ".fn75.pc.all.snd",
 ".ll100.pc.snd",
@@ -4414,9 +7730,7 @@ internal class FNV1A64
 ".sn75.pc.all.snd",
 ".sr75.pc.all.snd",
 };
-        string[] xLanguage =
-{
-"",
+        string[] xLanguage = {
 ".ln75.pc.bp.snd",
 ".ln75.pc.ea.snd",
 ".ln75.pc.en.snd",
@@ -4463,472 +7777,17 @@ internal class FNV1A64
 ".sn75.pc.po.snd",
 ".sn75.pc.ru.snd",
 };
-        string[] xWeaponSound =
-{
+        string[] stringCheck = {
 "",
-"_back",
-"_act",
-"_act_loop_npc",
-"_act_lp_npc",
-"_active",
-"_back",
-"_belt_feed",
-"_bolt_back",
-"_bolt_back_00",
-"_bolt_back_01",
-"_bolt_back_02",
-"_bolt_back_03",
-"_bolt_back_04",
-"_bolt_back_05",
-"_bolt_forward",
-"_bolt_forward_00",
-"_bolt_forward_01",
-"_bolt_forward_02",
-"_bolt_forward_03",
-"_bolt_forward_04",
-"_bolt_forward_05",
-"_bolt_release",
-"_bolt_release_00",
-"_bolt_release_01",
-"_bolt_release_02",
-"_bolt_release_03",
-"_bolt_release_04",
-"_bolt_release_05",
-"_burst",
-"_burst_act",
-"_burst_lfe",
-"_button",
-"_button_press",
-"_button_press_00",
-"_button_press_01",
-"_button_press_02",
-"_button_press_03",
-"_button_press_04",
-"_button_press_05",
-"_chamber_bolt_back",
-"_chamber_bolt_back_00",
-"_chamber_bolt_back_01",
-"_chamber_bolt_back_02",
-"_chamber_bolt_back_03",
-"_chamber_bolt_back_04",
-"_chamber_bolt_back_05",
-"_chamber_bolt_forward",
-"_chamber_bolt_forward_00",
-"_chamber_bolt_forward_01",
-"_chamber_bolt_forward_02",
-"_chamber_bolt_forward_03",
-"_chamber_bolt_forward_04",
-"_chamber_bolt_forward_05",
-"_chamber_cyl_in",
-"_chamber_cyl_in_00",
-"_chamber_cyl_in_01",
-"_chamber_cyl_in_02",
-"_chamber_cyl_in_03",
-"_chamber_cyl_in_04",
-"_chamber_cyl_in_05",
-"_chamber_cyl_out",
-"_chamber_cyl_out_00",
-"_chamber_cyl_out_01",
-"_chamber_cyl_out_02",
-"_chamber_cyl_out_03",
-"_chamber_cyl_out_04",
-"_chamber_cyl_out_05",
-"_chamber_first",
-"_chamber_first_00",
-"_chamber_first_01",
-"_chamber_first_02",
-"_chamber_first_03",
-"_chamber_first_04",
-"_chamber_first_05",
-"_close",
-"_cyl_in",
-"_cyl_out",
-"cylinder_close",
-"cylinder_open",
-"_cylinder_close",
-"_cylinder_latch",
-"_cylinder_open",
-"_dist_loop",
-"_drum_in",
-"_drum_out",
-"_empty_mag_in",
-"_empty_mag_in_start",
-"_empty_mag_out",
-"_empty_mag_out_start",
-"_empty_mag_tap",
-"_end",
-"_ext_mag_in",
-"_ext_mag_out",
-"_ext_mag_tap",
-"_fast_bolt_release",
-"_fast_mag_in",
-"_fast_mag_out",
-"_fire",
-"_fire_act",
-"_fire_last",
-"_fire_start",
-"_fire_stop",
-"_first",
-"_first_bolt_back",
-"_first_bolt_release",
-"_first_grab_end",
-"_first_grab_start",
-"_first_quick",
-"_first_raise",
-"_first_raise_00",
-"_first_raise_01",
-"_first_raise_02",
-"_first_raise_03",
-"_first_raise_04",
-"_first_raise_05",
-"_firstraise",
-"_firstraise_00",
-"_firstraise_01",
-"_firstraise_02",
-"_firstraise_03",
-"_firstraise_04",
-"_firstraise_05",
-"_flap_close",
-"_flap_close",
-"_flap_open",
-"_flap_open",
-"_forward",
-"_grab",
-"_grab_end",
-"_grab_start",
-"_hammer_back",
-"_in",
-"_inspect",
-"_inspect_fast",
-"_inspect_fast_pt1",
-"_inspect_fast_pt2",
-"_inspect_pt1",
-"_inspect_pt2",
-"_lfe",
-"_lid_close",
-"_lid_open",
-"_load",
-"_loop",
-"_loop_act",
-"_loop_active",
-"_loop_ads",
-"_loop_lfe",
-"_loop_plr",
-"_lp",
-"_lp_act",
-"_lp_active",
-"_mag_grab",
-"_mag_in",
-"_mag_in_00",
-"_mag_in_01",
-"_mag_in_02",
-"_mag_in_03",
-"_mag_in_04",
-"_mag_in_05",
-"_mag_in_raise",
-"_mag_in_start",
-"_mag_in_start_00",
-"_mag_in_start_01",
-"_mag_in_start_02",
-"_mag_in_start_03",
-"_mag_in_start_04",
-"_mag_in_start_05",
-"_mag_lock",
-"_mag_out",
-"_mag_out_00",
-"_mag_out_01",
-"_mag_out_02",
-"_mag_out_03",
-"_mag_out_04",
-"_mag_out_05",
-"_mag_empty",
-"_mag_release",
-"_mag_slide",
-"_mag_slide_out",
-"_mag_tap",
-"_mag_tap_00",
-"_mag_tap_01",
-"_mag_tap_02",
-"_mag_tap_03",
-"_mag_tap_04",
-"_mag_tap_05",
-"_mag_unlock",
-"_open",
-"_out",
-"_pull_back",
-"_pullout",
-"_pump_back",
-"_pump_forward",
-"_push_forward",
-"_putaway",
-"_raise",
-"_rechamber",
-"_rechamber_00",
-"_rechamber_01",
-"_rechamber_02",
-"_rechamber_03",
-"_rechamber_04",
-"_rechamber_05",
-"_rechamber_ads",
-"_rechamber_ads_00",
-"_rechamber_ads_01",
-"_rechamber_ads_02",
-"_rechamber_ads_03",
-"_rechamber_ads_04",
-"_rechamber_ads_05",
-"revolver_spin",
-"revolver_shell_00",
-"revolver_shell_01",
-"revolver_shell_02",
-"revolver_shell_03",
-"revolver_shell_04",
-"revolver_shell_05",
-"_rocket_load",
-"_rocket_load",
-"_rocket_lock",
-"_rocket_lock",
-"_shell_00",
-"_shell_01",
-"_shell_02",
-"_shell_03",
-"_shell_04",
-"_shell_05",
-"_shells_in",
-"shell_in_speed_00",
-"_shells_out",
-"shells_out_00",
-"shells_out_01",
-"shells_out_02",
-"_sight_open",
-"_sight_open",
-"_slide_back",
-"_slide_back_00",
-"_slide_back_01",
-"_slide_back_02",
-"_slide_back_03",
-"_slide_back_04",
-"_slide_back_05",
-"_slide_forward",
-"_slide_forward_00",
-"_slide_forward_01",
-"_slide_forward_02",
-"_slide_forward_03",
-"_slide_forward_04",
-"_slide_forward_05",
-"_slide_release",
-"_slide_release_00",
-"_slide_release_01",
-"_slide_release_02",
-"_slide_release_03",
-"_slide_release_04",
-"_slide_release_05",
-"_spin",
-"_start",
-"_start_act",
-"_start_ads",
-"_start_fire",
-"_stop",
-"_stop_act",
-"_stop_ads",
-"_suppressed",
-"_suppressed_loop_act",
-"_suppressed_start_act",
-"_suppressed_stop_act",
-"_switch",
-"_tac_mag_in",
-"_tac_mag_out",
-"_tap",
-"_tap_00",
-"_tap_01",
-"_tap_02",
-"_tap_03",
-"_tap_04",
-"_tap_05",
-"_wheel_close",
-"_wheel",
-"_zm_pap",
-"_back",
-"_belt_feed",
-"_bolt_back",
-"_bolt_back_00",
-"_bolt_back_01",
-"_bolt_back_02",
-"_bolt_back_03",
-"_bolt_back_04",
-"_bolt_back_05",
-"_bolt_forward",
-"_bolt_forward_00",
-"_bolt_forward_01",
-"_bolt_forward_02",
-"_bolt_forward_03",
-"_bolt_forward_04",
-"_bolt_forward_05",
-"_bolt_release",
-"_bolt_release_00",
-"_bolt_release_01",
-"_bolt_release_02",
-"_bolt_release_03",
-"_bolt_release_04",
-"_bolt_release_05",
-"_button",
-"_button_press",
-"_button_press_00",
-"_button_press_01",
-"_button_press_02",
-"_button_press_03",
-"_button_press_04",
-"_button_press_05",
-"_chamber_bolt_back",
-"_chamber_bolt_back_00",
-"_chamber_bolt_back_01",
-"_chamber_bolt_back_02",
-"_chamber_bolt_back_03",
-"_chamber_bolt_back_04",
-"_chamber_bolt_back_05",
-"_chamber_bolt_forward",
-"_chamber_bolt_forward_00",
-"_chamber_bolt_forward_01",
-"_chamber_bolt_forward_02",
-"_chamber_bolt_forward_03",
-"_chamber_bolt_forward_04",
-"_chamber_bolt_forward_05",
-"_chamber_cyl_in",
-"_chamber_cyl_in_00",
-"_chamber_cyl_in_01",
-"_chamber_cyl_in_02",
-"_chamber_cyl_in_03",
-"_chamber_cyl_in_04",
-"_chamber_cyl_in_05",
-"_chamber_cyl_out",
-"_chamber_cyl_out_00",
-"_chamber_cyl_out_01",
-"_chamber_cyl_out_02",
-"_chamber_cyl_out_03",
-"_chamber_cyl_out_04",
-"_chamber_cyl_out_05",
-"_chamber_first",
-"_chamber_first_00",
-"_chamber_first_01",
-"_chamber_first_02",
-"_chamber_first_03",
-"_chamber_first_04",
-"_chamber_first_05",
-"_close",
-"_cylinder_close",
-"_cylinder_latch",
-"_cylinder_open",
-"_ext_mag_in",
-"_ext_mag_out",
-"_first_raise",
-"_first_raise_00",
-"_first_raise_01",
-"_first_raise_02",
-"_first_raise_03",
-"_first_raise_04",
-"_first_raise_05",
-"_firstraise",
-"_firstraise_00",
-"_firstraise_01",
-"_firstraise_02",
-"_firstraise_03",
-"_firstraise_04",
-"_firstraise_05",
-"_forward",
-"_hammer_back",
-"_in",
-"_load",
-"_mag_in",
-"_mag_in_00",
-"_mag_in_01",
-"_mag_in_02",
-"_mag_in_03",
-"_mag_in_04",
-"_mag_in_05",
-"_mag_in_raise",
-"_mag_in_start",
-"_mag_in_start_00",
-"_mag_in_start_01",
-"_mag_in_start_02",
-"_mag_in_start_03",
-"_mag_in_start_04",
-"_mag_in_start_05",
-"_mag_lock",
-"_mag_out",
-"_mag_out_00",
-"_mag_out_01",
-"_mag_out_02",
-"_mag_out_03",
-"_mag_out_04",
-"_mag_out_05",
-"_mag_release",
-"_mag_slide",
-"_mag_slide_out",
-"_mag_tap",
-"_mag_tap_00",
-"_mag_tap_01",
-"_mag_tap_02",
-"_mag_tap_03",
-"_mag_tap_04",
-"_mag_tap_05",
-"_mag_unlock",
-"_open",
-"_out",
-"_pull_back",
-"_push_forward",
-"_rechamber",
-"_rechamber_00",
-"_rechamber_01",
-"_rechamber_02",
-"_rechamber_03",
-"_rechamber_04",
-"_rechamber_05",
-"_rechamber_ads",
-"_rechamber_ads_00",
-"_rechamber_ads_01",
-"_rechamber_ads_02",
-"_rechamber_ads_03",
-"_rechamber_ads_04",
-"_rechamber_ads_05",
-"_shells_in",
-"_shells_out",
-"_slide_back",
-"_slide_back_00",
-"_slide_back_01",
-"_slide_back_02",
-"_slide_back_03",
-"_slide_back_04",
-"_slide_back_05",
-"_slide_forward",
-"_slide_forward_00",
-"_slide_forward_01",
-"_slide_forward_02",
-"_slide_forward_03",
-"_slide_forward_04",
-"_slide_forward_05",
-"_slide_release",
-"_slide_release_00",
-"_slide_release_01",
-"_slide_release_02",
-"_slide_release_03",
-"_slide_release_04",
-"_slide_release_05",
-"_spin",
-"_switch",
-"_tap",
-"_tap_00",
-"_tap_01",
-"_tap_02",
-"_tap_03",
-"_tap_04",
-"_tap_05",
-"flap_close",
-"flap_open",
-"rocket_load",
-"rocket_lock",
-"sight_open",
+"j",
+"jnt",
+"joint",
+"p7",
+"p8",
+"p9",
+"tag",
 };
-        string[] xString =
-        {
+        string[] xString = {
 "",
 };
 
@@ -4952,12 +7811,10 @@ internal class FNV1A64
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Specify xAsset Directory:");
         Path = Console.ReadLine();
-        while (true)
-        {
+        while (true) {
             Console.WriteLine("[1] Start Scan");
             string? search = Console.ReadLine();
-            if (search == "1")
-            {
+            if (search == "1") {
                 Console.WriteLine("\nScanning for Assets... ");
                 Stopwatch stopWatch = new Stopwatch();
                 stopWatch.Start();
@@ -4966,3257 +7823,93 @@ internal class FNV1A64
                 TimeSpan ts = stopWatch.Elapsed;
                 string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                 ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-                Console.WriteLine("Scan completed in " + elapsedTime);
-            }
-        }
+                Console.WriteLine("Scan completed in " + elapsedTime); }}
 
-        void SearchForSpecificAsset(string xAsset)
-        {
-            foreach (string xanim in xAnim)
-            {
-                foreach (string xaianim in xAIAnim)
-                {
-                    // BO4 & CW AI Anims
-                    CheckAnim("" + xanim);
-                    CheckAnim("" + xaianim);
-                    CheckAnim("mm_brawler" + xaianim);
-                    CheckAnim("ai_t8_zm_mob_brutus" + xaianim);
-                    CheckAnim("ai_t8_zm_twrs_hllpht" + xaianim);
-                    CheckAnim("ai_t8_zm_twrs_tgr" + xaianim);
-                    CheckAnim("ai_t8_zm_twrs_zg_dstyr" + xaianim);
-                    CheckAnim("ai_t8_zm_twrs_zg_mrdr" + xaianim);
-                    CheckAnim("ai_t8_zm_zod_bltfthr" + xaianim);
-                    CheckAnim("ai_t8_zm_zod_catalyst_electric" + xaianim);
-                    CheckAnim("ai_t8_zm_zod_catalyst_plasma" + xaianim);
-                    CheckAnim("ai_t8_zm_zod_catalyst_water" + xaianim);
-                    CheckAnim("ai_t8_zm_zod_stoker" + xaianim);
-                    CheckAnim("ai_t8_zm_zombie" + xaianim);
-                    CheckAnim("ai_t9_zm_abom" + xaianim);
-                    CheckAnim("ai_t9_zm_avogadro" + xaianim);
-                    CheckAnim("ai_t9_zm_hulkingsum" + xaianim);
-                    CheckAnim("ai_t9_zm_mechz" + xaianim);
-                    CheckAnim("ai_t9_zm_plague_hound" + xaianim);
-                    CheckAnim("ai_t9_zm_raz" + xaianim);
-                    CheckAnim("ai_t9_zm_steiner_base_com" + xaianim);
-                    // BO4 Weapon Animations
-                    // Backhander
-                    // Eye of Apophis
-                    // Gift Axe
-                    // Rising Tide
-                    // Spknifeork
-                    // Spoon
-                    // Spork
-                    // vm_essex_model_07
-                    // vm_hellion_salvo
-                    // vm_hitchcock_m9
-                    // vm_midburst
-                    // vm_sumarbrandr
-                    CheckAnim("vm_action_figure" + xanim);
-                    CheckAnim("vm_ar_accurate" + xanim);
-                    CheckAnim("vm_ar_an94_t8" + xanim);
-                    CheckAnim("vm_ar_damage" + xanim);
-                    CheckAnim("vm_ar_double_barrel" + xanim);
-                    CheckAnim("vm_ar_fastfire" + xanim);
-                    CheckAnim("vm_ar_galil" + xanim);
-                    CheckAnim("vm_ar_k57" + xanim);
-                    CheckAnim("vm_ar_peacekeeper_t8" + xanim);
-                    CheckAnim("vm_ar_standard" + xanim);
-                    CheckAnim("vm_ar_stealth" + xanim);
-                    CheckAnim("vm_argus_t8" + xanim);
-                    CheckAnim("vm_ballistic_knife_t8" + xanim);
-                    CheckAnim("vm_ballistic_knife_t8_dw" + xanim);
-                    CheckAnim("vm_bowie_knife_t8" + xanim);
-                    CheckAnim("vm_combat_knife_t8" + xanim);
-                    CheckAnim("vm_demo_hammer" + xanim);
-                    CheckAnim("vm_dg2" + xanim);
-                    CheckAnim("vm_hades" + xanim);
-                    CheckAnim("vm_homunculus" + xanim);
-                    CheckAnim("vm_incendiary" + xanim);
-                    CheckAnim("vm_katana" + xanim);
-                    CheckAnim("vm_koshka" + xanim);
-                    CheckAnim("vm_lmg_heavy" + xanim);
-                    CheckAnim("vm_lmg_mk48" + xanim);
-                    CheckAnim("vm_lmg_mg08" + xanim);
-                    CheckAnim("vm_money_bag_t8" + xanim);
-                    CheckAnim("vm_mp40" + xanim);
-                    CheckAnim("vm_mp9" + xanim);
-                    CheckAnim("vm_pistol_auto" + xanim);
-                    CheckAnim("vm_pistol_burst" + xanim);
-                    CheckAnim("vm_pistol_revolver" + xanim);
-                    CheckAnim("vm_pistol_standard" + xanim);
-                    CheckAnim("vm_pistol_webley" + xanim);
-                    CheckAnim("vm_polynesian_club_t8" + xanim);
-                    CheckAnim("vm_raygun" + xanim);
-                    CheckAnim("vm_reaper_lmg" + xanim);
-                    CheckAnim("vm_scorpion" + xanim);
-                    CheckAnim("vm_shotgun_full_auto" + xanim);
-                    CheckAnim("vm_shotgun_pump" + xanim);
-                    CheckAnim("vm_shotgun_semiauto" + xanim);
-                    CheckAnim("vm_shotgun_trench" + xanim);
-                    CheckAnim("vm_slaybell" + xanim);
-                    CheckAnim("vm_smg_accurate" + xanim);
-                    CheckAnim("vm_smg_capacity" + xanim);
-                    CheckAnim("vm_smg_drum_pistol" + xanim);
-                    CheckAnim("vm_smg_fastburst" + xanim);
-                    CheckAnim("vm_smg_fastfire" + xanim);
-                    CheckAnim("vm_smg_folding" + xanim);
-                    CheckAnim("vm_smg_handling" + xanim);
-                    CheckAnim("vm_smg_minigun" + xanim);
-                    CheckAnim("vm_smg_thompson" + xanim);
-                    CheckAnim("vm_smg_vmp_t8" + xanim);
-                    CheckAnim("vm_sniper_damagesemi" + xanim);
-                    CheckAnim("vm_sniper_fast_rechamber" + xanim);
-                    CheckAnim("vm_sniper_locus_t8" + xanim);
-                    CheckAnim("vm_sniper_mini14" + xanim);
-                    CheckAnim("vm_sniper_power_semi" + xanim);
-                    CheckAnim("vm_sniper_vanguard" + xanim);
-                    CheckAnim("vm_special_crossbow" + xanim);
-                    CheckAnim("vm_stop_sign" + xanim);
-                    CheckAnim("vm_t8_zom_galvaknuckles" + xanim);
-                    CheckAnim("vm_titan" + xanim);
-                    CheckAnim("vm_tr_damageburst_t8" + xanim);
-                    CheckAnim("vm_tr_flechette" + xanim);
-                    CheckAnim("vm_tr_power_semi" + xanim);
-                    CheckAnim("vm_tr_swordfish" + xanim);
-                    CheckAnim("vm_ww_akud" + xanim);
-                    CheckAnim("vm_ww_blundergat" + xanim);
-                    CheckAnim("vm_zom_arm" + xanim);
-                    CheckAnim("vm_zom_nesting_doll" + xanim);
-                    CheckAnim("vm_zom_raygun_mk2" + xanim);
-                    CheckAnim("vm_zom_thundergun" + xanim);
-                    // CW Weapon Animations
-                    CheckAnim("pt_ar_accurate_t9" + xanim);
-                    CheckAnim("pt_ar_british_t9" + xanim);
-                    CheckAnim("pt_ar_damage_t9" + xanim);
-                    CheckAnim("pt_ar_fastfire_t9" + xanim);
-                    CheckAnim("pt_ar_fasthandling_t9" + xanim);
-                    CheckAnim("pt_ar_mobility_t9" + xanim);
-                    CheckAnim("pt_ar_season6_t9" + xanim);
-                    CheckAnim("pt_ar_slowfire_t9" + xanim);
-                    CheckAnim("pt_ar_slowhandling_t9" + xanim);
-                    CheckAnim("pt_ar_soviet_t9" + xanim);
-                    CheckAnim("pt_ar_standard_t9" + xanim);
-                    CheckAnim("pt_ballistic_knife_t9" + xanim);
-                    CheckAnim("pt_baseball_bat_t9" + xanim);
-                    CheckAnim("pt_battle_axe_t9" + xanim);
-                    CheckAnim("pt_br_freefall" + xanim);
-                    CheckAnim("pt_br_parachute" + xanim);
-                    CheckAnim("pt_brawler_t9" + xanim);
-                    CheckAnim("pt_cane_t9" + xanim);
-                    CheckAnim("pt_com_t9" + xanim);
-                    CheckAnim("pt_combat_knife_t9" + xanim);
-                    CheckAnim("pt_concussion_grenade_t9" + xanim);
-                    CheckAnim("pt_crossbow_t9" + xanim);
-                    CheckAnim("pt_dual_sai_t9" + xanim);
-                    CheckAnim("pt_etool_t9" + xanim);
-                    CheckAnim("pt_flamethrower_t9" + xanim);
-                    CheckAnim("pt_frag_grenade_t9" + xanim);
-                    CheckAnim("pt_grapple_gun_t9" + xanim);
-                    CheckAnim("pt_hammer_sickle_t9" + xanim);
-                    CheckAnim("pt_hatchet_t9" + xanim);
-                    CheckAnim("pt_launcher_freefire_t9" + xanim);
-                    CheckAnim("pt_launcher_standard_t9" + xanim);
-                    CheckAnim("pt_lmg_accurate_t9" + xanim);
-                    CheckAnim("pt_lmg_fastfire_t9" + xanim);
-                    CheckAnim("pt_lmg_light_t9" + xanim);
-                    CheckAnim("pt_lmg_slowfire_t9" + xanim);
-                    CheckAnim("pt_mace_t9" + xanim);
-                    CheckAnim("pt_machete_t9" + xanim);
-                    CheckAnim("pt_minigun_t9" + xanim);
-                    CheckAnim("pt_nailgun_t9" + xanim);
-                    CheckAnim("pt_pistol_burst_t9" + xanim);
-                    CheckAnim("pt_pistol_fullauto_t9" + xanim);
-                    CheckAnim("pt_pistol_revolver_t9" + xanim);
-                    CheckAnim("pt_pistol_semiauto_t9" + xanim);
-                    CheckAnim("pt_pistol_shotgun_t9" + xanim);
-                    CheckAnim("pt_raygun_t9" + xanim);
-                    CheckAnim("pt_scythe_t9" + xanim);
-                    CheckAnim("pt_semtex_grenade_t9" + xanim);
-                    CheckAnim("pt_shotgun_fullauto_t9" + xanim);
-                    CheckAnim("pt_shotgun_leveraction_t9" + xanim);
-                    CheckAnim("pt_shotgun_pump_t9" + xanim);
-                    CheckAnim("pt_shotgun_semiauto_t9" + xanim);
-                    CheckAnim("pt_sledgehammer_t9" + xanim);
-                    CheckAnim("pt_smg_accurate_t9" + xanim);
-                    CheckAnim("pt_smg_burst_t9" + xanim);
-                    CheckAnim("pt_smg_capacity_t9" + xanim);
-                    CheckAnim("pt_smg_cqb_t9" + xanim);
-                    CheckAnim("pt_smg_fastfire_t9" + xanim);
-                    CheckAnim("pt_smg_flechette_t9" + xanim);
-                    CheckAnim("pt_smg_handling_t9" + xanim);
-                    CheckAnim("pt_smg_heavy_t9" + xanim);
-                    CheckAnim("pt_smg_season6_t9" + xanim);
-                    CheckAnim("pt_smg_semiauto_t9" + xanim);
-                    CheckAnim("pt_smg_spray_t9" + xanim);
-                    CheckAnim("pt_smg_standard_t9" + xanim);
-                    CheckAnim("pt_smoke_grenade_t9" + xanim);
-                    CheckAnim("pt_sniper_accurate_t9" + xanim);
-                    CheckAnim("pt_sniper_cannon_t9" + xanim);
-                    CheckAnim("pt_sniper_powersemi_t9" + xanim);
-                    CheckAnim("pt_sniper_quickscope_t9" + xanim);
-                    CheckAnim("pt_sniper_standard_t9" + xanim);
-                    CheckAnim("pt_special_grenade_launcher" + xanim);
-                    CheckAnim("pt_tr_damagesemi_t9" + xanim);
-                    CheckAnim("pt_tr_fastburst_t9" + xanim);
-                    CheckAnim("pt_tr_longburst_t9" + xanim);
-                    CheckAnim("pt_tr_powerburst_t9" + xanim);
-                    CheckAnim("pt_tr_precisionsemi_t9" + xanim);
-                    CheckAnim("pt_wakizashi_t9" + xanim);
-                    CheckAnim("pt_zm_crystal_axe_melee_t9" + xanim);
-                    CheckAnim("pt_zm_crystal_axe_smg_t9" + xanim);
-                    CheckAnim("pt_zm_mega_barrel_blazer_beam_t9" + xanim);
-                    CheckAnim("pt_zm_mega_barrel_micro_missile_t9" + xanim);
-                    CheckAnim("pt_zm_mega_barrel_pistol_t9" + xanim);
-                    CheckAnim("pt_zm_ray_rifle_t9" + xanim);
-                    CheckAnim("pt_zm_silver_ww_t9" + xanim);
-                    CheckAnim("vm_ar_accurate_t9" + xanim);
-                    CheckAnim("vm_ar_british_t9" + xanim);
-                    CheckAnim("vm_ar_damage_t9" + xanim);
-                    CheckAnim("vm_ar_fastfire_t9" + xanim);
-                    CheckAnim("vm_ar_fasthandling_t9" + xanim);
-                    CheckAnim("vm_ar_mobility_t9" + xanim);
-                    CheckAnim("vm_ar_season6_t9" + xanim);
-                    CheckAnim("vm_ar_slowfire_t9" + xanim);
-                    CheckAnim("vm_ar_slowhandling_t9" + xanim);
-                    CheckAnim("vm_ar_soviet_t9" + xanim);
-                    CheckAnim("vm_ar_standard_t9" + xanim);
-                    CheckAnim("vm_ballistic_knife_t9" + xanim);
-                    CheckAnim("vm_baseball_bat_t9" + xanim);
-                    CheckAnim("vm_battle_axe_t9" + xanim);
-                    CheckAnim("vm_br_freefall" + xanim);
-                    CheckAnim("vm_br_parachute" + xanim);
-                    CheckAnim("vm_brawler_t9" + xanim);
-                    CheckAnim("vm_cane_t9" + xanim);
-                    CheckAnim("vm_com" + xanim);
-                    CheckAnim("vm_com_t9" + xanim);
-                    CheckAnim("vm_combat_knife_t9" + xanim);
-                    CheckAnim("vm_concussion_grenade_t9" + xanim);
-                    CheckAnim("vm_crossbow_t9" + xanim);
-                    CheckAnim("vm_dual_sai_t9" + xanim);
-                    CheckAnim("vm_etool_t9" + xanim);
-                    CheckAnim("vm_flamethrower_t9" + xanim);
-                    CheckAnim("vm_frag_grenade_t9" + xanim);
-                    CheckAnim("vm_grapple_gun_t9" + xanim);
-                    CheckAnim("vm_hammer_sickle_t9" + xanim);
-                    CheckAnim("vm_hatchet_t9" + xanim);
-                    CheckAnim("vm_launcher_freefire_t9" + xanim);
-                    CheckAnim("vm_launcher_standard_t9" + xanim);
-                    CheckAnim("vm_lmg_accurate_t9" + xanim);
-                    CheckAnim("vm_lmg_fastfire_t9" + xanim);
-                    CheckAnim("vm_lmg_light_t9" + xanim);
-                    CheckAnim("vm_lmg_slowfire_t9" + xanim);
-                    CheckAnim("vm_mace_t9" + xanim);
-                    CheckAnim("vm_machete_t9" + xanim);
-                    CheckAnim("vm_minigun_t9" + xanim);
-                    CheckAnim("vm_nailgun_t9" + xanim);
-                    CheckAnim("vm_pistol_burst_t9" + xanim);
-                    CheckAnim("vm_pistol_fullauto_t9" + xanim);
-                    CheckAnim("vm_pistol_revolver_t9" + xanim);
-                    CheckAnim("vm_pistol_semiauto_t9" + xanim);
-                    CheckAnim("vm_pistol_shotgun_t9" + xanim);
-                    CheckAnim("vm_ray_gun_t9" + xanim);
-                    CheckAnim("vm_scythe_t9" + xanim);
-                    CheckAnim("vm_semtex_grenade_t9" + xanim);
-                    CheckAnim("vm_shotgun_fullauto_t9" + xanim);
-                    CheckAnim("vm_shotgun_leveraction_t9" + xanim);
-                    CheckAnim("vm_shotgun_pump_t9" + xanim);
-                    CheckAnim("vm_shotgun_semiauto_t9" + xanim);
-                    CheckAnim("vm_sledgehammer_t9" + xanim);
-                    CheckAnim("vm_smg_accurate_t9" + xanim);
-                    CheckAnim("vm_smg_burst_t9" + xanim);
-                    CheckAnim("vm_smg_capacity_t9" + xanim);
-                    CheckAnim("vm_smg_cqb_t9" + xanim);
-                    CheckAnim("vm_smg_fastfire_t9" + xanim);
-                    CheckAnim("vm_smg_flechette_t9" + xanim);
-                    CheckAnim("vm_smg_handling_t9" + xanim);
-                    CheckAnim("vm_smg_heavy_t9" + xanim);
-                    CheckAnim("vm_smg_season6_t9" + xanim);
-                    CheckAnim("vm_smg_semiauto_t9" + xanim);
-                    CheckAnim("vm_smg_spray_t9" + xanim);
-                    CheckAnim("vm_smg_standard_t9" + xanim);
-                    CheckAnim("vm_smoke_grenade_t9" + xanim);
-                    CheckAnim("vm_sniper_accurate_t9" + xanim);
-                    CheckAnim("vm_sniper_cannon_t9" + xanim);
-                    CheckAnim("vm_sniper_powersemi_t9" + xanim);
-                    CheckAnim("vm_sniper_quickscope_t9" + xanim);
-                    CheckAnim("vm_sniper_standard_t9" + xanim);
-                    CheckAnim("vm_special_grenade_launcher" + xanim);
-                    CheckAnim("vm_tactical" + xanim);
-                    CheckAnim("vm_tr_damagesemi_t9" + xanim);
-                    CheckAnim("vm_tr_fastburst_t9" + xanim);
-                    CheckAnim("vm_tr_longburst_t9" + xanim);
-                    CheckAnim("vm_tr_powerburst_t9" + xanim);
-                    CheckAnim("vm_tr_precisionsemi_t9" + xanim);
-                    CheckAnim("vm_wakizashi_t9" + xanim);
-                    CheckAnim("vm_zm_crystal_axe_melee_t9" + xanim);
-                    CheckAnim("vm_zm_crystal_axe_smg_t9" + xanim);
-                    CheckAnim("vm_zm_mega_barrel_blazer_beam_t9" + xanim);
-                    CheckAnim("vm_zm_mega_barrel_micro_missile_t9" + xanim);
-                    CheckAnim("vm_zm_mega_barrel_pistol_t9" + xanim);
-                    CheckAnim("vm_zm_ray_rifle_t9" + xanim);
-                    CheckAnim("vm_zm_silver_ww_t9" + xanim);
-                }
-            }
-            foreach (string ximage in xImage)
-            {
-                foreach (string xwpnattachment in xWpnAttachment)
-                {
-                    foreach (string xwpnblueprint in xWpnBlueprint)
-                    {
-                        // CW Weapon & Operator Images
-                        // Swap imageWpnAttachment with imageWpnBlueprint as some bundles have swapped names for more results
-                        CheckImage("" + ximage);
-                        CheckImage("i_mtl_wpn_t9" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_smg_standard" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_sniper_quickscope" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_sniper_standard" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_tr_damagesemi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_tr_longburst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_combat_knife_american" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_grenade_launcher" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_lmg_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_lmg_accurate_cb" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_lmg_light" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_lmg_slowfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_ar_fasthandling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_ar_slowfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_ar_slowhandling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_ar_soviet" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_bp" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_lmg_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_shotgun_leveraction" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_shotgun_sweeper" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_cqb" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_ingram" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_lapa" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_semiauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_spray" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_sniper_cannon" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_tr_fastburst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_hammersickle_hammer" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_hammersickle_sikle" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_shovel" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_wakizashi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_pistol_burst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_pistol_burst_cb" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_pistol_burst_cb_secondary" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_pistol_burst_secondary" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_pistol_revolver" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_pistol_semiauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_shotgun_pump" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_shotgun_semiauto_cb" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_burst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_capacity" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_handling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_heavy" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_standard_cb" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_sniper_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_sniper_powersemi_cb" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_sniper_quickscope" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_sniper_standard" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_special_crossbow" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_tr_damagesemi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_tr_fullauto_classic" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_tr_longburst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_tr_powerburst_cb" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_tr_precisionsemi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_zm_monkey" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_zm_raygun" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_british" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_damage" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_fasthandling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_krig6" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_mercenary" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_mobility" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_season6" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_slowfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_slowhandling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_soviet" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_ar_standard" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_ar_damage" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_ar_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_ar_krig6" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_ar_mercenary" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_ar_mobility" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_lmg_light" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_loot_ar_fasthandling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_pistol_burst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_pistol_revolver" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_pistol_semiauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_shotgun_pump" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_smg_burst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_smg_handling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_bp_smg_heavy" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_combat_knife_american" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_grenade_launcher" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_knife_ballistic" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_launcher_freefire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_launcher_standard" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_lmg_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_lmg_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_lmg_light" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_lmg_slowfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_ar_british" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_ar_fasthandling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_ar_season6" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_ar_slowfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_ar_slowhandling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_ar_soviet" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_lmg_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_nailgun" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_pistol_fullauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_pistol_shotgun" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_shotgun_fullauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_shotgun_leveraction" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_cqb" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_flechette" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_lapa" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_semiauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_smg_spray" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_sniper_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_sniper_cannon" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_loot_tr_fastburst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_machete" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_axe" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_bat" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_cane" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_hammersickle_hammer" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_hammersickle_sikle" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_mace" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_sais" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_scythe" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_shovel" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_sledgehammer" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_melee_wakizashi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_nailgun" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_pistol_burst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_pistol_fullauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_pistol_revolver" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_pistol_semiauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_pistol_shotgun" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_shotgun_fullauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_shotgun_leveraction" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_shotgun_pump" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_shotgun_semiauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_burst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_capacity" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_cqb" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_flechette" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_handling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_heavy" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_lapa" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_semiauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_spray" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_smg_standard" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_sniper_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_sniper_cannon" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_sniper_powersemi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_sniper_quickscope" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_sniper_standard" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_special_crossbow" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_tr_damagesemi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_tr_fastburst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_tr_longburst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_tr_powerburst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_tr_precisionsemi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_zm_mega_barrel" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_zm_monkey" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_zm_raygun" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_mtl_wpn_t9_zm_ray_rifle" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_british" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_damage" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_fasthandling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_krig6" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_mercenary" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_mobility" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_season6" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_slowfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_slowhandling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_soviet" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_ar_standard" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_combat_knife_american" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_grenade_launcher" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_knife_ballistic" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_launcher_freefire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_launcher_standard" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_lmg_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_lmg_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_lmg_light" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_lmg_slowfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_ar_british" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_ar_fasthandling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_ar_season6" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_ar_slowfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_ar_slowhandling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_ar_soviet" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_lmg_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_nailgun" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_pistol_fullauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_pistol_shotgun" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_shotgun_fullauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_shotgun_leveraction" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_smg_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_smg_cqb" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_smg_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_smg_flechette" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_smg_lapa" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_smg_semiauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_smg_spray" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_sniper_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_sniper_cannon" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_loot_tr_fastburst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_machete" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_melee_axe" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_melee_bat" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_melee_cane" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_melee_hammersickle_hammer" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_melee_hammersickle_sikle" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_melee_mace" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_melee_sais" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_melee_scythe" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_melee_shovel" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_melee_sledgehammer" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_melee_wakizashi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_nailgun" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_pistol_burst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_pistol_fullauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_pistol_revolver" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_pistol_semiauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_pistol_shotgun" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_shotgun_fullauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_shotgun_leveraction" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_shotgun_pump" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_shotgun_semiauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_burst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_capacity" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_cqb" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_fastfire" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_flechette" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_handling" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_heavy" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_lapa" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_semiauto" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_spray" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_smg_standard" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_sniper_accurate" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_sniper_cannon" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_sniper_powersemi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_sniper_quickscope" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_sniper_standard" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_special_crossbow" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_tr_damagesemi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_tr_fastburst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_tr_longburst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_tr_powerburst" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_tr_precisionsemi" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_zm_mega_barrel" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_zm_monkey" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_zm_raygun" + xwpnattachment + xwpnblueprint + ximage);
-                        CheckImage("i_wpn_t9_zm_ray_rifle" + xwpnattachment + xwpnblueprint + ximage);
-                    }
-                }
-            }
-            foreach (string xmaterial in xMaterial)
-            {
-                // BO4 & CW Materials
-                CheckMaterial("" + xmaterial);
-                CheckMaterial("ei/" + xmaterial);
-                CheckMaterial("el/" + xmaterial);
-                CheckMaterial("mc/" + xmaterial);
-                CheckMaterial("mc/c_t7" + xmaterial);
-                CheckMaterial("mc/c_t8" + xmaterial);
-                CheckMaterial("mc/c_t9" + xmaterial);
-                CheckMaterial("mc/i_mtl" + xmaterial);
-                CheckMaterial("mc/i_mtl_mtl_mtl_veh_t7" + xmaterial);
-                CheckMaterial("mc/i_mtl_mtl_mtl_veh_t8" + xmaterial);
-                CheckMaterial("mc/i_mtl_mtl_mtl_veh_t9" + xmaterial);
-                CheckMaterial("mc/i_mtl_mtl_veh_t7" + xmaterial);
-                CheckMaterial("mc/i_mtl_mtl_veh_t8" + xmaterial);
-                CheckMaterial("mc/i_mtl_mtl_veh_t9" + xmaterial);
-                CheckMaterial("mc/i_mtl_veh_t7" + xmaterial);
-                CheckMaterial("mc/i_mtl_veh_t8" + xmaterial);
-                CheckMaterial("mc/i_mtl_veh_t9" + xmaterial);
-                CheckMaterial("mc/i_p7" + xmaterial);
-                CheckMaterial("mc/i_p8" + xmaterial);
-                CheckMaterial("mc/i_p9" + xmaterial);
-                CheckMaterial("mc/i_t7" + xmaterial);
-                CheckMaterial("mc/i_t8" + xmaterial);
-                CheckMaterial("mc/i_t9" + xmaterial);
-                CheckMaterial("mc/i_veh" + xmaterial);
-                CheckMaterial("mc/i_veh_t7" + xmaterial);
-                CheckMaterial("mc/i_veh_t8" + xmaterial);
-                CheckMaterial("mc/i_veh_t9" + xmaterial);
-                CheckMaterial("mc/i_wpn_t7" + xmaterial);
-                CheckMaterial("mc/i_wpn_t8" + xmaterial);
-                CheckMaterial("mc/i_wpn_t9" + xmaterial);
-                CheckMaterial("mc/mlt" + xmaterial);
-                CheckMaterial("mc/mlt_mtl" + xmaterial);
-                CheckMaterial("mc/mtl" + xmaterial);
-                CheckMaterial("mc/mtl_c_t7" + xmaterial);
-                CheckMaterial("mc/mtl_c_t8" + xmaterial);
-                CheckMaterial("mc/mtl_c_t9" + xmaterial);
-                CheckMaterial("mc/mtl_mlt" + xmaterial);
-                CheckMaterial("mc/mtl_mtl" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_c_t7" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_c_t8" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_c_t9" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_mtl" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_mtl_c_t7" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_mtl_c_t8" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_mtl_c_t9" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_mtl_p7" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_mtl_p8" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_mtl_p9" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_mtl_t7" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_mtl_t8" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_mtl_t9" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_p7" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_p8" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_p9" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_t7" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_t8" + xmaterial);
-                CheckMaterial("mc/mtl_mtl_t9" + xmaterial);
-                CheckMaterial("mc/mtl_p7" + xmaterial);
-                CheckMaterial("mc/mtl_p8" + xmaterial);
-                CheckMaterial("mc/mtl_p9" + xmaterial);
-                CheckMaterial("mc/mtl_t7" + xmaterial);
-                CheckMaterial("mc/mtl_t8" + xmaterial);
-                CheckMaterial("mc/mtl_t9" + xmaterial);
-                CheckMaterial("mcs/" + xmaterial);
-                CheckMaterial("vd/" + xmaterial);
-                CheckMaterial("vdd/" + xmaterial);
-                CheckMaterial("wc/" + xmaterial);
-            }
-            foreach (string xmodel in xModel)
-            {
-                // CW Operator Models & Skins
-                CheckModel("" + xmodel);
-                CheckModel("c_t9_aml_komodo_dragon" + xmodel);
-                CheckModel("c_t9_aml_rabbit" + xmodel);
-                CheckModel("c_t9_aml_rottweiler" + xmodel);
-                CheckModel("c_t9_aml_snow_leopard" + xmodel);
-                CheckModel("c_t9_base_female_nude" + xmodel);
-                CheckModel("c_t9_base_male_nude_2" + xmodel);
-                CheckModel("c_t9_base_male_nude_buff" + xmodel);
-                CheckModel("c_t9_cp_rus_pl_f_agent_global_infil_combat" + xmodel);
-                CheckModel("c_t9_cp_rus_pl_f_agent_hub_infil" + xmodel);
-                CheckModel("c_t9_cp_rus_pl_f_agent_nam_infil_combat" + xmodel);
-                CheckModel("c_t9_cp_rus_pl_m_agent_global_infil_combat" + xmodel);
-                CheckModel("c_t9_cp_rus_pl_m_agent_global_undrcvr_civ" + xmodel);
-                CheckModel("c_t9_cp_rus_pl_m_agent_hub_infil_combat" + xmodel);
-                CheckModel("c_t9_cp_usa_pl_mason_infil_takedown" + xmodel);
-                CheckModel("c_t9_cp_usa_pl_mason_yam_winter" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_barrio" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_bongo" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_brawler" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_commando" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_el_jefe" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_flick" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_general" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_havana" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_hitman" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_infiltration" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_jack" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_jack_ms" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_jack_pc" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_jack_sy" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_lucha" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_mechanic" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_rebel_leader" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_sicario" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_slasher" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_tropas_ms" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_tropas_pc" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_tropas_sy" + xmodel);
-                CheckModel("c_t9_cub_pl_dgi_warlord" + xmodel);
-                CheckModel("c_t9_eg_pl_quicksand" + xmodel);
-                CheckModel("c_t9_eg_pl_quicksand_khopesh" + xmodel);
-                CheckModel("c_t9_eg_pl_quicksand_slither" + xmodel);
-                CheckModel("c_t9_esp_pl_goe_bomber" + xmodel);
-                CheckModel("c_t9_esp_pl_goe_bomber_scrapmetal" + xmodel);
-                CheckModel("c_t9_fin_pl_wraith" + xmodel);
-                CheckModel("c_t9_fin_pl_wraith_automaton" + xmodel);
-                CheckModel("c_t9_fin_pl_wraith_burnout" + xmodel);
-                CheckModel("c_t9_fin_pl_wraith_freya" + xmodel);
-                CheckModel("c_t9_fin_pl_wraith_havoc" + xmodel);
-                CheckModel("c_t9_fin_pl_wraith_white_queen" + xmodel);
-                CheckModel("c_t9_fra_pl_dgse_amped" + xmodel);
-                CheckModel("c_t9_fra_pl_dgse_arc" + xmodel);
-                CheckModel("c_t9_fra_pl_dgse_dakar" + xmodel);
-                CheckModel("c_t9_fra_pl_dgse_gign" + xmodel);
-                CheckModel("c_t9_fra_pl_dgse_infiltration" + xmodel);
-                CheckModel("c_t9_fra_pl_dgse_mademoiselle" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_female" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_female_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_female_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_female_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_male_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_male_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_male_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_empire_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_empire_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_empire_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_faze_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_faze_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_faze_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_guerillas_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_guerillas_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_guerillas_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_legion_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_legion_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_legion_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_mutineers_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_mutineers_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_mutineers_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_optic_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_optic_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_optic_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_rokkr_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_rokkr_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_rokkr_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_royalravens_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_royalravens_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_royalravens_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_subliners_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_subliners_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_subliners_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_surge_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_surge_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_surge_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_thieves_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_thieves_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_thieves_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_ultra_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_ultra_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_esports_watch_ultra_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_starter1" + xmodel);
-                CheckModel("c_t9_gen_pl_starter1_hunter_dash" + xmodel);
-                CheckModel("c_t9_gen_pl_starter1_hunter_eagleeye" + xmodel);
-                CheckModel("c_t9_gen_pl_starter1_hunter_frontline" + xmodel);
-                CheckModel("c_t9_gen_pl_starter1_hunter_inferno" + xmodel);
-                CheckModel("c_t9_gen_pl_starter1_hunter_killer" + xmodel);
-                CheckModel("c_t9_gen_pl_starter1_hunter_rescue" + xmodel);
-                CheckModel("c_t9_gen_pl_starter2" + xmodel);
-                CheckModel("c_t9_gen_pl_starter2_vargas_bacano" + xmodel);
-                CheckModel("c_t9_gen_pl_starter2_vargas_bull_bull_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_starter2_vargas_bull_bull_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_starter2_vargas_bull_bull_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_starter2_vargas_bunker" + xmodel);
-                CheckModel("c_t9_gen_pl_starter2_vargas_finishline" + xmodel);
-                CheckModel("c_t9_gen_pl_starter2_vargas_major" + xmodel);
-                CheckModel("c_t9_gen_pl_starter2_vargas_steel" + xmodel);
-                CheckModel("c_t9_gen_pl_starter2_vargas_stovepipe" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_ash" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_bollocks_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_bollocks_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_bollocks_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_bugscreen" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_carver" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_infestation" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_insurgent" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_jammy" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_ripper" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_seige" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_squelch" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_stoned" + xmodel);
-                CheckModel("c_t9_gen_pl_starter3_stone_storefront" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4_song_backflip" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4_song_bloom" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4_song_busted" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4_song_counter" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4_song_dagger" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4_song_flare" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4_song_mechanic_ms" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4_song_mechanic_pc" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4_song_mechanic_sy" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4_song_observer" + xmodel);
-                CheckModel("c_t9_gen_pl_starter4_song_tiger" + xmodel);
-                CheckModel("c_t9_gen_pl_starter5" + xmodel);
-                CheckModel("c_t9_gen_pl_starter5_powers_cameroon" + xmodel);
-                CheckModel("c_t9_gen_pl_starter5_powers_desert" + xmodel);
-                CheckModel("c_t9_gen_pl_starter5_powers_driver" + xmodel);
-                CheckModel("c_t9_gen_pl_starter5_powers_dust" + xmodel);
-                CheckModel("c_t9_gen_pl_starter5_powers_ffl" + xmodel);
-                CheckModel("c_t9_gen_pl_starter5_powers_gun" + xmodel);
-                CheckModel("c_t9_gen_pl_starter5_powers_stealth" + xmodel);
-                CheckModel("c_t9_gen_pl_starter5_powers_swift" + xmodel);
-                CheckModel("c_t9_ger_pl_maxis_berlin" + xmodel);
-                CheckModel("c_t9_ger_pl_maxis_bride" + xmodel);
-                CheckModel("c_t9_ger_pl_maxis_dark" + xmodel);
-                CheckModel("c_t9_ger_pl_maxis_lumens" + xmodel);
-                CheckModel("c_t9_ger_pl_maxis_phantom" + xmodel);
-                CheckModel("c_t9_ger_pl_maxis_scythe" + xmodel);
-                CheckModel("c_t9_ger_pl_maxis_traveler" + xmodel);
-                CheckModel("c_t9_ger_pl_west_bomber" + xmodel);
-                CheckModel("c_t9_ger_pl_west_carnage" + xmodel);
-                CheckModel("c_t9_ger_pl_west_gothic" + xmodel);
-                CheckModel("c_t9_ger_pl_west_gsg9_3" + xmodel);
-                CheckModel("c_t9_ger_pl_west_gsg9_hardhat" + xmodel);
-                CheckModel("c_t9_ger_pl_west_infiltration" + xmodel);
-                CheckModel("c_t9_ger_pl_west_judge_dredd" + xmodel);
-                CheckModel("c_t9_ger_pl_west_klown" + xmodel);
-                CheckModel("c_t9_ger_pl_west_nightops" + xmodel);
-                CheckModel("c_t9_ger_pl_west_paratrooper" + xmodel);
-                CheckModel("c_t9_ger_pl_west_patrol" + xmodel);
-                CheckModel("c_t9_ger_pl_west_police" + xmodel);
-                CheckModel("c_t9_ger_pl_west_professor" + xmodel);
-                CheckModel("c_t9_ger_pl_west_racer" + xmodel);
-                CheckModel("c_t9_ger_pl_west_raider" + xmodel);
-                CheckModel("c_t9_ger_pl_west_stalker" + xmodel);
-                CheckModel("c_t9_ger_pl_west_stealth" + xmodel);
-                CheckModel("c_t9_ger_pl_west_stronghold" + xmodel);
-                CheckModel("c_t9_ger_pl_west_swat" + xmodel);
-                CheckModel("c_t9_ger_pl_west_tagger_ii" + xmodel);
-                CheckModel("c_t9_ger_pl_west_winter" + xmodel);
-                CheckModel("c_t9_isr_pl_lazar_idf" + xmodel);
-                CheckModel("c_t9_jpn_pl_kitsune" + xmodel);
-                CheckModel("c_t9_jpn_pl_kitsune_biteme" + xmodel);
-                CheckModel("c_t9_jpn_pl_kitsune_boss" + xmodel);
-                CheckModel("c_t9_jpn_pl_kitsune_ultra" + xmodel);
-                CheckModel("c_t9_jpn_pl_kitsune_yokai" + xmodel);
-                CheckModel("c_t9_lao_pl_serpent" + xmodel);
-                CheckModel("c_t9_lao_pl_serpent_haggler" + xmodel);
-                CheckModel("c_t9_lao_pl_serpent_hollow" + xmodel);
-                CheckModel("c_t9_lao_pl_serpent_overgrowth" + xmodel);
-                CheckModel("c_t9_lao_pl_serpent_shadow" + xmodel);
-                CheckModel("c_t9_lao_pl_serpent_warlord" + xmodel);
-                CheckModel("c_t9_nic_pl_smuggler" + xmodel);
-                CheckModel("c_t9_nic_pl_smuggler_mural" + xmodel);
-                CheckModel("c_t9_nic_pl_smuggler_stinger" + xmodel);
-                CheckModel("c_t9_nic_pl_smuggler_whiskey" + xmodel);
-                CheckModel("c_t9_pl_f_agent_global_undrcvr_civ" + xmodel);
-                CheckModel("c_t9_pl_f_agent_global_undrcvr_civ_asian" + xmodel);
-                CheckModel("c_t9_pl_f_agent_global_undrcvr_civ_asian2" + xmodel);
-                CheckModel("c_t9_pl_f_agent_global_undrcvr_civ_black" + xmodel);
-                CheckModel("c_t9_pl_f_agent_global_undrcvr_civ_black2" + xmodel);
-                CheckModel("c_t9_pl_f_agent_global_undrcvr_civ_mideast" + xmodel);
-                CheckModel("c_t9_pl_f_agent_global_undrcvr_civ_mideast2" + xmodel);
-                CheckModel("c_t9_pl_f_agent_global_undrcvr_civ_white" + xmodel);
-                CheckModel("c_t9_pl_f_agent_global_undrcvr_civ_white2" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_exfil_asian" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_exfil_asian2" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_exfil_black" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_exfil_black2" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_exfil_mideast" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_exfil_mideast2" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_exfil_white" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_exfil_white2" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_undrcvr_asian" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_undrcvr_asian2" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_undrcvr_black" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_undrcvr_black2" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_undrcvr_mideast" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_undrcvr_mideast2" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_undrcvr_white" + xmodel);
-                CheckModel("c_t9_pl_f_agent_kgb_undrcvr_white2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_asian" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_asian2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_black" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_black2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_body_asian" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_body_asian2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_body_black" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_body_black2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_body_mideast" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_body_mideast2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_body_white" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_body_white2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_mideast" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_mideast2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_white" + xmodel);
-                CheckModel("c_t9_pl_m_agent_kgb_officer_exfil_white2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_undcvr_kgb_guard" + xmodel);
-                CheckModel("c_t9_pl_m_agent_undcvr_kgb_guard_asian" + xmodel);
-                CheckModel("c_t9_pl_m_agent_undcvr_kgb_guard_asian2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_undcvr_kgb_guard_black" + xmodel);
-                CheckModel("c_t9_pl_m_agent_undcvr_kgb_guard_black2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_undcvr_kgb_guard_mideast" + xmodel);
-                CheckModel("c_t9_pl_m_agent_undcvr_kgb_guard_mideast2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_undcvr_kgb_guard_white" + xmodel);
-                CheckModel("c_t9_pl_m_agent_undcvr_kgb_guard_white2" + xmodel);
-                CheckModel("c_t9_pl_m_agent_undcvr_takedown" + xmodel);
-                CheckModel("c_t9_pl_m_agent_undcvr_takedown_body" + xmodel);
-                CheckModel("c_t9_pl_mason_infil_stealth_viewmodel" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_assassin" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_breakout" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_bunny" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_burglar" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_funnybone" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_ghost" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_gunshow" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_hash" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_infantry" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_infiltration" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_lab" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_mach1_ms" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_mach1_pc" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_mach1_sy" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_poison" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_punk" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_shadow" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_smoker" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_spyglass" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_tacticalgoth" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_thekid" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_urban" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_valentines" + xmodel);
-                CheckModel("c_t9_rus_pl_kgb_winter" + xmodel);
-                CheckModel("c_t9_rus_pl_mason_winter_yam" + xmodel);
-                CheckModel("c_t9_rus_pl_spetsnaz_afghan_sniper" + xmodel);
-                CheckModel("c_t9_rus_pl_spetsnaz_chernobyl" + xmodel);
-                CheckModel("c_t9_rus_pl_spetsnaz_grudge" + xmodel);
-                CheckModel("c_t9_rus_pl_spetsnaz_infiltration" + xmodel);
-                CheckModel("c_t9_rus_pl_spetsnaz_melted" + xmodel);
-                CheckModel("c_t9_rus_pl_stitch_01" + xmodel);
-                CheckModel("c_t9_rus_pl_stitch_brute" + xmodel);
-                CheckModel("c_t9_rus_pl_stitch_cultist" + xmodel);
-                CheckModel("c_t9_rus_pl_stitch_cultist_ms" + xmodel);
-                CheckModel("c_t9_rus_pl_stitch_cultist_pc" + xmodel);
-                CheckModel("c_t9_rus_pl_stitch_cultist_sy" + xmodel);
-                CheckModel("c_t9_rus_pl_stitch_echo" + xmodel);
-                CheckModel("c_t9_rus_pl_stitch_manga" + xmodel);
-                CheckModel("c_t9_rus_pl_stitch_prisoner" + xmodel);
-                CheckModel("c_t9_rus_pl_stitch_torn" + xmodel);
-                CheckModel("c_t9_sa_pl_deathstalker" + xmodel);
-                CheckModel("c_t9_sa_pl_deathstalker_bearclaw" + xmodel);
-                CheckModel("c_t9_sa_pl_deathstalker_bearclaw_ms" + xmodel);
-                CheckModel("c_t9_sa_pl_deathstalker_bearclaw_pc" + xmodel);
-                CheckModel("c_t9_sa_pl_deathstalker_bearclaw_sy" + xmodel);
-                CheckModel("c_t9_sa_pl_deathstalker_snake" + xmodel);
-                CheckModel("c_t9_uk_pl_kingsley" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_aftermath" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_badblood" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_checker" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_clandestine" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_coal" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_derby" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_doubleagent" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_dystopia" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_fob" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_football" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_glam" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_guard" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_handler" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_heist" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_ignite" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_infiltration" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_napalm" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_racer" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_scorch" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_sis" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_skyhook_ms" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_skyhook_pc" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_skyhook_sy" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_snapshot" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_standoff" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_survivor" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_tagger" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_uncharted" + xmodel);
-                CheckModel("c_t9_uk_pl_mi6_xray" + xmodel);
-                CheckModel("c_t9_uk_pl_price" + xmodel);
-                CheckModel("c_t9_uk_pl_sas_blackknight" + xmodel);
-                CheckModel("c_t9_uk_pl_sas_gridlock" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_airborne" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_buoy" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_control" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_detective" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_detective_ms" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_detective_pc" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_detective_sy" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_game_fuel" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_gator" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_gunslinger" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_hostage" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_infiltration" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_lancer" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_miami" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_pressed" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_ranger" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_red" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_renegade" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_slayer" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_tropic" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_vbss" + xmodel);
-                CheckModel("c_t9_usa_pl_adler_wire" + xmodel);
-                CheckModel("c_t9_usa_pl_bulldozer_01" + xmodel);
-                CheckModel("c_t9_usa_pl_bulldozer_boom" + xmodel);
-                CheckModel("c_t9_usa_pl_bulldozer_forged" + xmodel);
-                CheckModel("c_t9_usa_pl_bulldozer_hawk" + xmodel);
-                CheckModel("c_t9_usa_pl_bulldozer_panda" + xmodel);
-                CheckModel("c_t9_usa_pl_bulldozer_toxin" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_adler_bloodhound" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_adler_traveler" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_advisor" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_agent" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_big_joke_3" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_boss" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_captain" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_climber" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_commando" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_covert" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_grit" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_infiltration" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_kick" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_logger" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_macv" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_macv_code_ms" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_macv_code_pc" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_macv_code_sy" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_penumbra_ms" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_penumbra_pc" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_penumbra_sy" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_regulator" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_snatch" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_sogman" + xmodel);
-                CheckModel("c_t9_usa_pl_cia_tee" + xmodel);
-                CheckModel("c_t9_usa_pl_deltaforce_brutalist" + xmodel);
-                CheckModel("c_t9_usa_pl_deltaforce_brutalist_ms" + xmodel);
-                CheckModel("c_t9_usa_pl_deltaforce_brutalist_pc" + xmodel);
-                CheckModel("c_t9_usa_pl_deltaforce_brutalist_sy" + xmodel);
-                CheckModel("c_t9_usa_pl_deltaforce_cyclone" + xmodel);
-                CheckModel("c_t9_usa_pl_deltaforce_dynamite" + xmodel);
-                CheckModel("c_t9_usa_pl_deltaforce_halo" + xmodel);
-                CheckModel("c_t9_usa_pl_deltaforce_infiltration" + xmodel);
-                CheckModel("c_t9_usa_pl_deltaforce_infiltration_body" + xmodel);
-                CheckModel("c_t9_usa_pl_deltaforce_jungle_warfare" + xmodel);
-                CheckModel("c_t9_usa_pl_deltaforce_urgentfury" + xmodel);
-                CheckModel("c_t9_usa_pl_ghostface" + xmodel);
-                CheckModel("c_t9_usa_pl_hudson" + xmodel);
-                CheckModel("c_t9_usa_pl_hudson_hazmat_ms" + xmodel);
-                CheckModel("c_t9_usa_pl_hudson_hazmat_pc" + xmodel);
-                CheckModel("c_t9_usa_pl_hudson_hazmat_sy" + xmodel);
-                CheckModel("c_t9_usa_pl_hudson_rock" + xmodel);
-                CheckModel("c_t9_usa_pl_mason" + xmodel);
-                CheckModel("c_t9_usa_pl_mason_ultra" + xmodel);
-                CheckModel("c_t9_usa_pl_masongame" + xmodel);
-                CheckModel("c_t9_usa_pl_mcclane" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_air_ms" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_air_pc" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_air_sy" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_blue_devil" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_breaker" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_business" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_clown" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_dissident" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_endurance_ms" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_endurance_pc" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_endurance_sy" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_frank" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_frogman" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_gigawatt" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_grip" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_grunge" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_hopper" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_hunter" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_infiltration" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_knucklehead" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_land_ms" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_land_pc" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_land_sy" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_maverick" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_ringleader" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_sea_ms" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_sea_pc" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_sea_sy" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_slugger" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_sniper" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_solitude" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_strike" + xmodel);
-                CheckModel("c_t9_usa_pl_navyseal_wolf" + xmodel);
-                CheckModel("c_t9_usa_pl_rambo" + xmodel);
-                CheckModel("c_t9_usa_pl_spy_female_investigator" + xmodel);
-                CheckModel("c_t9_usa_pl_spy_investigator" + xmodel);
-                CheckModel("c_t9_usa_pl_surge" + xmodel);
-                CheckModel("c_t9_usa_pl_surge_meta" + xmodel);
-                CheckModel("c_t9_usa_pl_vip" + xmodel);
-                CheckModel("c_t9_usa_pl_vip2_axis_side" + xmodel);
-                CheckModel("c_t9_usa_pl_weaver_aftermath" + xmodel);
-                CheckModel("c_t9_usa_pl_weaver_cosmodrome" + xmodel);
-                CheckModel("c_t9_usa_pl_weaver_rebirth" + xmodel);
-                CheckModel("c_t9_usa_pl_weaver_sonsoforda" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_biker" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_conquer" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_dapper" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_dope" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_eagleclaw" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_eliminator" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_fisherman" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_haha" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_holidaywoods" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_infiltration" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_mellow" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_payback" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_pow" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_pow_body" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_rogue" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_sandstorm" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_slaughter" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_swamp" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_trucker" + xmodel);
-                CheckModel("c_t9_usa_pl_woods_whirlwind" + xmodel);
-                // BO4 / CW Weapon Models & Blueprints
-                // Rising Tide
-                // wpn_t8_abr_223
-                // wpn_t8_acheron_alliterator
-                // wpn_t8_d3s0l8_regulator
-                // wpn_t8_escargot
-                // wpn_t8_essex_model_07
-                // wpn_t8_hitchcock_m9
-                // wpn_t8_king_and_country
-                CheckModel("wpn_t8_ar_accurate" + xmodel);
-                CheckModel("wpn_t8_ar_fastfire" + xmodel);
-                CheckModel("wpn_t8_ar_galil" + xmodel);
-                CheckModel("wpn_t8_ar_heavy" + xmodel);
-                CheckModel("wpn_t8_ar_k57" + xmodel);
-                CheckModel("wpn_t8_ar_stealth" + xmodel);
-                CheckModel("wpn_t8_crossbow_special" + xmodel);
-                CheckModel("wpn_t8_knife_combat" + xmodel);
-                CheckModel("wpn_t8_launcher_standard" + xmodel);
-                CheckModel("wpn_t8_lmg_plr" + xmodel);
-                CheckModel("wpn_t8_lmg_titan" + xmodel);
-                CheckModel("wpn_t8_loot_ar_an94" + xmodel);
-                CheckModel("wpn_t8_loot_ar_double_barrel" + xmodel);
-                CheckModel("wpn_t8_loot_ar_peacekeeper" + xmodel);
-                CheckModel("wpn_t8_loot_ar_standard" + xmodel);
-                CheckModel("wpn_t8_loot_knife_ballistic" + xmodel);
-                CheckModel("wpn_t8_loot_knife_ballistic_dw" + xmodel);
-                CheckModel("wpn_t8_loot_knife_ballistic_karambit_dw" + xmodel);
-                CheckModel("wpn_t8_loot_lmg_mk48" + xmodel);
-                CheckModel("wpn_t8_loot_melee_action_figure" + xmodel);
-                CheckModel("wpn_t8_loot_melee_amulet" + xmodel);
-                CheckModel("wpn_t8_loot_melee_coinbag" + xmodel);
-                CheckModel("wpn_t8_loot_melee_gift_axe" + xmodel);
-                CheckModel("wpn_t8_loot_melee_hammer_demo" + xmodel);
-                CheckModel("wpn_t8_loot_melee_polynesian_club" + xmodel);
-                CheckModel("wpn_t8_loot_melee_slay_bell" + xmodel);
-                CheckModel("wpn_t8_loot_melee_stop_sign" + xmodel);
-                CheckModel("wpn_t8_loot_melee_zombie_arm" + xmodel);
-                CheckModel("wpn_t8_loot_pistol_auto" + xmodel);
-                CheckModel("wpn_t8_loot_shotgun_fullauto" + xmodel);
-                CheckModel("wpn_t8_loot_shotgun_prec" + xmodel);
-                CheckModel("wpn_t8_loot_smg_fastburst" + xmodel);
-                CheckModel("wpn_t8_loot_smg_folding" + xmodel);
-                CheckModel("wpn_t8_loot_smg_minigun" + xmodel);
-                CheckModel("wpn_t8_loot_smg_vmp" + xmodel);
-                CheckModel("wpn_t8_loot_sniper_locus" + xmodel);
-                CheckModel("wpn_t8_loot_sniper_mini14" + xmodel);
-                CheckModel("wpn_t8_loot_tac_rifle_damageburst" + xmodel);
-                CheckModel("wpn_t8_loot_tac_rifle_flechette" + xmodel);
-                CheckModel("wpn_t8_pistol_burst" + xmodel);
-                CheckModel("wpn_t8_pistol_revolver" + xmodel);
-                CheckModel("wpn_t8_pistol_standard" + xmodel);
-                CheckModel("wpn_t8_shotgun_pump" + xmodel);
-                CheckModel("wpn_t8_shotgun_semi" + xmodel);
-                CheckModel("wpn_t8_smg_accurate" + xmodel);
-                CheckModel("wpn_t8_smg_capacity" + xmodel);
-                CheckModel("wpn_t8_smg_fastfire" + xmodel);
-                CheckModel("wpn_t8_smg_handling" + xmodel);
-                CheckModel("wpn_t8_smg_mp9" + xmodel);
-                CheckModel("wpn_t8_sniper_koshka" + xmodel);
-                CheckModel("wpn_t8_sniper_power_semi" + xmodel);
-                CheckModel("wpn_t8_sniper_semiauto" + xmodel);
-                CheckModel("wpn_t8_sniper_vanguard" + xmodel);
-                CheckModel("wpn_t8_sumbarbrandr" + xmodel);
-                CheckModel("wpn_t8_tac_rifle_surgeon" + xmodel);
-                CheckModel("wpn_t8_tac_rifle_swordfish" + xmodel);
-                CheckModel("wpn_t8_zm_akud" + xmodel);
-                CheckModel("wpn_t8_zm_akud_scope" + xmodel);
-                CheckModel("wpn_t8_zm_blundergat" + xmodel);
-                CheckModel("wpn_t8_zm_blundergat_acid" + xmodel);
-                CheckModel("wpn_t8_zm_blundergat_fire" + xmodel);
-                CheckModel("wpn_t8_zm_crossbow_impaler" + xmodel);
-                CheckModel("wpn_t8_zm_dg1" + xmodel);
-                CheckModel("wpn_t8_zm_dg2" + xmodel);
-                CheckModel("wpn_t8_zm_freeze_gun" + xmodel);
-                CheckModel("wpn_t8_zm_goldenknife" + xmodel);
-                CheckModel("wpn_t8_zm_hand_charon" + xmodel);
-                CheckModel("wpn_t8_zm_hand_gaia" + xmodel);
-                CheckModel("wpn_t8_zm_hand_hemera" + xmodel);
-                CheckModel("wpn_t8_zm_hand_ouranos" + xmodel);
-                CheckModel("wpn_t8_zm_homunculus" + xmodel);
-                CheckModel("wpn_t8_zm_knife_bowie" + xmodel);
-                CheckModel("wpn_t8_zm_knife_stake" + xmodel);
-                CheckModel("wpn_t8_zm_lmg_mg08" + xmodel);
-                CheckModel("wpn_t8_zm_mp40" + xmodel);
-                CheckModel("wpn_t8_zm_nesting_dolls" + xmodel);
-                CheckModel("wpn_t8_zm_raygun" + xmodel);
-                CheckModel("wpn_t8_zm_raygun_dw" + xmodel);
-                CheckModel("wpn_t8_zm_raygun_mk2" + xmodel);
-                CheckModel("wpn_t8_zm_raygun_upg" + xmodel);
-                CheckModel("wpn_t8_zm_red_shield" + xmodel);
-                CheckModel("wpn_t8_zm_red_spear" + xmodel);
-                CheckModel("wpn_t8_zm_shotgun_trenchgun" + xmodel);
-                CheckModel("wpn_t8_zm_smg_thompson" + xmodel);
-                CheckModel("wpn_t8_zm_snowball" + xmodel);
-                CheckModel("wpn_t8_zm_snowball_yellow" + xmodel);
-                CheckModel("wpn_t8_zm_spknifeork" + xmodel);
-                CheckModel("wpn_t8_zm_spoon" + xmodel);
-                CheckModel("wpn_t8_zm_spork" + xmodel);
-                CheckModel("wpn_t8_zm_thundergun" + xmodel);
-                CheckModel("wpn_t8_zm_tomahawk" + xmodel);
-                CheckModel("wpn_t8_zm_tundra_gun" + xmodel);
-                CheckModel("wpn_t9_ar_damage" + xmodel);
-                CheckModel("wpn_t9_ar_damage_8bit" + xmodel);
-                CheckModel("wpn_t9_ar_damage_achill" + xmodel);
-                CheckModel("wpn_t9_ar_damage_animedark" + xmodel);
-                CheckModel("wpn_t9_ar_damage_arvnr1" + xmodel);
-                CheckModel("wpn_t9_ar_damage_batts" + xmodel);
-                CheckModel("wpn_t9_ar_damage_catbud" + xmodel);
-                CheckModel("wpn_t9_ar_damage_champs_ms" + xmodel);
-                CheckModel("wpn_t9_ar_damage_champs_pc" + xmodel);
-                CheckModel("wpn_t9_ar_damage_champs_sy" + xmodel);
-                CheckModel("wpn_t9_ar_damage_checkmate" + xmodel);
-                CheckModel("wpn_t9_ar_damage_chrome" + xmodel);
-                CheckModel("wpn_t9_ar_damage_cubarevo" + xmodel);
-                CheckModel("wpn_t9_ar_damage_czar" + xmodel);
-                CheckModel("wpn_t9_ar_damage_evil" + xmodel);
-                CheckModel("wpn_t9_ar_damage_go_bananas" + xmodel);
-                CheckModel("wpn_t9_ar_damage_grey_ranger" + xmodel);
-                CheckModel("wpn_t9_ar_damage_halloween" + xmodel);
-                CheckModel("wpn_t9_ar_damage_heartbreak" + xmodel);
-                CheckModel("wpn_t9_ar_damage_modernp" + xmodel);
-                CheckModel("wpn_t9_ar_damage_moonshine" + xmodel);
-                CheckModel("wpn_t9_ar_damage_motocross" + xmodel);
-                CheckModel("wpn_t9_ar_damage_nightf" + xmodel);
-                CheckModel("wpn_t9_ar_damage_ole" + xmodel);
-                CheckModel("wpn_t9_ar_damage_penumbra" + xmodel);
-                CheckModel("wpn_t9_ar_damage_psa" + xmodel);
-                CheckModel("wpn_t9_ar_damage_ram" + xmodel);
-                CheckModel("wpn_t9_ar_damage_resist" + xmodel);
-                CheckModel("wpn_t9_ar_damage_roadwar" + xmodel);
-                CheckModel("wpn_t9_ar_damage_s05challenge_sy" + xmodel);
-                CheckModel("wpn_t9_ar_damage_strace" + xmodel);
-                CheckModel("wpn_t9_ar_damage_tchern" + xmodel);
-                CheckModel("wpn_t9_ar_damage_ufo" + xmodel);
-                CheckModel("wpn_t9_ar_damage_wargames" + xmodel);
-                CheckModel("wpn_t9_ar_damage_yokai" + xmodel);
-                CheckModel("wpn_t9_ar_damagenificent" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_animeskater" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_arcade" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_bowling" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_bwarrior_ms" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_bwarrior_pc" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_bwarrior_sy" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_dbreath" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_dynasty" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_egyptian" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_guerilla" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_hcover" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_hollywood" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_jet" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_junglewarfare" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_kwanzaa" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_legion_sy" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_leprecon" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_lifesaver" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_maneater" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_medical" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_ninja" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_nugget" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_opulence" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_reactor" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_renegade" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_smoulder" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_spacehead" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_stamp" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_ultrafunk" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_wsow_ms" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_wsow_pc" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_wsow_solo" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_wsow_sy" + xmodel);
-                CheckModel("wpn_t9_ar_fastfire_zombied" + xmodel);
-                CheckModel("wpn_t9_ar_krig6" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_ace" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_bee" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_blazer" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_boar_ms" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_boar_pc" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_boar_sy" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_burgertown" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_cdl_ms" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_cdl_pc" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_cdl_sy" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_coyote" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_darkaether" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_dragon" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_draid" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_especial" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_fchance" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_glitch" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_ilazar" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_leagueplay" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_lfg" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_midnight_express" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_rbaron" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_rdecree" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_rebel" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_rebirth" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_redbaron" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_royal" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_space" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_spirit" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_stitch" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_surge" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_tagger3" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_typhoon" + xmodel);
-                CheckModel("wpn_t9_ar_krig6_undead" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_animemon" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_arabian" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_armored" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_brutus" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_caiman" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_carolina" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_charden" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_codemam" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_codemam_ms" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_codemam_pc" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_codemam_sy" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_declar" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_devilwoman" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_firework" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_frogmen" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_gigaswatt" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_gladia" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_hologram" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_jester" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_junglec" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_knight" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_law" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_leagueplay" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_mrfix" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_mvs" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_oktober" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_poison" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_predator" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_resist" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_spacegun" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_titanium" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_voodoo" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_wasteland" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_wonder" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_wonder_catapillar" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_zenya" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_zslayer" + xmodel);
-                CheckModel("wpn_t9_ar_mercenary_ztheme" + xmodel);
-                CheckModel("wpn_t9_ar_mobility" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_aagirl" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_arcticwind" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_bloodhawk_sy" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_camera" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_colds" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_commando" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_ddaemon" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_dfoilage" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_electro" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_fastlane" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_fchina2" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_firestorm" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_flashf" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_frostbite" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_gaudy" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_importer" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_lochness" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_lucha" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_lunar" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_milboots" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_muerte" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_nature" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_peace" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_poseidon" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_shark" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_sneaker" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_soul" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_supers" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_tattoo" + xmodel);
-                CheckModel("wpn_t9_ar_mobility_wanker" + xmodel);
-                CheckModel("wpn_t9_boomstick_prop_weapon" + xmodel);
-                CheckModel("wpn_t9_bp_ar_damage_bthroat" + xmodel);
-                CheckModel("wpn_t9_bp_ar_damage_confront_ms" + xmodel);
-                CheckModel("wpn_t9_bp_ar_damage_confront_pc" + xmodel);
-                CheckModel("wpn_t9_bp_ar_damage_confront_sy" + xmodel);
-                CheckModel("wpn_t9_bp_ar_damage_fires" + xmodel);
-                CheckModel("wpn_t9_bp_ar_damage_nocturne" + xmodel);
-                CheckModel("wpn_t9_bp_ar_damage_tagger" + xmodel);
-                CheckModel("wpn_t9_bp_ar_damage_vcp" + xmodel);
-                CheckModel("wpn_t9_bp_ar_fastfire_aconstrictor" + xmodel);
-                CheckModel("wpn_t9_bp_ar_fastfire_carbongold_ms" + xmodel);
-                CheckModel("wpn_t9_bp_ar_fastfire_carbongold_pc" + xmodel);
-                CheckModel("wpn_t9_bp_ar_fastfire_carbongold_sy" + xmodel);
-                CheckModel("wpn_t9_bp_ar_fastfire_mallrat" + xmodel);
-                CheckModel("wpn_t9_bp_ar_fastfire_sterile" + xmodel);
-                CheckModel("wpn_t9_bp_ar_fastfire_street" + xmodel);
-                CheckModel("wpn_t9_bp_ar_krig6_ace" + xmodel);
-                CheckModel("wpn_t9_bp_ar_krig6_confront" + xmodel);
-                CheckModel("wpn_t9_bp_ar_krig6_eclipse" + xmodel);
-                CheckModel("wpn_t9_bp_ar_krig6_geo_sy" + xmodel);
-                CheckModel("wpn_t9_bp_ar_krig6_opulence" + xmodel);
-                CheckModel("wpn_t9_bp_ar_krig6_reaper" + xmodel);
-                CheckModel("wpn_t9_bp_ar_krig6_rebirth" + xmodel);
-                CheckModel("wpn_t9_bp_ar_krig6_samurai" + xmodel);
-                CheckModel("wpn_t9_bp_ar_mercenary_bluereaper" + xmodel);
-                CheckModel("wpn_t9_bp_ar_mercenary_miami" + xmodel);
-                CheckModel("wpn_t9_bp_ar_mercenary_rifleer" + xmodel);
-                CheckModel("wpn_t9_bp_ar_mercenary_sea_ms" + xmodel);
-                CheckModel("wpn_t9_bp_ar_mercenary_sea_pc" + xmodel);
-                CheckModel("wpn_t9_bp_ar_mercenary_sea_sy" + xmodel);
-                CheckModel("wpn_t9_bp_ar_mercenary_tagger" + xmodel);
-                CheckModel("wpn_t9_bp_ar_mobility_spirit" + xmodel);
-                CheckModel("wpn_t9_bp_lmg_accurate_cb_opulence" + xmodel);
-                CheckModel("wpn_t9_bp_lmg_light" + xmodel);
-                CheckModel("wpn_t9_bp_lmg_light_bcowboy" + xmodel);
-                CheckModel("wpn_t9_bp_lmg_light_beachcomber" + xmodel);
-                CheckModel("wpn_t9_bp_lmg_light_gambit" + xmodel);
-                CheckModel("wpn_t9_bp_lmg_light_six" + xmodel);
-                CheckModel("wpn_t9_bp_lmg_light_trawler" + xmodel);
-                CheckModel("wpn_t9_bp_loot_ar_fasthandling_sterile" + xmodel);
-                CheckModel("wpn_t9_bp_loot_ar_slowfire_muzzle_waterpark" + xmodel);
-                CheckModel("wpn_t9_bp_loot_ar_slowfire_waterpark" + xmodel);
-                CheckModel("wpn_t9_bp_loot_ar_slowhandling_420" + xmodel);
-                CheckModel("wpn_t9_bp_loot_shotgun_fullauto_maelstrom" + xmodel);
-                CheckModel("wpn_t9_bp_loot_shotgun_fullauto_red" + xmodel);
-                CheckModel("wpn_t9_bp_loot_smg_accurate_jet" + xmodel);
-                CheckModel("wpn_t9_bp_loot_smg_fastfire_gknight" + xmodel);
-                CheckModel("wpn_t9_bp_loot_smg_spray_jetfighter" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_burst_avalanche" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_burst_cb_bullshark" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_burst_cb_dw_primal_sy" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_burst_cb_rbaron" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_burst_devil" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_burst_primal_sy" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_revolver_84" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_revolver_adder" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_revolver_noir" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_revolver_scorpion" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_revolver_six" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_air_dw_ms" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_air_dw_pc" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_air_dw_sy" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_air_ms" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_air_pc" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_air_sy" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_arvnr1_sy" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_code_dw_ms" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_code_dw_pc" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_code_dw_sy" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_code_ms" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_code_pc" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_code_sy" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_dw_fixit" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_fixit" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_midnight" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_mvice" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_rifleer" + xmodel);
-                CheckModel("wpn_t9_bp_pistol_semiauto_teal" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_pump_land_ms" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_pump_land_pc" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_pump_land_sy" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_pump_nightfall" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_pump_nt6_bus" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_pump_ripper" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_pump_schwagger" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_semiauto_cb_gnr" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_semiauto_cb_predator" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_semiauto_cb_taffy" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_semiauto_cb_valya" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_semiauto_cb_zslayer" + xmodel);
-                CheckModel("wpn_t9_bp_shotgun_semiauto_uglysweater" + xmodel);
-                CheckModel("wpn_t9_bp_smg_burst_absinthe" + xmodel);
-                CheckModel("wpn_t9_bp_smg_burst_flak" + xmodel);
-                CheckModel("wpn_t9_bp_smg_burst_forged" + xmodel);
-                CheckModel("wpn_t9_bp_smg_burst_kwanzaa" + xmodel);
-                CheckModel("wpn_t9_bp_smg_burst_mechanic" + xmodel);
-                CheckModel("wpn_t9_bp_smg_burst_red" + xmodel);
-                CheckModel("wpn_t9_bp_smg_burst_runman" + xmodel);
-                CheckModel("wpn_t9_bp_smg_capacity_alleywayamb" + xmodel);
-                CheckModel("wpn_t9_bp_smg_capacity_bluereaper" + xmodel);
-                CheckModel("wpn_t9_bp_smg_capacity_fulltank" + xmodel);
-                CheckModel("wpn_t9_bp_smg_capacity_gcompany" + xmodel);
-                CheckModel("wpn_t9_bp_smg_capacity_muzzle_bluereaper" + xmodel);
-                CheckModel("wpn_t9_bp_smg_capacity_prpsunder" + xmodel);
-                CheckModel("wpn_t9_bp_smg_capacity_rocketscience" + xmodel);
-                CheckModel("wpn_t9_bp_smg_handling_avalanche" + xmodel);
-                CheckModel("wpn_t9_bp_smg_handling_beta" + xmodel);
-                CheckModel("wpn_t9_bp_smg_handling_density" + xmodel);
-                CheckModel("wpn_t9_bp_smg_handling_schwagger" + xmodel);
-                CheckModel("wpn_t9_bp_smg_heavy_brawler" + xmodel);
-                CheckModel("wpn_t9_bp_smg_heavy_dinotoy" + xmodel);
-                CheckModel("wpn_t9_bp_smg_heavy_polar" + xmodel);
-                CheckModel("wpn_t9_bp_smg_heavy_smdest" + xmodel);
-                CheckModel("wpn_t9_bp_smg_standard_cb_blkmamba" + xmodel);
-                CheckModel("wpn_t9_bp_smg_standard_cb_bwidow" + xmodel);
-                CheckModel("wpn_t9_bp_smg_standard_cb_crypto" + xmodel);
-                CheckModel("wpn_t9_bp_smg_standard_cb_urbangold" + xmodel);
-                CheckModel("wpn_t9_bp_smg_standard_roman" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_powersemi_frostbite" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_powersemi_frostbite_frontend" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_powersemi_scope_ads_frostbite" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_powersemi_scope_frostbite" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_quickscope_collectors" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_quickscope_collectors_scope" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_quickscope_scope_collectors_ads" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_crypto" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_crypto_scope" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_crypto_scope_ads" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_ghostwood" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_ghostwood_scope" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_ghostwood_scope_ads" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_moa_sy" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_scope_ads_moa_sy" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_scope_ads_urbangold" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_scope_crypto" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_scope_ghostwood" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_scope_moa_sy" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_scope_teal" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_scope_urbangold" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_teal" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_teal_scope" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_teal_scope_ads" + xmodel);
-                CheckModel("wpn_t9_bp_sniper_standard_urbangold" + xmodel);
-                CheckModel("wpn_t9_bp_tr_damagesemi_adder" + xmodel);
-                CheckModel("wpn_t9_bp_tr_damagesemi_armyrv" + xmodel);
-                CheckModel("wpn_t9_bp_tr_damagesemi_bwidow" + xmodel);
-                CheckModel("wpn_t9_bp_tr_damagesemi_crowstorm_sy" + xmodel);
-                CheckModel("wpn_t9_bp_tr_damagesemi_fighter" + xmodel);
-                CheckModel("wpn_t9_bp_tr_damagesemi_six" + xmodel);
-                CheckModel("wpn_t9_bp_tr_damagesemi_soviet_ops" + xmodel);
-                CheckModel("wpn_t9_bp_tr_longburst_code_ms" + xmodel);
-                CheckModel("wpn_t9_bp_tr_longburst_code_pc" + xmodel);
-                CheckModel("wpn_t9_bp_tr_longburst_code_sy" + xmodel);
-                CheckModel("wpn_t9_bp_tr_longburst_confront_ms" + xmodel);
-                CheckModel("wpn_t9_bp_tr_longburst_confront_pc" + xmodel);
-                CheckModel("wpn_t9_bp_tr_longburst_confront_sy" + xmodel);
-                CheckModel("wpn_t9_bp_tr_longburst_gaudy" + xmodel);
-                CheckModel("wpn_t9_bp_tr_longburst_pink" + xmodel);
-                CheckModel("wpn_t9_bp_tr_longburst_resp" + xmodel);
-                CheckModel("wpn_t9_bp_tr_longburst_twotone" + xmodel);
-                CheckModel("wpn_t9_bp_tr_longburst_verde" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_cupid" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_lurker" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_midnight_xp" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_racer02" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_ads_lurker" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_ads_midnight_xp" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_ads_target_practice" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_cupid" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_cupid_ads" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_fcarbon" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_fcarbon_ads" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_lunar" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_lunar_ads" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_lurker" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_midnight_xp" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_racer02" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_racer02_ads" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_scope_target_practice" + xmodel);
-                CheckModel("wpn_t9_bp_tr_powerburst_cb_target_practice" + xmodel);
-                CheckModel("wpn_t9_bp_tr_precisionsemi_arrow" + xmodel);
-                CheckModel("wpn_t9_cigar_prop" + xmodel);
-                CheckModel("wpn_t9_eqp_ammo_pack" + xmodel);
-                CheckModel("wpn_t9_eqp_ammo_pack_fx2" + xmodel);
-                CheckModel("wpn_t9_eqp_ammo_pack_fx_ammo1" + xmodel);
-                CheckModel("wpn_t9_eqp_ammo_pack_fx_base" + xmodel);
-                CheckModel("wpn_t9_eqp_ammo_pack_fx_bigmag" + xmodel);
-                CheckModel("wpn_t9_eqp_ammo_pack_fx_cover" + xmodel);
-                CheckModel("wpn_t9_eqp_ammo_pack_prop" + xmodel);
-                CheckModel("wpn_t9_eqp_ammo_pack_prop_cac" + xmodel);
-                CheckModel("wpn_t9_eqp_armor_plate" + xmodel);
-                CheckModel("wpn_t9_eqp_ascender" + xmodel);
-                CheckModel("wpn_t9_eqp_claymore" + xmodel);
-                CheckModel("wpn_t9_eqp_data_pad" + xmodel);
-                CheckModel("wpn_t9_eqp_flashbang" + xmodel);
-                CheckModel("wpn_t9_eqp_flashbang_projectile" + xmodel);
-                CheckModel("wpn_t9_eqp_garrot_wire_prop_weapon" + xmodel);
-                CheckModel("wpn_t9_eqp_gersh_device" + xmodel);
-                CheckModel("wpn_t9_eqp_grenade_concussion" + xmodel);
-                CheckModel("wpn_t9_eqp_grenade_concussion_projectile" + xmodel);
-                CheckModel("wpn_t9_eqp_grenade_decoy_projectile" + xmodel);
-                CheckModel("wpn_t9_eqp_grenade_frag" + xmodel);
-                CheckModel("wpn_t9_eqp_grenade_frag_projectile" + xmodel);
-                CheckModel("wpn_t9_eqp_grenade_frag_prop_weapon" + xmodel);
-                CheckModel("wpn_t9_eqp_grenade_semtex" + xmodel);
-                CheckModel("wpn_t9_eqp_grenade_semtex_projectile" + xmodel);
-                CheckModel("wpn_t9_eqp_hatchet" + xmodel);
-                CheckModel("wpn_t9_eqp_hatchet_projectile" + xmodel);
-                CheckModel("wpn_t9_eqp_hatchet_prop_weapon" + xmodel);
-                CheckModel("wpn_t9_eqp_jammer" + xmodel);
-                CheckModel("wpn_t9_eqp_jammer_fx_base" + xmodel);
-                CheckModel("wpn_t9_eqp_jammer_fx_left_panel" + xmodel);
-                CheckModel("wpn_t9_eqp_jammer_fx_round_atenna" + xmodel);
-                CheckModel("wpn_t9_eqp_jammer_fx_small_atenna" + xmodel);
-                CheckModel("wpn_t9_eqp_jammer_fx_tiny_atenna" + xmodel);
-                CheckModel("wpn_t9_eqp_land_mine" + xmodel);
-                CheckModel("wpn_t9_eqp_listening_device" + xmodel);
-                CheckModel("wpn_t9_eqp_listening_device_fx_dish" + xmodel);
-                CheckModel("wpn_t9_eqp_listening_device_fx_leg" + xmodel);
-                CheckModel("wpn_t9_eqp_listening_device_fx_mic" + xmodel);
-                CheckModel("wpn_t9_eqp_listening_device_fx_radio" + xmodel);
-                CheckModel("wpn_t9_eqp_map_streak" + xmodel);
-                CheckModel("wpn_t9_eqp_medical_injection_sml" + xmodel);
-                CheckModel("wpn_t9_eqp_mobile_cover" + xmodel);
-                CheckModel("wpn_t9_eqp_molotov" + xmodel);
-                CheckModel("wpn_t9_eqp_nightingale" + xmodel);
-                CheckModel("wpn_t9_eqp_nightingale_projectile" + xmodel);
-                CheckModel("wpn_t9_eqp_parachute" + xmodel);
-                CheckModel("wpn_t9_eqp_rcxd_remote" + xmodel);
-                CheckModel("wpn_t9_eqp_satchel_charge" + xmodel);
-                CheckModel("wpn_t9_eqp_satchel_charge_clacker" + xmodel);
-                CheckModel("wpn_t9_eqp_satchel_charge_projectile" + xmodel);
-                CheckModel("wpn_t9_eqp_small_radio" + xmodel);
-                CheckModel("wpn_t9_eqp_smoke_grenade" + xmodel);
-                CheckModel("wpn_t9_eqp_smoke_grenade_projectile" + xmodel);
-                CheckModel("wpn_t9_eqp_smoke_grenade_red" + xmodel);
-                CheckModel("wpn_t9_eqp_smoke_grenade_yellow" + xmodel);
-                CheckModel("wpn_t9_eqp_teargas_mine" + xmodel);
-                CheckModel("wpn_t9_eqp_teargas_mine_fx_cap" + xmodel);
-                CheckModel("wpn_t9_eqp_teargas_mine_fx_lever" + xmodel);
-                CheckModel("wpn_t9_eqp_teargas_mine_fx_pin_1" + xmodel);
-                CheckModel("wpn_t9_eqp_teargas_mine_fx_pin_2" + xmodel);
-                CheckModel("wpn_t9_eqp_teargas_mine_fx_pin_3" + xmodel);
-                CheckModel("wpn_t9_eqp_teargas_mine_sprung" + xmodel);
-                CheckModel("wpn_t9_eqp_trophy_system" + xmodel);
-                CheckModel("wpn_t9_eqp_trophy_system_fx_head_01" + xmodel);
-                CheckModel("wpn_t9_eqp_trophy_system_fx_leg_01" + xmodel);
-                CheckModel("wpn_t9_eqp_trophy_system_fx_main" + xmodel);
-                CheckModel("wpn_t9_eqp_trophy_system_fx_plate" + xmodel);
-                CheckModel("wpn_t9_eqp_trophy_system_knob_01" + xmodel);
-                CheckModel("wpn_t9_eqp_ultimate_turret" + xmodel);
-                CheckModel("wpn_t9_eqp_ultimate_turret_fx_ammo" + xmodel);
-                CheckModel("wpn_t9_eqp_ultimate_turret_fx_barrel" + xmodel);
-                CheckModel("wpn_t9_eqp_ultimate_turret_fx_camera" + xmodel);
-                CheckModel("wpn_t9_eqp_ultimate_turret_fx_handle" + xmodel);
-                CheckModel("wpn_t9_eqp_ultimate_turret_fx_legs" + xmodel);
-                CheckModel("wpn_t9_eqp_ultimate_turret_fx_main" + xmodel);
-                CheckModel("wpn_t9_eqp_ultimate_turret_pickup" + xmodel);
-                CheckModel("wpn_t9_eqp_ultimate_turret_prop" + xmodel);
-                CheckModel("wpn_t9_eqp_vip_harness" + xmodel);
-                CheckModel("wpn_t9_eqp_zipline_trolley" + xmodel);
-                CheckModel("wpn_t9_ges_bottle_vodka_accessory" + xmodel);
-                CheckModel("wpn_t9_ges_bullet_127_108mm_cartridge" + xmodel);
-                CheckModel("wpn_t9_ges_bunny_reaper_accessory" + xmodel);
-                CheckModel("wpn_t9_ges_ferrofluid_accessory" + xmodel);
-                CheckModel("wpn_t9_ges_fortunecookie_accessory" + xmodel);
-                CheckModel("wpn_t9_ges_jack_o_lantern_accessory" + xmodel);
-                CheckModel("wpn_t9_ges_microphone_accessory" + xmodel);
-                CheckModel("wpn_t9_ges_scorpion_accessory" + xmodel);
-                CheckModel("wpn_t9_ges_teabag_accessory" + xmodel);
-                CheckModel("wpn_t9_ges_zombie_arm_accessory" + xmodel);
-                CheckModel("wpn_t9_ges_zombie_head_accessory" + xmodel);
-                CheckModel("wpn_t9_grenade_frag_prop" + xmodel);
-                CheckModel("wpn_t9_grenade_launcher" + xmodel);
-                CheckModel("wpn_t9_grenade_launcher_bomber" + xmodel);
-                CheckModel("wpn_t9_grenade_launcher_oozeball" + xmodel);
-                CheckModel("wpn_t9_grenade_launcher_projectile" + xmodel);
-                CheckModel("wpn_t9_grenade_launcher_shadow" + xmodel);
-                CheckModel("wpn_t9_knife_ballistic" + xmodel);
-                CheckModel("wpn_t9_knife_ballistic_babayaga" + xmodel);
-                CheckModel("wpn_t9_knife_ballistic_oktober" + xmodel);
-                CheckModel("wpn_t9_knife_ballistic_projectile" + xmodel);
-                CheckModel("wpn_t9_knife_ballistic_spycraft" + xmodel);
-                CheckModel("wpn_t9_knife_bowie_predator_sy" + xmodel);
-                CheckModel("wpn_t9_knife_combat_american" + xmodel);
-                CheckModel("wpn_t9_knife_combat_american_cmoney" + xmodel);
-                CheckModel("wpn_t9_knife_combat_american_lile" + xmodel);
-                CheckModel("wpn_t9_knife_combat_american_prop" + xmodel);
-                CheckModel("wpn_t9_knife_combat_babayaga_le" + xmodel);
-                CheckModel("wpn_t9_knife_combat_bope" + xmodel);
-                CheckModel("wpn_t9_knife_combat_le" + xmodel);
-                CheckModel("wpn_t9_knife_combat_le_oktober" + xmodel);
-                CheckModel("wpn_t9_knife_combat_russian_aagirl" + xmodel);
-                CheckModel("wpn_t9_knife_combat_russian_go_bananas" + xmodel);
-                CheckModel("wpn_t9_knife_combat_scream" + xmodel);
-                CheckModel("wpn_t9_knife_combat_spycraft_le" + xmodel);
-                CheckModel("wpn_t9_knife_combat_switchblade" + xmodel);
-                CheckModel("wpn_t9_knife_combat_wooden" + xmodel);
-                CheckModel("wpn_t9_knife_dagger_predator" + xmodel);
-                CheckModel("wpn_t9_launcher_freefire" + xmodel);
-                CheckModel("wpn_t9_launcher_freefire_projectile" + xmodel);
-                CheckModel("wpn_t9_launcher_freefire_stow" + xmodel);
-                CheckModel("wpn_t9_launcher_standard" + xmodel);
-                CheckModel("wpn_t9_launcher_standard_ads" + xmodel);
-                CheckModel("wpn_t9_launcher_standard_optic" + xmodel);
-                CheckModel("wpn_t9_launcher_standard_projectile" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_bayou" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_bite" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_bowling" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_bsilver" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_bstreet" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_carnival" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_crimson" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_endtimes" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_knight" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_mummy" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_mvs" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_nuclear" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_numbers" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_overkill" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_ratrod" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_scrap" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_sshovel" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_street" + xmodel);
-                CheckModel("wpn_t9_lmg_accurate_cb_zweed" + xmodel);
-                CheckModel("wpn_t9_lmg_light" + xmodel);
-                CheckModel("wpn_t9_lmg_light_angel" + xmodel);
-                CheckModel("wpn_t9_lmg_light_animetankg" + xmodel);
-                CheckModel("wpn_t9_lmg_light_arcade" + xmodel);
-                CheckModel("wpn_t9_lmg_light_armyrv" + xmodel);
-                CheckModel("wpn_t9_lmg_light_beachcomber" + xmodel);
-                CheckModel("wpn_t9_lmg_light_carbongold_ms" + xmodel);
-                CheckModel("wpn_t9_lmg_light_carbongold_pc" + xmodel);
-                CheckModel("wpn_t9_lmg_light_carbongold_sy" + xmodel);
-                CheckModel("wpn_t9_lmg_light_cmachine" + xmodel);
-                CheckModel("wpn_t9_lmg_light_dpharao_sy" + xmodel);
-                CheckModel("wpn_t9_lmg_light_ferfluid" + xmodel);
-                CheckModel("wpn_t9_lmg_light_gladia" + xmodel);
-                CheckModel("wpn_t9_lmg_light_milhack" + xmodel);
-                CheckModel("wpn_t9_lmg_light_orda" + xmodel);
-                CheckModel("wpn_t9_lmg_light_rebirth" + xmodel);
-                CheckModel("wpn_t9_lmg_light_tchern" + xmodel);
-                CheckModel("wpn_t9_lmg_light_warship" + xmodel);
-                CheckModel("wpn_t9_lmg_light_x2" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_armored" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_btank" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_chemburn_sy" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_chewing" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_cia" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_darkaether" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_krieger" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_leprecon" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_necroking" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_notcryo" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_pigs" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_ram" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_reactor" + xmodel);
-                CheckModel("wpn_t9_lmg_slowfire_samurai" + xmodel);
-                CheckModel("wpn_t9_loot_ar_british" + xmodel);
-                CheckModel("wpn_t9_loot_ar_british_eclipse" + xmodel);
-                CheckModel("wpn_t9_loot_ar_british_gilded" + xmodel);
-                CheckModel("wpn_t9_loot_ar_british_gilded_muzzle" + xmodel);
-                CheckModel("wpn_t9_loot_ar_british_lightw" + xmodel);
-                CheckModel("wpn_t9_loot_ar_british_muzzle" + xmodel);
-                CheckModel("wpn_t9_loot_ar_british_scope" + xmodel);
-                CheckModel("wpn_t9_loot_ar_british_scope_ads" + xmodel);
-                CheckModel("wpn_t9_loot_ar_british_scope_eclipse" + xmodel);
-                CheckModel("wpn_t9_loot_ar_british_scope_eclipse_ads" + xmodel);
-                CheckModel("wpn_t9_loot_ar_british_sultan" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_animeninja" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_babayaga" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_bbear" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_charged_sy" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_circuit" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_classic" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_firestorm" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_joke" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_leaf" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_longshot" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_lorider" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_opulence" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_silver_streak" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_snavy" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_sterile" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_tagger_ms" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_tagger_pc" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_tagger_solo" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_tagger_sy" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_tiger" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_triton" + xmodel);
-                CheckModel("wpn_t9_loot_ar_fasthandling_wetops" + xmodel);
-                CheckModel("wpn_t9_loot_ar_season6" + xmodel);
-                CheckModel("wpn_t9_loot_ar_season6_artdeco" + xmodel);
-                CheckModel("wpn_t9_loot_ar_season6_scream" + xmodel);
-                CheckModel("wpn_t9_loot_ar_season6_unicorn" + xmodel);
-                CheckModel("wpn_t9_loot_ar_season6_venom" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_assassin" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_donnie" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_judged" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_laser_mount" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_laser_mount_assassin" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_media" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_muzzle" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_muzzle_ww" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_rockcold" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_special" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_special_muzzle" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfire_ww" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowfirewell_adapter" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_carbonchrome_ms" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_carbonchrome_pc" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_carbonchrome_sy" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_dh" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_endgame" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_fishtank" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_frost" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_gmaxis" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_kreiger" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_lightup" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_orda" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_somberv" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_wildchild" + xmodel);
-                CheckModel("wpn_t9_loot_ar_slowhandling_xray" + xmodel);
-                CheckModel("wpn_t9_loot_ar_soviet" + xmodel);
-                CheckModel("wpn_t9_loot_ar_soviet_bw" + xmodel);
-                CheckModel("wpn_t9_loot_ar_soviet_ferrofluid" + xmodel);
-                CheckModel("wpn_t9_loot_lmg_fastfire" + xmodel);
-                CheckModel("wpn_t9_loot_lmg_fastfire_electro" + xmodel);
-                CheckModel("wpn_t9_loot_lmg_fastfire_highnoon" + xmodel);
-                CheckModel("wpn_t9_loot_lmg_fastfire_highstakes" + xmodel);
-                CheckModel("wpn_t9_loot_lmg_fastfire_jester" + xmodel);
-                CheckModel("wpn_t9_loot_lmg_fastfire_lochness" + xmodel);
-                CheckModel("wpn_t9_loot_lmg_fastfire_nightf" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_eburial" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_eburial_le" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_egyptian" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_egyptian_le" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_gilded" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_gilded_le" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_judged" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_le" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_le_judged" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_le_poison" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_phased" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_phased_le" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_fullauto_poison" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_shotgun" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_shotgun_le" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_shotgun_throwback" + xmodel);
-                CheckModel("wpn_t9_loot_pistol_shotgun_throwback_le" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_acid" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_base_muzzle" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_blue" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_bronze" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_carapace" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_carnival" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_commando" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_coyote" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_cyber" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_lightup" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_lion" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_mutant" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_numbers" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_summer" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_surge" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_wanker" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_fullauto_wasteland" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_leveraction" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_leveraction_carnival" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_leveraction_freya" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_leveraction_ripper" + xmodel);
-                CheckModel("wpn_t9_loot_shotgun_leveraction_shell" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_bod" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_evil" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_grunge" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_gunking" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_halloween" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_joke4_ms" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_joke4_pc" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_joke4_solo" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_joke4_sy" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_maxpurp" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_poison" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_soccer" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_sweet" + xmodel);
-                CheckModel("wpn_t9_loot_smg_accurate_zombied" + xmodel);
-                CheckModel("wpn_t9_loot_smg_cqb" + xmodel);
-                CheckModel("wpn_t9_loot_smg_cqb_cyber" + xmodel);
-                CheckModel("wpn_t9_loot_smg_cqb_donnie" + xmodel);
-                CheckModel("wpn_t9_loot_smg_cqb_kgb" + xmodel);
-                CheckModel("wpn_t9_loot_smg_cqb_mind" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_angel" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_base_muzzle" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_camera" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_cshinobi" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_faberge" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_fires" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_frost" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_intercell" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_jefes" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_judged" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_maverick" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_mummycat" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_overrun" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_scrap" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_stitch" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_sweet" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_toke" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_wsow_ms" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_wsow_pc" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_wsow_solo" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_wsow_sy" + xmodel);
-                CheckModel("wpn_t9_loot_smg_fastfire_ztheme" + xmodel);
-                CheckModel("wpn_t9_loot_smg_flechette" + xmodel);
-                CheckModel("wpn_t9_loot_smg_flechette_endgame" + xmodel);
-                CheckModel("wpn_t9_loot_smg_flechette_ilazar" + xmodel);
-                CheckModel("wpn_t9_loot_smg_lapa" + xmodel);
-                CheckModel("wpn_t9_loot_smg_lapa_horror" + xmodel);
-                CheckModel("wpn_t9_loot_smg_lapa_ripper" + xmodel);
-                CheckModel("wpn_t9_loot_smg_semiauto" + xmodel);
-                CheckModel("wpn_t9_loot_smg_semiauto_counter" + xmodel);
-                CheckModel("wpn_t9_loot_smg_semiauto_endgame" + xmodel);
-                CheckModel("wpn_t9_loot_smg_semiauto_heatwave" + xmodel);
-                CheckModel("wpn_t9_loot_smg_semiauto_mdriving" + xmodel);
-                CheckModel("wpn_t9_loot_smg_semiauto_scream" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_betty_ms" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_betty_pc" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_betty_sy" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_ferfluid" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_ghostship" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_hypno" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_jester" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_milspec" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_space" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_tagger_ms" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_tagger_pc" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_tagger_solo" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_tagger_sy" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_tuningf" + xmodel);
-                CheckModel("wpn_t9_loot_smg_spray_urban" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_accurate" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_accurate_animemon" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_accurate_cybersnake" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_accurate_deaths" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_accurate_donnie" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_accurate_egyptian" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_accurate_hollywood" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_accurate_roman" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_accurate_scope_cybersnake" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_accurate_scope_cybersnake_ads" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_accurate_unicorn" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_8bit" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_aces" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_bullet_casing" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_debonair" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_ghillie" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_rave" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_rebel" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_8bit" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_aces" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_ads" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_ads_8bit" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_ads_aces" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_ads_debonair" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_ads_ghillie" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_ads_rave" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_ads_rebel" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_debonair" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_ghillie" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_rave" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_rebel" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_scope_yokai" + xmodel);
-                CheckModel("wpn_t9_loot_sniper_cannon_yokai" + xmodel);
-                CheckModel("wpn_t9_loot_special_nailgun" + xmodel);
-                CheckModel("wpn_t9_loot_special_nailgun_maxpurp" + xmodel);
-                CheckModel("wpn_t9_loot_special_nailgun_naildome" + xmodel);
-                CheckModel("wpn_t9_loot_special_nailgun_soulripper" + xmodel);
-                CheckModel("wpn_t9_loot_tr_fastburst" + xmodel);
-                CheckModel("wpn_t9_loot_tr_fastburst_chewing" + xmodel);
-                CheckModel("wpn_t9_loot_tr_fastburst_controller" + xmodel);
-                CheckModel("wpn_t9_loot_tr_fastburst_cuddly" + xmodel);
-                CheckModel("wpn_t9_loot_tr_fastburst_halloween" + xmodel);
-                CheckModel("wpn_t9_loot_tr_fastburst_mdriving" + xmodel);
-                CheckModel("wpn_t9_loot_tr_fastburst_metamorph" + xmodel);
-                CheckModel("wpn_t9_loot_tr_fastburst_toke" + xmodel);
-                CheckModel("wpn_t9_loot_tr_fastburst_wilder" + xmodel);
-                CheckModel("wpn_t9_loot_tr_fastburst_wood" + xmodel);
-                CheckModel("wpn_t9_melee_axe" + xmodel);
-                CheckModel("wpn_t9_melee_axe_berserker" + xmodel);
-                CheckModel("wpn_t9_melee_axe_ripper" + xmodel);
-                CheckModel("wpn_t9_melee_bat" + xmodel);
-                CheckModel("wpn_t9_melee_bat_bayou" + xmodel);
-                CheckModel("wpn_t9_melee_bat_heavyhit" + xmodel);
-                CheckModel("wpn_t9_melee_bat_penumbra" + xmodel);
-                CheckModel("wpn_t9_melee_cane" + xmodel);
-                CheckModel("wpn_t9_melee_cane_class" + xmodel);
-                CheckModel("wpn_t9_melee_cane_joke_ms" + xmodel);
-                CheckModel("wpn_t9_melee_cane_joke_pc" + xmodel);
-                CheckModel("wpn_t9_melee_cane_joke_solo" + xmodel);
-                CheckModel("wpn_t9_melee_cane_joke_sy" + xmodel);
-                CheckModel("wpn_t9_melee_crystalaxe" + xmodel);
-                CheckModel("wpn_t9_melee_halligan_tool_prop_weapon" + xmodel);
-                CheckModel("wpn_t9_melee_hammersickle_agony_hammer_le" + xmodel);
-                CheckModel("wpn_t9_melee_hammersickle_agony_sickle" + xmodel);
-                CheckModel("wpn_t9_melee_hammersickle_hammer_le" + xmodel);
-                CheckModel("wpn_t9_melee_hammersickle_sickle" + xmodel);
-                CheckModel("wpn_t9_melee_knuckle_knife_prop" + xmodel);
-                CheckModel("wpn_t9_melee_kukri_dw_prop_weapon" + xmodel);
-                CheckModel("wpn_t9_melee_kukri_prop_weapon" + xmodel);
-                CheckModel("wpn_t9_melee_mace" + xmodel);
-                CheckModel("wpn_t9_melee_mace_scepter" + xmodel);
-                CheckModel("wpn_t9_melee_machete" + xmodel);
-                CheckModel("wpn_t9_melee_machete_croc" + xmodel);
-                CheckModel("wpn_t9_melee_machete_daether" + xmodel);
-                CheckModel("wpn_t9_melee_machete_hollywood" + xmodel);
-                CheckModel("wpn_t9_melee_sais" + xmodel);
-                CheckModel("wpn_t9_melee_sais_le" + xmodel);
-                CheckModel("wpn_t9_melee_sais_le_ninja" + xmodel);
-                CheckModel("wpn_t9_melee_sais_le_rainbow_jewel" + xmodel);
-                CheckModel("wpn_t9_melee_sais_ninja" + xmodel);
-                CheckModel("wpn_t9_melee_sais_rainbow_jewel" + xmodel);
-                CheckModel("wpn_t9_melee_scythe" + xmodel);
-                CheckModel("wpn_t9_melee_scythe_rbunny" + xmodel);
-                CheckModel("wpn_t9_melee_shovel" + xmodel);
-                CheckModel("wpn_t9_melee_shovel_angel" + xmodel);
-                CheckModel("wpn_t9_melee_shovel_assassin" + xmodel);
-                CheckModel("wpn_t9_melee_shovel_jefe" + xmodel);
-                CheckModel("wpn_t9_melee_shovel_warlord" + xmodel);
-                CheckModel("wpn_t9_melee_sledgehammer" + xmodel);
-                CheckModel("wpn_t9_melee_sledgehammer_assassin" + xmodel);
-                CheckModel("wpn_t9_melee_sledgehammer_dozer" + xmodel);
-                CheckModel("wpn_t9_melee_sledgehammer_predator_sy" + xmodel);
-                CheckModel("wpn_t9_melee_sledgehammer_prop" + xmodel);
-                CheckModel("wpn_t9_melee_sledgehammer_rranch" + xmodel);
-                CheckModel("wpn_t9_melee_sledgehammer_zhunter" + xmodel);
-                CheckModel("wpn_t9_melee_wakizashi_base" + xmodel);
-                CheckModel("wpn_t9_melee_wakizashi_base_metamorph" + xmodel);
-                CheckModel("wpn_t9_melee_wakizashi_base_rebel" + xmodel);
-                CheckModel("wpn_t9_melee_wakizashi_gladiator" + xmodel);
-                CheckModel("wpn_t9_melee_wakizashi_ornate" + xmodel);
-                CheckModel("wpn_t9_melee_warmace_prop_weapon" + xmodel);
-                CheckModel("wpn_t9_pistol_burst" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_animetankg" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_blade" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_decree" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_avalanche" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_blade" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_bullshark" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_decree" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_devil" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_especial" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_faberge" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_firestorm" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_fumigator" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_highfidelity" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_leagueplay" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_rbaron" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_samurai" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_sheriff" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_souleat" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_surge" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_ubronze" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_whunter" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_dw_yokai" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_especial" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_faberge" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_firestorm" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_fumigator" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_highfidelity" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_leagueplay" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_samurai" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_secondary" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_sheriff" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_souleat" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_surge" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_ubronze" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_ultrafunk" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_ultrafunk_dw" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_whunter" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_cb_yokai" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_dw" + xmodel);
-                CheckModel("wpn_t9_pistol_burst_dw_prop" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_bbear" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_bite" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_bite_dw" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_debonai" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_84" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_adder" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_bbear" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_bite" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_debonai" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_finec" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_modernp" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_murder" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_noir" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_pollock" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_prop" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_scorpion" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_six" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_srave" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_swashbuck" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_dw_winters" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_finec" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_hvt" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_hvt_dw" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_modernp" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_murder" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_pollock" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_srave" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_swashbuck" + xmodel);
-                CheckModel("wpn_t9_pistol_revolver_winters" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_8bit" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_classic" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_classic_dw" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_cp" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_cuddly" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_8bit" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_cuddly" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_endtimes" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_fchina" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_firework" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_midnight" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_muerte" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_mvice" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_pow" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_presone" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_prop" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_rifleer" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_sweet" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_teal" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_dw_tunnel" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_endtimes" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_eqp_hatchet_prop_weapon" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_finechina" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_firework" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_muerte" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_pow" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_presone" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_prop" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_prop_animate" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_prop_weapon" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_sweet" + xmodel);
-                CheckModel("wpn_t9_pistol_semiauto_tunnel" + xmodel);
-                CheckModel("wpn_t9_red_card_prop" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_albino_serpent" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_battery" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_blazer" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_collect" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_dark" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_dozer" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_glitch" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_great" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_grunge" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_gunzroses" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_jefe" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_lawman" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_lfg" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_motocross" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_mvs" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_nature" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_nucleard" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_tunnel" + xmodel);
-                CheckModel("wpn_t9_shotgun_pump_wilder" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_aether" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_animepilot" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_assassin" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_cosplay" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_darkaether" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_doomsday" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_elegant" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_gmaxis" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_hudson_ms" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_hudson_pc" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_hudson_sy" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_jokerh" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_miami" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_rainbow" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_resp" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_sunset" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_supers" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_tuningf" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_cb_voodoo" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_frogmen" + xmodel);
-                CheckModel("wpn_t9_shotgun_semiauto_unfolded_stock" + xmodel);
-                CheckModel("wpn_t9_sig_grapple_gun" + xmodel);
-                CheckModel("wpn_t9_smg_burst" + xmodel);
-                CheckModel("wpn_t9_smg_burst_absinthe_barrel_laser_mount" + xmodel);
-                CheckModel("wpn_t9_smg_burst_assassin" + xmodel);
-                CheckModel("wpn_t9_smg_burst_barrel_laser_mount" + xmodel);
-                CheckModel("wpn_t9_smg_burst_barrel_laser_mount_assassin" + xmodel);
-                CheckModel("wpn_t9_smg_burst_barrel_laser_mount_rainbow" + xmodel);
-                CheckModel("wpn_t9_smg_burst_barrel_laser_mount_scarab" + xmodel);
-                CheckModel("wpn_t9_smg_burst_barrel_laser_mount_wonder" + xmodel);
-                CheckModel("wpn_t9_smg_burst_barrel_light_mount" + xmodel);
-                CheckModel("wpn_t9_smg_burst_brutus" + xmodel);
-                CheckModel("wpn_t9_smg_burst_bullshark" + xmodel);
-                CheckModel("wpn_t9_smg_burst_dino" + xmodel);
-                CheckModel("wpn_t9_smg_burst_fumigator" + xmodel);
-                CheckModel("wpn_t9_smg_burst_improvt" + xmodel);
-                CheckModel("wpn_t9_smg_burst_jade" + xmodel);
-                CheckModel("wpn_t9_smg_burst_maneater" + xmodel);
-                CheckModel("wpn_t9_smg_burst_metamorph" + xmodel);
-                CheckModel("wpn_t9_smg_burst_milspec" + xmodel);
-                CheckModel("wpn_t9_smg_burst_motocross" + xmodel);
-                CheckModel("wpn_t9_smg_burst_nest" + xmodel);
-                CheckModel("wpn_t9_smg_burst_nugget" + xmodel);
-                CheckModel("wpn_t9_smg_burst_purpsun" + xmodel);
-                CheckModel("wpn_t9_smg_burst_rainbow" + xmodel);
-                CheckModel("wpn_t9_smg_burst_ruby" + xmodel);
-                CheckModel("wpn_t9_smg_burst_scarab" + xmodel);
-                CheckModel("wpn_t9_smg_burst_sneaker" + xmodel);
-                CheckModel("wpn_t9_smg_burst_sultan" + xmodel);
-                CheckModel("wpn_t9_smg_burst_sunkissed" + xmodel);
-                CheckModel("wpn_t9_smg_burst_wonder" + xmodel);
-                CheckModel("wpn_t9_smg_capacity" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_arctic" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_body_mount" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_body_mount_summer" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_body_mount_undead" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_body_ring_mount" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_body_ring_mount_rockcold" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_cocktail" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_dark" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_deaths" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_electric" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_electric_muzzle" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_fishtank" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_gigaswatt" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_goth" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_hanukkah" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_hipower" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_insect" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_jade" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_jwarrior" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_media" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_monte" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_muzzle" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_muzzle_dark" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_muzzle_jade" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_muzzle_monte" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_muzzle_nugget" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_muzzle_summer" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_nugget" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_pink" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_racer" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_rebel" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_rockcold" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_rranch" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_somberv" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_summer" + xmodel);
-                CheckModel("wpn_t9_smg_capacity_undead" + xmodel);
-                CheckModel("wpn_t9_smg_capacityer_sy" + xmodel);
-                CheckModel("wpn_t9_smg_crystalaxe" + xmodel);
-                CheckModel("wpn_t9_smg_handling" + xmodel);
-                CheckModel("wpn_t9_smg_handling_achill" + xmodel);
-                CheckModel("wpn_t9_smg_handling_angel_fish" + xmodel);
-                CheckModel("wpn_t9_smg_handling_animeninja" + xmodel);
-                CheckModel("wpn_t9_smg_handling_assassin" + xmodel);
-                CheckModel("wpn_t9_smg_handling_bguard" + xmodel);
-                CheckModel("wpn_t9_smg_handling_blow_runner" + xmodel);
-                CheckModel("wpn_t9_smg_handling_cell" + xmodel);
-                CheckModel("wpn_t9_smg_handling_cheese" + xmodel);
-                CheckModel("wpn_t9_smg_handling_cmoney" + xmodel);
-                CheckModel("wpn_t9_smg_handling_cubarevo" + xmodel);
-                CheckModel("wpn_t9_smg_handling_deepblue" + xmodel);
-                CheckModel("wpn_t9_smg_handling_electro" + xmodel);
-                CheckModel("wpn_t9_smg_handling_flower" + xmodel);
-                CheckModel("wpn_t9_smg_handling_gilded" + xmodel);
-                CheckModel("wpn_t9_smg_handling_heartbreak" + xmodel);
-                CheckModel("wpn_t9_smg_handling_high_end" + xmodel);
-                CheckModel("wpn_t9_smg_handling_hudson_ms" + xmodel);
-                CheckModel("wpn_t9_smg_handling_hudson_pc" + xmodel);
-                CheckModel("wpn_t9_smg_handling_hudson_sy" + xmodel);
-                CheckModel("wpn_t9_smg_handling_jewel" + xmodel);
-                CheckModel("wpn_t9_smg_handling_jungle" + xmodel);
-                CheckModel("wpn_t9_smg_handling_lucha" + xmodel);
-                CheckModel("wpn_t9_smg_handling_lycan" + xmodel);
-                CheckModel("wpn_t9_smg_handling_miami" + xmodel);
-                CheckModel("wpn_t9_smg_handling_microfilm" + xmodel);
-                CheckModel("wpn_t9_smg_handling_nights" + xmodel);
-                CheckModel("wpn_t9_smg_handling_rebirth" + xmodel);
-                CheckModel("wpn_t9_smg_handling_sim" + xmodel);
-                CheckModel("wpn_t9_smg_handling_ssilver" + xmodel);
-                CheckModel("wpn_t9_smg_handling_toohot" + xmodel);
-                CheckModel("wpn_t9_smg_handling_wanker" + xmodel);
-                CheckModel("wpn_t9_smg_heavy" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_aagirl" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_animetankg" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_apache" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_arabian" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_armadillo" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_batts" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_big_joke" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_blade" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_carbonchrome_ms" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_carbonchrome_pc" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_carbonchrome_sy" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_cdummy" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_checkmate" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_concrete" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_gasoline" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_leagueplay" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_oktober" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_orda" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_panda" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_penumbra" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_pow" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_ratrod" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_rbunny" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_rebel" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_rsurvival" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_soulripper" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_standoff" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_striked" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_swiss" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_tagger3" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_washed" + xmodel);
-                CheckModel("wpn_t9_smg_heavy_zslayer" + xmodel);
-                CheckModel("wpn_t9_smg_standard" + xmodel);
-                CheckModel("wpn_t9_smg_standard_barrel_light_mount" + xmodel);
-                CheckModel("wpn_t9_smg_standard_barrel_mount" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_apilot" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_bomber" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_carnival" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_chewing" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_cia" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_coyote" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_cryo" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_cuddly" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_ddaemon" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_debonair" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_dh" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_evintage" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_finec1" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_firework" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_gambit" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_infest" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_leaf" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_nature" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_numbers" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_operator" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_pollock" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_roadwar" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_roman" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_shadow" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_spacehead" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_strace" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_taffy" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_zenya" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cb_znaga" + xmodel);
-                CheckModel("wpn_t9_smg_standard_chewing" + xmodel);
-                CheckModel("wpn_t9_smg_standard_cuddly" + xmodel);
-                CheckModel("wpn_t9_smg_standard_infest" + xmodel);
-                CheckModel("wpn_t9_smg_standard_leaf" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope_ads_animemon" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope_animemon" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope_deaths" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope_deaths_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope_donnie" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope_donnie_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope_egyptian" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope_egyptian_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope_unicorn" + xmodel);
-                CheckModel("wpn_t9_sniper_accurate_scope_unicorn_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_animelight" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_acid" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_acid_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_animelight" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_animelight_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_biggame" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_biggame_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_circuit" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_circuit_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_hologram" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_hologram_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_hypno" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_hypno_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_improvt" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_improvt_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_intercell" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_intercell_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_jungle" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_jungle_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_lancer" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_lancer_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_rain" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_ruby" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_ruby_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scarab" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scarab_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_acid" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_ads_acid" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_ads_animelight" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_ads_biggame" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_ads_circuit" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_ads_jungle" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_ads_lancer" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_ads_rain" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_ads_ruby" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_ads_scarab" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_ads_stalker" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_animelight" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_biggame" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_circuit" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_improvt" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_improvt_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_jungle" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_lancer" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_rain" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_rain_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_ruby" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_scarab" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_scope_stalker" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_stalker" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cb_stalker_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cmoney" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_cmoney_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_frontend" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_hypno" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_scope_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_scope_ads_cmoney" + xmodel);
-                CheckModel("wpn_t9_sniper_powersemi_scope_cmoney" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_animewidow" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_bullet" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_bwarrior_ms" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_bwarrior_pc" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_bwarrior_sy" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_cotton" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_coyote" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_darkg" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_darkg_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_darkg_scope_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_endgame" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_endgame_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_endgame_scope_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_eyerelief" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_gasoline" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_ghillie_sy" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_holiday" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_holiday_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_holiday_scope_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_manguish" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_mvs" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_opulence" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_pearl" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_psa" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_psa_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_psa_scope_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_rbunny" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_rbunny_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_rbunny_scope_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_redwave" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_ads_animewidow" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_ads_cotton" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_ads_coyote" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_ads_ghillie_sy" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_ads_manguish" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_ads_opulence" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_ads_pearl" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_ads_somberv" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_ads_wrap" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_animewidow" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_cotton" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_coyote" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_gasoline" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_ghillie_sy" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_manguish" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_mvs" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_opulence" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_pearl" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_skeleton" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_skeleton_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_somberv" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_scope_wrap" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_skeleton" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_somberv" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_vietnam_bullet" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_wind" + xmodel);
-                CheckModel("wpn_t9_sniper_quickscope_wrap" + xmodel);
-                CheckModel("wpn_t9_sniper_standard" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_achill" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_animesg" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_apex" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_beachcomber" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_carbon_fiber" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_carbon_fiber_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_carbon_fiber_scope_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_dino" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_dino_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_ghost" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_ghost_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_ghost_scope_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_milspec" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_nonuke" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_prof" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_qjackal" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope_ads_animesg" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope_ads_prof" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope_ads_space" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope_animesg" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope_apex" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope_apex_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope_prof" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope_space" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope_wandering" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scope_wandering_ads" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scopeer_ads_ms" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scopeer_ads_pc" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scopeer_ads_sy" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scopeer_ms" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scopeer_pc" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_scopeer_sy" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_sorrow" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_space" + xmodel);
-                CheckModel("wpn_t9_sniper_standard_wandering" + xmodel);
-                CheckModel("wpn_t9_sniper_standarder_ms" + xmodel);
-                CheckModel("wpn_t9_sniper_standarder_pc" + xmodel);
-                CheckModel("wpn_t9_sniper_standarder_sy" + xmodel);
-                CheckModel("wpn_t9_sparkler_prop" + xmodel);
-                CheckModel("wpn_t9_special_crossbow" + xmodel);
-                CheckModel("wpn_t9_special_crossbow_diynot" + xmodel);
-                CheckModel("wpn_t9_special_crossbow_goth" + xmodel);
-                CheckModel("wpn_t9_special_crossbow_lancehead" + xmodel);
-                CheckModel("wpn_t9_special_crossbow_lastzombie" + xmodel);
-                CheckModel("wpn_t9_special_crossbow_projectile" + xmodel);
-                CheckModel("wpn_t9_special_crossbow_ztheme" + xmodel);
-                CheckModel("wpn_t9_special_nailgun_projectile" + xmodel);
-                CheckModel("wpn_t9_sr_electric_avogadro_projectile" + xmodel);
-                CheckModel("wpn_t9_streak_annihilator" + xmodel);
-                CheckModel("wpn_t9_streak_bow" + xmodel);
-                CheckModel("wpn_t9_streak_bow_arrow_03_projectile" + xmodel);
-                CheckModel("wpn_t9_streak_bow_pickup" + xmodel);
-                CheckModel("wpn_t9_streak_care_package" + xmodel);
-                CheckModel("wpn_t9_streak_care_package_booby_trap" + xmodel);
-                CheckModel("wpn_t9_streak_care_package_friendly" + xmodel);
-                CheckModel("wpn_t9_streak_care_package_friendly_nosight" + xmodel);
-                CheckModel("wpn_t9_streak_care_package_fx_corner" + xmodel);
-                CheckModel("wpn_t9_streak_care_package_fx_ratchet" + xmodel);
-                CheckModel("wpn_t9_streak_death_machine" + xmodel);
-                CheckModel("wpn_t9_streak_flamethrower" + xmodel);
-                CheckModel("wpn_t9_streak_missile_turret" + xmodel);
-                CheckModel("wpn_t9_streak_missile_turret_fx_arm" + xmodel);
-                CheckModel("wpn_t9_streak_missile_turret_fx_base" + xmodel);
-                CheckModel("wpn_t9_streak_missile_turret_fx_leg" + xmodel);
-                CheckModel("wpn_t9_streak_missile_turret_fx_senors" + xmodel);
-                CheckModel("wpn_t9_streak_missile_turret_projectile" + xmodel);
-                CheckModel("wpn_t9_streak_war_machine" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_apache" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_babayaga" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_batts" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_cdummy" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_checkp" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_codename" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_faberge" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_flashf" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_fuego" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_jfighter_sy" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_king_scorpion" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_onyx_sy" + xmodel);
-                CheckModel("wpn_t9_tr_damagesemi_wildchild" + xmodel);
-                CheckModel("wpn_t9_tr_longburst" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_aerobics" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_animepilot" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_arvnr1" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_arvnr2" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_boar_ms" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_boar_pc" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_boar_sy" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_bope" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_cyborg" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_devilwoman" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_dhawk" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_dozer" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_electric" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_fallenh" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_freya" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_gchoice" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_goth" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_highnoon" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_infest" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_joke4_ms" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_joke4_pc" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_joke4_solo" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_joke4_sy" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_jokerh" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_kjackal" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_lastzombie" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_mind" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_mvs" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_opulence" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_peace" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_resp" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_sforces_sy" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_smu" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_ufo" + xmodel);
-                CheckModel("wpn_t9_tr_longburst_warlock" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_animemeow" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_blade" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_bush" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_carapace" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_carolina" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_chems" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_dieh" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_draid" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_fcarbon" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_ghostship" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_jewel" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_lunar" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_maxpurp" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_monte" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_rthunder" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_ads_animemeow" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_ads_blade" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_ads_bush" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_ads_dieh" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_ads_draid" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_ads_ghostship" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_animemeow" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_blade" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_bush" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_dieh" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_draid" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_ghostship" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_sweet" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_sweet_ads" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_urban" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_scope_urban_ads" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_srave_sy" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_standoff" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_sweet" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_tanner" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_cb_urban" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_scope" + xmodel);
-                CheckModel("wpn_t9_tr_powerburst_scope_ads" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_egypt" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_excellence" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_ivory" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_mutant" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_ninja_v2" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_punk" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_reinforced" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_speckled" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_tiki" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_v2_8bit" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_v2_doomsday" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_v2_draid" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_v2_fieldm" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_v2_lightm" + xmodel);
-                CheckModel("wpn_t9_tr_precisionsemi_v2_wandering" + xmodel);
-                CheckModel("wpn_t9_zm_knife_bowie" + xmodel);
-                CheckModel("wpn_t9_zm_mega_barrel_blazer_beam" + xmodel);
-                CheckModel("wpn_t9_zm_mega_barrel_micro" + xmodel);
-                CheckModel("wpn_t9_zm_mega_barrel_pistol" + xmodel);
-                CheckModel("wpn_t9_zm_mega_barrel_spreadshot" + xmodel);
-                CheckModel("wpn_t9_zm_monkey_bomb" + xmodel);
-                CheckModel("wpn_t9_zm_perk_can_deadshot" + xmodel);
-                CheckModel("wpn_t9_zm_perk_can_death_perception" + xmodel);
-                CheckModel("wpn_t9_zm_perk_can_elemental" + xmodel);
-                CheckModel("wpn_t9_zm_perk_can_juggernog" + xmodel);
-                CheckModel("wpn_t9_zm_perk_can_mule_kick" + xmodel);
-                CheckModel("wpn_t9_zm_perk_can_phd_slider" + xmodel);
-                CheckModel("wpn_t9_zm_perk_can_powerup" + xmodel);
-                CheckModel("wpn_t9_zm_perk_can_quick_revive" + xmodel);
-                CheckModel("wpn_t9_zm_perk_can_speed_cola" + xmodel);
-                CheckModel("wpn_t9_zm_perk_can_stamina_up" + xmodel);
-                CheckModel("wpn_t9_zm_perk_can_tombstone" + xmodel);
-                CheckModel("wpn_t9_zm_ray_rifle" + xmodel);
-                CheckModel("wpn_t9_zm_raygun" + xmodel);
-                CheckModel("wpn_t9_zm_raygun_upg" + xmodel);
-                CheckModel("wpn_t9_zm_silver_panic_knife" + xmodel);
-                CheckModel("wpn_t9_zm_silver_ww" + xmodel);
-                CheckModel("wpn_t9_zm_silver_ww_01" + xmodel);
-                CheckModel("wpn_t9_zm_wand_aether_shround" + xmodel);
-                CheckModel("wpn_t9_zm_wand_energy_mine" + xmodel);
-                CheckModel("wpn_t9_zm_wand_frenzied_guard" + xmodel);
-                CheckModel("wpn_t9_zm_wand_frost_blast" + xmodel);
-                CheckModel("wpn_t9_zm_wand_healing_aura" + xmodel);
-                CheckModel("wpn_t9_zm_wand_lightning_links" + xmodel);
-                CheckModel("wpn_t9_zm_wand_ring_fire" + xmodel);
-                CheckModel("wpn_t9_zm_wand_toxic_growth" + xmodel);
-                CheckModel("wpn_t9_zm_wand_closed_aether_shround" + xmodel);
-                CheckModel("wpn_t9_zm_wand_closed_energy_mine" + xmodel);
-                CheckModel("wpn_t9_zm_wand_closed_frenzied_guard" + xmodel);
-                CheckModel("wpn_t9_zm_wand_closed_frost_blast" + xmodel);
-                CheckModel("wpn_t9_zm_wand_closed_healing_aura" + xmodel);
-                CheckModel("wpn_t9_zm_wand_closed_lightning_links" + xmodel);
-                CheckModel("wpn_t9_zm_wand_closed_ring_fire" + xmodel);
-                CheckModel("wpn_t9_zm_wand_closed_toxic_growth" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_aviator_02" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_aviator_x2" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_bope_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_brawler_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_broken_fancy" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_fancy_debt_collector" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_fancy_gold" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_kremlin_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_origin_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_private_eye_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_private_eye_02" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_private_eye_03" + xmodel);
-                CheckModel("wrist_watch_t9_s1_analog_retroren_02" + xmodel);
-                CheckModel("wrist_watch_t9_s1_bracelet_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_bracelet_braided_02" + xmodel);
-                CheckModel("wrist_watch_t9_s1_bracelet_gold_chain_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_bracelet_silver_chain_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_bracelet_skull_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_digital_compass" + xmodel);
-                CheckModel("wrist_watch_t9_s1_digital_diver" + xmodel);
-                CheckModel("wrist_watch_t9_s1_digital_first_spy" + xmodel);
-                CheckModel("wrist_watch_t9_s1_digital_gambit_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_digital_gaudy" + xmodel);
-                CheckModel("wrist_watch_t9_s1_digital_inteculo_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_digital_kazuya_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_digital_rank_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_digital_rank_penumbra_sy" + xmodel);
-                CheckModel("wrist_watch_t9_s1_digital_zm_heart_rate_01" + xmodel);
-                CheckModel("wrist_watch_t9_s1_digital_zm_heart_rate_black_02" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_420" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_black_silver" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_caiman" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_cold_hearted" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_dark_aether" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_jungle_aviator" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_mayan" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_mortal" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_naval_warfare" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_necro_king" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_paratroop" + xmodel);
-                CheckModel("wrist_watch_t9_s2_analog_rebel" + xmodel);
-                CheckModel("wrist_watch_t9_s2_bracelet_lure" + xmodel);
-                CheckModel("wrist_watch_t9_s2_bracelet_mardi_gras" + xmodel);
-                CheckModel("wrist_watch_t9_s2_digital_jade" + xmodel);
-                CheckModel("wrist_watch_t9_s2_digital_mayan" + xmodel);
-                CheckModel("wrist_watch_t9_s2_digital_mini_map" + xmodel);
-                CheckModel("wrist_watch_t9_s2_digital_mini_map_hot_rod" + xmodel);
-                CheckModel("wrist_watch_t9_s2_digital_river_slasher" + xmodel);
-                CheckModel("wrist_watch_t9_s2_digital_sforce" + xmodel);
-                CheckModel("wrist_watch_t9_s3_analog_chrono_sea" + xmodel);
-                CheckModel("wrist_watch_t9_s3_analog_mctag" + xmodel);
-                CheckModel("wrist_watch_t9_s3_analog_nuclear_fallout" + xmodel);
-                CheckModel("wrist_watch_t9_s3_analog_rebel_fighter_sy" + xmodel);
-                CheckModel("wrist_watch_t9_s3_analog_winter_ash" + xmodel);
-                CheckModel("wrist_watch_t9_s3_analog_zombie_naga" + xmodel);
-                CheckModel("wrist_watch_t9_s3_bracelet_01" + xmodel);
-                CheckModel("wrist_watch_t9_s3_digital_big_joke" + xmodel);
-                CheckModel("wrist_watch_t9_s3_digital_death_touch" + xmodel);
-                CheckModel("wrist_watch_t9_s3_digital_heart_rate_alien" + xmodel);
-                CheckModel("wrist_watch_t9_s3_digital_inteculo_spycraft" + xmodel);
-                CheckModel("wrist_watch_t9_s3_digital_inteculo_w_fallout" + xmodel);
-                CheckModel("wrist_watch_t9_s3_digital_nuclear_fallout" + xmodel);
-                CheckModel("wrist_watch_t9_s3_digital_radiation" + xmodel);
-                CheckModel("wrist_watch_t9_s3_digital_rank_winter_fallout" + xmodel);
-                CheckModel("wrist_watch_t9_s3_digital_ultrafunk" + xmodel);
-                CheckModel("wrist_watch_t9_s3_digitalic8" + xmodel);
-                CheckModel("wrist_watch_t9_s4_analog_assassin" + xmodel);
-                CheckModel("wrist_watch_t9_s4_analog_fire_storm" + xmodel);
-                CheckModel("wrist_watch_t9_s4_analog_future_soldier" + xmodel);
-                CheckModel("wrist_watch_t9_s4_analog_horror" + xmodel);
-                CheckModel("wrist_watch_t9_s4_analog_jefe" + xmodel);
-                CheckModel("wrist_watch_t9_s4_analog_rbear" + xmodel);
-                CheckModel("wrist_watch_t9_s4_analog_roadwar" + xmodel);
-                CheckModel("wrist_watch_t9_s4_analog_sleek_assassin" + xmodel);
-                CheckModel("wrist_watch_t9_s4_analog_spaceship" + xmodel);
-                CheckModel("wrist_watch_t9_s4_analog_wasteland" + xmodel);
-                CheckModel("wrist_watch_t9_s4_bracelet_leather_studd" + xmodel);
-                CheckModel("wrist_watch_t9_s4_bracelet_weathered" + xmodel);
-                CheckModel("wrist_watch_t9_s4_digital_big_joke" + xmodel);
-                CheckModel("wrist_watch_t9_s4_digital_blade" + xmodel);
-                CheckModel("wrist_watch_t9_s4_digital_evil" + xmodel);
-                CheckModel("wrist_watch_t9_s4_digital_holographic" + xmodel);
-                CheckModel("wrist_watch_t9_s4_digital_holographic_rank" + xmodel);
-                CheckModel("wrist_watch_t9_s4_digital_holographic_rank_cyber" + xmodel);
-                CheckModel("wrist_watch_t9_s4_digital_roadwarrior" + xmodel);
-                CheckModel("wrist_watch_t9_s4_digital_royal_decree" + xmodel);
-                CheckModel("wrist_watch_t9_s5_analog_beer_o_clock" + xmodel);
-                CheckModel("wrist_watch_t9_s5_analog_blood_fancy" + xmodel);
-                CheckModel("wrist_watch_t9_s5_analog_classic" + xmodel);
-                CheckModel("wrist_watch_t9_s5_analog_demon" + xmodel);
-                CheckModel("wrist_watch_t9_s5_analog_dis_assassin" + xmodel);
-                CheckModel("wrist_watch_t9_s5_analog_egy_burial" + xmodel);
-                CheckModel("wrist_watch_t9_s5_analog_hacking_code" + xmodel);
-                CheckModel("wrist_watch_t9_s5_analog_holographic" + xmodel);
-                CheckModel("wrist_watch_t9_s5_analog_no_numbers" + xmodel);
-                CheckModel("wrist_watch_t9_s5_analog_onyx_sy" + xmodel);
-                CheckModel("wrist_watch_t9_s5_analog_retrotac" + xmodel);
-                CheckModel("wrist_watch_t9_s5_digital_arabian" + xmodel);
-                CheckModel("wrist_watch_t9_s5_digital_checkmate" + xmodel);
-                CheckModel("wrist_watch_t9_s5_digital_critical_kill" + xmodel);
-                CheckModel("wrist_watch_t9_s5_digital_dark_weaver" + xmodel);
-                CheckModel("wrist_watch_t9_s5_digital_ghosted" + xmodel);
-                CheckModel("wrist_watch_t9_s5_digital_judge_d" + xmodel);
-                CheckModel("wrist_watch_t9_s5_digital_mummy_cat" + xmodel);
-                CheckModel("wrist_watch_t9_s5_digital_rank_countdwn" + xmodel);
-                CheckModel("wrist_watch_t9_s5_digital_tagger" + xmodel);
-                CheckModel("wrist_watch_t9_s5_digital_wonderland" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_agony" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_big_joke4_ms" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_big_joke4_pc" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_big_joke4_solo" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_big_joke4_sy" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_bite_me" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_blue_chroma" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_bog_ops" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_camo" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_cyber_venom" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_gilded" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_halloween" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_hypnosis" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_krieger" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_scrapyard" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_scream" + xmodel);
-                CheckModel("wrist_watch_t9_s6_analog_street_mech_sy" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_atomic_ash" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_egyptian_fire" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_endgame" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_frost" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_gov1" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_gov2" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_nightmare_fuel" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_rank_carnival" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_reaper_bunny" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_sultan" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_tagger_ms" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_tagger_pc" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_tagger_solo" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_tagger_sy" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_undead_warrior" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_undeadic" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_ww" + xmodel);
-                CheckModel("wrist_watch_t9_s6_digital_zm_critical_kill" + xmodel);
-            }
-            foreach (string xweaponsound in xWeaponSound)
-            {
-                foreach (string xgenericsound in xGenericSound)
-                {
-                    foreach (string xtaacom in xTAACOM)
-                    {
-                        foreach (string xlanguage in xLanguage)
-                        {
-                            foreach (string xopvox in xOpVox)
-                            {
-                                CheckSound("" + xweaponsound + xgenericsound);
-                                CheckSound("" + xtaacom + xlanguage);
-                                CheckSound("" + xopvox + xlanguage);
-                                CheckSound("fly/weapon/reload/ar_accurate/ar_accurate" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/ar_british/fly_ar_british" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/ar_damage/fly_ar_damage" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/ar_fastfire/fly_ar_fastfire" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/ar_fasthandling/fly_ar_fasthandling" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/ar_mobility/fly_ar_mobility" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/ar_season6/fly_ar_season6" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/ar_slowfire/fly_ar_slowfire" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/ar_slowhandling/fly_ar_slowhandling" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/ar_soviet/fly_ar_soviet" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/ar_standard/fly_ar_standard" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/grenade_launcher/fly_grenade_launcher" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/launcher_freefire/fly_launcher_freefire" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/launcher_standard/fly_launcher_standard" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/lmg_accurate/fly_lmg_accurate" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/lmg_fastfire/fly_lmg_fastfire" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/lmg_light/fly_lmg_light" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/lmg_slowfire/fly_lmg_slowfire" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/pistol_burst/fly_pistol_burst" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/pistol_fullauto/fly_pistol_fullauto" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/pistol_revolver/fly_pistol_revolver" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/pistol_semiauto/fly_pistol_semiauto" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/pistol_shotgun/fly_pistol_shotgun" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/shotgun_leveraction/fly_shotgun_leveraction" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/shotgun_pump/fly_shotgun_pump" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/shotgun_semi/fly_shotgun_semi" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_accurate/fly_smg_accurate" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_burst/fly_smg_burst" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_capacity/fly_smg_capacity" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_cqb/fly_smg_cqb" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_fastfire/fly_smg_fastfire" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_flechette/fly_smg_flechette" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_handling/fly_smg_handling" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_heavy/fly_smg_heavy" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_season6/fly_smg_season6" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_semiauto/fly_smg_semiauto" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_spray/fly_smg_spray" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/smg_standard/fly_smg_standard" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/sniper_accurate/fly_sniper_accurate" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/sniper_cannon/fly_sniper_cannon" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/sniper_powersemi/fly_sniper_powersemi" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/sniper_standard/sniper_standard" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/special_nailgun/fly_nailgun" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/tr_damagesemi/fly_tr_damagesemi" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/tr_fastburst/fly_tr_fastburst" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/tr_longburst/fly_tr_longburst" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/tr_powerburst/fly_tr_powerburst" + xweaponsound + xgenericsound);
-                                CheckSound("fly/weapon/reload/tr_precision/fly_tr_precision" + xweaponsound + xgenericsound);
-                                CheckSound("vox/scripted/mpl/abnd/vox_abnd" + xtaacom + xlanguage);
-                                CheckSound("vox/scripted/mpl/adgi/vox_adgi" + xtaacom + xlanguage);
-                                CheckSound("vox/scripted/mpl/ahva/vox_ahva" + xtaacom + xlanguage);
-                                CheckSound("vox/scripted/mpl/ami6/vox_ami6" + xtaacom + xlanguage);
-                                CheckSound("vox/scripted/mpl/anbo/vox_anbo" + xtaacom + xlanguage);
-                                CheckSound("vox/scripted/mpl/anme/vox_anme" + xtaacom + xlanguage);
-                                CheckSound("vox/scripted/adlr/vox_adlr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/antv/vox_antv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/bakr/vox_bakr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/bdzr/vox_bdzr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/beck/vox_beck" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/frs1/vox_frs1" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/frs2/vox_frs2" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/fuze/vox_fuze" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/grca/vox_grca" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/gstf/vox_gstf" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/hdsn/vox_hdsn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/jckl/vox_jckl" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/kngs/vox_kngs" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/kngt/vox_kngt" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ktsn/vox_ktsn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/lazr/vox_lazr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/masn/vox_masn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/maxi/vox_maxi" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/mcln/vox_mcln" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/mrs1/vox_mrs1" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/mrs2/vox_mrs2" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/mrs3/vox_mrs3" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/naga/vox_naga" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/park/vox_park" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/prce/vox_prce" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ptnv/vox_ptnv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/rmbo/vox_rmbo" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/rvas/vox_rvas" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/rvnv/vox_rvnv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/sala/vox_sala" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/sims/vox_sims" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/stch/vox_stch" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/stry/vox_stry" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/weav/vox_weav" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/wolf/vox_wolf" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/wood/vox_wood" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/wrth/vox_wrth" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zyna/vox_zyna" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/adlr/vox_adlr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/antv/vox_antv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/bakr/vox_bakr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/bdzr/vox_bdzr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/beck/vox_beck" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/frs1/vox_frs1" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/frs2/vox_frs2" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/fuze/vox_fuze" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/grca/vox_grca" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/gstf/vox_gstf" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/hdsn/vox_hdsn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/jckl/vox_jckl" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/kngs/vox_kngs" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/kngt/vox_kngt" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/ktsn/vox_ktsn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/lazr/vox_lazr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/masn/vox_masn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/maxi/vox_maxi" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/mcln/vox_mcln" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/mrs1/vox_mrs1" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/mrs2/vox_mrs2" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/mrs3/vox_mrs3" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/naga/vox_naga" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/park/vox_park" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/prce/vox_prce" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/ptnv/vox_ptnv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/rmbo/vox_rmbo" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/rvas/vox_rvas" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/rvnv/vox_rvnv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/sala/vox_sala" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/sims/vox_sims" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/stch/vox_stch" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/stry/vox_stry" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/weav/vox_weav" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/wolf/vox_wolf" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/wood/vox_wood" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/wrth/vox_wrth" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/operators/zyna/vox_zyna" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/adlr/vox_adlr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/antv/vox_antv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/bakr/vox_bakr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/bdzr/vox_bdzr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/beck/vox_beck" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/frs1/vox_frs1" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/frs2/vox_frs2" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/fuze/vox_fuze" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/grca/vox_grca" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/gstf/vox_gstf" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/hdsn/vox_hdsn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/jckl/vox_jckl" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/kngs/vox_kngs" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/kngt/vox_kngt" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/ktsn/vox_ktsn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/lazr/vox_lazr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/masn/vox_masn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/maxi/vox_maxi" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/mcln/vox_mcln" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/mrs1/vox_mrs1" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/mrs2/vox_mrs2" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/mrs3/vox_mrs3" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/naga/vox_naga" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/park/vox_park" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/prce/vox_prce" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/ptnv/vox_ptnv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/rmbo/vox_rmbo" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/rvas/vox_rvas" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/rvnv/vox_rvnv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/sala/vox_sala" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/sims/vox_sims" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/stch/vox_stch" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/stry/vox_stry" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/weav/vox_weav" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/wolf/vox_wolf" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/wood/vox_wood" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/wrth/vox_wrth" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/ping/zyna/vox_zyna" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/adlr/vox_adlr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/antv/vox_antv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/bakr/vox_bakr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/bdzr/vox_bdzr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/beck/vox_beck" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/frs1/vox_frs1" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/frs2/vox_frs2" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/fuze/vox_fuze" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/grca/vox_grca" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/gstf/vox_gstf" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/hdsn/vox_hdsn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/jckl/vox_jckl" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/kngs/vox_kngs" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/kngt/vox_kngt" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/ktsn/vox_ktsn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/lazr/vox_lazr" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/masn/vox_masn" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/maxi/vox_maxi" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/mcln/vox_mcln" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/mrs1/vox_mrs1" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/mrs2/vox_mrs2" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/mrs3/vox_mrs3" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/naga/vox_naga" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/park/vox_park" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/prce/vox_prce" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/ptnv/vox_ptnv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/rmbo/vox_rmbo" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/rvas/vox_rvas" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/rvnv/vox_rvnv" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/sala/vox_sala" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/sims/vox_sims" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/stch/vox_stch" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/stry/vox_stry" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/weav/vox_weav" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/wolf/vox_wolf" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/wood/vox_wood" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/wrth/vox_wrth" + xopvox + xlanguage);
-                                CheckSound("vox/scripted/zm_operators/zyna/vox_zyna" + xopvox + xlanguage);
-                            }
-                        }
-                    }
-                }
-            }
-            foreach (string xstring in xString)
-            {
-                CheckString("" + xstring);
-                CheckString("j" + xstring);
-                CheckString("jnt" + xstring);
-                CheckString("joint" + xstring);
-                CheckString("p7" + xstring);
-                CheckString("p8" + xstring);
-                CheckString("p9" + xstring);
-                CheckString("tag" + xstring);
-            }
-        }
+         void SearchForSpecificAsset(string xAsset) {
 
-        void CheckAnim(string animName)
-        {
+            foreach (string animcheck in animCheck) {
+                foreach (string xanim in xAnim) {
+                    CheckAnim(animcheck + xanim); }}
+
+            foreach (string imagecheck in imageCheck) {
+                foreach (string ximage in xImage) {
+                    // Swap imageWpnAttachment with imageWpnBlueprint as some bundles have swapped names for more results
+                    CheckImage(imagecheck + ximage); }}
+
+            foreach (string materialcheck in materialCheck) {
+                foreach (string xmaterial in xMaterial) {
+                    CheckMaterial(materialcheck + xmaterial); }}
+
+            foreach (string modelcheck in modelCheck) {
+                foreach (string xmodel in xModel) {
+				    CheckModel(modelcheck + xmodel); }}
+
+            foreach (string soundwpncheck in soundWpnCheck) {
+                foreach (string xweaponsound in xWeaponSound) {
+                    foreach (string xgenericsound in xGenericSound) {
+                        CheckSound(soundwpncheck + xweaponsound + xgenericsound); }}}
+
+            foreach (string soundoperatercheck in soundOperaterCheck) {
+                foreach (string xopvox in xOpVox) {
+                    foreach (string xlanguage in xLanguage) {
+                        CheckSound(soundoperatercheck + xopvox + xlanguage); }}}
+
+            foreach (string soundtaacomcheck in soundTaacomCheck) {
+                foreach (string xtaacom in xTAACOM) {
+                    foreach (string xlanguage in xLanguage) {
+                        CheckSound(soundtaacomcheck + xtaacom + xlanguage); }}}
+
+            foreach (string stringcheck in stringCheck) {
+			    foreach (string xstring in xString) {
+			        CheckString(stringcheck + xstring); }}}
+
+        void CheckAnim(string animName) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(animName));
-            string notFoundFilePath = Path + "\\AnimsNotFound.txt";
-            string foundFilePath = Path + "\\AnimsFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found Anim: {0:x}", hashName + "," + animName);
-                        File.AppendAllText(foundFilePath, hashName + "," + animName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
+            if (File.Exists(Path + "\\xanim\\" + hashName)) {
+                Console.WriteLine("Found Anim: {0:x}", hashName + "," + animName);
+                File.AppendAllText(Path + "\\AnimsFound.txt", hashName + "," + animName + Environment.NewLine);
+                File.Delete(Path + "\\xanim\\" + hashName); }}
 
-        void CheckImage(string imageName)
-        {
+        void CheckImage(string imageName) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(imageName));
-            string notFoundFilePath = Path + "\\ImagesNotFound.txt";
-            string foundFilePath = Path + "\\ImagesFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found Image: {0:x}", hashName + "," + imageName);
-                        File.AppendAllText(foundFilePath, hashName + "," + imageName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
+            if (File.Exists(Path + "\\ximage\\" + hashName)) {
+                Console.WriteLine("Found Image: {0:x}", hashName + "," + imageName);
+                File.AppendAllText(Path + "\\ImagesFound.txt", hashName + "," + imageName + Environment.NewLine);
+                File.Delete(Path + "\\ximage\\" + hashName); }}
 
-        void CheckMaterial(string materialName)
-        {
+        void CheckMaterial(string materialName) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(materialName));
-            string notFoundFilePath = Path + "\\MaterialsNotFound.txt";
-            string foundFilePath = Path + "\\MaterialsFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found Material: {0:x}", hashName + "," + materialName);
-                        File.AppendAllText(foundFilePath, hashName + "," + materialName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
+            if (File.Exists(Path + "\\xmaterial\\" + hashName)) {
+                Console.WriteLine("Found Material: {0:x}", hashName + "," + materialName);
+                File.AppendAllText(Path + "\\MaterialsFound.txt", hashName + "," + materialName + Environment.NewLine);
+                File.Delete(Path + "\\xmaterial\\" + hashName); }}
 
-        void CheckModel(string modelName)
-        {
+        void CheckModel(string modelName) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(modelName));
-            string notFoundFilePath = Path + "\\ModelsNotFound.txt";
-            string foundFilePath = Path + "\\ModelsFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found Model: {0:x}", hashName + "," + modelName);
-                        File.AppendAllText(foundFilePath, hashName + "," + modelName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
+            if (File.Exists(Path + "\\xmodel\\" + hashName)) {
+                Console.WriteLine("Found Model: {0:x}", hashName + "," + modelName);
+                File.AppendAllText(Path + "\\ModelsFound.txt", hashName + "," + modelName + Environment.NewLine);
+                File.Delete(Path + "\\xmodel\\" + hashName); }}
 
-        void CheckSound(string soundName)
-        {
+        void CheckSound(string soundName) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(soundName));
-            string notFoundFilePath = Path + "\\SoundsNotFound.txt";
-            string foundFilePath = Path + "\\SoundsFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found Sound: {0:x}", hashName + "," + soundName);
-                        File.AppendAllText(foundFilePath, hashName + "," + soundName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
+            if (File.Exists(Path + "\\xsound\\" + hashName)) {
+                Console.WriteLine("Found Sound: {0:x}", hashName + "," + soundName);
+                File.AppendAllText(Path + "\\SoundsFound.txt", hashName + "," + soundName + Environment.NewLine);
+                File.Delete(Path + "\\xsound\\" + hashName); }}
 
-        void CheckString(string stringName)
-        {
+        void CheckString(string stringName) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(stringName));
-            string notFoundFilePath = Path + "\\StringsNotFound.txt";
-            string foundFilePath = Path + "\\StringsFound.txt";
-            if (File.Exists(notFoundFilePath))
-            {
-                List<string> lines = new List<string>(File.ReadAllLines(notFoundFilePath));
-                bool found = false;
-                for (int i = 0; i < lines.Count; i++)
-                {
-                    if (lines[i].TrimStart().StartsWith(hashName))
-                    {
-                        Console.WriteLine("Found String: {0:x}", hashName + "," + stringName);
-                        File.AppendAllText(foundFilePath, hashName + "," + stringName + Environment.NewLine);
-                        lines.RemoveAt(i);
-                        i--;
-                        found = true;
-                    }
-                }
-                if (found)
-                {
-                    File.WriteAllLines(notFoundFilePath, lines.Select(l => l.TrimEnd()).ToArray());
-                }
-            }
-        }
-    }
-}
+            if (File.Exists(Path + "\\xstring\\" + hashName)) {
+                Console.WriteLine("Found String: {0:x}", hashName + "," + stringName);
+                File.AppendAllText(Path + "\\StringsFound.txt", hashName + "," + stringName + Environment.NewLine);
+                File.Delete(Path + "\\xstring\\" + hashName); }}}}
 
-namespace fnvHashFinder
-{
-    class Hash64Util
-    {
-        public static ulong Hash64(string input)
-        {
+namespace fnvHashFinder {
+    class Hash64Util {
+        public static ulong Hash64(string input) {
             ulong num = 14695981039346656037;
             for (int index = 0; index < input.Length; ++index)
                 num = (ulong)(((long)num ^ (long)input[index]) * 1099511628211L);
             num &= 0xFFFFFFFFFFFFFFF;
-            return num;
-        }
-    }
-}
+            return num; }}}

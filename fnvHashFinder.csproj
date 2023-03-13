@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
     <Platforms>x64</Platforms>
 	<PublishAot>true</PublishAot>
-	<StartupObject>FNV1A64base</StartupObject>
+	<StartupObject>FNV1A64</StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

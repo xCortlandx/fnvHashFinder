@@ -1,3 +1,14 @@
+14/03/2023:
+This update addresses numerous issues that wouldn't allow the scan to finish properly with assistance from @Amorfirion on the tests and suggestions:
+
+->Reverted textfile method as some users had issues with file permissions unable to scan
+->The tool now scans blank files of hashnames rather than folders similar to before, this takes 10mins to extract, was 20mins+ on folders
+->Addressed an issue on the main program that would take excessively long to finish a sound check
+->All starting word checks are now declared at the top as simple strings to concatenate with others, this saves a lot of time of mass bruteforce checks too with regex FnR
+->Removed a wpnsound list that was duped twice that wasn't supposed to be there
+->Few more asset checks added
+->Compile times are much faster, running a full scan on the main script only takes roughly 3mins
+
 07/03/2023:
 
 With a lot going on, most changes listed are included with more in later updates:
