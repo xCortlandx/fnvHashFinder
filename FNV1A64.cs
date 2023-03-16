@@ -40,11 +40,6 @@ internal class FNV1A64 {
 "ai_t9_zm_plague_hound",
 "ai_t9_zm_raz",
 "ai_t9_zm_steiner_base_com",
-"_p8_fxanim_zm_vapor_altar_danu",
-"_p8_fxanim_zm_vapor_altar_odin",
-"_p8_fxanim_zm_vapor_altar_ra",
-"_p8_fxanim_zm_vapor_altar_zeus",
-"mm_brawler",
 "vm_action_figure",
 "vm_ar_accurate",
 "vm_ar_an94_t8",
@@ -58,7 +53,6 @@ internal class FNV1A64 {
 "vm_ar_stealth",
 "vm_argus_t8",
 "vm_ballistic_knife_t8",
-"vm_ballistic_knife_t8_dw",
 "vm_bowie_knife_t8",
 "vm_combat_knife_t8",
 "vm_demo_hammer",
@@ -116,13 +110,44 @@ internal class FNV1A64 {
 "vm_ww_akud",
 "vm_ww_blundergat",
 "vm_zom_arm",
+"vm_zom_chakram",
 "vm_zom_hammer",
 "vm_zom_monkey_bomb",
 "vm_zom_nesting_doll",
 "vm_zom_raygun_mk2",
 "vm_zom_scepter",
+"vm_zom_sword_pistol",
 "vm_zom_thundergun",
 // CW Playerbody / Playertorso & Weapon Animations
+"mm_battle_shield_fem",
+"mm_battle_shield_male",
+"mm_brawler",
+"mm_dualwield_fem",
+"mm_dualwield_male",
+"mm_hammer_fem",
+"mm_hammer_male",
+"mm_hold_alt_fem",
+"mm_hold_alt_male",
+"mm_hold_fem",
+"mm_hold_male",
+"mm_katana_fem",
+"mm_katana_male",
+"mm_knife",
+"mm_minigun_fem",
+"mm_minigun_male",
+"mm_one_handed_gun_fem",
+"mm_one_handed_gun_male",
+"mm_pistol",
+"mm_rifle",
+"mm_staff_fem",
+"mm_staff_male",
+"mm_sword_and_pistol_fem",
+"mm_sword_and_pistol_male",
+"mm_talon_spikes_fem",
+"mm_talon_spikes_male",
+"mm_zhield_zpear_fem",
+"mm_zhield_zpear_male",
+"mm_zombie",
 "pt_ar_accurate_t9",
 "pt_ar_british_t9",
 "pt_ar_damage_t9",
@@ -289,6 +314,7 @@ internal class FNV1A64 {
 "vm_zm_crystal_axe_melee_t9",
 "vm_zm_crystal_axe_smg_t9",
 "vm_zm_mega_barrel_blazer_beam_t9",
+"vm_zm_mega_barrel_diffusion_beam_t9",
 "vm_zm_mega_barrel_micro_missile_t9",
 "vm_zm_mega_barrel_pistol_t9",
 "vm_zm_ray_rifle_t9",
@@ -316,6 +342,9 @@ internal class FNV1A64 {
 "_active_idle_r",
 "_additive",
 "_additive_empty",
+"_additive_idle",
+"_additive_idle_l",
+"_additive_idle_r",
 "_ads_2x_down",
 "_ads_2x_up",
 "_ads_3x_down",
@@ -526,6 +555,10 @@ internal class FNV1A64 {
 "_dw_supersprint_putaway",
 "_dw_swim_uw_pullout",
 "_dw_swim_uw_putaway",
+"_dw_swipe_l",
+"_dw_swipe_r",
+"_dw_throw_l",
+"_dw_throw_r",
 "_dw_view",
 "_dw_view_blue",
 "_dw_walk_f",
@@ -761,6 +794,7 @@ internal class FNV1A64 {
 "_negative_rh",
 "_off",
 "_off_anim",
+"_plant",
 "_pullout",
 "_pullout_alt",
 "_pullout_empty",
@@ -876,6 +910,7 @@ internal class FNV1A64 {
 "_runman_inspect",
 "_run_dth_f_01",
 "_sanim",
+"_slam",
 "_slide",
 "_sprint_in",
 "_sprint_loop",
@@ -950,6 +985,27 @@ internal class FNV1A64 {
 "_throwback",
 "_walk",
 "_walk_f",
+// Playerbody / Playertorso middle checks
+"_crouch",
+"_crouch_creep_loco",
+"_crouch_run_loco",
+"_crouch_turn",
+"_crouch_walk_loco",
+"_crouch_walk_turn_soft",
+"_run_slide",
+"_runjump_land",
+"_stand_creep_loco",
+"_stand_run",
+"_stand_run_aim",
+"_stand_run_loco",
+"_stand_run_start_stop",
+"_stand_run_turn",
+"_stand_run_turn_strafe",
+"_stand_sprint",
+"_stand_sprint_turn",
+"_stand_turn",
+"_stand_walk_loco",
+"_standjump_land_2f_up",
 // AI Anims
 "_aim_2",
 "_aim_4",
@@ -1199,6 +1255,32 @@ internal class FNV1A64 {
 "_walk_turn_r_45",
 "_walk_turn_r_90",
 "_walk_v1",
+};
+        string[] animFinalCheck = {
+"",
+"_1f_b",
+"_1f_l",
+"_1f_r",
+"_b",
+"_bk_cc",
+"_bl",
+"_br",
+"_cc",
+"_cl",
+"_f",
+"_fb",
+"_fl",
+"_fr",
+"_idle",
+"_idle_transitions",
+"_l",
+"_l90",
+"_l_cc",
+"_r",
+"_r90",
+"_r_cc",
+"_run_slide_l",
+"_run_slide_r",
 };
         string[] imageCheck = {
 // CW Weapon & Operator Images
@@ -4554,6 +4636,9 @@ internal class FNV1A64 {
 "fly/weapon/reload/tr_longburst/fly_tr_longburst",
 "fly/weapon/reload/tr_powerburst/fly_tr_powerburst",
 "fly/weapon/reload/tr_precision/fly_tr_precision",
+"wpn/turret/ac130/25mm/plr/wpn_ac130_25mm",
+"wpn/turret/arav/lfe/wpn_arav",
+"wpn/turret/arav/plr/wpn_arav",
 //BO4 weapons
 // ICR-7
 "fly\\weapon\\reload\\ar_accurate\\fly_ar_accurate",
@@ -4708,7 +4793,7 @@ internal class FNV1A64 {
 "wpn\\assault\\standard\\upgraded\\lfe\\shot\\wpn_ar_standard",
 "wpn\\assault\\standard\\upgraded\\plr\\shot\\wpn_ar_standard",
 // Peacekeeper
-"fly\\weapon\\reload\\ar_peacekeeper\\fly_ar_peacekeeper",
+"fly\\weapon\\reload\\peacekeeper\\fly_peacek",
 "wpn\\assault\\peacekeeper\\dist\\wpn_ar_peacekeeper",
 "wpn\\assault\\peacekeeper\\lfe\\wpn_ar_peacekeeper",
 "wpn\\assault\\peacekeeper\\pap\\plr\\wpn_ar_peacekeeper",
@@ -4746,7 +4831,7 @@ internal class FNV1A64 {
 "wpn\\assault\\an94\\upgraded\\lfe\\shot\\wpn_ar_an94",
 "wpn\\assault\\an94\\upgraded\\plr\\shot\\wpn_ar_an94",
 // Doublecross
-"fly\\weapon\\reload\\ar_double\\fly_ar_double",
+"fly\\weapon\\reload\\ar_dbl\\fly_ar_dbl",
 "wpn\\assault\\double\\dist\\wpn_ar_double",
 "wpn\\assault\\double\\lfe\\wpn_ar_double",
 "wpn\\assault\\double\\pap\\plr\\wpn_ar_double",
@@ -4783,6 +4868,10 @@ internal class FNV1A64 {
 "wpn\\smg\\mini\\uber\\shot\\wpn_smg_mini",
 "wpn\\smg\\mini\\upgraded\\lfe\\shot\\wpn_smg_mini",
 "wpn\\smg\\mini\\upgraded\\plr\\shot\\wpn_smg_mini",
+"wpn\\smg\\minigun\\npc\\fire\\wpn_smg_minigun",
+"wpn\\smg\\minigun\\npc\\spool\\wpn_smg_minigun",
+"wpn\\smg\\minigun\\plr\\fire\\wpn_smg_minigun",
+"wpn\\smg\\minigun\\plr\\spool\\wpn_smg_minigun",
 // Escargot
 "fly\\weapon\\reload\\smg_drum_pistol\\fly_smg_drum_pistol",
 "wpn\\smg\\drum_pistol\\dist\\wpn_smg_drum_pistol",
@@ -5088,7 +5177,7 @@ internal class FNV1A64 {
 "wpn\\tactical\\flechette\\upgraded\\lfe\\shot\\wpn_tr_flechette",
 "wpn\\tactical\\flechette\\upgraded\\plr\\shot\\wpn_tr_flechette",
 // M16
-"fly\\weapon\\reload\\tr_damageburst\\fly_tr_damageburst",
+"fly\\weapon\\reload\\m16\\fly_m16",
 "wpn\\tactical\\damageburst\\dist\\wpn_tr_damageburst",
 "wpn\\tactical\\damageburst\\lfe\\wpn_tr_damageburst",
 "wpn\\tactical\\damageburst\\pap\\plr\\wpn_tr_damageburst",
@@ -5183,7 +5272,7 @@ internal class FNV1A64 {
 "wpn\\lmg\\double\\upgraded\\lfe\\shot\\wpn_lmg_double",
 "wpn\\lmg\\double\\upgraded\\plr\\shot\\wpn_lmg_double",
 // Tigershark
-"fly\\weapon\\reload\\lmg_stealth\\fly_lmg_stealth",
+"fly\\weapon\\reload\\lmg_mk48\\fly_mk48",
 "wpn\\lmg\\stealth\\dist\\wpn_lmg_stealth",
 "wpn\\lmg\\stealth\\lfe\\wpn_lmg_stealth",
 "wpn\\lmg\\stealth\\pap\\plr\\wpn_lmg_stealth",
@@ -5452,7 +5541,7 @@ internal class FNV1A64 {
 "wpn\\pistol\\burst\\upgraded\\lfe\\shot\\wpn_pistol_burst",
 "wpn\\pistol\\burst\\upgraded\\plr\\shot\\wpn_pistol_burst",
 // KAP 45
-"fly\\weapon\\reload\\pistol_fullauto\\fly_pistol_fullauto",
+"fly\\weapon\\reload\\pistol_auto\\fly_pistol_auto",
 "wpn\\pistol\\fullauto\\dist\\wpn_pistol_fullauto",
 "wpn\\pistol\\fullauto\\lfe\\wpn_pistol_fullauto",
 "wpn\\pistol\\fullauto\\pap\\plr\\wpn_pistol_fullauto",
@@ -5642,8 +5731,14 @@ internal class FNV1A64 {
 "_fire_last",
 "_fire_lfe",
 "_fire_lfe_01",
+"_fire_loop_npc",
+"_fire_loop_plr",
 "_fire_start",
+"_fire_start_npc",
+"_fire_start_plr",
 "_fire_stop",
+"_fire_stop_npc",
+"_fire_stop_plr",
 "_fire_underwater",
 "_first",
 "_first_01",
@@ -5801,11 +5896,15 @@ internal class FNV1A64 {
 "_start_ads",
 "_start_belt",
 "_start_fire",
+"_start_npc",
+"_start_plr",
 "_stop",
 "_stop_act",
 "_stop_ads",
 "_stop_belt",
 "_stop_lfe",
+"_stop_npc",
+"_stop_plr",
 "_suppressed",
 "_suppressed_loop_act",
 "_suppressed_start_act",
@@ -8846,95 +8945,123 @@ internal class FNV1A64 {
             Console.WriteLine("[1] Start Scan");
             string? search = Console.ReadLine();
             if (search == "1") {
-                Console.WriteLine("\nScanning for Assets... ");
+                Console.WriteLine("\nScanning for Assets...");
                 Stopwatch stopWatch = new Stopwatch();
                 stopWatch.Start();
-                Task.WaitAll(Task.Factory.StartNew(() => SearchForSpecificAsset(xAsset)));
+                int totalHashesFound = 0;
+                Task.WaitAll(Task.Factory.StartNew(() => SearchAsset(xAsset, ref totalHashesFound)));
                 stopWatch.Stop();
                 TimeSpan ts = stopWatch.Elapsed;
                 string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                 ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-                Console.WriteLine("Scan completed in " + elapsedTime); }}
+                Console.WriteLine("\nScan completed in " + elapsedTime);
+                Console.WriteLine("Total assets found: " + totalHashesFound); }}
 
-         void SearchForSpecificAsset(string xAsset) {
+        void SearchAsset(string xAsset, ref int totalHashesFound) {
+            int intermediateTotal = 0;
+            int iterationsCompleted = 0;
+            int numIterations =
+                animCheck.Length * xAnim.Length * animFinalCheck.Length +
+                imageCheck.Length * xImage.Length +
+                materialCheck.Length * xMaterial.Length +
+                modelCheck.Length * xModel.Length +
+                soundWpnCheck.Length * xWeaponSound.Length * xGenericSound.Length +
+                soundOperaterCheck.Length * xOpVox.Length * xLanguage.Length +
+                soundTaacomCheck.Length * xTAACOM.Length * xLanguage.Length +
+                stringCheck.Length * xString.Length;
 
-            foreach (string animcheck in animCheck) {
-                foreach (string xanim in xAnim) {
-                    CheckAnim(animcheck + xanim); }}
+            Parallel.ForEach(animCheck, animcheck => {
+                Parallel.ForEach(xAnim, xanim => {
+                    Parallel.ForEach(animFinalCheck, animfinalcheck => {
+                        CheckAnim(animcheck + xanim + animfinalcheck, ref intermediateTotal);
+                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
 
-            foreach (string imagecheck in imageCheck) {
-                foreach (string ximage in xImage) {
-                    // Swap imageWpnAttachment with imageWpnBlueprint as some bundles have swapped names for more results
-                    CheckImage(imagecheck + ximage); }}
+            Parallel.ForEach(imageCheck, imagecheck => {
+                Parallel.ForEach(xImage, ximage => {
+                    CheckImage(imagecheck + ximage, ref intermediateTotal);
+                    Interlocked.Add(ref iterationsCompleted, 1); }); });
 
-            foreach (string materialcheck in materialCheck) {
-                foreach (string xmaterial in xMaterial) {
-                    CheckMaterial(materialcheck + xmaterial); }}
+            Parallel.ForEach(materialCheck, materialcheck => {
+                Parallel.ForEach(xMaterial, xmaterial => {
+                    CheckMaterial(materialcheck + xmaterial, ref intermediateTotal);
+                    Interlocked.Add(ref iterationsCompleted, 1); }); });
 
-            foreach (string modelcheck in modelCheck) {
-                foreach (string xmodel in xModel) {
-				    CheckModel(modelcheck + xmodel); }}
+            Parallel.ForEach(modelCheck, modelcheck => {
+                Parallel.ForEach(xModel, xmodel => {
+                    CheckModel(modelcheck + xmodel, ref intermediateTotal);
+                    Interlocked.Add(ref iterationsCompleted, 1); }); });
 
-            foreach (string soundwpncheck in soundWpnCheck) {
-                foreach (string xweaponsound in xWeaponSound) {
-                    foreach (string xgenericsound in xGenericSound) {
-                        CheckSound(soundwpncheck + xweaponsound + xgenericsound); }}}
+            Parallel.ForEach(soundWpnCheck, soundwpncheck => {
+                Parallel.ForEach(xWeaponSound, xweaponsound => {
+                    Parallel.ForEach(xGenericSound, xgenericsound => {
+                        CheckSound(soundwpncheck + xweaponsound + xgenericsound, ref intermediateTotal);
+                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
 
-            foreach (string soundoperatercheck in soundOperaterCheck) {
-                foreach (string xopvox in xOpVox) {
-                    foreach (string xlanguage in xLanguage) {
-                        CheckSound(soundoperatercheck + xopvox + xlanguage); }}}
+            Parallel.ForEach(soundOperaterCheck, soundoperatercheck => {
+                Parallel.ForEach(xOpVox, xopvox => {
+                    Parallel.ForEach(xLanguage, xlanguage => {
+                        CheckSound(soundoperatercheck + xopvox + xlanguage, ref intermediateTotal);
+                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
 
-            foreach (string soundtaacomcheck in soundTaacomCheck) {
-                foreach (string xtaacom in xTAACOM) {
-                    foreach (string xlanguage in xLanguage) {
-                        CheckSound(soundtaacomcheck + xtaacom + xlanguage); }}}
+            Parallel.ForEach(soundTaacomCheck, soundtaacomcheck => {
+                Parallel.ForEach(xTAACOM, xtaacom => {
+                    Parallel.ForEach(xLanguage, xlanguage => {
+                        CheckSound(soundtaacomcheck + xtaacom + xlanguage, ref intermediateTotal);
+                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
 
-            foreach (string stringcheck in stringCheck) {
-			    foreach (string xstring in xString) {
-			        CheckString(stringcheck + xstring); }}}
+            Parallel.ForEach(stringCheck, stringcheck => {
+                Parallel.ForEach(xString, xstring => {
+                    CheckString(stringcheck + xstring, ref intermediateTotal);
+                    Interlocked.Add(ref iterationsCompleted, 1); }); });
+            totalHashesFound += intermediateTotal; }
 
-        void CheckAnim(string animName) {
+        void CheckAnim(string animName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(animName));
             if (File.Exists(Path + "\\xanim\\" + hashName)) {
                 Console.WriteLine("Found Anim: {0:x}", hashName + "," + animName);
                 File.AppendAllText(Path + "\\AnimsFound.txt", hashName + "," + animName + Environment.NewLine);
-                File.Delete(Path + "\\xanim\\" + hashName); }}
+                File.Delete(Path + "\\xanim\\" + hashName);
+                totalHashesFound++; }}
 
-        void CheckImage(string imageName) {
+        void CheckImage(string imageName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(imageName));
             if (File.Exists(Path + "\\ximage\\" + hashName)) {
                 Console.WriteLine("Found Image: {0:x}", hashName + "," + imageName);
                 File.AppendAllText(Path + "\\ImagesFound.txt", hashName + "," + imageName + Environment.NewLine);
-                File.Delete(Path + "\\ximage\\" + hashName); }}
+                File.Delete(Path + "\\ximage\\" + hashName);
+                totalHashesFound++; }}
 
-        void CheckMaterial(string materialName) {
+        void CheckMaterial(string materialName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(materialName));
             if (File.Exists(Path + "\\xmaterial\\" + hashName)) {
                 Console.WriteLine("Found Material: {0:x}", hashName + "," + materialName);
                 File.AppendAllText(Path + "\\MaterialsFound.txt", hashName + "," + materialName + Environment.NewLine);
-                File.Delete(Path + "\\xmaterial\\" + hashName); }}
+                File.Delete(Path + "\\xmaterial\\" + hashName);
+                totalHashesFound++; }}
 
-        void CheckModel(string modelName) {
+        void CheckModel(string modelName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(modelName));
             if (File.Exists(Path + "\\xmodel\\" + hashName)) {
                 Console.WriteLine("Found Model: {0:x}", hashName + "," + modelName);
                 File.AppendAllText(Path + "\\ModelsFound.txt", hashName + "," + modelName + Environment.NewLine);
-                File.Delete(Path + "\\xmodel\\" + hashName); }}
+                File.Delete(Path + "\\xmodel\\" + hashName);
+                totalHashesFound++; }}
 
-        void CheckSound(string soundName) {
+        void CheckSound(string soundName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(soundName));
             if (File.Exists(Path + "\\xsound\\" + hashName)) {
                 Console.WriteLine("Found Sound: {0:x}", hashName + "," + soundName);
                 File.AppendAllText(Path + "\\SoundsFound.txt", hashName + "," + soundName + Environment.NewLine);
-                File.Delete(Path + "\\xsound\\" + hashName); }}
+                File.Delete(Path + "\\xsound\\" + hashName);
+                totalHashesFound++; }}
 
-        void CheckString(string stringName) {
+        void CheckString(string stringName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64Util.Hash64(stringName));
             if (File.Exists(Path + "\\xstring\\" + hashName)) {
                 Console.WriteLine("Found String: {0:x}", hashName + "," + stringName);
                 File.AppendAllText(Path + "\\StringsFound.txt", hashName + "," + stringName + Environment.NewLine);
-                File.Delete(Path + "\\xstring\\" + hashName); }}}}
+                File.Delete(Path + "\\xstring\\" + hashName);
+                totalHashesFound++; }}}}
 
 namespace fnvHashFinder {
     class Hash64Util {

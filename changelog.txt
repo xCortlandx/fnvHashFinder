@@ -1,3 +1,20 @@
+17/03/2023:
+
+->Added new name checks
+->Added a Total number of assets found at the end of the scan
+->Implemented Parallelism to each set task to scan with multiple cpu threads
+
+Future updates:
+
+~Upgrade project from .Net 7 to .Net 8 (Planned rewrite in C++)
+~All fnv hash functions
+~(fnv32,fnv1a32,fnv64,fnv1a64,fnv128,fnv1a128,fnv256,fnv1a256,fnv512,fnv1a512,fnv1024,fnv1a1024)
+~Add missing assets manually from COD IW: mp_rally as Parasyte couldn't load it
+~Add World at War AssetLog
+~Add BO1 AssetLog
+~Add missing images/fx from BO2
+~Add BO4 sound checks [Amorfirion]
+
 14/03/2023 update 2:
 
 ->Added Black Ops 4 weapon sounds (mostly dlc) and other words
@@ -36,18 +53,6 @@ With a lot going on, most changes listed are included with more in later updates
 ->Rephrased the docs
 ->Updated xasset_generate to current
 ->Changelog included
-
-Future updates:
-
-~Upgrade project from .Net 7 to .Net 8
-~All fnv hash functions
-~(fnv32,fnv1a32,fnv64,fnv1a64,fnv128,fnv1a128,fnv256,fnv1a256,fnv512,fnv1a512,fnv1024,fnv1a1024)
-~Add missing assets manually from COD IW: mp_rally as Parasyte couldn't load it
-~Add World at War AssetLog
-~Add BO1 AssetLog
-~Add missing images/fx from BO2
-~Read xassets from a txtfile
-~Add BO4 sound checks [Amorfirion]
 
 11/02/2023
 ->Added more anim checks and reworked the sound checks for improved scan times for sounds [Amorfirion]

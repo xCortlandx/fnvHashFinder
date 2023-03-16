@@ -13,6 +13,9 @@ internal class FNV1A64base {
         string[] xAnim = {
 "",
 };
+        string[] animFinalCheck = {
+"",
+};
         string[] imageCheck = {
 "",
 };
@@ -84,7 +87,7 @@ internal class FNV1A64base {
         Console.WriteLine("\nThis Project was made possible by:\n");
         Console.WriteLine("Scobalula, itsNatoriousB, Cortland, Amorfirion, Dark7x, DeltaDriver, pmr360, JohnWick\n");
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("[FNV1A64 MODE]\n");
+        Console.WriteLine("[FNV1A64 BASE MODE]\n");
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Specify xAsset Directory:");
         Path = Console.ReadLine();
@@ -92,94 +95,123 @@ internal class FNV1A64base {
             Console.WriteLine("[1] Start Scan");
             string? search = Console.ReadLine();
             if (search == "1") {
-                Console.WriteLine("\nScanning for Assets... ");
+                Console.WriteLine("\nScanning for Assets...");
                 Stopwatch stopWatch = new Stopwatch();
                 stopWatch.Start();
-                Task.WaitAll(Task.Factory.StartNew(() => SearchForSpecificAsset(xAsset)));
+                int totalHashesFound = 0;
+                Task.WaitAll(Task.Factory.StartNew(() => SearchAsset(xAsset, ref totalHashesFound)));
                 stopWatch.Stop();
                 TimeSpan ts = stopWatch.Elapsed;
                 string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                 ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-                Console.WriteLine("Scan completed in " + elapsedTime); }}
+                Console.WriteLine("\nScan completed in " + elapsedTime);
+                Console.WriteLine("Total assets found: " + totalHashesFound); }}
 
-         void SearchForSpecificAsset(string xAsset) {
+        void SearchAsset(string xAsset, ref int totalHashesFound) {
+			int intermediateTotal = 0;
+			int iterationsCompleted = 0;
+			int numIterations =
+                animCheck.Length * xAnim.Length * animFinalCheck.Length +
+                imageCheck.Length * xImage.Length +
+                materialCheck.Length * xMaterial.Length +
+                modelCheck.Length * xModel.Length +
+                soundWpnCheck.Length * xWeaponSound.Length * xGenericSound.Length +
+                soundOperaterCheck.Length * xOpVox.Length * xLanguage.Length +
+                soundTaacomCheck.Length * xTAACOM.Length * xLanguage.Length +
+                stringCheck.Length * xString.Length;
 
-            foreach (string animcheck in animCheck) {
-                foreach (string xanim in xAnim) {
-                    CheckAnim(animcheck + xanim); }}
+            Parallel.ForEach(animCheck, animcheck => {
+                Parallel.ForEach(xAnim, xanim => {
+                    Parallel.ForEach(animFinalCheck, animfinalcheck => {
+                        CheckAnim(animcheck + xanim + animfinalcheck, ref intermediateTotal);
+                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
 
-            foreach (string imagecheck in imageCheck) {
-                foreach (string ximage in xImage) {
-                    CheckImage(imagecheck + ximage); }}
+            Parallel.ForEach(imageCheck, imagecheck => {
+                Parallel.ForEach(xImage, ximage => {
+                    CheckImage(imagecheck + ximage, ref intermediateTotal);
+                    Interlocked.Add(ref iterationsCompleted, 1); }); });
 
-            foreach (string materialcheck in materialCheck) {
-                foreach (string xmaterial in xMaterial) {
-                    CheckMaterial(materialcheck + xmaterial); }}
+            Parallel.ForEach(materialCheck, materialcheck => {
+                Parallel.ForEach(xMaterial, xmaterial => {
+                    CheckMaterial(materialcheck + xmaterial, ref intermediateTotal);
+                    Interlocked.Add(ref iterationsCompleted, 1); }); });
 
-            foreach (string modelcheck in modelCheck) {
-                foreach (string xmodel in xModel) {
-				    CheckModel(modelcheck + xmodel); }}
+            Parallel.ForEach(modelCheck, modelcheck => {
+                Parallel.ForEach(xModel, xmodel => {
+                    CheckModel(modelcheck + xmodel, ref intermediateTotal);
+                    Interlocked.Add(ref iterationsCompleted, 1); }); });
 
-            foreach (string soundwpncheck in soundWpnCheck) {
-                foreach (string xweaponsound in xWeaponSound) {
-                    foreach (string xgenericsound in xGenericSound) {
-                        CheckSound(soundwpncheck + xweaponsound + xgenericsound); }}}
+            Parallel.ForEach(soundWpnCheck, soundwpncheck => {
+                Parallel.ForEach(xWeaponSound, xweaponsound => {
+                    Parallel.ForEach(xGenericSound, xgenericsound => {
+                        CheckSound(soundwpncheck + xweaponsound + xgenericsound, ref intermediateTotal);
+                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
 
-            foreach (string soundoperatercheck in soundOperaterCheck) {
-                foreach (string xopvox in xOpVox) {
-                    foreach (string xlanguage in xLanguage) {
-                        CheckSound(soundoperatercheck + xopvox + xlanguage); }}}
+            Parallel.ForEach(soundOperaterCheck, soundoperatercheck => {
+                Parallel.ForEach(xOpVox, xopvox => {
+                    Parallel.ForEach(xLanguage, xlanguage => {
+                        CheckSound(soundoperatercheck + xopvox + xlanguage, ref intermediateTotal);
+                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
 
-            foreach (string soundtaacomcheck in soundTaacomCheck) {
-                foreach (string xtaacom in xTAACOM) {
-                    foreach (string xlanguage in xLanguage) {
-                        CheckSound(soundtaacomcheck + xtaacom + xlanguage); }}}
+            Parallel.ForEach(soundTaacomCheck, soundtaacomcheck => {
+                Parallel.ForEach(xTAACOM, xtaacom => {
+                    Parallel.ForEach(xLanguage, xlanguage => {
+                        CheckSound(soundtaacomcheck + xtaacom + xlanguage, ref intermediateTotal);
+                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
 
-            foreach (string stringcheck in stringCheck) {
-			    foreach (string xstring in xString) {
-			        CheckString(stringcheck + xstring); }}}
+            Parallel.ForEach(stringCheck, stringcheck => {
+                Parallel.ForEach(xString, xstring => {
+                    CheckString(stringcheck + xstring, ref intermediateTotal);
+                    Interlocked.Add(ref iterationsCompleted, 1); }); });
+            totalHashesFound += intermediateTotal; }
 
-        void CheckAnim(string animName) {
+            void CheckAnim(string animName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(animName));
             if (File.Exists(Path + "\\xanim\\" + hashName)) {
                 Console.WriteLine("Found Anim: {0:x}", hashName + "," + animName);
                 File.AppendAllText(Path + "\\AnimsFound.txt", hashName + "," + animName + Environment.NewLine);
-                File.Delete(Path + "\\xanim\\" + hashName); }}
+                File.Delete(Path + "\\xanim\\" + hashName);
+                totalHashesFound++; }}
 
-        void CheckImage(string imageName) {
+        void CheckImage(string imageName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(imageName));
             if (File.Exists(Path + "\\ximage\\" + hashName)) {
                 Console.WriteLine("Found Image: {0:x}", hashName + "," + imageName);
                 File.AppendAllText(Path + "\\ImagesFound.txt", hashName + "," + imageName + Environment.NewLine);
-                File.Delete(Path + "\\ximage\\" + hashName); }}
+                File.Delete(Path + "\\ximage\\" + hashName);
+                totalHashesFound++; }}
 
-        void CheckMaterial(string materialName) {
+        void CheckMaterial(string materialName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(materialName));
             if (File.Exists(Path + "\\xmaterial\\" + hashName)) {
                 Console.WriteLine("Found Material: {0:x}", hashName + "," + materialName);
                 File.AppendAllText(Path + "\\MaterialsFound.txt", hashName + "," + materialName + Environment.NewLine);
-                File.Delete(Path + "\\xmaterial\\" + hashName); }}
+                File.Delete(Path + "\\xmaterial\\" + hashName);
+                totalHashesFound++; }}
 
-        void CheckModel(string modelName) {
+        void CheckModel(string modelName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(modelName));
             if (File.Exists(Path + "\\xmodel\\" + hashName)) {
                 Console.WriteLine("Found Model: {0:x}", hashName + "," + modelName);
                 File.AppendAllText(Path + "\\ModelsFound.txt", hashName + "," + modelName + Environment.NewLine);
-                File.Delete(Path + "\\xmodel\\" + hashName); }}
+                File.Delete(Path + "\\xmodel\\" + hashName);
+                totalHashesFound++; }}
 
-        void CheckSound(string soundName) {
+        void CheckSound(string soundName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(soundName));
             if (File.Exists(Path + "\\xsound\\" + hashName)) {
                 Console.WriteLine("Found Sound: {0:x}", hashName + "," + soundName);
                 File.AppendAllText(Path + "\\SoundsFound.txt", hashName + "," + soundName + Environment.NewLine);
-                File.Delete(Path + "\\xsound\\" + hashName); }}
+                File.Delete(Path + "\\xsound\\" + hashName);
+                totalHashesFound++; }}
 
-        void CheckString(string stringName) {
+        void CheckString(string stringName, ref int totalHashesFound) {
             string hashName = string.Format("{0:x}", Hash64baseUtil.Hash64base(stringName));
             if (File.Exists(Path + "\\xstring\\" + hashName)) {
                 Console.WriteLine("Found String: {0:x}", hashName + "," + stringName);
                 File.AppendAllText(Path + "\\StringsFound.txt", hashName + "," + stringName + Environment.NewLine);
-                File.Delete(Path + "\\xstring\\" + hashName); }}}}
+                File.Delete(Path + "\\xstring\\" + hashName);
+                totalHashesFound++; }}}}
 
 namespace fnvHashFinder {
     class Hash64baseUtil {
