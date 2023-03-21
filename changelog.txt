@@ -1,12 +1,12 @@
-17/03/2023:
+21/03/2023:
 
-->Added new name checks
-->Added a Total number of assets found at the end of the scan
-->Implemented Parallelism to each set task to scan with multiple cpu threads
+->Project was ported to C++
+->The C# package is no longer required
+->For now there is an included base version you can replace over the main script to use at the moment, unsure how to set multiple startup objects
+->Debug builds are not working, use only Release compiles
 
 Future updates:
 
-~Upgrade project from .Net 7 to .Net 8 (Planned rewrite in C++)
 ~All fnv hash functions
 ~(fnv32,fnv1a32,fnv64,fnv1a64,fnv128,fnv1a128,fnv256,fnv1a256,fnv512,fnv1a512,fnv1024,fnv1a1024)
 ~Add missing assets manually from COD IW: mp_rally as Parasyte couldn't load it
@@ -14,6 +14,12 @@ Future updates:
 ~Add BO1 AssetLog
 ~Add missing images/fx from BO2
 ~Add BO4 sound checks [Amorfirion]
+
+17/03/2023:
+
+->Added new name checks
+->Added a Total number of assets found at the end of the scan
+->Implemented Parallelism to each set task to scan with multiple cpu threads
 
 14/03/2023 update 2:
 

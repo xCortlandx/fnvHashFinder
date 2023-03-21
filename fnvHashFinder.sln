@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.4.33122.133
+VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fnvHashFinder", "fnvHashFinder.csproj", "{A9EDC519-7504-425C-A766-FCED104E4BF6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fnvHashFinder", "fnvHashFinder.vcxproj", "{D8CC6EB4-AF42-48FA-8BF0-E148F382C6ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A9EDC519-7504-425C-A766-FCED104E4BF6}.Debug|x64.ActiveCfg = Debug|x64
-		{A9EDC519-7504-425C-A766-FCED104E4BF6}.Debug|x64.Build.0 = Debug|x64
-		{A9EDC519-7504-425C-A766-FCED104E4BF6}.Release|x64.ActiveCfg = Release|x64
-		{A9EDC519-7504-425C-A766-FCED104E4BF6}.Release|x64.Build.0 = Release|x64
+		{D8CC6EB4-AF42-48FA-8BF0-E148F382C6ED}.Debug|x64.ActiveCfg = Debug|x64
+		{D8CC6EB4-AF42-48FA-8BF0-E148F382C6ED}.Debug|x64.Build.0 = Debug|x64
+		{D8CC6EB4-AF42-48FA-8BF0-E148F382C6ED}.Release|x64.ActiveCfg = Release|x64
+		{D8CC6EB4-AF42-48FA-8BF0-E148F382C6ED}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {09C4E86E-6B44-4A64-8582-68DA2A1C9F0B}
+		SolutionGuid = {F69EE534-4153-4A5F-9F7B-A22C215746CB}
 	EndGlobalSection
 EndGlobal

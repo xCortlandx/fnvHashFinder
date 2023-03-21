@@ -1,26 +1,9 @@
-﻿using fnvHashFinder;
-using System.Diagnostics;
+#include "fnv1a64.h"
 
-internal class FNV1A64 {
-    private static void Main(string[] args) {
-        string? Path = string.Empty;
-        string? xAsset = string.Empty;
+string path;
 
-        // You can add Direct names under any of the types
-        string[] animCheck = {
-// BO4 / CW Viewmodel & AI Anims
-// BO4 Weapon Missing Animations
-// Backhander
-// Eye of Apophis
-// Gift Axe
-// Rising Tide
-// Spknifeork
-// Spoon
-// Spork
-// Essex Model 07
-// Hitchcock M9
-// Kraken
-// vm_midburst - ABR 223 check this anim, we have already
+// You can add Direct names under any of the types
+string animCheck[] = {
 "",
 "ai_t8_zm_mob_brutus",
 "ai_t8_zm_twrs_hllpht",
@@ -320,8 +303,7 @@ internal class FNV1A64 {
 "vm_zm_ray_rifle_t9",
 "vm_zm_silver_ww_t9",
 };
-
-        string[] xAnim = {
+string xAnim[] = {
 "",
 "_acknowledge",
 "_acknowledge_additive",
@@ -1256,7 +1238,7 @@ internal class FNV1A64 {
 "_walk_turn_r_90",
 "_walk_v1",
 };
-        string[] animFinalCheck = {
+string animFinalCheck[] = {
 "",
 "_1f_b",
 "_1f_l",
@@ -1282,7 +1264,7 @@ internal class FNV1A64 {
 "_run_slide_l",
 "_run_slide_r",
 };
-        string[] imageCheck = {
+string imageCheck[] = {
 // CW Weapon & Operator Images
 "",
 "i_mtl_wpn_t9_bp_smg_standard",
@@ -1542,9 +1524,8 @@ internal class FNV1A64 {
 "i_wpn_t9_zm_raygun",
 "i_wpn_t9_zm_ray_rifle",
 "i_wpn_t8_loot_melee_amulet",
-// these weapons above require an image group to string with, not jump to _c with nothing inbetween
-        };
-        string[] xImage = {
+};
+string xImage[] = {
 "",
 "_a",
 "_c",
@@ -1602,7 +1583,7 @@ internal class FNV1A64 {
 "_v",
 "_xl",
 };
-        string[] materialCheck = {
+string materialCheck[] = {
 // BO4 & CW Materials
 "",
 "ei/",
@@ -1672,10 +1653,10 @@ internal class FNV1A64 {
 "vdd/",
 "wc/",
 };
-        string[] xMaterial = {
+string xMaterial[] = {
 "",
 };
-        string[] modelCheck = {
+string modelCheck[] = {
 // CW Operator Models & Skins
 // BO4 / CW Weapon Models & Blueprints
 // Rising Tide
@@ -3891,7 +3872,7 @@ internal class FNV1A64 {
 "wrist_watch_t9_s6_digital_ww",
 "wrist_watch_t9_s6_digital_zm_critical_kill",
 };
-        string[] xModel = {
+string xModel[] = {
 "",
 "_anim",
 "_armorheavy",
@@ -4243,7 +4224,7 @@ internal class FNV1A64 {
 "_world_yellow",
 "_xmodel",
 };
-        string[] xWpnAttachment = {
+string xWpnAttachment[] = {
 "",
 "_acc_bpu",
 "_accessories",
@@ -4430,7 +4411,7 @@ internal class FNV1A64 {
 "_upper",
 "_wires",
 };
-        string[] xWpnBlueprint = {
+string xWpnBlueprint[] = {
 "",
 "_84",
 "_aagirl",
@@ -4586,7 +4567,7 @@ internal class FNV1A64 {
 "_weapon_wetop",
 "_zslayer",
 };
-        string[] soundWpnCheck = {
+string soundWpnCheck[] = {
 // CW Weapon Sounds (Reloads only at the moment)
 "fly/weapon/reload/ar_accurate/ar_accurate",
 "fly/weapon/reload/ar_british/fly_ar_british",
@@ -4639,7 +4620,9 @@ internal class FNV1A64 {
 "wpn/turret/ac130/25mm/plr/wpn_ac130_25mm",
 "wpn/turret/arav/lfe/wpn_arav",
 "wpn/turret/arav/plr/wpn_arav",
+
 //BO4 weapons
+
 // ICR-7
 "fly\\weapon\\reload\\ar_accurate\\fly_ar_accurate",
 "wpn\\assault\\accurate\\dist\\wpn_ar_accurate",
@@ -5559,56 +5542,57 @@ internal class FNV1A64 {
 "wpn\\pistol\\fullauto\\uber\\shot\\wpn_pistol_fullauto",
 "wpn\\pistol\\fullauto\\upgraded\\lfe\\shot\\wpn_pistol_fullauto",
 "wpn\\pistol\\fullauto\\upgraded\\plr\\shot\\wpn_pistol_fullauto",
-// Hellion Salvo [PH]
-// Reaver C86 [PH]
-// Ballistic Knife [PH]
-// Combat Knife [PH]
-// Secret Santa [PH]
-// Slay Bell [PH]
-// Nifo'Oti [PH]
-// Eye of Apophis [PH]
-// Backhander [PH]
-// Cha-Ching [PH]
-// Full Stop [PH]
-// Home Wrecker [PH]
-// Rising Tide [PH]
-// Series 6 Outrider [PH]
-// Bowie Knife [PH]
-// Kraken [PH]
-// Death of Orion [PH]
-// Blundergat [PH]
+
 // Acidgat [PH]
-// Magmagat [PH]
-// Spoon [PH]
-// Spork [PH]
-// Golden Spork Knife [PH]
-// Alistair's Folly [PH]
 // Alistair's Annihilator [PH]
-// Stake Knife [PH]
-// Savage Impaler [PH]
-// Hand of Gaia [PH]
+// Alistair's Folly [PH]
+// Apollo's Will (Shield) [PH]
+// Apollo's Will (Spear) [PH]
+// Backhander [PH]
+// Ballistic Knife [PH]
+// Blundergat [PH]
+// Bowie Knife [PH]
+// Cha-Ching [PH]
+// Combat Knife [PH]
+// Death of Orion [PH]
+// Eye of Apophis [PH]
+// Full Stop [PH]
+// Galvaknuckles [PH]
+// Golden Spork Knife [PH]
 // Hand of Charon [PH]
+// Hand of Gaia [PH]
 // Hand of Hemera [PH]
 // Hand of Ouranos [PH]
-// Apollo's Will (Spear) [PH]
-// Apollo's Will (Shield) [PH]
-// Ray Gun [PH]
-// Ray Gun Packed [PH]
+// Hell's Retriever [PH]
+// Hellion Salvo [PH]
+// Home Wrecker [PH]
+// Kraken [PH]
+// Magmagat [PH]
+// Nifo'Oti [PH]
 // Ray Gun Mark II [PH]
 // Ray Gun Mark II-V [PH]
 // Ray Gun Mark II-X [PH]
 // Ray Gun Mark II-Y [PH]
 // Ray Gun Mark II-Z [PH]
+// Ray Gun Packed [PH]
+// Ray Gun [PH]
+// Reaver C86 [PH]
+// Rising Tide [PH]
+// Savage Impaler [PH]
+// Secret Santa [PH]
+// Series 6 Outrider [PH]
+// Slay Bell [PH]
+// Snowball [PH]
+// Spoon [PH]
+// Spork [PH]
+// Stake Knife [PH]
 // Thundergun [PH]
 // Tundragun [PH]
-// Snowball [PH]
-// Wunderwaffe DG-Scharfschütze [PH]
-// Wunderwaffe DG-Funkenschütze [PH]
-// Hell's Retriever [PH]
 // Winter's Howl [PH]
-// Galvaknuckles [PH]
-    };
-        string[] xWeaponSound = {
+// Wunderwaffe DG-Funkenschütze [PH]
+// Wunderwaffe DG-Scharfschütze [PH]
+};
+string xWeaponSound[] = {
 "_act",
 "_act_loop_npc",
 "_act_lp_npc",
@@ -5942,7 +5926,7 @@ internal class FNV1A64 {
 "shells_out_02",
 "sight_open",
 };
-        string[] soundOperaterCheck = {
+string soundOperaterCheck[] = {
 "vox/scripted/adlr/vox_adlr",
 "vox/scripted/antv/vox_antv",
 "vox/scripted/bakr/vox_bakr",
@@ -6096,7 +6080,7 @@ internal class FNV1A64 {
 "vox/scripted/zm_operators/wrth/vox_wrth",
 "vox/scripted/zm_operators/zyna/vox_zyna",
 };
-        string[] soundTaacomCheck = {
+string soundTaacomCheck[] = {
 "vox/scripted/mpl/abnd/vox_abnd",
 "vox/scripted/mpl/adgi/vox_adgi",
 "vox/scripted/mpl/ahva/vox_ahva",
@@ -6104,7 +6088,7 @@ internal class FNV1A64 {
 "vox/scripted/mpl/anbo/vox_anbo",
 "vox/scripted/mpl/anme/vox_anme",
 };
-        string[] xOpVox = {
+string xOpVox[] = {
 // Operator Voicelines
 "_boost_draw_00",
 "_boost_draw_01",
@@ -7793,7 +7777,7 @@ internal class FNV1A64 {
 "_zm_se_kill_special_04",
 "_zm_se_kill_special_05",
 };
-        string[] xTAACOM = {
+string xTAACOM[] = {
 // TAACOM Voicelines
 "_bb_control_start_00",
 "_bb_control_start_hardcore_00",
@@ -8839,7 +8823,7 @@ internal class FNV1A64 {
 "_winning_02",
 "_winning_03",
 };
-        string[] xGenericSound = {
+string xGenericSound[] = {
 ".fl75.pc.all.snd",
 ".fn75.pc.all.snd",
 ".ll100.pc.snd",
@@ -8860,7 +8844,7 @@ internal class FNV1A64 {
 ".sn75.pc.all.snd",
 ".sr75.pc.all.snd",
 };
-        string[] xLanguage = {
+string xLanguage[] = {
 ".ln75.pc.bp.snd",
 ".ln75.pc.ea.snd",
 ".ln75.pc.en.snd",
@@ -8907,7 +8891,7 @@ internal class FNV1A64 {
 ".sn75.pc.po.snd",
 ".sn75.pc.ru.snd",
 };
-        string[] stringCheck = {
+string stringCheck[] = {
 "",
 "j",
 "jnt",
@@ -8917,157 +8901,227 @@ internal class FNV1A64 {
 "p9",
 "tag",
 };
-        string[] xString = {
+string xString[] = {
 "",
 };
 
-        Console.Title = "fnvHashFinder";
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("                         __,,,,_");
-        Console.WriteLine("          _ __..-;''`--/'/ /.',-`-.");
-        Console.WriteLine("      (`/' ` |  \\ \\ \\ / / / / .-'/`,_");
-        Console.WriteLine("     /'`\\ \\   |  \\ | \\| // // / -.,/_,'-,");
-        Console.WriteLine("    /<7' ;  \\ \\  | ; ||/ /| | \\/    |`-/,/-.,_,/')");
-        Console.WriteLine("   /  _.-, `,-\\,__|  _-| / \\ \\/|_/  |    '-/.;.\'");
-        Console.WriteLine("   `-`  f/ ;      / __/ \\__ `/ |__/ |");
-        Console.WriteLine("    fnv `-'      |  -| =|\\_  \\  |-' |");
-        Console.WriteLine("    Hash      __/   /_..-' `  ),'  //");
-        Console.WriteLine("    Finder   ((__.-'((___..-'' \\__.'");
-        Console.WriteLine("\nA Multi-purpose Tool that verifies pre-defined assets\n");
-        Console.WriteLine("\nThis Project was made possible by:\n");
-        Console.WriteLine("Scobalula, itsNatoriousB, Cortland, Amorfirion, Dark7x, DeltaDriver, pmr360, JohnWick\n");
-        Console.ForegroundColor = ConsoleColor.Green;
-        Console.WriteLine("[FNV1A64 MODE]\n");
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine("Specify xAsset Directory:");
-        Path = Console.ReadLine();
-        while (true) {
-            Console.WriteLine("[1] Start Scan");
-            string? search = Console.ReadLine();
-            if (search == "1") {
-                Console.WriteLine("\nScanning for Assets...");
-                Stopwatch stopWatch = new Stopwatch();
-                stopWatch.Start();
-                int totalHashesFound = 0;
-                Task.WaitAll(Task.Factory.StartNew(() => SearchAsset(xAsset, ref totalHashesFound)));
-                stopWatch.Stop();
-                TimeSpan ts = stopWatch.Elapsed;
-                string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
-                Console.WriteLine("\nScan completed in " + elapsedTime);
-                Console.WriteLine("Total assets found: " + totalHashesFound); }}
+void SearchAsset(string xAsset, int& totalHashesFound);
+void CheckAnim(string animName, int& totalHashesFound);
+void CheckImage(string imageName, int& totalHashesFound);
+void CheckMaterial(string materialName, int& totalHashesFound);
+void CheckModel(string modelName, int& totalHashesFound);
+void CheckSound(string soundName, int& totalHashesFound);
+void CheckString(string stringName, int& totalHashesFound);
 
-        void SearchAsset(string xAsset, ref int totalHashesFound) {
-            int intermediateTotal = 0;
-            int iterationsCompleted = 0;
-            int numIterations =
-                animCheck.Length * xAnim.Length * animFinalCheck.Length +
-                imageCheck.Length * xImage.Length +
-                materialCheck.Length * xMaterial.Length +
-                modelCheck.Length * xModel.Length +
-                soundWpnCheck.Length * xWeaponSound.Length * xGenericSound.Length +
-                soundOperaterCheck.Length * xOpVox.Length * xLanguage.Length +
-                soundTaacomCheck.Length * xTAACOM.Length * xLanguage.Length +
-                stringCheck.Length * xString.Length;
+void SearchAsset(string xAsset, int& totalHashesFound) {
+	int intermediateTotal = 0;
+	int iterationsCompleted = 0;
 
-            Parallel.ForEach(animCheck, animcheck => {
-                Parallel.ForEach(xAnim, xanim => {
-                    Parallel.ForEach(animFinalCheck, animfinalcheck => {
-                        CheckAnim(animcheck + xanim + animfinalcheck, ref intermediateTotal);
-                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
+	int animIterations = sizeof(animCheck) / sizeof(animCheck[0]) * sizeof(xAnim) / sizeof(xAnim[0]) * sizeof(animFinalCheck) / sizeof(animFinalCheck[0]);
+	int imageIterations = sizeof(imageCheck) / sizeof(imageCheck[0]) * sizeof(xImage) / sizeof(xImage[0]);
+	int materialIterations = sizeof(materialCheck) / sizeof(materialCheck[0]) * sizeof(xMaterial) / sizeof(xMaterial[0]);
+	int modelIterations = sizeof(modelCheck) / sizeof(modelCheck[0]) * sizeof(xModel) / sizeof(xModel[0]);
+	int soundWpnIterations = sizeof(soundWpnCheck) / sizeof(soundWpnCheck[0]) * sizeof(xWeaponSound) / sizeof(xWeaponSound[0]) * sizeof(xGenericSound) / sizeof(xGenericSound[0]);
+	int soundOperaterIterations = sizeof(soundOperaterCheck) / sizeof(soundOperaterCheck[0]) * sizeof(xOpVox) / sizeof(xOpVox[0]) * sizeof(xLanguage) / sizeof(xLanguage[0]);
+	int soundTaacomIterations = sizeof(soundTaacomCheck) / sizeof(soundTaacomCheck[0]) * sizeof(xTAACOM) / sizeof(xTAACOM[0]) * sizeof(xLanguage) / sizeof(xLanguage[0]);
+	int stringIterations = sizeof(stringCheck) / sizeof(stringCheck[0]) * sizeof(xString) / sizeof(xString[0]);
 
-            Parallel.ForEach(imageCheck, imagecheck => {
-                Parallel.ForEach(xImage, ximage => {
-                    CheckImage(imagecheck + ximage, ref intermediateTotal);
-                    Interlocked.Add(ref iterationsCompleted, 1); }); });
+	for (const auto& animcheck : animCheck) {
+		for (const auto& xanim : xAnim) {
+			for (const auto& animfinalcheck : animFinalCheck) {
+				CheckAnim(animcheck + xanim + animfinalcheck, intermediateTotal);
+				iterationsCompleted++;
+			}
+		}
+	}
 
-            Parallel.ForEach(materialCheck, materialcheck => {
-                Parallel.ForEach(xMaterial, xmaterial => {
-                    CheckMaterial(materialcheck + xmaterial, ref intermediateTotal);
-                    Interlocked.Add(ref iterationsCompleted, 1); }); });
+	for (const auto& imagecheck : imageCheck) {
+		for (const auto& ximage : xImage) {
+			CheckImage(imagecheck + ximage, intermediateTotal);
+			iterationsCompleted++;
+		}
+	}
 
-            Parallel.ForEach(modelCheck, modelcheck => {
-                Parallel.ForEach(xModel, xmodel => {
-                    CheckModel(modelcheck + xmodel, ref intermediateTotal);
-                    Interlocked.Add(ref iterationsCompleted, 1); }); });
+	for (const auto& materialcheck : materialCheck) {
+		for (const auto& xmaterial : xMaterial) {
+			CheckMaterial(materialcheck + xmaterial, intermediateTotal);
+			iterationsCompleted++;
+		}
+	}
 
-            Parallel.ForEach(soundWpnCheck, soundwpncheck => {
-                Parallel.ForEach(xWeaponSound, xweaponsound => {
-                    Parallel.ForEach(xGenericSound, xgenericsound => {
-                        CheckSound(soundwpncheck + xweaponsound + xgenericsound, ref intermediateTotal);
-                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
+	for (const auto& modelcheck : modelCheck) {
+		for (const auto& xmodel : xModel) {
+			CheckModel(modelcheck + xmodel, intermediateTotal);
+			iterationsCompleted++;
+		}
+	}
 
-            Parallel.ForEach(soundOperaterCheck, soundoperatercheck => {
-                Parallel.ForEach(xOpVox, xopvox => {
-                    Parallel.ForEach(xLanguage, xlanguage => {
-                        CheckSound(soundoperatercheck + xopvox + xlanguage, ref intermediateTotal);
-                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
+	for (const auto& soundwpncheck : soundWpnCheck) {
+		for (const auto& xweaponsound : xWeaponSound) {
+			for (const auto& xgenericsound : xGenericSound) {
+				CheckSound(soundwpncheck + xweaponsound + xgenericsound, intermediateTotal);
+				iterationsCompleted++;
+			}
+		}
+	}
 
-            Parallel.ForEach(soundTaacomCheck, soundtaacomcheck => {
-                Parallel.ForEach(xTAACOM, xtaacom => {
-                    Parallel.ForEach(xLanguage, xlanguage => {
-                        CheckSound(soundtaacomcheck + xtaacom + xlanguage, ref intermediateTotal);
-                        Interlocked.Add(ref iterationsCompleted, 1); }); }); });
+	for (const auto& soundoperatercheck : soundOperaterCheck) {
+		for (const auto& xopvox : xOpVox) {
+			for (const auto& xlanguage : xLanguage) {
+				CheckSound(soundoperatercheck + xopvox + xlanguage, intermediateTotal);
+				iterationsCompleted++;
+			}
+		}
+	}
 
-            Parallel.ForEach(stringCheck, stringcheck => {
-                Parallel.ForEach(xString, xstring => {
-                    CheckString(stringcheck + xstring, ref intermediateTotal);
-                    Interlocked.Add(ref iterationsCompleted, 1); }); });
-            totalHashesFound += intermediateTotal; }
+	for (const auto& soundtaacomcheck : soundTaacomCheck) {
+		for (const auto& xtaacom : xTAACOM) {
+			for (const auto& xlanguage : xLanguage) {
+				CheckSound(soundtaacomcheck + xtaacom + xlanguage, intermediateTotal);
+				iterationsCompleted++;
+			}
+		}
+	}
 
-        void CheckAnim(string animName, ref int totalHashesFound) {
-            string hashName = string.Format("{0:x}", Hash64Util.Hash64(animName));
-            if (File.Exists(Path + "\\xanim\\" + hashName)) {
-                Console.WriteLine("Found Anim: {0:x}", hashName + "," + animName);
-                File.AppendAllText(Path + "\\AnimsFound.txt", hashName + "," + animName + Environment.NewLine);
-                File.Delete(Path + "\\xanim\\" + hashName);
-                totalHashesFound++; }}
+	for (const auto& stringcheck : stringCheck) {
+		for (const auto& xstring : xString) {
+			CheckString(stringcheck + xstring, intermediateTotal);
+			iterationsCompleted++;
+		}
+	}
+	totalHashesFound = intermediateTotal;
+}
 
-        void CheckImage(string imageName, ref int totalHashesFound) {
-            string hashName = string.Format("{0:x}", Hash64Util.Hash64(imageName));
-            if (File.Exists(Path + "\\ximage\\" + hashName)) {
-                Console.WriteLine("Found Image: {0:x}", hashName + "," + imageName);
-                File.AppendAllText(Path + "\\ImagesFound.txt", hashName + "," + imageName + Environment.NewLine);
-                File.Delete(Path + "\\ximage\\" + hashName);
-                totalHashesFound++; }}
+void CheckAnim(string animName, int& totalHashesFound) {
+	const char* animNameCStr = animName.c_str();
+	uint64_t animNameHash = Hash64Util::Hash64(animNameCStr, animName.length());
+	ostringstream ss;
+	ss << hex << animNameHash;
+	string hashName = ss.str();
+	if (ifstream(path + "\\xanim\\" + hashName).good()) {
+		cout << "Found Anim: " << hashName << "," << animName << "\n";
+		ofstream outfile(path + "\\AnimsFound.txt", ios_base::app);
+		outfile << hashName << "," << animName << "\n";
+		outfile.close();
+		remove((path + "\\xanim\\" + hashName).c_str());
+		totalHashesFound++;
+	}
+}
 
-        void CheckMaterial(string materialName, ref int totalHashesFound) {
-            string hashName = string.Format("{0:x}", Hash64Util.Hash64(materialName));
-            if (File.Exists(Path + "\\xmaterial\\" + hashName)) {
-                Console.WriteLine("Found Material: {0:x}", hashName + "," + materialName);
-                File.AppendAllText(Path + "\\MaterialsFound.txt", hashName + "," + materialName + Environment.NewLine);
-                File.Delete(Path + "\\xmaterial\\" + hashName);
-                totalHashesFound++; }}
+void CheckImage(string imageName, int& totalHashesFound) {
+	const char* imageNameCStr = imageName.c_str();
+	uint64_t imageNameHash = Hash64Util::Hash64(imageNameCStr, imageName.length());
+	ostringstream ss;
+	ss << hex << imageNameHash;
+	string hashName = ss.str();
+	if (ifstream(path + "\\ximage\\" + hashName).good()) {
+		cout << "Found Image: " << hashName << "," << imageName << "\n";
+		ofstream outfile(path + "\\ImagesFound.txt", ios_base::app);
+		outfile << hashName << "," << imageName << "\n";
+		outfile.close();
+		remove((path + "\\ximage\\" + hashName).c_str());
+		totalHashesFound++;
+	}
+}
 
-        void CheckModel(string modelName, ref int totalHashesFound) {
-            string hashName = string.Format("{0:x}", Hash64Util.Hash64(modelName));
-            if (File.Exists(Path + "\\xmodel\\" + hashName)) {
-                Console.WriteLine("Found Model: {0:x}", hashName + "," + modelName);
-                File.AppendAllText(Path + "\\ModelsFound.txt", hashName + "," + modelName + Environment.NewLine);
-                File.Delete(Path + "\\xmodel\\" + hashName);
-                totalHashesFound++; }}
+void CheckMaterial(string materialName, int& totalHashesFound) {
+	const char* materialNameCStr = materialName.c_str();
+	uint64_t materialNameHash = Hash64Util::Hash64(materialNameCStr, materialName.length());
+	ostringstream ss;
+	ss << hex << materialNameHash;
+	string hashName = ss.str();
+	if (ifstream(path + "\\xmaterial\\" + hashName).good()) {
+		cout << "Found Material: " << hashName << "," << materialName << "\n";
+		ofstream outfile(path + "\\MaterialsFound.txt", ios_base::app);
+		outfile << hashName << "," << materialName << "\n";
+		outfile.close();
+		remove((path + "\\xmaterial\\" + hashName).c_str());
+		totalHashesFound++;
+	}
+}
 
-        void CheckSound(string soundName, ref int totalHashesFound) {
-            string hashName = string.Format("{0:x}", Hash64Util.Hash64(soundName));
-            if (File.Exists(Path + "\\xsound\\" + hashName)) {
-                Console.WriteLine("Found Sound: {0:x}", hashName + "," + soundName);
-                File.AppendAllText(Path + "\\SoundsFound.txt", hashName + "," + soundName + Environment.NewLine);
-                File.Delete(Path + "\\xsound\\" + hashName);
-                totalHashesFound++; }}
+void CheckModel(string modelName, int& totalHashesFound) {
+	const char* modelNameCStr = modelName.c_str();
+	uint64_t modelNameHash = Hash64Util::Hash64(modelNameCStr, modelName.length());
+	ostringstream ss;
+	ss << hex << modelNameHash;
+	string hashName = ss.str();
+	if (ifstream(path + "\\xmodel\\" + hashName).good()) {
+		cout << "Found Model: " << hashName << "," << modelName << "\n";
+		ofstream outfile(path + "\\ModelsFound.txt", ios_base::app);
+		outfile << hashName << "," << modelName << "\n";
+		outfile.close();
+		remove((path + "\\xmodel\\" + hashName).c_str());
+		totalHashesFound++;
+	}
+}
 
-        void CheckString(string stringName, ref int totalHashesFound) {
-            string hashName = string.Format("{0:x}", Hash64Util.Hash64(stringName));
-            if (File.Exists(Path + "\\xstring\\" + hashName)) {
-                Console.WriteLine("Found String: {0:x}", hashName + "," + stringName);
-                File.AppendAllText(Path + "\\StringsFound.txt", hashName + "," + stringName + Environment.NewLine);
-                File.Delete(Path + "\\xstring\\" + hashName);
-                totalHashesFound++; }}}}
+void CheckSound(string soundName, int& totalHashesFound) {
+	const char* soundNameCStr = soundName.c_str();
+	uint64_t soundNameHash = Hash64Util::Hash64(soundNameCStr, soundName.length());
+	ostringstream ss;
+	ss << hex << soundNameHash;
+	string hashName = ss.str();
+	if (ifstream(path + "\\xsound\\" + hashName).good()) {
+		cout << "Found Sound: " << hashName << "," << soundName << "\n";
+		ofstream outfile(path + "\\SoundsFound.txt", ios_base::app);
+		outfile << hashName << "," << soundName << "\n";
+		outfile.close();
+		remove((path + "\\xsound\\" + hashName).c_str());
+		totalHashesFound++;
+	}
+}
 
-namespace fnvHashFinder {
-    class Hash64Util {
-        public static ulong Hash64(string input) {
-            ulong num = 14695981039346656037;
-            for (int index = 0; index < input.Length; ++index)
-                num = (ulong)(((long)num ^ (long)input[index]) * 1099511628211L);
-            num &= 0xFFFFFFFFFFFFFFF;
-            return num; }}}
+void CheckString(string stringName, int& totalHashesFound) {
+	const char* stringNameCStr = stringName.c_str();
+	uint64_t stringNameHash = Hash64Util::Hash64(stringNameCStr, stringName.length());
+	ostringstream ss;
+	ss << hex << stringNameHash;
+	string hashName = ss.str();
+	if (ifstream(path + "\\xstring\\" + hashName).good()) {
+		cout << "Found String: " << hashName << "," << stringName << "\n";
+		ofstream outfile(path + "\\StringsFound.txt", ios_base::app);
+		outfile << hashName << "," << stringName << "\n";
+		outfile.close();
+		remove((path + "\\xstring\\" + hashName).c_str());
+		totalHashesFound++;
+	}
+}
+
+int main(const vector<wstring>& args) {
+	SetConsoleTitle(L"fnvHashFinder");
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_RED);
+	cout << "                         __,,,,_\n";
+	cout << "          _ __..-;''`--/'/ /.',-`-.\n";
+	cout << "      (`/' ` |  \\ \\ \\ / / / / .-'/`,_\n";
+	cout << "     /'`\\ \\   |  \\ | \\| // // / -.,/_,'-,\n";
+	cout << "    /<7' ;  \\ \\  | ; ||/ /| | \\/    |`-/,/-.,_,/')\n";
+	cout << "   /  _.-, `,-\\,__|  _-| / \\ \\/|_/  |    '-/.;.\\'\n";
+	cout << "   `-`  f/ ;      / __/ \\__ `/ |__/ |\n";
+	cout << "    fnv `-'      |  -| =|\\_  \\  |-' |\n";
+	cout << "    Hash      __/   /_..-' `  ),'  //\n";
+	cout << "    Finder   ((__.-'((___..-'' \\__.'\n";
+	cout << "\nA Versatile Tool that verifies hashes\n";
+	cout << "\nThis Project was made possible by:\n";
+	cout << "Scobalula, Cortland, ItsNatoriousB, Amorfirion\n";
+	SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+	cout << "\nFNV1A64 MODE\n";
+	SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_RED);
+	cout << "\nSpecify Root Directory: ";
+	getline(cin, path); {
+		cout << "\nScanning for Assets...\n";
+		time_point start = steady_clock::now();
+		int totalHashesFound = 0;
+		thread t(SearchAsset, path.c_str(), ref(totalHashesFound));
+		t.join();
+		steady_clock::time_point end = steady_clock::now();
+		duration<double> elapsed_seconds = end - start;
+		int hours = static_cast<int>(elapsed_seconds.count() / 3600);
+		int minutes = static_cast<int>((elapsed_seconds.count() - (hours * 3600)) / 60);
+		int seconds = static_cast<int>(elapsed_seconds.count() - (hours * 3600) - (minutes * 60));
+		cout << "\nScan completed in: " << setfill('0') << setw(2) << hours << ":" << setw(2) << minutes << ":" << setw(2) << seconds;
+		cout << "\nTotal assets found: " << totalHashesFound << '\n';
+		system("pause");
+		return 0; }
+}

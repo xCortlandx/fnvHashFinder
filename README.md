@@ -1,12 +1,14 @@
 # fnvHashFinder [![Discord](https://img.shields.io/badge/chat-Discord-blue.svg)](https://discord.gg/qqptpeVW)
 
-A Multi-purpose Tool that verifies pre-defined assets
+A Versatile Tool that verifies hashes
 
 NOTE 1: Delete and regenerate the xassets on each build as the hashes are removed for newer scans
-NOTE 2: Change the startup object to FNV1A64base if you are using it for large scans (default)
+//NOTE 2: Change the startup object to FNV1A64base if you are using it for large scans (default)
 NOTE 3: You can use Ladisk CascViewer to pull Black Ops 4 Sounds or the full game from their CDN to find assets manually through Greyhound.
 
 ## Overview
+
+NEW: This project is now in C++ (/std:c++20). The user can operate the tool the same way as they did in C#. The C# package is no longer required.
 
 This tool was created late 2022 and was able to help find thousands of hashed names. With the help of a few folks from the Hash Scene.
 With this tool, you are capable of scanning assets given defined words.
