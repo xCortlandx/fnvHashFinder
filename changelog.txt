@@ -1,3 +1,6 @@
+24/03/2023:
+->The Check Functions per assetType are merged into one, while still printing the Found Results from the originating folder
+
 21/03/2023:
 
 ->Project was ported to C++
