@@ -26,11 +26,8 @@ Assets that you find can be issued here [https://github.com/Scobalula/GreyhoundP
 Including but not limited to what we need to do:
 
 Black Ops 4: xSound Languages (sabs/sabl)
-Black Ops CW: Vehicle xModel
 Vanguard: xSound
-(Soon) MW2022: xImage, xMaterial, xSound, bones (bones use fnv1a32)
-Create a textfile for assets to scan from and eliminate the use of folders/files
-Multithreading
+Multithreading / CUDA
 
 ## Bruteforce Methods:
 

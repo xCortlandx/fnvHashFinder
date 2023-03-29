@@ -1,3 +1,14 @@
+29/03/2023:
+->Added fnv hash functions in header for easy swapping (fnv32,fnv1a32,fnv64,fnv1a64,fnv1a64_mw5)
+->Included MW5 (Season 1) xassets
+->Included SEModelViewer & Notepad++ v8.5.1
+
+Future updates:
+~Add World at War AssetLog
+~Add BO1 AssetLog
+~Add missing images/fx from BO2
+~Add BO4 sound checks [Amorfirion]
+
 24/03/2023:
 ->The Check Functions per assetType are merged into one, while still printing the Found Results from the originating folder
 
@@ -7,16 +18,6 @@
 ->The C# package is no longer required
 ->For now there is an included base version you can replace over the main script to use at the moment, unsure how to set multiple startup objects
 ->Debug builds are not working, use only Release compiles
-
-Future updates:
-
-~All fnv hash functions
-~(fnv32,fnv1a32,fnv64,fnv1a64,fnv128,fnv1a128,fnv256,fnv1a256,fnv512,fnv1a512,fnv1024,fnv1a1024)
-~Add missing assets manually from COD IW: mp_rally as Parasyte couldn't load it
-~Add World at War AssetLog
-~Add BO1 AssetLog
-~Add missing images/fx from BO2
-~Add BO4 sound checks [Amorfirion]
 
 17/03/2023:
 

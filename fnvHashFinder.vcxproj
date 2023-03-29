@@ -80,10 +80,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="fnv1a64.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="fnv1a64.h" />
+    <ClInclude Include="decoder.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
