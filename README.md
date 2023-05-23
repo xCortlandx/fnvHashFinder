@@ -1,5 +1,7 @@
 # fnvHashFinder [![Discord](https://img.shields.io/badge/chat-Discord-blue.svg)](https://discord.gg/qqptpeVW)
 
+<img src="fnvhashfinder.webp">
+
 A Versatile Tool that verifies hashes
 
 NOTE 1: Delete and regenerate the xassets on each build as the hashes are removed for newer scans

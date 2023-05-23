@@ -1,3 +1,11 @@
+24/05/2023:
+->Updated 7z x64 to v23.00
+->Updated Notepad++ to v8.5.3
+->Reduced Ransack package down 10.6MB (removed samples and help files)
+->Add few extra hash checks
+->Add wordlist of cod glossary of all current words used in each package
+->Updated xassets to current state
+
 29/03/2023:
 ->Added fnv hash functions in header for easy swapping (fnv32,fnv1a32,fnv64,fnv1a64,fnv1a64_mw5)
 ->Included MW5 (Season 1) xassets
@@ -35,7 +43,7 @@ This update addresses numerous issues that wouldn't allow the scan to finish pro
 
 ->Reverted textfile method as some users had issues with file permissions unable to scan
 ->The tool now scans blank files of hashnames rather than folders similar to before, this takes 10mins to extract, was 20mins+ on folders
-->Addressed an issue on the main program that would take excessively long to finish a sound check
+->Addressed an issue on the main program that would take excessively long to finish a sound check [Amorfirion]
 ->All starting word checks are now declared at the top as simple strings to concatenate with others, this saves a lot of time of mass bruteforce checks too with regex FnR
 ->Removed a wpnsound list that was duped twice that wasn't supposed to be there
 ->Few more asset checks added
