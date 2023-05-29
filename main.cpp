@@ -1,6 +1,6 @@
 #include "decoder.h"
 
-const vector<string> xAnimCheck = {
+string xAnimCheck[] = {
 "",
 "ai_t8_zm_mob_brutus",
 "ai_t8_zm_twrs_hllpht",
@@ -302,7 +302,7 @@ const vector<string> xAnimCheck = {
 "vm_zm_ray_rifle_t9",
 "vm_zm_silver_ww_t9",
 };
-const vector<string> xAnim = {
+string xAnim[] = {
 "",
 "_acknowledge",
 "_acknowledge_additive",
@@ -1236,7 +1236,7 @@ const vector<string> xAnim = {
 "_walk_turn_r_90",
 "_walk_v1",
 };
-const vector<string> xAnimFinalCheck = {
+string xAnimFinalCheck[] = {
 "",
 "_1f_b",
 "_1f_l",
@@ -1261,7 +1261,7 @@ const vector<string> xAnimFinalCheck = {
 "_run_slide_l",
 "_run_slide_r",
 };
-const vector<string> xImageCheck = {
+string xImageCheck[] = {
     // CW Weapon & Operator Images
     "",
     "i_mtl_wpn_t9_bp_smg_standard",
@@ -1522,7 +1522,7 @@ const vector<string> xImageCheck = {
     "i_wpn_t9_zm_ray_rifle",
     "i_wpn_t8_loot_melee_amulet",
 };
-const vector<string> xImage = {
+string xImage[] = {
 "",
 "_a",
 "_c",
@@ -1580,10 +1580,10 @@ const vector<string> xImage = {
 "_v",
 "_xl",
 };
-const vector<string> xImageFinalCheck = {
+string xImageFinalCheck[] = {
 "",
 };
-const vector<string> xMaterialCheck = {
+string xMaterialCheck[] = {
     // BO4 & CW Materials
     "",
     "ei/",
@@ -1653,13 +1653,13 @@ const vector<string> xMaterialCheck = {
     "vdd/",
     "wc/",
 };
-const vector<string> xMaterial = {
+string xMaterial[] = {
 "",
 };
-const vector<string> xMaterialFinalCheck = {
+string xMaterialFinalCheck[] = {
 "",
 };
-const vector<string> xModelCheck = {
+string xModelCheck[] = {
     // CW Operator Models & Skins
     // BO4 / CW Weapon Models & Blueprints
     // Rising Tide
@@ -3881,7 +3881,7 @@ const vector<string> xModelCheck = {
     "wrist_watch_t9_s6_digital_ww",
     "wrist_watch_t9_s6_digital_zm_critical_kill",
 };
-const vector<string> xModel = {
+string xModel[] = {
 "",
 "_anim",
 "_armorheavy",
@@ -4235,10 +4235,10 @@ const vector<string> xModel = {
 "_world_yellow",
 "_xmodel",
 };
-const vector<string> xModelFinalCheck = {
+string xModelFinalCheck[] = {
 "",
 };
-const vector<string> xWpnAttachment = {
+string xWpnAttachment[] = {
 "",
 "_acc_bpu",
 "_accessories",
@@ -4425,7 +4425,7 @@ const vector<string> xWpnAttachment = {
 "_upper",
 "_wires",
 };
-const vector<string> xWpnBlueprint = {
+string xWpnBlueprint[] = {
 "",
 "_84",
 "_aagirl",
@@ -4581,7 +4581,7 @@ const vector<string> xWpnBlueprint = {
 "_weapon_wetop",
 "_zslayer",
 };
-const vector<string> xSoundWpnCheck = {
+string xSoundWpnCheck[] = {
     // CW Weapon Sounds (Reloads only at the moment)
     "fly/weapon/reload/ar_accurate/ar_accurate",
     "fly/weapon/reload/ar_british/fly_ar_british",
@@ -5606,7 +5606,7 @@ const vector<string> xSoundWpnCheck = {
     // Wunderwaffe DG-Funkenschütze [PH]
     // Wunderwaffe DG-Scharfschütze [PH]
 };
-const vector<string> xWeaponSound = {
+string xWeaponSound[] = {
 "_act",
 "_act_loop_npc",
 "_act_lp_npc",
@@ -5940,7 +5940,7 @@ const vector<string> xWeaponSound = {
 "shells_out_02",
 "sight_open",
 };
-const vector<string> xSoundOperaterCheck = {
+string xSoundOperatorCheck[] = {
 "vox/scripted/adlr/vox_adlr",
 "vox/scripted/antv/vox_antv",
 "vox/scripted/bakr/vox_bakr",
@@ -6094,7 +6094,7 @@ const vector<string> xSoundOperaterCheck = {
 "vox/scripted/zm_operators/wrth/vox_wrth",
 "vox/scripted/zm_operators/zyna/vox_zyna",
 };
-const vector<string> xSoundTaacomCheck = {
+string xSoundTaacomCheck[] = {
 "vox/scripted/mpl/abnd/vox_abnd",
 "vox/scripted/mpl/adgi/vox_adgi",
 "vox/scripted/mpl/ahva/vox_ahva",
@@ -6102,7 +6102,7 @@ const vector<string> xSoundTaacomCheck = {
 "vox/scripted/mpl/anbo/vox_anbo",
 "vox/scripted/mpl/anme/vox_anme",
 };
-const vector<string> xOpVox = {
+string xOpVox[] = {
     // Operator Voicelines
     "_boost_draw_00",
     "_boost_draw_01",
@@ -7791,7 +7791,7 @@ const vector<string> xOpVox = {
     "_zm_se_kill_special_04",
     "_zm_se_kill_special_05",
 };
-const vector<string> xTAACOM = {
+string xTAACOM[] = {
     // TAACOM Voicelines
     "_bb_control_start_00",
     "_bb_control_start_hardcore_00",
@@ -8837,7 +8837,7 @@ const vector<string> xTAACOM = {
     "_winning_02",
     "_winning_03",
 };
-const vector<string> xGenericSound = {
+string xGenericSound[] = {
 ".fl75.pc.all.snd",
 ".fn75.pc.all.snd",
 ".ll100.pc.snd",
@@ -8858,7 +8858,7 @@ const vector<string> xGenericSound = {
 ".sn75.pc.all.snd",
 ".sr75.pc.all.snd",
 };
-const vector<string> xLanguage = {
+string xLanguage[] = {
 ".ln75.pc.bp.snd",
 ".ln75.pc.ea.snd",
 ".ln75.pc.en.snd",
@@ -8905,7 +8905,7 @@ const vector<string> xLanguage = {
 ".sn75.pc.po.snd",
 ".sn75.pc.ru.snd",
 };
-const vector<string> xStringCheck = {
+string xStringCheck[] = {
 "",
 "j",
 "jnt",
@@ -8915,10 +8915,10 @@ const vector<string> xStringCheck = {
 "p9",
 "tag",
 };
-const vector<string> xString = {
+string xString[] = {
 "",
 };
-const vector<string> xStringFinalCheck = {
+string xStringFinalCheck[] = {
 "",
 };
 
@@ -8952,25 +8952,88 @@ void CheckAsset(string assetType, string assetName, int& totalHashesFound, strin
 void ScanAsset(string xAsset, int& totalHashesFound) {
     string assetType;
     int intermediateTotal = 0;
+    int iterationsCompleted = 0;
 
-    auto procChecks = [&](const string& assetPrefix, const vector<string>& firstChecks, const vector<string>& secondChecks, const vector<string>& thirdChecks) {
-        for (const auto& firstCheck : firstChecks) {
-            for (const auto& secondCheck : secondChecks) {
-                for (const auto& thirdCheck : thirdChecks) {
-                    CheckAsset(assetPrefix, firstCheck + secondCheck + thirdCheck, intermediateTotal, assetType);
-                }
+    const int animIterations = sizeof(xAnimCheck) / sizeof(xAnimCheck[0]) * sizeof(xAnim) / sizeof(xAnim[0]) * sizeof(xAnimFinalCheck) / sizeof(xAnimFinalCheck[0]);
+    const int imageIterations = sizeof(xImageCheck) / sizeof(xImageCheck[0]) * sizeof(xImage) / sizeof(xImage[0]) * sizeof(xImageFinalCheck) / sizeof(xImageFinalCheck[0]);
+    const int materialIterations = sizeof(xMaterialCheck) / sizeof(xMaterialCheck[0]) * sizeof(xMaterial) / sizeof(xMaterial[0]) * sizeof(xMaterialFinalCheck) / sizeof(xMaterialFinalCheck[0]);
+    const int modelIterations = sizeof(xModelCheck) / sizeof(xModelCheck[0]) * sizeof(xModel) / sizeof(xModel[0]) * sizeof(xModelFinalCheck) / sizeof(xModelFinalCheck[0]);
+    const int soundWpnIterations = sizeof(xSoundWpnCheck) / sizeof(xSoundWpnCheck[0]) * sizeof(xWeaponSound) / sizeof(xWeaponSound[0]) * sizeof(xGenericSound) / sizeof(xGenericSound[0]);
+    const int soundOperaterIterations = sizeof(xSoundOperatorCheck) / sizeof(xSoundOperatorCheck[0]) * sizeof(xOpVox) / sizeof(xOpVox[0]) * sizeof(xLanguage) / sizeof(xLanguage[0]);
+    const int soundTaacomIterations = sizeof(xSoundTaacomCheck) / sizeof(xSoundTaacomCheck[0]) * sizeof(xTAACOM) / sizeof(xTAACOM[0]) * sizeof(xLanguage) / sizeof(xLanguage[0]);
+    const int stringIterations = sizeof(xStringCheck) / sizeof(xStringCheck[0]) * sizeof(xString) / sizeof(xString[0]) * sizeof(xStringFinalCheck) / sizeof(xStringFinalCheck[0]);
+
+    for (const auto& xanimcheck : xAnimCheck) {
+        for (const auto& xanim : xAnim) {
+            for (const auto& xanimfinalcheck : xAnimFinalCheck) {
+                CheckAsset("xanim", xanimcheck + xanim + xanimfinalcheck, intermediateTotal, assetType);
+                iterationsCompleted++;
             }
         }
-    };
+    }
 
-    procChecks("xanim", xAnimCheck, xAnim, xAnimFinalCheck);
-    procChecks("ximage", xImageCheck, xImage, xImageFinalCheck);
-    procChecks("xmaterial", xMaterialCheck, xMaterial, xMaterialFinalCheck);
-    procChecks("xmodel", xModelCheck, xModel, xModelFinalCheck);
-    procChecks("xsound", xSoundWpnCheck, xWeaponSound, xGenericSound);
-    procChecks("xsound", xSoundOperaterCheck, xOpVox, xLanguage);
-    procChecks("xsound", xSoundTaacomCheck, xTAACOM, xLanguage);
-    procChecks("xstring", xStringCheck, xString, xStringFinalCheck);
+    for (const auto& ximagecheck : xImageCheck) {
+        for (const auto& ximage : xImage) {
+            for (const auto& ximagefinalcheck : xImageFinalCheck) {
+                CheckAsset("ximage", ximagecheck + ximage + ximagefinalcheck, intermediateTotal, assetType);
+                iterationsCompleted++;
+            }
+        }
+    }
+
+    for (const auto& xmaterialcheck : xMaterialCheck) {
+        for (const auto& xmaterial : xMaterial) {
+            for (const auto& xmaterialfinalcheck : xMaterialFinalCheck) {
+                CheckAsset("xmaterial", xmaterialcheck + xmaterial + xmaterialfinalcheck, intermediateTotal, assetType);
+                iterationsCompleted++;
+            }
+        }
+    }
+
+    for (const auto& xmodelcheck : xModelCheck) {
+        for (const auto& xmodel : xModel) {
+            for (const auto& xmodelfinalcheck : xModelFinalCheck) {
+                CheckAsset("xmodel", xmodelcheck + xmodel + xmodelfinalcheck, intermediateTotal, assetType);
+                iterationsCompleted++;
+            }
+        }
+    }
+
+    for (const auto& xsoundwpncheck : xSoundWpnCheck) {
+        for (const auto& xweaponsound : xWeaponSound) {
+            for (const auto& xgenericsound : xGenericSound) {
+                CheckAsset("xsound", xsoundwpncheck + xweaponsound + xgenericsound, intermediateTotal, assetType);
+                iterationsCompleted++;
+            }
+        }
+    }
+
+    for (const auto& xsoundoperatorcheck : xSoundOperatorCheck) {
+        for (const auto& xopvox : xOpVox) {
+            for (const auto& xlanguage : xLanguage) {
+                CheckAsset("xsound", xsoundoperatorcheck + xopvox + xlanguage, intermediateTotal, assetType);
+                iterationsCompleted++;
+            }
+        }
+    }
+
+    for (const auto& xsoundtaacomcheck : xSoundTaacomCheck) {
+        for (const auto& xtaacom : xTAACOM) {
+            for (const auto& xlanguage : xLanguage) {
+                CheckAsset("xsound", xsoundtaacomcheck + xtaacom + xlanguage, intermediateTotal, assetType);
+                iterationsCompleted++;
+            }
+        }
+    }
+
+    for (const auto& xstringcheck : xStringCheck) {
+        for (const auto& xstring : xString) {
+            for (const auto& xstringfinalcheck : xStringFinalCheck) {
+                CheckAsset("xstring", xstringcheck + xstring + xstringfinalcheck, intermediateTotal, assetType);
+                iterationsCompleted++;
+            }
+        }
+    }
 
     totalHashesFound = intermediateTotal;
 }
@@ -8997,18 +9060,18 @@ int main() {
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_RED);
     cout << "\nSpecify root directory: ";
     getline(cin, path);
-        cout << "\nScanning for Assets...\n";
-        time_point start = steady_clock::now();
-        int totalHashesFound = 0;
-        thread t(ScanAsset, path.c_str(), ref(totalHashesFound));
-        t.join();
-        steady_clock::time_point end = steady_clock::now();
-        duration<double> elapsed_seconds = end - start;
-        int hours = static_cast<int>(elapsed_seconds.count() / 3600);
-        int minutes = static_cast<int>((elapsed_seconds.count() - (hours * 3600)) / 60);
-        int seconds = static_cast<int>(elapsed_seconds.count() - (hours * 3600) - (minutes * 60));
-        cout << "\nScan completed in: " << setfill('0') << setw(2) << hours << ":" << setw(2) << minutes << ":" << setw(2) << seconds;
-        cout << "\nTotal assets found: " << totalHashesFound << '\n';
-        system("pause");
-        return 0;
-    }
+    cout << "\nScanning for Assets...\n";
+    time_point start = steady_clock::now();
+    int totalHashesFound = 0;
+    thread t(ScanAsset, path.c_str(), ref(totalHashesFound));
+    t.join();
+    steady_clock::time_point end = steady_clock::now();
+    duration<double> elapsed_seconds = end - start;
+    int hours = static_cast<int>(elapsed_seconds.count() / 3600);
+    int minutes = static_cast<int>((elapsed_seconds.count() - (hours * 3600)) / 60);
+    int seconds = static_cast<int>(elapsed_seconds.count() - (hours * 3600) - (minutes * 60));
+    cout << "\nScan completed in: " << setfill('0') << setw(2) << hours << ":" << setw(2) << minutes << ":" << setw(2) << seconds;
+    cout << "\nTotal assets found: " << totalHashesFound << '\n';
+    system("pause");
+    return 0;
+}
