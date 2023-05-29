@@ -5,15 +5,17 @@
 #include <iostream>
 #include <string>
 #include <thread>
+#include <unordered_map>
 #include <vector>
 #include <windows.h>
 
 using namespace std;
 using namespace std::chrono;
 
-// Change the uint and Hash class in the .cpp file for the target game
+// Change the uint and Hash/Util function in the .cpp file for the target game
 
 // FNV1a-64 [Modern Warfare 2022 - Modified Function]
+// uint64_t assetNameHash = HashMW64Util::HashMW64(assetNameCStr, assetName.length());
 class HashMW64Util {
 public: static const uint64_t HashMW64(const char* data, const size_t dataLen) {
     const uint64_t FNVPrime = 0x100000001B3;
@@ -30,6 +32,7 @@ public: static const uint64_t HashMW64(const char* data, const size_t dataLen) {
 };
 
 // FNV1a-64 [Black Ops 4, Black Ops Cold War, Vanguard]
+// uint64_t assetNameHash = HashA64Util::HashA64(assetNameCStr, assetName.length());
 class HashA64Util {
 public: static uint64_t HashA64(const char* Data, uint64_t Size) {
     const uint64_t FNVPrime = 0x100000001B3;
@@ -44,6 +47,7 @@ public: static uint64_t HashA64(const char* Data, uint64_t Size) {
 };
 
 // FNV1-64 [Unused]
+// uint64_t assetNameHash = Hash64Util::Hash64(assetNameCStr, assetName.length());
 class Hash64Util {
 public: static uint64_t Hash64(const char* Data, uint64_t Size) {
     const uint64_t FNVPrime = 0x100000001B3;

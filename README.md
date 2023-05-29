@@ -4,9 +4,9 @@
 
 A Versatile Tool that verifies hashes
 
-NOTE 1: Delete and regenerate the xassets on each build as the hashes are removed for newer scans
-//NOTE 2: Change the startup object to FNV1A64base if you are using it for large scans (default)
-NOTE 3: You can use Ladisk CascViewer to pull Black Ops 4 Sounds or the full game from their CDN to find assets manually through Greyhound.
+NOTE 1: Delete and regenerate the xassets on each build as verified hashes are removed for newer scans
+//NOTE 2: Change the startup object to base.cpp if you are using it for large scans (default)
+NOTE 3: You can use Ladisk CascViewer to pull Black Ops 4 Sounds or the full game from the CDN to find assets manually through Greyhound
 
 ## Overview
 
@@ -34,7 +34,7 @@ Multithreading / CUDA
 ## Bruteforce Methods:
 
 ->These methods provided are what i did to find large amounts of assets, this is a more effective way. Mostly Regex.
-->Make name checks outside Visual Studio in fnv1a64.cs with Notepad++, after saving, VS can be debugged/compiled instantly without the formating text dialog.
+->Make name checks outside Visual Studio in main.cs with Notepad++, after saving, VS can be debugged/compiled instantly without the formating text dialog.
 
 1. (Most Effective) Using names from previous COD Titles Asset Logs
 2. (Most Effective) Word trimming after the last underscore		_[^_]*$
