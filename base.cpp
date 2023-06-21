@@ -108,15 +108,6 @@ void ScanAsset(string xAsset, int& totalHashesFound) {
     int intermediateTotal = 0;
     int iterationsCompleted = 0;
 
-    const int animIterations = sizeof(xAnimCheck) / sizeof(xAnimCheck[0]) * sizeof(xAnim) / sizeof(xAnim[0]) * sizeof(xAnimFinalCheck) / sizeof(xAnimFinalCheck[0]);
-    const int imageIterations = sizeof(xImageCheck) / sizeof(xImageCheck[0]) * sizeof(xImage) / sizeof(xImage[0]) * sizeof(xImageFinalCheck) / sizeof(xImageFinalCheck[0]);
-    const int materialIterations = sizeof(xMaterialCheck) / sizeof(xMaterialCheck[0]) * sizeof(xMaterial) / sizeof(xMaterial[0]) * sizeof(xMaterialFinalCheck) / sizeof(xMaterialFinalCheck[0]);
-    const int modelIterations = sizeof(xModelCheck) / sizeof(xModelCheck[0]) * sizeof(xModel) / sizeof(xModel[0]) * sizeof(xModelFinalCheck) / sizeof(xModelFinalCheck[0]);
-    const int soundWpnIterations = sizeof(xSoundWpnCheck) / sizeof(xSoundWpnCheck[0]) * sizeof(xWeaponSound) / sizeof(xWeaponSound[0]) * sizeof(xGenericSound) / sizeof(xGenericSound[0]);
-    const int soundOperaterIterations = sizeof(xSoundOperatorCheck) / sizeof(xSoundOperatorCheck[0]) * sizeof(xOpVox) / sizeof(xOpVox[0]) * sizeof(xLanguage) / sizeof(xLanguage[0]);
-    const int soundTaacomIterations = sizeof(xSoundTaacomCheck) / sizeof(xSoundTaacomCheck[0]) * sizeof(xTAACOM) / sizeof(xTAACOM[0]) * sizeof(xLanguage) / sizeof(xLanguage[0]);
-    const int stringIterations = sizeof(xStringCheck) / sizeof(xStringCheck[0]) * sizeof(xString) / sizeof(xString[0]) * sizeof(xStringFinalCheck) / sizeof(xStringFinalCheck[0]);
-
     for (const auto& xanimcheck : xAnimCheck) {
         for (const auto& xanim : xAnim) {
             for (const auto& xanimfinalcheck : xAnimFinalCheck) {

@@ -1,8 +1,13 @@
+21/06/2023:
+->Removed some useless code
+->Updated Notepad++ to v8.5.4
+->Updated xassets.7z to current
+
 29/05/2023:
-Re-done the CheckAsset and ScanAsset functions whilst removing unused code
-Vectors rather than string arrays, compile and scan times are the same, binary sizes are smaller (who cares)
-Went back to Win11 sdk because its backwards compatible to 10 1809,
-HxD was updated which seems to already be undetectable by COD games
+->Re-done the CheckAsset and ScanAsset functions whilst removing unused code
+->Vectors rather than string arrays, compile and scan times are the same, binary sizes are smaller (who cares)
+->Went back to Win11 sdk because its backwards compatible to 10 1809,
+->HxD was updated which seems to already be undetectable by COD games
 
 24/05/2023:
 ->Updated 7z x64 to v23.00
